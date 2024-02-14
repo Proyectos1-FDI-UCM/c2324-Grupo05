@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class #SCRIPTNAME# : MonoBehaviour
+{
+    // Block with PublicVariables
+
+    // Block with [attributed]-variables (ex. SerializeField)
+
+    // Block with _privateVariables
+
+    // Block with references
+
+    // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
+
+    private void Awake()
+    {
+        #NOTRIM#
+    }
+
+    private void Start()
+    {
+        #NOTRIM#
+    }
+
+    // Block with custom private methods
+
+    // Update methods
+    private void Update()
+    {
+        #NOTRIM#
+    }
+
+    // Block with custom public methods
+}
