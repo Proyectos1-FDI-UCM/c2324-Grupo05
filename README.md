@@ -1,4 +1,4 @@
-# GDD
+# Game design document
 
 ## Género
 
@@ -81,7 +81,7 @@ Si el jugador completa la actividad opcional de recolectar y reciclar basura, qu
 >**Ejemplo:** 
 >*`Cuando un personaje activa la habilidad de "Curación", el personaje recibe el buff de "Curación", que cura al personaje y restaura N unidades de salud.`*
 >
->Esto puede sonar terrible desde un punto de vista estilístico, pero para fines de documentación, este es un párrafo muy bueno que se puede traducir fácilmente a [codigo](code_example.png).
+>Esto puede sonar terrible desde un punto de vista estilístico, pero para fines de documentación, este es un párrafo muy bueno que se puede traducir fácilmente a [codigo](https://raw.githubusercontent.com/Proyectos1-FDI-UCM/c2324-Grupo05/main/docs/Media/code_example.png).
 
 
 ### Sistemas
@@ -152,7 +152,7 @@ La palabra muerte se refiere a todos los casos en los que un personaje pisa lava
 >**Antes del prototipo**, vale la pena agregar ideas, conceptos, una descripción básica de qué sonidos, animaciones y efectos queremos tener en la forma final. Esquemas y bocetos de niveles, una propuesta de mapa mundial. Primeros borradores del guión del juego, referencias de animación (de recursos ya preparados, otros juegos, etc.).
 >
 >**Después del prototipo,** debemos agregar aquí información relevante sobre el diseño. 
->Los mapas finales de cada nivel en formato digital, para sonidos y animaciones hacer una breve descripción de los archivos en el proyecto Unity (lo más conveniente es en forma de una[ tabla](table_example.png)), donde frente al nombre del fichero se describirá en qué lugar lo utilizamos cual sonido o animación, de modo que en caso de circunstancias imprevistas, si el repositorio del proyecto se dañara de alguna manera o se produjera un error crítico que mezclara o eliminara los archivos que necesitábamos, pudiéramos restaurar todo rápida y fácilmente usando el GDD.
+>Los mapas finales de cada nivel en formato digital, para sonidos y animaciones hacer una breve descripción de los archivos en el proyecto Unity (lo más conveniente es en forma de una[ tabla](https://raw.githubusercontent.com/Proyectos1-FDI-UCM/c2324-Grupo05/main/docs/Media/table_example.png)), donde frente al nombre del fichero se describirá en qué lugar lo utilizamos cual sonido o animación, de modo que en caso de circunstancias imprevistas, si el repositorio del proyecto se dañara de alguna manera o se produjera un error crítico que mezclara o eliminara los archivos que necesitábamos, pudiéramos restaurar todo rápida y fácilmente usando el GDD.
 
 ### Historia:
 
