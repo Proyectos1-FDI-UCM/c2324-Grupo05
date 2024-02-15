@@ -36,9 +36,8 @@ El escenario del juego EG6 es un mundo sombrío de un vertedero en una isla árt
 
 >[!NOTE] 
 >El estilo se entiende en el sentido más amplio. Aquí podemos agregar cualquier arte conceptual y referencias. Escriba los detalles de cómo debería sentirse el juego, qué emociones debería evocar en el jugador.
->
-   Desde el punto de vista del juego, en esta sección debes describir cómo funciona el juego sin tocar detalles. Por ejemplo, cómo está estructurado el mundo del juego, si está dividido en niveles o es un "mundo abierto", como se produce el movimiento entre ubicaciones. ¿El personaje sólo puede caminar? ¿O volar? ¿O conducir un vehículo? ¿Podrá recoger algo en su inventario? ¿Mover cosas? ¿Luchar? ¿Usar magia?, etc...
-   Esta sección es como un avance (trailer) del juego en forma de texto, donde describimos las capacidades del jugador. Después de leer toda la sección, el lector deberá entender de qué se tratará el juego, pero sin entrar en detalles.
+>Desde el punto de vista del juego, en esta sección debes describir cómo funciona el juego sin tocar detalles. Por ejemplo, cómo está estructurado el mundo del juego, si está dividido en niveles o es un "mundo abierto", como se produce el movimiento entre ubicaciones. ¿El personaje sólo puede caminar? ¿O volar? ¿O conducir un vehículo? ¿Podrá recoger algo en su inventario? ¿Mover cosas? ¿Luchar? ¿Usar magia?, etc...
+>Esta sección es como un avance (trailer) del juego en forma de texto, donde describimos las capacidades del jugador. Después de leer toda la sección, el lector deberá entender de qué se tratará el juego, pero sin entrar en detalles.
 
 El juego está realizado en pixel art 2D, con una posición de la cámara Top-Down.
 El mundo del juego está dividido en niveles, cada nivel tiene un conjunto específico de pantallas, cada pantalla está hecha de tiles.
