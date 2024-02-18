@@ -35,7 +35,7 @@ Action-adventure, Puzzle
 >[!info]- ¿Qué es?
 >Este parte de GDD proporciona una visión general concisa del entorno, permitiendo a cualquier lector comprender qué imaginar mientras se mencionan términos específicos en el texto. Por ejemplo, si especificamos que el entorno del juego es un mundo de fantasía medieval, el lector entenderá que cuando se mencione "armas", se refiere a espadas o ballestas, y no a armas láser futuristas.
 
-El escenario del juego EG6 es un mundo sombrío de un vertedero en una isla ártica, lleno de contaminación y restos de tecnología. El jugador y su compañero robótico pingüino exploran este paisaje devastado, recolectando piezas y resolviendo acertijos para encontrar una ruta hacia la salvación. El tiempo parece detenido aquí, y la naturaleza ha casi desaparecido debido al terrible impacto de la contaminación.
+El escenario del juego EG6 es un mundo sombrío de un vertedero en una isla ártica, lleno de contaminación y restos de tecnología. El jugador y su compañero, un pingüino robótico, exploran este paisaje devastado, recolectando piezas y resolviendo puzzles para encontrar una ruta hacia la salvación. El tiempo en esta isla parece detenido, y la naturaleza ha desaparecido casi por completo debido al terrible impacto de la contaminación.
 
 
 ## Controles
