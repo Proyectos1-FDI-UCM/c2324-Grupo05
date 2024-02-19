@@ -24,12 +24,6 @@ public class MovableObject : MonoBehaviour
         }
     }
 
-    // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
-    private void Awake()
-    {
-        
-    }
-
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
