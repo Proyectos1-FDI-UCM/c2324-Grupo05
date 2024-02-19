@@ -46,16 +46,17 @@ El escenario del juego EG6 es un mundo sombrío de un vertedero en una isla árt
 > 
 > Si necesitamos cambiar un botón que será responsable de alguna acción, bastará con cambiarlo en la tabla y no tocar todos los demás lugares en los que se menciona.
 
-| Botón  | Nombre  |
-|---|---|
-|W |arriba|
-|A |izquierda|
-|S |abajo|
-|D |derecha|
-|E/Space |interactuar|
-|LMB |disparar|
-|i|inventario|
-|Esc |guardar/ ajustes|
+| Botón | Nombre |
+| ---- | ---- |
+| W | arriba |
+| A | izquierda |
+| S | abajo |
+| D | derecha |
+| E/Space | interactuar |
+| LMB | disparar |
+| i | inventario |
+| Esc | guardar/ ajustes |
+| Q | cambiar control de jugador a pingüino |
 ## Estilo
 
 >[!info]- ¿Qué es?
