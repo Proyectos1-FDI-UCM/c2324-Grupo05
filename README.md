@@ -2,7 +2,7 @@
 
 ## Género
 
-Action-adventure, Puzzle
+Action-adventure, Puzzle.
 
 **Referencias:** Undertale, OneShot, Deltarune.
 
