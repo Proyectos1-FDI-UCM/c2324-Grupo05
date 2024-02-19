@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerNewInput : MonoBehaviour
 {
     private MovableObject _movableObject;
     private Vector2 _inputDirection;
+    public InputActionReference move;
 
     // Block with public Properties {get; set;}
 
@@ -23,7 +25,10 @@ public class PlayerNewInput : MonoBehaviour
     // MonoBehaviour update methods
     private void FixedUpdate()
     {
-        _inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        _inputDirection = new Vector2(); //(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        
+
+        _inputDirection = move.action.ReadValue<Vector2>();
         _movableObject.SetInput(_inputDirection);
     }
 
