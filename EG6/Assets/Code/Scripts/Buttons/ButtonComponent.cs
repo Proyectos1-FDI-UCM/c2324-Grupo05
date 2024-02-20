@@ -52,8 +52,6 @@ public class ButtonComponent : MonoBehaviour
         {
             //comprobar que componente tiene el target
             DoorComponent door = _target.GetComponent<DoorComponent>();
-
-
             if (door != null)
             {
                 door.OnPressedButton();

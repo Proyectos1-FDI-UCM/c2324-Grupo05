@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpTrash : MonoBehaviour
+public class PiezaComponent : MonoBehaviour
 {
     // Block with private (or protected) _fields
 
