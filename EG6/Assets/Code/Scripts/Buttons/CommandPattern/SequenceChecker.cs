@@ -54,7 +54,7 @@ public class SequenceChecker : MonoBehaviour
             if (_isSequenceMatched)
             {
                 _door.SetDoorState(true);
-                UndoSequence();
+                //UndoSequence();
             }
             else
             {
