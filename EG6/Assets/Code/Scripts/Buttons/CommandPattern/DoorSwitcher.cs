@@ -7,13 +7,12 @@ public class DoorSwitcher : MonoBehaviour
     private bool _isDoorOpen = false;
     private GameObject _door;
 
-
     private void Start()
     {
         _door = gameObject;
     }
 
-    
+    // private method to update the door state based on the _isDoorOpen state
     private void UpdateDoorState()
     {
         if (_isDoorOpen)
@@ -29,7 +28,7 @@ public class DoorSwitcher : MonoBehaviour
     }
 
     /// <summary>
-    /// Method to open or close the door
+    /// Method to set the door state (opened or closed)
     /// </summary>
     /// <param name="state">true if door is opened, false if it's closed</param>
     public void SetDoorState(bool state)
