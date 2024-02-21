@@ -504,10 +504,10 @@ GameObject:
   - component: {fileID: 314597642}
   - component: {fileID: 314597641}
   - component: {fileID: 314597640}
-  - component: {fileID: 314597639}
   - component: {fileID: 314597638}
   - component: {fileID: 314597644}
   - component: {fileID: 314597645}
+  - component: {fileID: 314597646}
   m_Layer: 3
   m_Name: Main Character
   m_TagString: Untagged
@@ -542,19 +542,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
---- !u!114 &314597639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314597637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 809137104bf863c4bbcd788c7773c75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementSpeed: 2
 --- !u!61 &314597640
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -706,7 +693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcac992b205ee6e46ae66d96b21e09ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: {fileID: -2075448846181819123, guid: 74175583c2b38194bbc736d5ac51d3bd, type: 3}
 --- !u!114 &314597645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,9 +720,22 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: New action map
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &314597646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314597637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d8f310410f1b948b0a9dca6ca78ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementSpeed: 0
 --- !u!1 &633441331
 GameObject:
   m_ObjectHideFlags: 0

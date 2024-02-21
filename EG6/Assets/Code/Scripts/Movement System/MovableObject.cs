@@ -6,8 +6,8 @@ public class MovableObject : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     private CollisionHandler _collisionHandler;
-    private Vector2 _inputDirection;
-    [SerializeField] [Range(1f, 10f)] private float _movementSpeed;
+    protected Vector2 _movementDirection;    
+    [SerializeField] [Range(1f, 10f)] protected float _movementSpeed = 4f;
 
     public float MovementSpeed
     {
@@ -34,12 +34,12 @@ public class MovableObject : MonoBehaviour
     // MonoBehaviour update methods
     private void FixedUpdate()
     {
-        Move(_inputDirection);
+        Move(_movementDirection);
     }
 
-    public void SetInput(Vector2 inputDirection)
+    public void SetDirection(Vector2 direction)
     {
-        _inputDirection = inputDirection;
+        _movementDirection = direction;
     }
 
     private void Move(Vector2 direction)

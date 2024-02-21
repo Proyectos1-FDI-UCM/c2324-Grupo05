@@ -3,24 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(PlayerMovement))]
 public class PlayerNewInput : MonoBehaviour
 {
-    private MovableObject _movableObject;
+    private PlayerMovement _playerMovement;
     private Vector2 _inputDirection;
-    public InputActionReference move;
+    private PlayerInput _playerInput;
 
     // Block with public Properties {get; set;}
 
     // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
     private void Awake()
     {
-        
+        _playerInput = new PlayerInput();
     }
+
+    private void OnEnable() 
+	{
+		_playerInput.Enable();
+	}
 
     private void Start()
     {
-        _movableObject = GetComponent<MovableObject>();
+        _playerMovement = GetComponent<PlayerMovement>();
     }
+
+    private void OnDisable() 
+	{
+		_playerInput.Disable();
+	}
 
     // MonoBehaviour update methods
     private void FixedUpdate()
@@ -28,8 +39,8 @@ public class PlayerNewInput : MonoBehaviour
         _inputDirection = new Vector2(); //(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         
 
-        _inputDirection = move.action.ReadValue<Vector2>();
-        _movableObject.SetInput(_inputDirection);
+        _inputDirection = _playerInput.Player.move.ReadValue<Vector2>();
+        _playerMovement.SetInputDirection(_inputDirection);
     }
 
     // Block with custom classes or structures
