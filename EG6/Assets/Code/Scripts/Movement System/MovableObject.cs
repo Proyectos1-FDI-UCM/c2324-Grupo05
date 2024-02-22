@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MovableObject : MonoBehaviour
@@ -7,19 +8,19 @@ public class MovableObject : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private CollisionHandler _collisionHandler;
     protected Vector2 _movementDirection; 
+    protected Vector2 _additionalVector;
 
     [SerializeField] [Range(1f, 10f)] 
     protected float _movementSpeed = 4f;
 
-    // Speed property which can be changed from another components
-    // Round the value to 1 or 10 if it's out of range
+    public Vector2 AdditionalVector { get => _additionalVector; set => _additionalVector = value;}
     public float MovementSpeed
     {
         get => _movementSpeed;
         set {
-            if (value <= 1f)
+            if (value <= 0f)
             {
-                _movementSpeed = 1;}
+                _movementSpeed = 0;}
             else if (value >= 10f)
             {
                 _movementSpeed = 10f;
@@ -42,11 +43,6 @@ public class MovableObject : MonoBehaviour
         Move(_movementDirection);
     }
 
-    public void SetDirection(Vector2 direction)
-    {
-        _movementDirection = direction;
-    }
-
     private void Move(Vector2 direction)
     {
         if (TryMove(direction) == false)
@@ -62,10 +58,21 @@ public class MovableObject : MonoBehaviour
     {
         if (_collisionHandler.CheckCollision(direction, _movementSpeed) == false)
         {
-            Vector2 moveVector = direction * _movementSpeed * Time.fixedDeltaTime;
-            _rigidbody2D.MovePosition(_rigidbody2D.position + moveVector);
+            Vector2 movingVector = SetMovingVector(direction, _movementSpeed, _additionalVector);
+            _rigidbody2D.MovePosition(_rigidbody2D.position + movingVector * Time.fixedDeltaTime);
             return true;
         }
         return false;
     }
+
+    public void SetDirection(Vector2 direction)
+    {
+        _movementDirection = direction;
+    }
+
+    protected Vector2 SetMovingVector(Vector2 direction, float speed, Vector2 additionalVector)
+    {
+        return direction * speed  + additionalVector;
+    }
+    
 }
