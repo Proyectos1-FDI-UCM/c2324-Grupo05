@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ConveyorBelt : MonoBehaviour
 {
-    private Vector2 _movementDirection;
-    private float pushSpeed = 3f;
+    [SerializeField] private Vector2 _movementDirection;
+    private float pushSpeed = 3;
+
+    public Vector2 MovementDirection { get => _movementDirection; set => _movementDirection = value; }
 
     private void Start() 
     {
-        _movementDirection = new Vector2(1, 0);
+        _movementDirection = _movementDirection.normalized;
     }
 
     private void OnTriggerStay2D(Collider2D collision)

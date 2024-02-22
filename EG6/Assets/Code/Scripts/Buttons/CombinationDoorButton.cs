@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class CombinationDoorButton : Button
 {
-
     [SerializeField] private DoorSwitcher _doorSwitcher;
     [SerializeField] private SequenceChecker _sequenceChecker;
-    private Renderer _buttonRenderer;
-
-    private void Start()
-    {
-        _buttonRenderer = GetComponent<Renderer>();
-    }
 
     // When the player enters the button collider the OnPressed method is called
     private void OnTriggerEnter2D(Collider2D collision) 

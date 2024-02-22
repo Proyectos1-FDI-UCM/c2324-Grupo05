@@ -6,12 +6,6 @@ using UnityEngine;
 public class DoorButton : Button
 {
     [SerializeField] private DoorSwitcher _doorSwitcher;
-    private Renderer _buttonRenderer;
-    
-    private void Start()
-    {
-        _buttonRenderer = GetComponent<Renderer>();
-    }
 
     // When the player enters the button collider the OnPressed method is called
     private void OnTriggerEnter2D(Collider2D collision) 
