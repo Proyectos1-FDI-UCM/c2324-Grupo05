@@ -40,7 +40,12 @@ public class PlayerNewInput : MonoBehaviour
         
 
         _inputDirection = _playerInput.Player.move.ReadValue<Vector2>();
-        _playerMovement.SetInputDirection(_inputDirection);
+        if (_inputDirection.x!=0)
+        {
+            _inputDirection.y = 0;
+        }
+
+        _playerMovement.SetInputDirection(_inputDirection.normalized);
     }
 
     // Block with custom classes or structures
