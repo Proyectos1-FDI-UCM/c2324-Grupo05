@@ -6,7 +6,7 @@ using UnityEngine;
 public class MovableObject : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
-    private CollisionHandler _collisionHandler;
+    protected CollisionHandler _collisionHandler;
     protected Vector2 _movementDirection; 
     protected Vector2 _additionalVector;
 
@@ -54,7 +54,7 @@ public class MovableObject : MonoBehaviour
         }
     }
 
-    private bool TryMove(Vector2 direction)
+    public bool TryMove(Vector2 direction)
     {
         if (_collisionHandler.CheckCollision(direction, _movementSpeed) == false)
         {
