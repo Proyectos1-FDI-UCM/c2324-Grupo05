@@ -46,6 +46,7 @@ El escenario del juego EG6 es un mundo sombrío de un vertedero en una isla árt
 > 
 > Si necesitamos cambiar un botón que será responsable de alguna acción, bastará con cambiarlo en la tabla y no tocar todos los demás lugares en los que se menciona.
 
+### Teclado
 | Botón | Nombre |
 | ---- | ---- |
 | W | arriba |
@@ -53,10 +54,22 @@ El escenario del juego EG6 es un mundo sombrío de un vertedero en una isla árt
 | S | abajo |
 | D | derecha |
 | E/Space | interactuar |
-| LMB | disparar |
 | i | inventario |
 | Esc | guardar/ ajustes |
 | Q | cambiar control de jugador a pingüino |
+
+### Gamepad
+| Botón | Nombre |
+| ---- | ---- |
+|  | arriba |
+|  | izquierda |
+|  | abajo |
+|  | derecha |
+|  | interactuar |
+|  | inventario |
+|  | guardar/ ajustes |
+|  | cambiar control de jugador a pingüino |
+
 ## Estilo
 
 >[!info]- ¿Qué es?
@@ -88,7 +101,7 @@ La tarea del jugador es resolver tareas cambiando entre personajes y usando su c
 
 El jugador sale de la habitación del personaje en busca de una pieza para mejorar el robot pingüino, pasa por niveles cada vez más difíciles utilizando nuevas mecánicas, regresa a la habitación para mejorar a su compañero para poder superar obstáculos más difíciles y escapar de la isla.
 
-Si el jugador completa la actividad opcional de recolectar y reciclar basura, que no impide su progreso, recibirá un final más positivo o un huevo de Pascua escondido al final.
+Si el jugador completa la actividad opcional de recolectar y reciclar basura, que no impide su progreso, recibirá un final más positivo o un secreto escondido al final.
 
 ## Sistemas y Mecánicas
 
@@ -120,8 +133,18 @@ Incluye la lógica de funciones que están asociadas a la interacción (personaj
 Todas estas mecánicas forman un sistema.
 
 #### Sistema de movimiento
-Incluye dos secciones: el movimiento del personaje principal y el movimiento del pingüino.
-Se diferencian en la naturaleza y la velocidad del movimiento, así como en los "modos". Por ejemplo, el pingüino tiene un modo separado que le permite nadar. 
+El sistema de movimiento se implementa con Rigidbodies cinemáticos.
+Para evitar que los personajes atraviesen las paredes, utilizamos RayCast. El componente *`CollisionHandler.cs`* se encarga de detectar obstáculos en el camino de movimiento de los objetos, lo que transmite información a otros métodos del sistema si hay un objeto de la capa “Walls” en nuestro camino.
+Todos los objetos que se pueden mover (personajes y bloques) se heredan de la clase en *`MovableObject.cs`* común, que implementa la interfaz *`IMovable`*.
+
+Para controlar el personaje usamos la clase heredera en *`PlayerMovement.cs`*, que puede recibir información de "New Input System".
+
+| Class | ¿Qué hace? |
+| ---- | ---- |
+| MovableObject | Contiene lógica de movimiento básica para rigidbodies cinemáticos. |
+| PlayerMovement | Heredero de MovableObject. Determina la dirección del movimiento usando un Input del jugador. |
+| PlayerNewInput | Una clase que le permite llamar a métodos de otros componentes y pasarles información utilizando "Unity New Input System". |
+| CollisionHandler | Verifica si hay otro objeto en la capa "Paredes" en la ruta del movimiento del MovementObject usando Raycast. Devuelve booleano para utilizarlo en los métodos de MovableObject. |
 
 >[!note] Explicación
 > Durante un modo separado, la naturaleza del movimiento cambia, pero la lógica básica permanece sin cambios (lo que significa que no comienza a moverse como en un juego de plataformas o de ritmo, por lo que podemos usar la [herencia](https://www.w3schools.com/cs/cs_inheritance.php) de manera segura para implementar este sistema).
