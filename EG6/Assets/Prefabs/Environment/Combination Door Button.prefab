@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6312132761764612965}
   - component: {fileID: 8773700976419476009}
   - component: {fileID: 3341495600564877070}
-  - component: {fileID: 4477597794644135722}
+  - component: {fileID: 297556967417809102}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Combination Door Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4477597794644135722
+--- !u!114 &297556967417809102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4053522191386273628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 849e8f2d792091944ae82e60a1eb4093, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e07cdd11f8825e40af369cd5d9be230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonId: 0

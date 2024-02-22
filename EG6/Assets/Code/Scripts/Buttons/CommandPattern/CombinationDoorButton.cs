@@ -1,32 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
-public class ButtonHandler : MonoBehaviour
+public class CombinationDoorButton : Button
 {
-    [SerializeField] private int _buttonId; 
+
     [SerializeField] private DoorSwitcher _doorSwitcher;
     [SerializeField] private SequenceChecker _sequenceChecker;
     private Renderer _buttonRenderer;
-    
-    public int ButtonId { get => _buttonId; private set => _buttonId = value; } // Incapsulated property for the id
 
     private void Start()
     {
         _buttonRenderer = GetComponent<Renderer>();
     }
 
-    // When the player enters the button collider, the button press command is created and executed
+    // When the player enters the button collider the OnPressed method is called
     private void OnTriggerEnter2D(Collider2D collision) 
     {
-        if (collision.gameObject.GetComponent<PlayerMovement>() != null)
+        if (collision.GetComponent<PlayerMovement>() != null)
+        {
+            OnPressed();
+        }
+    }
+
+    // The OnPressed method is overriden to check the sequence of buttons pressed and open the door
+    protected override void OnPressed()
+    {
         {
             ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
             buttonPressCommand.Execute();
-
             _sequenceChecker.AddButtonToSequence(buttonPressCommand);
             _sequenceChecker.CheckSequence();
         }
     }
+    
 }
