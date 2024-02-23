@@ -47,28 +47,28 @@ El escenario del juego EG6 es un mundo sombrío de un vertedero en una isla árt
 > Si necesitamos cambiar un botón que será responsable de alguna acción, bastará con cambiarlo en la tabla y no tocar todos los demás lugares en los que se menciona.
 
 ### Teclado
-| Botón | Nombre |
-| ---- | ---- |
-| W | arriba |
-| A | izquierda |
-| S | abajo |
-| D | derecha |
-| E/Space | interactuar |
-| i | inventario |
-| Esc | guardar/ ajustes |
-| Q | cambiar control de jugador a pingüino |
+| Botón   | Nombre                                |
+| ------- | ------------------------------------- |
+| W       | arriba                                |
+| A       | izquierda                             |
+| S       | abajo                                 |
+| D       | derecha                               |
+| E/Space | interactuar                           |
+| i       | inventario                            |
+| Esc     | ajustes                               |
+| Q       | cambiar control de jugador a pingüino |
 
 ### Gamepad
-| Botón | Nombre |
-| ---- | ---- |
-|  | arriba |
-|  | izquierda |
-|  | abajo |
-|  | derecha |
-|  | interactuar |
-|  | inventario |
-|  | guardar/ ajustes |
-|  | cambiar control de jugador a pingüino |
+| Botón                       | Nombre                                |
+| --------------------------- | ------------------------------------- |
+| D-pad Up / L-stick Up       | arriba                                |
+| D-pad Left / L-stick Left   | izquierda                             |
+| D-pad Down / L-stick Down   | abajo                                 |
+| D-pad Right / L-stick Right | derecha                               |
+| Button South                | interactuar                           |
+| Select                      | inventario                            |
+| Start                       | ajustes                               |
+| Button North                | cambiar control de jugador a pingüino |
 
 ## Estilo
 
@@ -135,7 +135,7 @@ Todas estas mecánicas forman un sistema.
 #### Sistema de movimiento
 El sistema de movimiento se implementa con Rigidbodies cinemáticos.
 Para evitar que los personajes atraviesen las paredes, utilizamos RayCast. El componente *`CollisionHandler.cs`* se encarga de detectar obstáculos en el camino de movimiento de los objetos, lo que transmite información a otros métodos del sistema si hay un objeto de la capa “Walls” en nuestro camino.
-Todos los objetos que se pueden mover (personajes y bloques) se heredan de la clase en *`MovableObject.cs`* común, que implementa la interfaz *`IMovable`*.
+Todos los objetos que se pueden mover (personajes y bloques) heredan de la clase común en *`MovableObject.cs`* , que implementa la interfaz *`IMovable`*.
 
 Para controlar el personaje usamos la clase heredera en *`PlayerMovement.cs`*, que puede recibir información de "New Input System".
 
@@ -145,9 +145,6 @@ Para controlar el personaje usamos la clase heredera en *`PlayerMovement.cs`*, q
 | PlayerMovement | Heredero de MovableObject. Determina la dirección del movimiento usando un Input del jugador. |
 | PlayerNewInput | Una clase que le permite llamar a métodos de otros componentes y pasarles información utilizando "Unity New Input System". |
 | CollisionHandler | Verifica si hay otro objeto en la capa "Paredes" en la ruta del movimiento del MovementObject usando Raycast. Devuelve booleano para utilizarlo en los métodos de MovableObject. |
-
->[!note] Explicación
-> Durante un modo separado, la naturaleza del movimiento cambia, pero la lógica básica permanece sin cambios (lo que significa que no comienza a moverse como en un juego de plataformas o de ritmo, por lo que podemos usar la [herencia](https://www.w3schools.com/cs/cs_inheritance.php) de manera segura para implementar este sistema).
 
 #### Sistema de la cámara
 La lógica de la cámara incluye pantallas divididas, así como posibles funciones de la cámara, como hacer zoom en los personajes para mostrar una escena escrita, funciones para representar lugares oscuros, etc.
