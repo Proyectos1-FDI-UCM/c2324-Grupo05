@@ -58,7 +58,7 @@ public class MovableObject : MonoBehaviour
     {
         if (_collisionHandler.CheckCollision(direction, _movementSpeed) == false)
         {
-            Vector2 movingVector = SetMovingVector(direction, _movementSpeed, _additionalVector);
+            Vector2 movingVector = direction * _movementSpeed + _additionalVector;
             _rigidbody2D.MovePosition(_rigidbody2D.position + movingVector * Time.fixedDeltaTime);
             return true;
         }
@@ -68,11 +68,6 @@ public class MovableObject : MonoBehaviour
     public void SetDirection(Vector2 direction)
     {
         _movementDirection = direction;
-    }
-
-    protected Vector2 SetMovingVector(Vector2 direction, float speed, Vector2 additionalVector)
-    {
-        return direction * speed  + additionalVector;
     }
     
 }
