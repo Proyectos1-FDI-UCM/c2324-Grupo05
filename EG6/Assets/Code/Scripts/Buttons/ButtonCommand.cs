@@ -24,7 +24,7 @@ public class ButtonPressCommand : ICommand
         _buttonRenderer.material.color = Color.green;
     }
 
-    // Undo the command, change the color of the button to the previous color
+    // This method is called to undo the action
     public void Undo()
     {
         _buttonRenderer.material.color = _previousColor;

@@ -22,7 +22,6 @@ public class ConveyorBelt : MonoBehaviour
             movableObject.AdditionalVector = _movementDirection * pushSpeed;
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<MovableObject>() != null)

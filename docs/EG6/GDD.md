@@ -139,6 +139,13 @@ Todos los objetos que se pueden mover (personajes y bloques) heredan de la clase
 
 Para controlar el personaje usamos la clase heredera en *`PlayerMovement.cs`*, que puede recibir información de "New Input System".
 
+Cuando el personaje recoge toda la basura en un nivel, aumenta la velocidad de movimiento.
+
+**Incluye:**
+- [[#Mecánica de caminar]]
+- [[#Mecánica de nadar]]
+
+
 | Class | ¿Qué hace? |
 | ---- | ---- |
 | MovableObject | Contiene lógica de movimiento básica para rigidbodies cinemáticos. |
@@ -150,20 +157,14 @@ Para controlar el personaje usamos la clase heredera en *`PlayerMovement.cs`*, q
 La lógica de la cámara incluye pantallas divididas, así como posibles funciones de la cámara, como hacer zoom en los personajes para mostrar una escena escrita, funciones para representar lugares oscuros, etc.
 
 #### Sistema de interacciones
-Incluye la lógica por la cual ocurren todas las interacciones en el juego (independientemente del tipo de interacción, como recolectar un objeto, hablar con un NPC, mejorar un pingüino, romper una ficha). 
+Contiene logica que permite al jugador interactuar con tiles. 
+Cada mecánica de interación depende del personaje que se esté controlando el jugador.
 
->[!note] Por ejemplo: 
->Cuando un jugador entra al área de efecto de un objeto, tiene la oportunidad de interactuar con él presionando el botón `<interactuar>`. Pero para evitar conflictos, cuando el jugador está parado al lado de dos objetos y entra en la zona de interacción de ambos, el objeto del jugador dispara rayos (RayCast) en la dirección en la que mira, y si entran en contacto con el objeto, el objeto se resalta y te permite realizar una determinada acción.
->
->U otro ejemplo
->
->El jugador puede usar el cursor para seleccionar un objeto que se encuentre dentro de la zona de interacción del jugador (como en [Terraria](https://static.wikia.nocookie.net/terraria_gamepedia/images/b/b9/Pylon_Demonstration_spoiler.gif/revision/latest/scale-to-width-down/277?cb=20200501192936))
-
+**Incluye:**
+- [[#Mecánica de romper tiles]]
+- [[#Mecánica de recoger cosas]]
 #### Sistema de niveles
-Incluye la lógica por la cual se debe reiniciar y cargar el nivel.
-Por ejemplo, ¿se guardan los coleccionables repartidos por el nivel si ya los hemos recogido?
-¿Qué bloques se restauran al reiniciar y cuáles no?
-¿Cómo se produce la transición de un nivel a otro? ¿Qué datos del nivel anterior se restablecen y cuáles se conservan?
+
 
 ### Mecánicas
 
@@ -171,6 +172,34 @@ Por ejemplo, ¿se guardan los coleccionables repartidos por el nivel si ya los h
 > 
 > **La mecánica** es una acción separada, una pieza a partir de la cual se forman los sistemas. Por ejemplo, el sistema de movimiento tiene una mecánica "correr" y una mecánica "nadar". Nuestra tarea es describir la mecánica para que podamos imaginar su código.
 
+#### Mecánica de caminar
+Cuando el jugador envia Input, el personaje se mueve en 2 ejes, tiene aceleración instantánea sin movimiento diagonal. 
+
+#### Mecánica de nadar
+<Descripción de mecánica>
+
+#### Mecánica de romper tiles
+El niño puede romper solo tiles de basura
+El pingüino puede romper solo tiles de hielo
+Ambos tipos de tiles tienen la misma animación al romperse. 
+Cuando el tile se rompe, este desaparece.
+Para romper un tile, el personaje necesita acercarse a este tile y mirar en su dirección y pulsar botón de `<Interactuar>`. 
+Cuando el personaje puede romper un tile, el contorno del bloque aparece marcado con una línea más gruesa.
+#### Mecánica de recoger cosas
+Solo el niño puede recoger cosas.
+Para recoger cosas el necesita entrar en su collider. 
+Un objeto desaparece cuando el personaje la recoge.
+
+Para realizar lógica de objetos recogibles, implementamos la interfaz IPickable 
+Basura Recogible funciona junto con el contador.
+
+| PickableObject   | Lógica                                                                                                                                                                                          |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pieza            | La ponemos al inventario. Dice a otros componentes, que el jugador puede pasar al siguiente nivel si recogió una pieza en nivel actual. La utilizamos en la habitación para mejorar el pinüino. |
+| Basura Recogible | Incrementa el contador de basura en (el sistema de niveles). Necesitamos recoger toda basura en todos los niveles para desbloquear un final alternativo.                                        |
+
+
+#### Mecánica de pulsar botónes
 
 #### Mecánica de muerte
 La palabra muerte se refiere a todos los casos en los que un personaje pisa lava o se ahoga en agua. La mecánica debe describir el comportamiento del juego, ¿cómo exactamente se reinicia el personaje después de la muerte? ¿Aparece al principio del nivel? ¿Muere inmediatamente al tocar un tile o tiene algo de tiempo antes de morir? etc...
