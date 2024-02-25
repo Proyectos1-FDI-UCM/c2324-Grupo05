@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PenguinAI : MovableObject
 {
@@ -9,19 +10,24 @@ public class PenguinAI : MovableObject
 
     [SerializeField] Transform _targetTransform;
 
-    private Transform _myTransform;
+    NavMeshAgent _navMeshAgent;
+
+    
 
     // Block with public Properties {get; set;}
 
     // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
     private void Awake()
     {
-        _collisionHandler = GetComponent<CollisionHandler>();
-        _myTransform = transform; 
+
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+        _navMeshAgent.updateRotation = false;
+        _navMeshAgent.updateUpAxis = false;
+         
     }
     private void Update()
     {
-        _movementDirection = _targetTransform.position - _myTransform.position;
+        _navMeshAgent.SetDestination(_targetTransform.position);
 
     }
 
@@ -30,18 +36,6 @@ public class PenguinAI : MovableObject
     // Block with custom private Methods 
 
 
-    //Method to determine how the penguin should move in case that there are walls between him and the player. 
-    private void PenguinAi()
-    {
-        if (_collisionHandler.CheckCollision(_movementDirection,MovementSpeed) == false) 
-        {
-            _movementDirection = _targetTransform.position - _myTransform.position;
-        }
-        else
-        {
-            TryMove(_movementDirection + Vector2.Perpendicular(_movementDirection));
-        }
-    }
 
     // Block with custom public Methods (with summary if it has complex logic)
 }
