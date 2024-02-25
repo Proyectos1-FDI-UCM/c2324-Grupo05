@@ -30,8 +30,8 @@ El escenario del juego EG6 es un mundo sombrío de un vertedero en una isla árt
 |D |derecha|
 |E/Space |interactuar|
 |LMB |disparar|
-|i|inventario|
-|Esc |guardar/ ajustes|
+|Esc |menú pausa|
+|Left click |Select|
 ## Estilo
 
 >[!NOTE] 
