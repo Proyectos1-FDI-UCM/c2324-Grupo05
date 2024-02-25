@@ -46,14 +46,11 @@ public class PlayerNewInput : MonoBehaviour
         }
 
         _playerMovement.SetInputDirection(_inputDirection.normalized);
-
-
-        
     }
 
     // Block with custom classes or structures
 
     // Block with custom private Methods 
-    
+
     // Block with custom public Methods (with summary if it has complex logic)
 }

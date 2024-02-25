@@ -13,24 +13,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "select",
-                    "type": "Button",
-                    "id": "214f8803-5921-4a91-bc94-ad13b01d2ae7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "pause",
-                    "type": "Button",
-                    "id": "e8c99576-072b-4105-a14d-97dfd1209002",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -198,28 +180,6 @@
                     "action": "move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "f966c72f-dad9-4fe4-8f07-bc6d5b10ce54",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "keyboard",
-                    "action": "select",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "92a957e7-d732-4e18-8dc2-4361df563e86",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "keyboard",
-                    "action": "pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }

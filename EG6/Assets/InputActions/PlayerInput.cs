@@ -35,24 +35,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""select"",
-                    ""type"": ""Button"",
-                    ""id"": ""214f8803-5921-4a91-bc94-ad13b01d2ae7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""pause"",
-                    ""type"": ""Button"",
-                    ""id"": ""e8c99576-072b-4105-a14d-97dfd1209002"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -220,28 +202,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f966c72f-dad9-4fe4-8f07-bc6d5b10ce54"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""keyboard"",
-                    ""action"": ""select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""92a957e7-d732-4e18-8dc2-4361df563e86"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""keyboard"",
-                    ""action"": ""pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -274,8 +234,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_move = m_Player.FindAction("move", throwIfNotFound: true);
-        m_Player_select = m_Player.FindAction("select", throwIfNotFound: true);
-        m_Player_pause = m_Player.FindAction("pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -338,15 +296,11 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_move;
-    private readonly InputAction m_Player_select;
-    private readonly InputAction m_Player_pause;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @move => m_Wrapper.m_Player_move;
-        public InputAction @select => m_Wrapper.m_Player_select;
-        public InputAction @pause => m_Wrapper.m_Player_pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -359,12 +313,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @move.started += instance.OnMove;
             @move.performed += instance.OnMove;
             @move.canceled += instance.OnMove;
-            @select.started += instance.OnSelect;
-            @select.performed += instance.OnSelect;
-            @select.canceled += instance.OnSelect;
-            @pause.started += instance.OnPause;
-            @pause.performed += instance.OnPause;
-            @pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -372,12 +320,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @move.started -= instance.OnMove;
             @move.performed -= instance.OnMove;
             @move.canceled -= instance.OnMove;
-            @select.started -= instance.OnSelect;
-            @select.performed -= instance.OnSelect;
-            @select.canceled -= instance.OnSelect;
-            @pause.started -= instance.OnPause;
-            @pause.performed -= instance.OnPause;
-            @pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -416,7 +358,5 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnSelect(InputAction.CallbackContext context);
-        void OnPause(InputAction.CallbackContext context);
     }
 }
