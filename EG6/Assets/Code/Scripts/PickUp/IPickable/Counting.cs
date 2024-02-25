@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Trash : PickableObject
+public class Counting : MonoBehaviour
 {
     // Block with private (or protected) _fields
-    [SerializeField] private Counting _counter;
+    [SerializeField] private TextMeshProUGUI _pieceText;
+    [SerializeField] private TextMeshProUGUI _TrashText;
+    private int _nTrash = 0;
+    private int _nPiece = 0;
+
     // Block with public Properties {get; set;}
 
     // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
@@ -28,22 +34,18 @@ public class Trash : PickableObject
     // Block with custom classes or structures
 
     // Block with custom private Methods 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<PlayerMovement>() != null)
-        {
-
-            PickUp();
-        
-        }
-    }
 
     // Block with custom public Methods (with summary if it has complex logic)
-    public override void PickUp()
+    public void CounterTrash()
     {
-        base.PickUp();
-        _counter.CounterTrash();
-        // Here could be any logic
-        Debug.Log("You picked up trash.");
+        _nTrash++;
+        Debug.Log("trash acquired" + _nTrash);
+        _TrashText.text = "" + _nTrash;
+    }
+    public void CounterPiece()
+    {
+        _nPiece++;
+        Debug.Log("Piece acquired" + _nPiece);
+        _pieceText.text = "" + _nPiece;
     }
 }

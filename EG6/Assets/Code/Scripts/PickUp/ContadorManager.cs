@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trash : PickableObject
+public class ContadorManager : MonoBehaviour
 {
     // Block with private (or protected) _fields
-    [SerializeField] private Counting _counter;
+    //contadores:
+    private int Ntrash = 0;
+    private int Npieza = 0;
+
     // Block with public Properties {get; set;}
 
     // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
@@ -25,25 +28,19 @@ public class Trash : PickableObject
         
     }
 
+
     // Block with custom classes or structures
 
     // Block with custom private Methods 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<PlayerMovement>() != null)
-        {
-
-            PickUp();
-        
-        }
-    }
 
     // Block with custom public Methods (with summary if it has complex logic)
-    public override void PickUp()
+    public void PiezaContador()
     {
-        base.PickUp();
-        _counter.CounterTrash();
-        // Here could be any logic
-        Debug.Log("You picked up trash.");
+        Npieza++;
+    }
+
+    public void TrashContador()
+    {
+        Ntrash++;
     }
 }

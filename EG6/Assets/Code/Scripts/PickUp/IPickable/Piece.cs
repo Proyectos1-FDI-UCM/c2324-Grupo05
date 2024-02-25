@@ -5,19 +5,46 @@ using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCou
 
 public class Piece : PickableObject
 {
-    [SerializeField] private PieceCounter _counter;
-   
+    // Block with private (or protected) _fields
+    [SerializeField] private Counting _counter;
+    // Block with public Properties {get; set;}
+
+    // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
+    private void Awake()
+    {
+        
+    }
+
+    private void Start()
+    {
+        
+    }
+
+    // MonoBehaviour update methods
+    private void Update()
+    {
+        
+    }
+
+    // Block with custom classes or structures
+
+    // Block with custom private Methods 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerMovement>() != null)
         {
+
             PickUp();
+
         }
     }
+    // Block with custom public Methods (with summary if it has complex logic)
 
     public override void PickUp()
-    {   
-        base.PickUp(); // base. is used to call method PickUp from PickableObject class and then execute additional code below
-        _counter.IncrementCount();
-    }
+        {   
+            base.PickUp();
+        // Here could be any logic
+        _counter.CounterPiece();
+        Debug.Log("You picked up a part.");
+        }
 }

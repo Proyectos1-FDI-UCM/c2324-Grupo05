@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Class representing a base pickable object
-public class PickableObject : MonoBehaviour, IPickable
+public class PickableObject : MonoBehaviour,IPickable
 {
         public virtual void PickUp()
         {
