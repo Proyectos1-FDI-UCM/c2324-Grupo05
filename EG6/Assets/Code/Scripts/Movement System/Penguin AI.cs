@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
@@ -25,17 +26,16 @@ public class PenguinAI : MovableObject
         _navMeshAgent.updateUpAxis = false;
          
     }
-    private void Update()
+
+    protected void FixedUpdate()
     {
-        _navMeshAgent.SetDestination(_targetTransform.position);
-
+        if (_additionalVector == Vector2.zero)
+        {
+            _navMeshAgent.SetDestination(_targetTransform.position);
+        }
+        else
+        {
+            _navMeshAgent.velocity = _additionalVector;
+        }
     }
-
-    // Block with custom classes or structures
-
-    // Block with custom private Methods 
-
-
-
-    // Block with custom public Methods (with summary if it has complex logic)
 }

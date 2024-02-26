@@ -43,7 +43,7 @@ public class MovableObject : MonoBehaviour
         Move(_movementDirection);
     }
 
-    private void Move(Vector2 direction)
+    protected virtual void Move(Vector2 direction)
     {
         if (TryMove(direction) == false)
         {
@@ -63,11 +63,6 @@ public class MovableObject : MonoBehaviour
             return true;
         }
         return false;
-    }
-
-    public void SetDirection(Vector2 direction)
-    {
-        _movementDirection = direction;
     }
     
 }
