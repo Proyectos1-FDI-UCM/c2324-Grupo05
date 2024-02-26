@@ -24,7 +24,7 @@ public class CollisionHandler : MonoBehaviour
             _movementFilter,
             _castCollisions,
             movementSpeed * Time.fixedDeltaTime + _collisionOffset);
-
+        Debug.DrawRay(transform.position, direction * movementSpeed * Time.fixedDeltaTime * _collisionOffset, Color.red);
         if (count == 0) 
             {
                 return false;

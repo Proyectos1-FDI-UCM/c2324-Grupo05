@@ -5,7 +5,7 @@ using UnityEngine;
 public class ConveyorBelt : MonoBehaviour
 {
     [SerializeField] private Vector2 _movementDirection;
-    private float pushSpeed = 3;
+    private float _pushSpeed = 2;
 
     public Vector2 MovementDirection { get => _movementDirection; set => _movementDirection = value; }
 
@@ -19,7 +19,7 @@ public class ConveyorBelt : MonoBehaviour
         if (collision.GetComponent<MovableObject>() != null)
         {
             MovableObject movableObject = collision.GetComponent<MovableObject>();
-            movableObject.AdditionalVector = _movementDirection * pushSpeed;
+            movableObject.AdditionalVector = _movementDirection * _pushSpeed;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
