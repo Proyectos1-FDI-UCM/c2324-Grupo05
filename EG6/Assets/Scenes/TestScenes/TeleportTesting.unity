@@ -2858,7 +2858,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 475739977}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 535884322}
+        m_TargetAssemblyTypeName: PausingMenu, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &475739977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3497,6 +3509,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3662818594373335886, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
+      propertyPath: _pauseMenu
+      value: 
+      objectReference: {fileID: 535884321}
+    - target: {fileID: 3662818594373335886, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
+      propertyPath: _pausingMenu
+      value: 
+      objectReference: {fileID: 535884322}
     - target: {fileID: 4868714519538971283, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7669,7 +7689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1851014424
 MonoBehaviour:
   m_ObjectHideFlags: 0

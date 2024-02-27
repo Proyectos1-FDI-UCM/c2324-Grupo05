@@ -32,6 +32,19 @@ public class PausingMenu : MonoBehaviour
     // Block with custom private Methods 
 
     // Block with custom public Methods (with summary if it has complex logic)
+    public void OnPressedPause()
+    {
+        gameObject.SetActive(true);
+        //parar el tiempo
+        Time.timeScale = 0f;
+    }
+    
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        gameObject.SetActive(false);
+    }
+    
     public void SelectLevel()
     {
         _selectLevelMenu.SetActive(true);

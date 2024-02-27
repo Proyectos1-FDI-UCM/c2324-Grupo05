@@ -35,21 +35,25 @@ public class SelectingLevel : MonoBehaviour
     public void Level0()
     {
         _teleport.Teleport(0);
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
     public void Level1()
     {
         _teleport.Teleport(1);
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
     public void Level2()
     {
         _teleport.Teleport(2);
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
     public void Level3()
     {
         _teleport.Teleport(3);
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 

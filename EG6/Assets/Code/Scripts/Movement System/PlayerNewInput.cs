@@ -9,6 +9,7 @@ public class PlayerNewInput : MonoBehaviour
     private PlayerMovement _playerMovement;
     private Vector2 _inputDirection;
     private PlayerInput _playerInput;
+    [SerializeField] PausingMenu _pausingMenu;
 
     // Block with public Properties {get; set;}
 
@@ -21,7 +22,8 @@ public class PlayerNewInput : MonoBehaviour
     private void OnEnable() 
 	{
 		_playerInput.Enable();
-	}
+        _playerInput.Player.Pause.performed += ctx => _pausingMenu.OnPressedPause();
+    }
 
     private void Start()
     {
