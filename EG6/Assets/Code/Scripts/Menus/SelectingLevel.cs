@@ -7,6 +7,7 @@ public class SelectingLevel : MonoBehaviour
 {
     // Block with private (or protected) _fields
     [SerializeField] private Teleporting _teleport;
+    
 
     // Block with public Properties {get; set;}
 
@@ -40,21 +41,33 @@ public class SelectingLevel : MonoBehaviour
     }
     public void Level1()
     {
-        _teleport.Teleport(1);
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if(Egg.Instance._nEgg == 1)
+        {
+            _teleport.Teleport(1);
+            Time.timeScale = 1f;
+            gameObject.SetActive(false);
+        }
+        
     }
     public void Level2()
     {
-        _teleport.Teleport(2);
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if(PieceCounter.InstancePiece._collectedPieceCount == 1)
+        {
+            _teleport.Teleport(2);
+            Time.timeScale = 1f;
+            gameObject.SetActive(false);
+        }
+        
     }
     public void Level3()
     {
-        _teleport.Teleport(3);
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if(PieceCounter.InstancePiece._collectedPieceCount == 2)
+        {
+            _teleport.Teleport(3);
+            Time.timeScale = 1f;
+            gameObject.SetActive(false);
+        }
+        
     }
 
     public void Bedroom()
