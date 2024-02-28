@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class Piece : PickableObject
@@ -12,6 +13,7 @@ public class Piece : PickableObject
         if (collision.gameObject.GetComponent<PlayerMovement>() != null)
         {
             PickUp();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 
