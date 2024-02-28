@@ -57,7 +57,13 @@ public class SelectingLevel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void Bedroom()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 
+
+    }
 
 
 
