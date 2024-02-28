@@ -5,9 +5,10 @@ using UnityEngine;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] private float _collisionOffset = 0.01f;
+    [SerializeField] private float _maxIterations = 2f;
     [SerializeField] private ContactFilter2D _movementFilter;
     private Rigidbody2D _rigidbody2D;
-    private List<RaycastHit2D> _castCollisions = new List<RaycastHit2D>();
+    private List<RaycastHit2D> _movementDirectionHits = new List<RaycastHit2D>();
 
 
     
@@ -17,21 +18,81 @@ public class CollisionHandler : MonoBehaviour
     }
 
     // Check if the object can move in the given direction by casting a ray in that direction
-    public bool CheckCollision(Vector2 direction, float movementSpeed) 
+    public void CheckCollision(Vector2 movementDirection, float distanceRemaining) 
     {
-        int count = _rigidbody2D.Cast(
-            direction,
-            _movementFilter,
-            _castCollisions,
-            movementSpeed * Time.fixedDeltaTime + _collisionOffset);
-        Debug.DrawRay(transform.position, direction * movementSpeed * Time.fixedDeltaTime * _collisionOffset, Color.red);
-        if (count == 0) 
-            {
-                return false;
-            }
-        else
+        const float Epsilon = 0.005f;
+        while(
+            _maxIterations-- > 0 &&
+            distanceRemaining > Epsilon &&
+            movementDirection.sqrMagnitude > Epsilon
+            )
         {
-            return true;
-        }
+            float distance = distanceRemaining;
+
+            // Perform a cast in the current movement direction using the colliders on the Rigidbody.
+            // Note: A potentially better way of doing this is to do an arbitrary shape cast such as Physics2D.CapsuleCast/BoxCast etc.
+            // At least when performing a specific shape query, we have no need to reposition the Rigidbody2D before each query.
+            int hitCount = _rigidbody2D.Cast(movementDirection, _movementFilter, _movementDirectionHits, distance);
+
+            // Did we have any hits?
+            if (hitCount > 0)
+            {
+                // Yes, so for this controller we're only interested in the first results which is the first hit.
+                RaycastHit2D hit = _movementDirectionHits[0];
+
+                // We're only interested in movement if it's beyond the contact offset.
+                if (hit.distance > _collisionOffset)
+                {
+                    // Calculate the distance we'd like to move.
+                    distance = hit.distance - _collisionOffset;
+
+                    // Reposition the Rigidbody2D to the hit point.
+                    // NOTE: Again, this can be avoided by a different choice of query.
+                    _rigidbody2D.position += movementDirection * distance;
+                }
+                else
+                {
+                    // We had a hit but it resulted in us touching or being inside the contact offset.
+                    distance = 0f;
+                }
+
+                // Clamp the movement direction.
+                // NOTE: This is effectively how we iterate and change direction for the queries.
+                movementDirection -=  hit.normal * Vector2.Dot(movementDirection, hit.normal);
+            }
+            else
+            {
+                // No hit so move by the whole distance.
+                _rigidbody2D.position += movementDirection * distance;
+            }
+
+            // Remove the distance we ended up moving from the remaining.
+            distanceRemaining -= distance;
+        };
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        RemoveOverlap(collision);
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        RemoveOverlap(collision);
+    }
+
+    void RemoveOverlap(Collision2D collision)
+    {
+        // If we're filtering out the collider we hit then ignore it.
+        if (_movementFilter.IsFilteringLayerMask(collision.collider.gameObject))
+            return;
+
+        // Calculate the collider distance.
+        var colliderDistance = Physics2D.Distance(collision.otherCollider, collision.collider);
+
+        // If we're overlapped then remove the overlap.
+        // NOTE: We could also ensure we move out of overlap by the contact offset here.
+        if (colliderDistance.isOverlapped)
+            collision.otherRigidbody.position += colliderDistance.normal * colliderDistance.distance;
     }
 }

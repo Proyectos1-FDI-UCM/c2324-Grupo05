@@ -39,13 +39,8 @@ public class PlayerNewInput : MonoBehaviour
     private void FixedUpdate()
     {
         _inputDirection = new Vector2(); //(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        
 
         _inputDirection = _playerInput.Player.move.ReadValue<Vector2>();
-        if (_inputDirection.x!=0)
-        {
-            _inputDirection.y = 0;
-        }
 
         _playerMovement.SetInputDirection(_inputDirection.normalized);
     }

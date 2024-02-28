@@ -5,7 +5,7 @@ using UnityEngine;
 public class ConveyorBelt : MonoBehaviour
 {
     [SerializeField] private Vector2 _movementDirection;
-    private float _pushSpeed = 2;
+    private float _pushSpeed = 0.5f;
 
     public Vector2 MovementDirection { get => _movementDirection; set => _movementDirection = value; }
 
