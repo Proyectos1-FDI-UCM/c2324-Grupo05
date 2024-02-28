@@ -49,5 +49,10 @@ public class PlayerNewInput : MonoBehaviour
 
     // Block with custom private Methods 
 
+    private void OnChangecharacter()
+    {
+        _playerMovement.enabled = !_playerMovement.enabled;
+    }
+
     // Block with custom public Methods (with summary if it has complex logic)
 }
