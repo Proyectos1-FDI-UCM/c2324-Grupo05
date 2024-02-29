@@ -36,7 +36,7 @@ public class PenguinAI : MovableObject
         }
         else
         {
-            _navMeshAgent.velocity = (Vector3)_additionalVector + (_targetTransform.position - transform.position) * _movementSpeed;
+            _navMeshAgent.velocity = (Vector3)_additionalVector + (_targetTransform.position - transform.position).normalized * _movementSpeed;
         }
     }
 }
