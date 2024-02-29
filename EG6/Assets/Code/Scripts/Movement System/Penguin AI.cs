@@ -7,17 +7,11 @@ using UnityEngine.AI;
 
 public class PenguinAI : MovableObject
 {
-    // Block with private (or protected) _fields
 
-    [SerializeField] Transform _targetTransform;
+    [SerializeField] private Transform _targetTransform;
 
     NavMeshAgent _navMeshAgent;
 
-    
-
-    // Block with public Properties {get; set;}
-
-    // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
     private void Awake()
     {
 

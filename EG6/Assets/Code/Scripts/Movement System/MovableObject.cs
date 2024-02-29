@@ -53,14 +53,10 @@ public class MovableObject : MonoBehaviour, IMovable
         Vector2 movementDirection = direction;
 
         float totalSpeed = _movementSpeed + _additionalVector.magnitude;
-
-        // Calculate how much distance we'd like to cover this update.
         float distanceRemaining = Mathf.Min(totalSpeed * Time.fixedDeltaTime, movementDirection.magnitude);
-
         float maxIterations = _maxIterations;
-
-        // Iterate up to a capped iteration limit or until we have no distance to move or we've clamped the direction of motion to zero.
         const float Epsilon = 0.005f;
+        
         while (
             maxIterations-- > 0 &&
             distanceRemaining > Epsilon &&
@@ -70,7 +66,6 @@ public class MovableObject : MonoBehaviour, IMovable
             _collisionHandler.CheckCollisions(ref distanceRemaining, ref movementDirection);
         };
 
-        // Set-up a move for the Rigidbody2D.
         Vector2 newPosition = _rigidbody2D.position + movementDirection.normalized * distanceRemaining + _additionalVector * Time.fixedDeltaTime;
         _rigidbody2D.MovePosition(newPosition);
     }
