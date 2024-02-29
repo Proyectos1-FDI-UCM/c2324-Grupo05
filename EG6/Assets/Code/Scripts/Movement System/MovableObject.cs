@@ -49,7 +49,7 @@ public class MovableObject : MonoBehaviour
 
     protected virtual void Move(Vector2 direction)
     {
-        Vector2 movementDirection = direction + _additionalVector;
+        Vector2 movementDirection = direction;
 
         float totalSpeed = _movementSpeed + _additionalVector.magnitude;
 
@@ -70,7 +70,7 @@ public class MovableObject : MonoBehaviour
         };
 
         // Set-up a move for the Rigidbody2D.
-        Vector2 newPosition = _rigidbody2D.position + movementDirection.normalized * distanceRemaining;
+        Vector2 newPosition = _rigidbody2D.position + movementDirection.normalized * distanceRemaining + _additionalVector * Time.fixedDeltaTime;
         _rigidbody2D.MovePosition(newPosition);
     }
     
