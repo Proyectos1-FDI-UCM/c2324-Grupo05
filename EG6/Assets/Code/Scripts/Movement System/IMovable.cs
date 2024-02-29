@@ -6,5 +6,5 @@ public interface IMovable
 {
     float MovementSpeed { get; set; }
 
-    void SetDirection(Vector2 direction);
+    Vector2 AdditionalVector { get; set; }
 }

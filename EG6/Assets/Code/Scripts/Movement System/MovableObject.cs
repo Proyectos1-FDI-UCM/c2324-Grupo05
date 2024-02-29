@@ -5,7 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using Vector2 = UnityEngine.Vector2;
 using UnityEngine;
 
-public class MovableObject : MonoBehaviour
+public class MovableObject : MonoBehaviour, IMovable
 {
     [SerializeField] private float _maxIterations = 2f;
 
@@ -44,6 +44,7 @@ public class MovableObject : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log("Movable Object name: " + gameObject.name);
         Move(_movementDirection);
     }
 

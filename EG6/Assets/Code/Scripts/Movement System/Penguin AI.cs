@@ -27,7 +27,7 @@ public class PenguinAI : MovableObject
          
     }
 
-    protected void FixedUpdate()
+    private void FixedUpdate()
     {
         Debug.Log("Additional Vector: " + _additionalVector);
         if (_additionalVector == Vector2.zero)
@@ -37,6 +37,15 @@ public class PenguinAI : MovableObject
         else
         {
             _navMeshAgent.velocity = (Vector3)_additionalVector + (_targetTransform.position - transform.position).normalized * _movementSpeed;
+        }
+        IdleWalking();
+    }
+
+    private void IdleWalking()
+    {
+        if (_navMeshAgent.velocity.magnitude < 0.1f)
+        {
+            _navMeshAgent.SetDestination(_targetTransform.position);
         }
     }
 }
