@@ -49,8 +49,7 @@ public class MovableObject : MonoBehaviour
 
     protected virtual void Move(Vector2 direction)
     {
-        Vector2 additionalVector = _additionalVector / _maxIterations;
-        Vector2 movementDirection = direction + additionalVector;
+        Vector2 movementDirection = direction + _additionalVector;
 
         float totalSpeed = _movementSpeed + _additionalVector.magnitude;
 
