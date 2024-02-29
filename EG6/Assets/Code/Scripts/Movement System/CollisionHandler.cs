@@ -1,33 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] private float _collisionOffset = 0.01f;
-    [SerializeField] private float _maxIterations = 2f;
     [SerializeField] private ContactFilter2D _movementFilter;
-    private Rigidbody2D _rigidbody2D;
-    private List<RaycastHit2D> _movementDirectionHits = new List<RaycastHit2D>();
-
-
     
+    private List<RaycastHit2D> _movementDirectionHits = new List<RaycastHit2D>();
+    private Rigidbody2D _rigidbody2D;
+
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Check if the object can move in the given direction by casting a ray in that direction
-    public void CheckCollision(Vector2 movementDirection, float distanceRemaining) 
+    public void CheckCollisions(ref float distanceRemaining, ref Vector2 movementDirection)
     {
-        const float Epsilon = 0.005f;
-        while(
-            _maxIterations-- > 0 &&
-            distanceRemaining > Epsilon &&
-            movementDirection.sqrMagnitude > Epsilon
-            )
-        {
-            float distance = distanceRemaining;
+        float distance = distanceRemaining;
 
             // Perform a cast in the current movement direction using the colliders on the Rigidbody.
             // Note: A potentially better way of doing this is to do an arbitrary shape cast such as Physics2D.CapsuleCast/BoxCast etc.
@@ -68,31 +59,5 @@ public class CollisionHandler : MonoBehaviour
 
             // Remove the distance we ended up moving from the remaining.
             distanceRemaining -= distance;
-        };
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        RemoveOverlap(collision);
-    }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        RemoveOverlap(collision);
-    }
-
-    void RemoveOverlap(Collision2D collision)
-    {
-        // If we're filtering out the collider we hit then ignore it.
-        if (_movementFilter.IsFilteringLayerMask(collision.collider.gameObject))
-            return;
-
-        // Calculate the collider distance.
-        var colliderDistance = Physics2D.Distance(collision.otherCollider, collision.collider);
-
-        // If we're overlapped then remove the overlap.
-        // NOTE: We could also ensure we move out of overlap by the contact offset here.
-        if (colliderDistance.isOverlapped)
-            collision.otherRigidbody.position += colliderDistance.normal * colliderDistance.distance;
     }
 }
