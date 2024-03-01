@@ -2583,7 +2583,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 447466570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 535884322}
+        m_TargetAssemblyTypeName: PausingMenu, Assembly-CSharp
+        m_MethodName: LoadScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &447466570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3255,7 +3267,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5139,7 +5151,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7895,8 +7907,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _teleport: {fileID: 1445698531}
-  _pieceCounter: {fileID: 522865209}
-  _egg: {fileID: 1762994597}
 --- !u!114 &1851014425
 MonoBehaviour:
   m_ObjectHideFlags: 0
