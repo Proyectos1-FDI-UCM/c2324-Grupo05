@@ -38,7 +38,7 @@ public class PlayerNewInput : MonoBehaviour
     // MonoBehaviour update methods
     private void FixedUpdate()
     {
-        _inputDirection = new Vector2(); //(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        _inputDirection = new Vector2(); 
 
         _inputDirection = _playerInput.Player.move.ReadValue<Vector2>();
 
@@ -51,6 +51,7 @@ public class PlayerNewInput : MonoBehaviour
 
     private void OnChangecharacter()
     {
+        Debug.Log("Change character");
         _playerMovement.enabled = !_playerMovement.enabled;
     }
 

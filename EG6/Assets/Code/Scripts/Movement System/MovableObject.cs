@@ -44,7 +44,6 @@ public class MovableObject : MonoBehaviour, IMovable
 
     private void FixedUpdate()
     {
-        Debug.Log("Movable Object name: " + gameObject.name);
         Move(_movementDirection);
     }
 
@@ -52,7 +51,7 @@ public class MovableObject : MonoBehaviour, IMovable
     {
         Vector2 movementDirection = direction;
 
-        float totalSpeed = _movementSpeed + _additionalVector.magnitude;
+        float totalSpeed = _movementSpeed;
         float distanceRemaining = Mathf.Min(totalSpeed * Time.fixedDeltaTime, movementDirection.magnitude);
         float maxIterations = _maxIterations;
         const float Epsilon = 0.005f;
@@ -66,8 +65,8 @@ public class MovableObject : MonoBehaviour, IMovable
             _collisionHandler.CheckCollisions(ref distanceRemaining, ref movementDirection);
         };
 
-        Vector2 newPosition = _rigidbody2D.position + movementDirection.normalized * distanceRemaining + _additionalVector * Time.fixedDeltaTime;
+        Vector2 movementVector =  movementDirection.normalized * distanceRemaining + _additionalVector * Time.fixedDeltaTime;
+        Vector2 newPosition = _rigidbody2D.position + movementVector;
         _rigidbody2D.MovePosition(newPosition);
     }
-    
 }

@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
-    [SerializeField] private float _collisionOffset = 0.01f;
+    [SerializeField] private float _collisionOffset = 0.05f;
     [SerializeField] private ContactFilter2D _movementFilter;
     
     private List<RaycastHit2D> _movementDirectionHits = new List<RaycastHit2D>();
     private Rigidbody2D _rigidbody2D;
+    private MovableObject _movableObject;
 
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _movableObject = GetComponent<MovableObject>();
     }
 
     public void CheckCollisions(ref float distanceRemaining, ref Vector2 movementDirection)
@@ -30,7 +32,7 @@ public class CollisionHandler : MonoBehaviour
             {
                 distance = hit.distance - _collisionOffset;
 
-                _rigidbody2D.position += movementDirection * distance;
+                return;
             }
             else
             {
@@ -41,7 +43,7 @@ public class CollisionHandler : MonoBehaviour
         }
         else
         {
-            _rigidbody2D.position += movementDirection * distance;
+            return;
         }
 
         distanceRemaining -= distance;

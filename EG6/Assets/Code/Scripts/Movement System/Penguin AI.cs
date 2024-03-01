@@ -23,7 +23,6 @@ public class PenguinAI : MovableObject
 
     private void FixedUpdate()
     {
-        Debug.Log("Additional Vector: " + _additionalVector);
         if (_additionalVector == Vector2.zero)
         {
             _navMeshAgent.SetDestination(_targetTransform.position);
