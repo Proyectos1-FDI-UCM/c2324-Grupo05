@@ -13,6 +13,7 @@ public class PlayerNewInput : MonoBehaviour
     private PenguinAI _penguinAI;
     private bool _inputEnabled;
     [SerializeField] PausingMenu _pausingMenu;
+    
 
     // Block with public Properties {get; set;}
 
@@ -27,6 +28,8 @@ public class PlayerNewInput : MonoBehaviour
 	{
 		_playerInput.Enable();
         _playerInput.Player.Pause.performed += ctx => _pausingMenu.OnPressedPause();
+        //_playerInput.Player.Interaction.performed += ctx => _destroy.Pressed(true);
+        
     }
 
     private void Start()
@@ -57,15 +60,16 @@ public class PlayerNewInput : MonoBehaviour
     private void OnChangecharacter()
     {
         Debug.Log("Change character");
+      
         if (_inputEnabled)
         {
             this._playernewinput.enabled = false;
-           // _playerInput.Player.move.Disable();
+            // _playerInput.Player.move.Disable();
             _inputEnabled = false;
         }
         else
         {
-            
+
             this._playernewinput.enabled = true;
             //_playerInput.Player.move.Enable();
             _inputEnabled = true;
