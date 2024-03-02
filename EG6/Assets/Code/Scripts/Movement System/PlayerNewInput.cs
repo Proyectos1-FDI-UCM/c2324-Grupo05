@@ -12,9 +12,9 @@ public class PlayerNewInput : MonoBehaviour
     private PlayerNewInput _playernewinput;
     private PenguinAI _penguinAI;
     private bool _inputEnabled;
-    [SerializeField] PausingMenu _pausingMenu;
+    [SerializeField] private PausingMenu _pausingMenu;
+    [SerializeField] private Destroy _destroy;
     
-
     // Block with public Properties {get; set;}
 
     // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
@@ -28,8 +28,7 @@ public class PlayerNewInput : MonoBehaviour
 	{
 		_playerInput.Enable();
         _playerInput.Player.Pause.performed += ctx => _pausingMenu.OnPressedPause();
-        //_playerInput.Player.Interaction.performed += ctx => _destroy.Pressed(true);
-        
+        _playerInput.Player.Interaction.performed += ctx => _destroy.Interaction();        
     }
 
     private void Start()
@@ -41,7 +40,8 @@ public class PlayerNewInput : MonoBehaviour
     private void OnDisable() 
 	{
 		_playerInput.Disable();
-	}
+        _playerInput.Player.Interaction.performed -= ctx => _destroy.Interaction();
+    }
 
     // MonoBehaviour update methods
     private void FixedUpdate()
