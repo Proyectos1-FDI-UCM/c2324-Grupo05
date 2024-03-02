@@ -9,6 +9,9 @@ public class PlayerNewInput : MonoBehaviour
     private PlayerMovement _playerMovement;
     private Vector2 _inputDirection;
     private PlayerInput _playerInput;
+    private PlayerNewInput _playernewinput;
+    private PenguinAI _penguinAI;
+    private bool _inputEnabled;
     [SerializeField] PausingMenu _pausingMenu;
 
     // Block with public Properties {get; set;}
@@ -17,6 +20,7 @@ public class PlayerNewInput : MonoBehaviour
     private void Awake()
     {
         _playerInput = new PlayerInput();
+        _playernewinput = FindObjectOfType<PlayerNewInput>();
     }
 
     private void OnEnable() 
@@ -28,6 +32,7 @@ public class PlayerNewInput : MonoBehaviour
     private void Start()
     {
         _playerMovement = GetComponent<PlayerMovement>();
+        _penguinAI = GetComponent<PenguinAI>();
     }
 
     private void OnDisable() 
@@ -52,7 +57,19 @@ public class PlayerNewInput : MonoBehaviour
     private void OnChangecharacter()
     {
         Debug.Log("Change character");
-        _playerMovement.enabled = !_playerMovement.enabled;
+        if (_inputEnabled)
+        {
+            this._playernewinput.enabled = false;
+           // _playerInput.Player.move.Disable();
+            _inputEnabled = false;
+        }
+        else
+        {
+            
+            this._playernewinput.enabled = true;
+            //_playerInput.Player.move.Enable();
+            _inputEnabled = true;
+        }
     }
 
     // Block with custom public Methods (with summary if it has complex logic)
