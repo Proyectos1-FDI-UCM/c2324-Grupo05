@@ -15,16 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Pause",
-                    "type": "Button",
-                    "id": "8f886cc8-7806-45df-8786-8c98ed2321ec",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "change character",
+                    "name": "SwitchCharacter",
                     "type": "Button",
                     "id": "70cd90ea-6e33-4a55-b7e1-41502b5e062c",
                     "expectedControlType": "Button",
@@ -210,23 +201,23 @@
                 },
                 {
                     "name": "",
-                    "id": "53604e6b-ba20-4ec0-8e03-5d4ee209228a",
-                    "path": "<Keyboard>/m",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "keyboard",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "4dfdd637-292a-4d90-bc07-9756b74e38b5",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "keyboard",
-                    "action": "change character",
+                    "action": "SwitchCharacter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b25aaa36-b75e-4ac8-8e66-b10be8102560",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "gamepad",
+                    "action": "SwitchCharacter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -238,6 +229,34 @@
                     "processors": "",
                     "groups": "keyboard",
                     "action": "Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Interface",
+            "id": "af04c028-855d-4bc4-b6b5-9fdf2cd7e680",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "b13d9887-2b6d-4dc8-8097-10a0590c0322",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "783fc54f-71de-4927-9397-3c6f9df3e95f",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
