@@ -16,8 +16,6 @@ public class CharacterSwitcher : MonoBehaviour
 
     private bool _isControllingChild = true;
     
-
-
     private void Start()
     {
         _childPlayerMovement = _childCharacter.GetComponent<ChildMovement>();
@@ -45,6 +43,7 @@ public class CharacterSwitcher : MonoBehaviour
             _childPlayerInput.enabled = true;
             _penguinPlayerInput.enabled = false;
             _penguinNavMeshAgent.enabled = true;
+
             _penguinPlayerMovement.MovementMode = MovementMode.AIControlled;
             _isControllingChild = true;
         }

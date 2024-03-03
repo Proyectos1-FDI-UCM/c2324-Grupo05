@@ -77,5 +77,4 @@ public class PenguinMovement : MovableObject
     {
         _movementDirection = direction;
     }
-
 }

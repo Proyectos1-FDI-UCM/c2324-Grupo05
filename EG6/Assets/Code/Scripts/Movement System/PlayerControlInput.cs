@@ -10,7 +10,6 @@ public class PlayerControlInput : MonoBehaviour
     private PlayerInput _playerInput;
     private MovableObject _playerMovement;
     private Vector2 _inputDirection;
-
     
     private void Awake()
     {
