@@ -5,7 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PenguinAI : MovableObject
+public class AIMovement : MovableObject
 {
 
     [SerializeField] private Transform _targetTransform;

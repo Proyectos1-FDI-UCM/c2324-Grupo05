@@ -17,10 +17,6 @@ public class Destroy: MonoBehaviour
     [SerializeField]TipoItem item;
     public bool _childInRange;
     private bool _penguinInRange;
-    
-
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,7 +26,7 @@ public class Destroy: MonoBehaviour
             _childInRange = true;
             _penguinInRange = false;
         }
-        else if(collision.gameObject.GetComponent<PenguinAI>() != null)
+        else if(collision.gameObject.GetComponent<AIMovement>() != null)
         {
             Debug.Log("Penguin in range");
             _childInRange = false;

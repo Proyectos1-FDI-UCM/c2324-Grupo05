@@ -12,10 +12,10 @@ public class CharacterSwitcher : MonoBehaviour
     private PlayerMovement _penguinPlayerMovement;
     private PlayerControlInput _childPlayerInput;
     private PlayerControlInput _penguinPlayerInput;
-    private PenguinAI _penguinAI;
+    private AIMovement _penguinAI;
     private NavMeshAgent _penguinNavMeshAgent;
 
-    private bool _isChildActive = true;
+    private bool _isControllingChild = true;
     
 
 
@@ -25,13 +25,13 @@ public class CharacterSwitcher : MonoBehaviour
         _penguinPlayerMovement = _penguinCharacter.GetComponent<PlayerMovement>();
         _childPlayerInput = _childCharacter.GetComponent<PlayerControlInput>();
         _penguinPlayerInput = _penguinCharacter.GetComponent<PlayerControlInput>();
-        _penguinAI = _penguinCharacter.GetComponent<PenguinAI>();
+        _penguinAI = _penguinCharacter.GetComponent<AIMovement>();
         _penguinNavMeshAgent = _penguinCharacter.GetComponent<NavMeshAgent>();
     }
 
     public void SwitchCharacter()
     {
-        if (_isChildActive)
+        if (_isControllingChild)
         {
             _childPlayerMovement.enabled = false;
             _childPlayerInput.enabled = false;
@@ -39,7 +39,7 @@ public class CharacterSwitcher : MonoBehaviour
             _penguinPlayerInput.enabled = true;
             _penguinAI.enabled = false;
             _penguinNavMeshAgent.enabled = false;
-            _isChildActive = false;
+            _isControllingChild = false;
         }
         else
         {
@@ -49,7 +49,7 @@ public class CharacterSwitcher : MonoBehaviour
             _penguinPlayerInput.enabled = false;
             _penguinAI.enabled = true;
             _penguinNavMeshAgent.enabled = true;
-            _isChildActive = true;
+            _isControllingChild = true;
         }
     }
 
