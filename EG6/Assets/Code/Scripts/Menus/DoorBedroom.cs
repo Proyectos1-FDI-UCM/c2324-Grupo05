@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DoorBedroom : MonoBehaviour
 {
     // Block with private (or protected) _fields
-    [SerializeField] private PlayerMovement _player;
+    [SerializeField] private MovableObject _player;
     // Block with public Properties {get; set;}
 
     // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
@@ -31,7 +31,7 @@ public class DoorBedroom : MonoBehaviour
     // Block with custom private Methods 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerMovement>() != null) 
+        if (collision.gameObject.GetComponent<ChildMovement>() != null) 
         {
             Debug.Log("teletrasport");
             Time.timeScale = 0f;

@@ -10,7 +10,7 @@ public class CombinationDoorButton : Button
     // When the player enters the button collider the OnPressed method is called
     private void OnTriggerEnter2D(Collider2D collision) 
     {
-        if (collision.GetComponent<PlayerMovement>() != null)
+        if (collision.GetComponent<ChildMovement>() != null)
         {
             OnPressed();
         }

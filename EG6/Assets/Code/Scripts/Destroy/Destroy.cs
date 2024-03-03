@@ -20,7 +20,7 @@ public class Destroy: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.GetComponent<PlayerMovement>() != null)
+        if(collision.gameObject.GetComponent<MovableObject>() != null)
         {
             Debug.Log("Child in range");
             _childInRange = true;

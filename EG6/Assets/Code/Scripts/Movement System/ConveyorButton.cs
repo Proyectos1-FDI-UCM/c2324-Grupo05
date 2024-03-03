@@ -9,7 +9,7 @@ public class ConveyorButton : Button
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.GetComponent<PlayerMovement>() != null)
+        if (other.GetComponent<ChildMovement>() != null)
         {
             OnPressed();
         }    

@@ -9,7 +9,7 @@ public class MovableObject : MonoBehaviour, IMovable
 {
     [SerializeField] private float _maxIterations = 2f;
 
-    private Rigidbody2D _rigidbody2D;
+    protected Rigidbody2D _rigidbody2D;
     protected CollisionHandler _collisionHandler;
     protected Vector2 _movementDirection; 
     protected Vector2 _additionalVector;
@@ -36,15 +36,20 @@ public class MovableObject : MonoBehaviour, IMovable
         }
     }
 
-    private void Start()
+    void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _collisionHandler = GetComponent<CollisionHandler>();
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         Move(_movementDirection);
+    }
+
+    public virtual void SetInputDirection(Vector2 direction)
+    {
+        _movementDirection = direction;
     }
 
     protected virtual void Move(Vector2 direction)

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerMovement))]
 public class PlayerControlInput : MonoBehaviour
 {
     private CharacterSwitcher _characterSwitcher;
 
     private PlayerInput _playerInput;
-    private PlayerMovement _playerMovement;
+    private MovableObject _playerMovement;
     private Vector2 _inputDirection;
 
     
@@ -20,7 +19,7 @@ public class PlayerControlInput : MonoBehaviour
 
     private void Start()
     {
-        _playerMovement = GetComponent<PlayerMovement>();
+        _playerMovement = GetComponent<MovableObject>();
         _characterSwitcher = FindAnyObjectByType<CharacterSwitcher>();
     }
 
