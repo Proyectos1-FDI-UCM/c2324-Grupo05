@@ -44,15 +44,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Interaction"",
-                    ""type"": ""Button"",
-                    ""id"": ""11d22ebb-c4ca-44ca-ba44-eb304684ed86"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -242,17 +233,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""SwitchCharacter"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f3226edd-7a09-4e17-a079-9b7111624083"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""keyboard"",
-                    ""action"": ""Interaction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -268,6 +248,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interaction"",
+                    ""type"": ""Button"",
+                    ""id"": ""2eb14188-69d3-4ec9-84ef-685d33f8b07d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -279,6 +268,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""keyboard"",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""718e95b2-c062-4059-8417-cd625f153e15"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""Interaction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -314,10 +314,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_move = m_Player.FindAction("move", throwIfNotFound: true);
         m_Player_SwitchCharacter = m_Player.FindAction("SwitchCharacter", throwIfNotFound: true);
-        m_Player_Interaction = m_Player.FindAction("Interaction", throwIfNotFound: true);
         // Interface
         m_Interface = asset.FindActionMap("Interface", throwIfNotFound: true);
         m_Interface_Pause = m_Interface.FindAction("Pause", throwIfNotFound: true);
+        m_Interface_Interaction = m_Interface.FindAction("Interaction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -381,14 +381,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_move;
     private readonly InputAction m_Player_SwitchCharacter;
-    private readonly InputAction m_Player_Interaction;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @move => m_Wrapper.m_Player_move;
         public InputAction @SwitchCharacter => m_Wrapper.m_Player_SwitchCharacter;
-        public InputAction @Interaction => m_Wrapper.m_Player_Interaction;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -404,9 +402,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @SwitchCharacter.started += instance.OnSwitchCharacter;
             @SwitchCharacter.performed += instance.OnSwitchCharacter;
             @SwitchCharacter.canceled += instance.OnSwitchCharacter;
-            @Interaction.started += instance.OnInteraction;
-            @Interaction.performed += instance.OnInteraction;
-            @Interaction.canceled += instance.OnInteraction;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -417,9 +412,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @SwitchCharacter.started -= instance.OnSwitchCharacter;
             @SwitchCharacter.performed -= instance.OnSwitchCharacter;
             @SwitchCharacter.canceled -= instance.OnSwitchCharacter;
-            @Interaction.started -= instance.OnInteraction;
-            @Interaction.performed -= instance.OnInteraction;
-            @Interaction.canceled -= instance.OnInteraction;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -442,11 +434,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Interface;
     private List<IInterfaceActions> m_InterfaceActionsCallbackInterfaces = new List<IInterfaceActions>();
     private readonly InputAction m_Interface_Pause;
+    private readonly InputAction m_Interface_Interaction;
     public struct InterfaceActions
     {
         private @PlayerInput m_Wrapper;
         public InterfaceActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Pause => m_Wrapper.m_Interface_Pause;
+        public InputAction @Interaction => m_Wrapper.m_Interface_Interaction;
         public InputActionMap Get() { return m_Wrapper.m_Interface; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -459,6 +453,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Interaction.started += instance.OnInteraction;
+            @Interaction.performed += instance.OnInteraction;
+            @Interaction.canceled += instance.OnInteraction;
         }
 
         private void UnregisterCallbacks(IInterfaceActions instance)
@@ -466,6 +463,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Interaction.started -= instance.OnInteraction;
+            @Interaction.performed -= instance.OnInteraction;
+            @Interaction.canceled -= instance.OnInteraction;
         }
 
         public void RemoveCallbacks(IInterfaceActions instance)
@@ -505,10 +505,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnSwitchCharacter(InputAction.CallbackContext context);
-        void OnInteraction(InputAction.CallbackContext context);
     }
     public interface IInterfaceActions
     {
         void OnPause(InputAction.CallbackContext context);
+        void OnInteraction(InputAction.CallbackContext context);
     }
 }

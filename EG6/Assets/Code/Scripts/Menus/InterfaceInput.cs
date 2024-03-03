@@ -9,7 +9,7 @@ public class InterfaceInput : MonoBehaviour
     private PlayerInput.InterfaceActions _interfaceInput;
     
     [SerializeField] private PausingMenu _pausingMenu;
-    [SerializeField] private Destroy _destroy;
+    [SerializeField] private CharacterInteraction _characterInteraction;
     
     private void Awake()
     {
@@ -21,8 +21,10 @@ public class InterfaceInput : MonoBehaviour
     private void OnEnable() 
 	{
 		_interfaceInput.Enable();
-        _interfaceInput.Pause.performed += ctx => _pausingMenu.OnPressedPause(); 
+        _interfaceInput.Pause.performed += ctx => _pausingMenu.OnPressedPause();
+        _interfaceInput.Interaction.performed += ctx => _characterInteraction.ReceiveInterac();
     }
+
 
     private void OnDisable() 
 	{
