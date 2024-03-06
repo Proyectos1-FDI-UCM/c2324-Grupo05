@@ -7,7 +7,12 @@ public class ChangingCameras : MonoBehaviour
 {
     // Block with private (or protected) _fields
     [SerializeField] private GameObject _virtualCamera;
-    
+
+    private void Start()
+    {
+        _virtualCamera.SetActive(false);
+    }
+
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
