@@ -14,7 +14,7 @@ public class CharacterSwitcher : MonoBehaviour
     private PlayerControlInput _penguinPlayerInput;
     private NavMeshAgent _penguinNavMeshAgent;
 
-    private bool _isControllingChild = true;
+    public bool _isControllingChild = true;
     
     private void Start()
     {
