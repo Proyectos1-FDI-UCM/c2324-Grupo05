@@ -7,18 +7,19 @@ using static UnityEditor.Progress;
 public class CharacterInteraction : MonoBehaviour
 {
     [SerializeField] private ContactFilter2D _interactionFilter;
-    [SerializeField] private float _interactionDistance = 2f;
+    [SerializeField] private float _interactionDistance = 0.5f;
 
     private List<RaycastHit2D> _interactionHits = new List<RaycastHit2D>();
     private Rigidbody2D _rigidbody2D;
     private MovableObject _movableObject;
     private Vector2 _direction;
-    private GameObject _selectedObject;
+    private DestroyableObject _selectedObject;
 
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _movableObject = GetComponent<MovableObject>();
+        _direction = _movableObject.MovementDirection;
     }
 
     private void Update() 
@@ -33,8 +34,18 @@ public class CharacterInteraction : MonoBehaviour
 
         if (hitCount > 0)
         {
-            _selectedObject = _interactionHits[0].collider.gameObject;
-            
+            _selectedObject = _interactionHits[0].collider.gameObject.GetComponent<DestroyableObject>();
+            Debug.Log(_selectedObject.name);
+            Debug.DrawLine(transform.position, (Vector2)transform.position + direction * _interactionDistance, Color.red);
+            _selectedObject.SpriteRenderer.color = Color.red;
+        }
+        else
+        {
+            if (_selectedObject != null)
+            {
+                _selectedObject.SpriteRenderer.color = Color.white;
+                _selectedObject = null;
+            }
         }
     }
 
@@ -45,4 +56,13 @@ public class CharacterInteraction : MonoBehaviour
             _direction = direction;
         }
     }
+
+    public void Interact()
+    {
+        if (_selectedObject != null)
+        {
+            _selectedObject.Destroy();
+        }
+    }
+
 }

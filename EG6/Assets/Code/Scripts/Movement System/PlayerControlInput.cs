@@ -9,6 +9,7 @@ public class PlayerControlInput : MonoBehaviour
 
     private PlayerInput _playerInput;
     private MovableObject _playerMovement;
+    private CharacterInteraction _characterInteraction;
     private Vector2 _inputDirection;
     
     private void Awake()
@@ -20,12 +21,14 @@ public class PlayerControlInput : MonoBehaviour
     {
         _playerMovement = GetComponent<MovableObject>();
         _characterSwitcher = FindAnyObjectByType<CharacterSwitcher>();
+        _characterInteraction = GetComponent<CharacterInteraction>();
     }
 
     private void OnEnable() 
 	{
 		_playerInput.Enable();
-        _playerInput.Player.SwitchCharacter.performed += ctx =>  _characterSwitcher.SwitchCharacter();   
+        _playerInput.Player.SwitchCharacter.performed += ctx =>  _characterSwitcher.SwitchCharacter();  
+        _playerInput.Player.Interaction.performed += ctx => _characterInteraction.Interact();
     }
 
     private void OnDisable() 
