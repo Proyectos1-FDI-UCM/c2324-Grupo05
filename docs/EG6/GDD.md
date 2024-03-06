@@ -122,6 +122,8 @@ Si el jugador completa la actividad opcional de recolectar y reciclar basura, qu
 >Esto puede sonar terrible desde un punto de vista estilístico, pero para fines de documentación, este es un párrafo muy bueno que se puede traducir fácilmente a [codigo](code_example.png).
 
 
+
+
 ### Sistemas
 
 >[!info]- ¿Qué es?
@@ -146,11 +148,11 @@ Cuando el personaje recoge toda la basura en un nivel, aumenta la velocidad de m
 - [[#Mecánica de nadar]]
 
 
-| Class | ¿Qué hace? |
-| ---- | ---- |
-| MovableObject | Contiene lógica de movimiento básica para rigidbodies cinemáticos. |
-| PlayerMovement | Heredero de MovableObject. Determina la dirección del movimiento usando un Input del jugador. |
-| PlayerNewInput | Una clase que le permite llamar a métodos de otros componentes y pasarles información utilizando "Unity New Input System". |
+| Class            | ¿Qué hace?                                                                                                                                                                       |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MovableObject    | Contiene lógica de movimiento básica para rigidbodies cinemáticos.                                                                                                               |
+| PlayerMovement   | Heredero de MovableObject. Determina la dirección del movimiento usando un Input del jugador.                                                                                    |
+| PlayerNewInput   | Una clase que le permite llamar a métodos de otros componentes y pasarles información utilizando "Unity New Input System".                                                       |
 | CollisionHandler | Verifica si hay otro objeto en la capa "Paredes" en la ruta del movimiento del MovementObject usando Raycast. Devuelve booleano para utilizarlo en los métodos de MovableObject. |
 
 #### Sistema de la cámara

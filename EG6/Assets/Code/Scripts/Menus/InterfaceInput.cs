@@ -22,7 +22,6 @@ public class InterfaceInput : MonoBehaviour
 	{
 		_interfaceInput.Enable();
         _interfaceInput.Pause.performed += ctx => _pausingMenu.OnPressedPause();
-        _interfaceInput.Interaction.performed += ctx => _characterInteraction.ReceiveInterac();
     }
 
 

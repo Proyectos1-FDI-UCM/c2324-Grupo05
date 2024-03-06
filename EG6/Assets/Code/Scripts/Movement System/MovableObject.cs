@@ -35,6 +35,7 @@ public class MovableObject : MonoBehaviour, IMovable
             }
         }
     }
+    public Vector2 MovementDirection { get => _movementDirection;}
 
     void Start()
     {
