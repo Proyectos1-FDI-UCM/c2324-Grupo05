@@ -7,13 +7,19 @@ public class ChangingCameras : MonoBehaviour
 {
     // Block with private (or protected) _fields
     [SerializeField] private GameObject _virtualCamera;
+    [SerializeField] private GameObject _virtualCameraPenguin;
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<ChildMovement>() != null)
         {
             _virtualCamera.SetActive(true);
-           
+            _virtualCameraPenguin.SetActive(false);
+        }
+        else if(collision.GetComponent<PenguinMovement>() != null)
+        {
+            _virtualCamera.SetActive(false);
+            _virtualCameraPenguin.SetActive(true);
         }
     }
 
@@ -22,7 +28,13 @@ public class ChangingCameras : MonoBehaviour
         if (other.GetComponent<ChildMovement>() != null)
         {
             _virtualCamera.SetActive(false);
-            
+            _virtualCameraPenguin.SetActive(false);
+
+        }
+        else if (other.GetComponent<PenguinMovement>() != null)
+        {
+            _virtualCamera.SetActive(false);
+            _virtualCameraPenguin.SetActive(false);
         }
     }
 
