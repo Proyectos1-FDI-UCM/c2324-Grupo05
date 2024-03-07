@@ -4710,7 +4710,7 @@ Transform:
   m_GameObject: {fileID: 506923093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.034830093, y: 0.0025996566, z: -10}
+  m_LocalPosition: {x: -0.025946617, y: 0.0026673675, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8080,6 +8080,7 @@ GameObject:
   - component: {fileID: 876731085}
   - component: {fileID: 876731087}
   - component: {fileID: 876731086}
+  - component: {fileID: 876731088}
   m_Layer: 0
   m_Name: Water tilemap
   m_TagString: Untagged
@@ -10393,6 +10394,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &876731088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876731084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &878015186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10617,7 +10634,7 @@ PrefabInstance:
     - target: {fileID: 3381649999389648559, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
       propertyPath: _conveyorBelt
       value: 
-      objectReference: {fileID: 1882829987}
+      objectReference: {fileID: 1584800993}
     - target: {fileID: 4053522191386273628, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
       propertyPath: m_Name
       value: Conveyor Button (5)
@@ -16115,6 +16132,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8551262978144202716, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
   m_PrefabInstance: {fileID: 1582600393}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1584800993 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
+  m_PrefabInstance: {fileID: 1575706099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e8ff2d72d52774aa539db060fe4684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1587958457
 GameObject:
   m_ObjectHideFlags: 0
@@ -26602,17 +26630,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8551262978144202716, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
   m_PrefabInstance: {fileID: 1882829985}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1882829987 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
-  m_PrefabInstance: {fileID: 1882829985}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6e8ff2d72d52774aa539db060fe4684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1887770870
 GameObject:
   m_ObjectHideFlags: 0
