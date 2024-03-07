@@ -7,7 +7,7 @@ public class SelectingLevel : MonoBehaviour
 {
     // Block with private (or protected) _fields
     [SerializeField] private Teleporting _teleport;
-    
+    [SerializeField] private GameObject _pauseMenu;
 
     // Block with public Properties {get; set;}
 
@@ -76,6 +76,13 @@ public class SelectingLevel : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 
 
+    }
+
+    public void Back()
+    {
+        //back to pause menu
+        _pauseMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
 
 
