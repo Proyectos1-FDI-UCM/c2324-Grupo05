@@ -11,7 +11,6 @@ public class TrashCounter : MonoBehaviour, ICounter
     public void IncrementCount()
     {
         _collectedTrashCount++;
-        Debug.Log("Trash acquired" + _collectedTrashCount);
         _trashText.text = "" + _collectedTrashCount;
     }
 }

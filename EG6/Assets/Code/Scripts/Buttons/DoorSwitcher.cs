@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class DoorSwitcher : MonoBehaviour
 {
+    private int _id;
     private bool _isDoorOpen = false;
+    private LocalObjectHandler _localObjectHandler;
     private GameObject _door;
+
+    public int ID { get => _id;}
 
     private void Start()
     {
         _door = gameObject;
+        _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
     }
 
     // private method to update the door state based on the _isDoorOpen state
@@ -19,6 +25,7 @@ public class DoorSwitcher : MonoBehaviour
         {
             Debug.Log("Door is open");
             _door.SetActive(false);
+            _localObjectHandler.OpenedDoorsIDs.Add(ID);
         }
         else
         {

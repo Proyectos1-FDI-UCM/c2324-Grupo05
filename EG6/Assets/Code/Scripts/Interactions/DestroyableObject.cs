@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 {
+    [SerializeField] private int _id;
+    private LocalObjectHandler _localObjectHandler;
     private SpriteRenderer _spriteRenderer;
 
     public SpriteRenderer SpriteRenderer => _spriteRenderer;
+    public int ID { get => _id; }
 
     private void Start()
     {
@@ -15,6 +19,8 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 
     public void Destroy()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        _localObjectHandler.DestroyedObjectsIDs.Add(ID);
+
     }
 }
