@@ -5,7 +5,7 @@ using UnityEngine.SocialPlatforms;
 
 public class DoorSwitcher : MonoBehaviour
 {
-    private int _id;
+    [SerializeField] private int _id;
     private bool _isDoorOpen = false;
     private LocalObjectHandler _localObjectHandler;
     private GameObject _door;
