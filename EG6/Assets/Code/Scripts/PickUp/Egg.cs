@@ -22,7 +22,6 @@ public class Egg : PickableObject
         if(!_instance)
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
