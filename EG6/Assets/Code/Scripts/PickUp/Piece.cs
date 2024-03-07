@@ -11,7 +11,7 @@ public class Piece : PickableObject
         {
             PickUp();
             _localObjectHandler.SaveLocalState();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene("BedroomTest");
         }
     }
 
