@@ -32,8 +32,9 @@ public class TriggeringText : MonoBehaviour
     {
         _panel.SetActive(true);
         yield return new WaitForSeconds(_waitTime);
-        _panel.SetActive(false);
-        gameObject.SetActive(false);
+        Destroy(_panel);
+        Destroy(gameObject);
+       
 
     }
 
