@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using SceneManager = UnityEngine.SceneManagement.SceneManager;
 using UnityEngine;
-using UnityEditor.SearchService;
 
 public class LocalObjectHandler : MonoBehaviour
 {
