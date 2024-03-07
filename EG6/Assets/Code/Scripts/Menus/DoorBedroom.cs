@@ -35,7 +35,7 @@ public class DoorBedroom : MonoBehaviour
         {
             Debug.Log("teletrasport");
             //Time.timeScale = 0f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("Map-Exterior");
         
         
         }
