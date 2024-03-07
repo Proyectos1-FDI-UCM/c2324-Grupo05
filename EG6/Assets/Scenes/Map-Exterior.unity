@@ -543,6 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &80277641
 BoxCollider2D:
@@ -1376,6 +1377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &227081177
 BoxCollider2D:
@@ -2114,6 +2116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &333822450
 BoxCollider2D:
@@ -3100,6 +3103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &415340192
 BoxCollider2D:
@@ -4854,6 +4858,7 @@ GameObject:
   - component: {fileID: 515051737}
   - component: {fileID: 515051739}
   - component: {fileID: 515051738}
+  - component: {fileID: 515051740}
   m_Layer: 0
   m_Name: paletSnow
   m_TagString: Untagged
@@ -4983,6 +4988,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &515051740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515051736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71c9e18f2a4c664b97df29ed86661ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
 --- !u!1 &532442652
 GameObject:
   m_ObjectHideFlags: 0
@@ -5126,6 +5144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &533474665
 BoxCollider2D:
@@ -5681,6 +5700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &555803340
 BoxCollider2D:
@@ -5924,6 +5944,7 @@ GameObject:
   - component: {fileID: 565941600}
   - component: {fileID: 565941602}
   - component: {fileID: 565941601}
+  - component: {fileID: 565941603}
   m_Layer: 0
   m_Name: paletSnow (1)
   m_TagString: Untagged
@@ -6053,6 +6074,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &565941603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565941599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71c9e18f2a4c664b97df29ed86661ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
 --- !u!1001 &569635824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7315,6 +7349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &762180907
 BoxCollider2D:
@@ -7935,6 +7970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &875205956
 BoxCollider2D:
@@ -11892,6 +11928,7 @@ GameObject:
   - component: {fileID: 1160970097}
   - component: {fileID: 1160970099}
   - component: {fileID: 1160970098}
+  - component: {fileID: 1160970100}
   m_Layer: 0
   m_Name: paletSnow
   m_TagString: Untagged
@@ -12021,6 +12058,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1160970100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160970096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71c9e18f2a4c664b97df29ed86661ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
 --- !u!1001 &1162585946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12235,6 +12285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71c9e18f2a4c664b97df29ed86661ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
 --- !u!1001 &1181485759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13328,6 +13379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71c9e18f2a4c664b97df29ed86661ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
 --- !u!1 &1318723943
 GameObject:
   m_ObjectHideFlags: 3
@@ -13697,6 +13749,7 @@ GameObject:
   - component: {fileID: 1361956866}
   - component: {fileID: 1361956868}
   - component: {fileID: 1361956867}
+  - component: {fileID: 1361956869}
   m_Layer: 0
   m_Name: paletSnow (2)
   m_TagString: Untagged
@@ -13826,6 +13879,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1361956869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361956865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71c9e18f2a4c664b97df29ed86661ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
 --- !u!1001 &1366157328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13946,6 +14012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &1366811291
 BoxCollider2D:
@@ -14640,6 +14707,7 @@ GameObject:
   - component: {fileID: 1477890407}
   - component: {fileID: 1477890409}
   - component: {fileID: 1477890408}
+  - component: {fileID: 1477890410}
   m_Layer: 0
   m_Name: paletSnow (1)
   m_TagString: Untagged
@@ -14769,6 +14837,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1477890410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477890406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71c9e18f2a4c664b97df29ed86661ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
 --- !u!1001 &1489658291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15130,6 +15211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &1514242495
 BoxCollider2D:
@@ -16630,6 +16712,7 @@ GameObject:
   - component: {fileID: 1660393619}
   - component: {fileID: 1660393621}
   - component: {fileID: 1660393620}
+  - component: {fileID: 1660393622}
   m_Layer: 0
   m_Name: paletSnow (2)
   m_TagString: Untagged
@@ -16759,6 +16842,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1660393622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660393618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71c9e18f2a4c664b97df29ed86661ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
 --- !u!1 &1669707292
 GameObject:
   m_ObjectHideFlags: 0
@@ -16805,6 +16901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &1669707295
 BoxCollider2D:
@@ -16949,6 +17046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &1683317213
 BoxCollider2D:
@@ -25488,6 +25586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &1798297393
 BoxCollider2D:
@@ -30985,6 +31084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9ec13d3de01e442bad237a74408d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _nEgg: 0
 --- !u!58 &2034673431
 CircleCollider2D:
@@ -31403,6 +31503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &2047315391
 BoxCollider2D:
@@ -31654,6 +31755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71c9e18f2a4c664b97df29ed86661ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
 --- !u!1001 &2056793866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31853,6 +31955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64675ae99ff94439e81f0bca1a5900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _counter: {fileID: 1980639945}
 --- !u!61 &2069339570
 BoxCollider2D:
