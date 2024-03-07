@@ -15,6 +15,7 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
     }
 
     public void Destroy()

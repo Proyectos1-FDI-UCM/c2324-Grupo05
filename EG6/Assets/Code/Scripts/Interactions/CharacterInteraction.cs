@@ -35,9 +35,12 @@ public class CharacterInteraction : MonoBehaviour
         if (hitCount > 0)
         {
             _selectedObject = _interactionHits[0].collider.gameObject.GetComponent<DestroyableObject>();
-            Debug.Log(_selectedObject.name);
-            Debug.DrawLine(transform.position, (Vector2)transform.position + direction * _interactionDistance, Color.red);
-            _selectedObject.SpriteRenderer.color = Color.red;
+            //Debug.Log(_selectedObject.name);
+            //Debug.DrawLine(transform.position, (Vector2)transform.position + direction * _interactionDistance, Color.red);
+            if (_selectedObject != null)
+            {
+                _selectedObject.SpriteRenderer.color = Color.red;
+            }
         }
         else
         {
