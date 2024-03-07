@@ -1939,7 +1939,7 @@ PrefabInstance:
     - target: {fileID: 3381649999389648559, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
       propertyPath: _conveyorBelt
       value: 
-      objectReference: {fileID: 1726138256983723688}
+      objectReference: {fileID: 1680258790}
     - target: {fileID: 4053522191386273628, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
       propertyPath: m_Name
       value: Conveyor Button (3)
@@ -4335,7 +4335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
       propertyPath: _movementDirection.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8551262978144202716, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
       propertyPath: m_LocalScale.x
@@ -4391,17 +4391,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8551262978144202716, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
   m_PrefabInstance: {fileID: 499583491}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &499583493 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
-  m_PrefabInstance: {fileID: 499583491}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6e8ff2d72d52774aa539db060fe4684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &501212074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5593,6 +5582,10 @@ PrefabInstance:
       value: Cinta (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
+      propertyPath: _pushSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
       propertyPath: _movementDirection.x
       value: -1
       objectReference: {fileID: 0}
@@ -6652,6 +6645,10 @@ PrefabInstance:
     - target: {fileID: 5827518675005421149, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
       propertyPath: m_Name
       value: Cinta 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
+      propertyPath: _pushSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
       propertyPath: _movementDirection.x
@@ -10700,7 +10697,7 @@ PrefabInstance:
     - target: {fileID: 3381649999389648559, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
       propertyPath: _conveyorBelt
       value: 
-      objectReference: {fileID: 499583493}
+      objectReference: {fileID: 1438180748}
     - target: {fileID: 4053522191386273628, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
       propertyPath: m_Name
       value: Conveyor Button (2)
@@ -13626,7 +13623,7 @@ PrefabInstance:
     - target: {fileID: 3381649999389648559, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
       propertyPath: _conveyorBelt
       value: 
-      objectReference: {fileID: 1510982677}
+      objectReference: {fileID: 1599812816}
     - target: {fileID: 4053522191386273628, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
       propertyPath: m_Name
       value: Conveyor Button
@@ -14576,6 +14573,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1438180748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
+  m_PrefabInstance: {fileID: 548959649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e8ff2d72d52774aa539db060fe4684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1443275468
 GameObject:
   m_ObjectHideFlags: 0
@@ -15114,8 +15122,12 @@ PrefabInstance:
       value: Cinta 1
       objectReference: {fileID: 0}
     - target: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
+      propertyPath: _pushSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
       propertyPath: _movementDirection.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8551262978144202716, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
       propertyPath: m_LocalScale.x
@@ -16465,6 +16477,10 @@ PrefabInstance:
       value: Cinta (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
+      propertyPath: _pushSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
       propertyPath: _movementDirection.x
       value: -1
       objectReference: {fileID: 0}
@@ -16526,6 +16542,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8551262978144202716, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
   m_PrefabInstance: {fileID: 1599812813}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1599812816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
+  m_PrefabInstance: {fileID: 1599812813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e8ff2d72d52774aa539db060fe4684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1608319469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1844651187891565230, guid: 113fad288bf44454c9e1508b4225b83d, type: 3}
@@ -17028,6 +17055,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1680258790 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
+  m_PrefabInstance: {fileID: 673547697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e8ff2d72d52774aa539db060fe4684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1683317210
 GameObject:
   m_ObjectHideFlags: 0
@@ -32736,7 +32774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
       propertyPath: _movementDirection.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8551262978144202716, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32783,17 +32821,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
---- !u!114 &1726138256983723688 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8237535895839602782, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
-  m_PrefabInstance: {fileID: 1726138256983723687}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6e8ff2d72d52774aa539db060fe4684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
