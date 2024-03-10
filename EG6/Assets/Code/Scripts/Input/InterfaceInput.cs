@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
+/// <summary>
+/// This class is used to handle the input for the interface actions.
+/// </summary>
 public class InterfaceInput : MonoBehaviour
 {
     private PlayerInput.InterfaceActions _interfaceInput;

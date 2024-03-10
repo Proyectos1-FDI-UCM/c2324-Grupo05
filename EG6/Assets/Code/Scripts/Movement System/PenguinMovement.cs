@@ -1,12 +1,19 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+
+
 public enum MovementMode
 {
     PlayerControlled,
     AIControlled
 }
 
+/// <summary>
+/// This class is used for the movement of the penguin.
+/// Uses NavMeshPlus for the AI movement and the MovableObject for the player controlled movement.
+/// Uses State Pattern to switch between the AI and Player controlled movement.
+/// </summary>
 public class PenguinMovement : MovableObject
 {
     [SerializeField] private Transform _targetTransform;

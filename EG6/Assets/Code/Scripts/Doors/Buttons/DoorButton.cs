@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// This class is used to make the door open when the button is pressed.
+/// </summary>
 public class DoorButton : Button
 {
     [SerializeField] private DoorSwitcher _doorSwitcher;

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Interface for the movable objects
+/// </summary>
 public interface IMovable
 {
     float MovementSpeed { get; set; }

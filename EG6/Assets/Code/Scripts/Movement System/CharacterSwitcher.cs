@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// This class is used to switch between the characters in the game.
+/// Recieves input from the player and switches the control between the characters.
+/// When the player is controlling the child, the penguin is controlled by the AI.
+/// </summary>
 public class CharacterSwitcher : MonoBehaviour
 {
     [SerializeField] private GameObject _childCharacter;

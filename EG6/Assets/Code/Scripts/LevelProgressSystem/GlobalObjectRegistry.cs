@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to store the state of the objects in the game between the scenes.
+/// Like the picked objects, opened doors, destroyed objects and the completion state of the level etc.
+/// </summary>
 public class GlobalObjectRegistry : MonoBehaviour
 {
     public struct LevelState

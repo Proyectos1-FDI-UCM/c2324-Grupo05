@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This class is used to store the command of the button press, execute it and undo it.
+/// </summary>
 public class ButtonPressCommand : ICommand
 {
     private int _buttonId;

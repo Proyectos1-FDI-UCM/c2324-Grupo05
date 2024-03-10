@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to check if the player has pressed the correct sequence of buttons to open the door.
+/// It uses the Command pattern to store the commands that the player has pressed and compare them with the desired sequence.
+/// </summary>
 public class SequenceChecker : MonoBehaviour
 {
     [SerializeField] private List<int> _combination; // List of the button ids that the player needs to press

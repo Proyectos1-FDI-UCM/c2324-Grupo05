@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to handle the collisions of every movable objects in the game.
+/// </summary>
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] private float _collisionOffset = 0.05f;

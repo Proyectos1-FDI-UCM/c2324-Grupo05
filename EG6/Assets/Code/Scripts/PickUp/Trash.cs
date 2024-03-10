@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class of pickable trash
+/// </summary>
 public class Trash : PickableObject
 {
     [SerializeField] private TrashCounter _counter;

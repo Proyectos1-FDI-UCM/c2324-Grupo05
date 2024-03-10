@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+/// <summary>
+/// This class is used to detect and interact with objects in the game.
+/// It uses the raycast to detect the objects in front of the character.
+/// </summary>
 public class CharacterInteraction : MonoBehaviour
 {
     [SerializeField] private ContactFilter2D _interactionFilter;

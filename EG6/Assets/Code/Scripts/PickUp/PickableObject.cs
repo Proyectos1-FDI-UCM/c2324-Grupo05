@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Class representing a base pickable object
+/// <summary>
+/// Base class for the pickable objects
+/// Has ID and can be picked up
+/// Saves the picked object in the LocalObjectHandler
+/// </summary>
 public class PickableObject : MonoBehaviour, IPickable
 {
     [SerializeField] private int _id;

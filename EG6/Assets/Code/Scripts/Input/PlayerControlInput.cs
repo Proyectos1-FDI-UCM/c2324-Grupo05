@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// This class is used to handle the input for the player (character) actions.
+/// </summary>
 public class PlayerControlInput : MonoBehaviour
 {
     private CharacterSwitcher _characterSwitcher;

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Class to count the pieces collected
+/// Needs to be attached to Empty GameObject in the scene
+/// </summary>
 public class PieceCounter : MonoBehaviour, ICounter
 {
     [SerializeField] private TextMeshProUGUI _pieceText;

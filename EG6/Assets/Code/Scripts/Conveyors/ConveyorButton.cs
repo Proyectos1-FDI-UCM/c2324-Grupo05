@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 
+/// <summary>
+/// This class is used to make the conveyor belt change its direction when the button is pressed.
+/// It can change the direction of the conveyor belt only if the object that pressed the button is a child.
+/// </summary>
 public class ConveyorButton : Button
 {
     [SerializeField] private ConveyorBelt _conveyorBelt;

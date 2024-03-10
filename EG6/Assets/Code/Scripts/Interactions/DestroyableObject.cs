@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
+/// <summary>
+/// This class defines the destroyable objects in the game
+/// And save the state of the destroyed objects in the LocalObjectHandler
+/// </summary>
 public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 {
     [SerializeField] private int _id;

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
+/// <summary>
+/// This class is used to switch the state of the door (opened or closed)
+/// And save the state of the door in the LocalObjectHandler
+/// </summary>
 public class DoorSwitcher : MonoBehaviour
 {
     [SerializeField] private int _id;

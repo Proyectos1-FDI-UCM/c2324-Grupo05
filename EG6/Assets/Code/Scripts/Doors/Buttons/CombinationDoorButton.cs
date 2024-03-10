@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to make the door open when the correct sequence of buttons is pressed.
+/// </summary>
 public class CombinationDoorButton : Button
 {
     [SerializeField] private DoorSwitcher _doorSwitcher;

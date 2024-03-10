@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// This class is used as a base class for the buttons in the game.
+/// </summary>
 [DisallowMultipleComponent]
 public abstract class Button : MonoBehaviour
 {

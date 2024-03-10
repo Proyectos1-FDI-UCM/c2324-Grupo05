@@ -1,6 +1,11 @@
 using Vector2 = UnityEngine.Vector2;
 using UnityEngine;
 
+/// <summary>
+/// Base class for the movable objects in the game.
+/// Is used to move kinematic rigidbodies in the game.
+/// Has additional vector for the movement to implement conveyor belts and other additional movement effects.
+/// </summary>
 public class MovableObject : MonoBehaviour, IMovable
 {
     [SerializeField] private float _maxIterations = 2f;

@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Class for the piece pickable object
+/// Teleports the player to the BedroomTest scene
+/// </summary>
 public class Piece : PickableObject
 {
     [SerializeField] private PieceCounter _counter;

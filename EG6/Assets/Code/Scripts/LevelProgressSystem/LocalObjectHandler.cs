@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using SceneManager = UnityEngine.SceneManagement.SceneManager;
 using UnityEngine;
 
+/// <summary>
+/// This class is used to handle the local state of the objects in the level
+/// Then save it to the global object registry
+/// </summary>
 public class LocalObjectHandler : MonoBehaviour
 {
     private GlobalObjectRegistry _globalObjectRegistry;
