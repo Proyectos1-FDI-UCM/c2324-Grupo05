@@ -11,6 +11,7 @@ public class ChangingCameras : MonoBehaviour
     [SerializeField] private Transform _child;
     [SerializeField] private Transform _penguin;
     [SerializeField] private CharacterSwitcher _switcher;
+    [SerializeField] private GameObject _block;
 
 
     private void Start()
@@ -25,13 +26,16 @@ public class ChangingCameras : MonoBehaviour
 
         if (_switcher._isControllingChild)
         {
-            _target.transform.position = _child.position;
             Debug.Log("niño");
+            _target.transform.position = _child.position;
+            _block.SetActive(false);
+            
         }
         else
         {
-            _target.transform.position = _penguin.position;
             Debug.Log("pinguino");
+            _target.transform.position = _penguin.position;
+            _block.SetActive(true);
         }
 
     }
