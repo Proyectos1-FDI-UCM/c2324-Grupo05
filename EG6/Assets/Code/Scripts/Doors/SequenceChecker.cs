@@ -11,6 +11,7 @@ public class SequenceChecker : MonoBehaviour
 {
     [SerializeField] private List<int> _combination; // List of the button ids that the player needs to press
     [SerializeField] private DoorSwitcher _door; // Reference to the door switcher
+    [SerializeField] private Animator _animator; // Add a reference to the Animator
     private List<ButtonPressCommand> _sequence = new List<ButtonPressCommand>(); // Commands that the player has pressed
     private List<ButtonPressCommand> _desiredSequence = new List<ButtonPressCommand>(); // field to store the desired sequence
     private bool _isSequenceMatched = true;
@@ -26,7 +27,7 @@ public class SequenceChecker : MonoBehaviour
     {
         for (int i = 0; i < _combination.Count; i++)
         {
-            _desiredSequence.Add(new ButtonPressCommand(_combination[i], null));
+            _desiredSequence.Add(new ButtonPressCommand(_combination[i], null, _animator));
         }
     }
 

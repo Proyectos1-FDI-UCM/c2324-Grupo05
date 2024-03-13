@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 public class ConveyorButton : Button
 {
     [SerializeField] private ConveyorBelt _conveyorBelt;
+    [SerializeField] private Animator _animator;
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -21,7 +22,7 @@ public class ConveyorButton : Button
 
     protected override async void OnPressed()
     {
-        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
+        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer, _animator);
         buttonPressCommand.Execute();
         _conveyorBelt.MovementDirection = _conveyorBelt.MovementDirection * -1;
         await Task.Delay(1000);

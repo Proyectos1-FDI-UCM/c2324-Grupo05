@@ -9,6 +9,7 @@ public class CombinationDoorButton : Button
 {
     [SerializeField] private DoorSwitcher _doorSwitcher;
     [SerializeField] private SequenceChecker _sequenceChecker;
+    [SerializeField] private Animator _animator;
 
     // When the player enters the button collider the OnPressed method is called
     private void OnTriggerEnter2D(Collider2D collision) 
@@ -23,7 +24,7 @@ public class CombinationDoorButton : Button
     protected override void OnPressed()
     {
         {
-            ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
+            ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer, _animator);
             buttonPressCommand.Execute();
             _sequenceChecker.AddButtonToSequence(buttonPressCommand);
             _sequenceChecker.CheckSequence();
