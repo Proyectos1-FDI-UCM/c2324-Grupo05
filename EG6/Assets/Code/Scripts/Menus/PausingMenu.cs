@@ -53,20 +53,25 @@ public class PausingMenu : MonoBehaviour
 
     public void LoadScreen()
     {
-        if (SceneManager.GetActiveScene().buildIndex==0)
-        {
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-
-        }
-        else 
-        {
-
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        SceneManager.LoadScene("InitialMenu");
 
 
 
-        
+        /* if (SceneManager.GetActiveScene().buildIndex==0)
+         {
+
+             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+
+         }
+         else 
+         {
+
+             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+         }
+
+        */
+
+
     }
 }

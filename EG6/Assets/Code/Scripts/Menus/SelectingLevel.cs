@@ -73,7 +73,7 @@ public class SelectingLevel : MonoBehaviour
     public void Bedroom()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("BedroomTest");
 
 
     }
