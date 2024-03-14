@@ -10,7 +10,11 @@ public class DoorButton : Button
     // When the player enters the button collider the OnPressed method is called
     private void OnTriggerEnter2D(Collider2D collision) 
     {
-        OnPressed();
+        if (collision.GetComponent<ChildMovement>() != null && _isPressed == false)
+        {
+            _isPressed = true;
+            OnPressed();
+        }
     }
 
     // The OnPressed method is overriden to call the SetDoorState method from the DoorSwitcher class

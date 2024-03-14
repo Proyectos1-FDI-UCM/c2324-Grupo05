@@ -9,11 +9,11 @@ using UnityEngine.UI;
 public class ButtonPressCommand : ICommand
 {
     private int _buttonId;
-    private Renderer _buttonRenderer; // Renderer reference to change the color of the button
-    private Color _previousColor; // Store the previous color of the button to undo the command
+    private SpriteRenderer _buttonRenderer; // Renderer reference to change the color of the button
+    private Sprite _previousSprite; // Store the previous sprite of the button
 
     // Constructor
-    public ButtonPressCommand(int buttonId, Renderer buttonRenderer)
+    public ButtonPressCommand(int buttonId, SpriteRenderer buttonRenderer)
     {
         _buttonId = buttonId;
         _buttonRenderer = buttonRenderer;
@@ -22,14 +22,17 @@ public class ButtonPressCommand : ICommand
     // Execute the command, change the color of the button to green
     public void Execute()
     {
-        _previousColor = _buttonRenderer.material.color;
-        _buttonRenderer.material.color = Color.green;
+        _previousSprite = _buttonRenderer.sprite;
+        Sprite sprite = Resources.Load<Sprite>("Sprites/Environment/SpritesFinales/ButtonPressed");
+        _buttonRenderer.sprite = sprite;
     }
 
     // This method is called to undo the action
     public void Undo()
     {
-        _buttonRenderer.material.color = _previousColor;
+        _buttonRenderer.sprite = _previousSprite;
+        Button button = _buttonRenderer.GetComponent<Button>();
+        button.IsPressed = false;
     }
 
     // public method to get the button id
