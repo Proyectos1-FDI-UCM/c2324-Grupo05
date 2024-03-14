@@ -26,14 +26,12 @@ public class ChangingCameras : MonoBehaviour
 
         if (_switcher._isControllingChild)
         {
-            Debug.Log("niño");
             _target.transform.position = _child.position;
             _block.SetActive(false);
             
         }
         else
         {
-            Debug.Log("pinguino");
             _target.transform.position = _penguin.position;
             _block.SetActive(true);
         }
@@ -43,10 +41,8 @@ public class ChangingCameras : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hellou");
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
         {
-            
             _virtualCamera.SetActive(true);
             
         }
@@ -59,7 +55,6 @@ public class ChangingCameras : MonoBehaviour
     {
         if (other.GetComponent<ChildMovement>() != null)
         {
-            
             _virtualCamera.SetActive(false);
 
         }

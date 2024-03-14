@@ -22,7 +22,7 @@ public class ConveyorButton : Button
 
     protected override async void OnPressed()
     {
-        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer, _animator);
+        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
         buttonPressCommand.Execute();
         _conveyorBelt.MovementDirection = _conveyorBelt.MovementDirection * -1;
         await Task.Delay(1000);

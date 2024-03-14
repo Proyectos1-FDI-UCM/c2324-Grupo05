@@ -24,7 +24,7 @@ public class CombinationDoorButton : Button
     protected override void OnPressed()
     {
         {
-            ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer, _animator);
+            ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
             buttonPressCommand.Execute();
             _sequenceChecker.AddButtonToSequence(buttonPressCommand);
             _sequenceChecker.CheckSequence();
