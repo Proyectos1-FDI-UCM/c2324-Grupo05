@@ -27,14 +27,14 @@ public class ButtonPressCommand : ICommand
         Debug.Log("Button with id " + _buttonId + " was pressed");
         _previousColor = _buttonRenderer.material.color;
         //_buttonRenderer.material.color = Color.green;
-        _animator.SetTrigger("Pressed");
+        //_animator.SetTrigger("Pressed");
     }
 
     // This method is called to undo the action
     public void Undo()
     {
         _buttonRenderer.material.color = _previousColor;
-        _animator.ResetTrigger("Pressed");
+       // _animator.ResetTrigger("Pressed");
     }
 
     // public method to get the button id
