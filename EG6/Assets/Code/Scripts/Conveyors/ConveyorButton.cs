@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 public class ConveyorButton : Button
 {
     [SerializeField] private ConveyorBelt _conveyorBelt;
-    [SerializeField] private Animator _animator;
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
