@@ -36,7 +36,7 @@ public class InitialMenu : MonoBehaviour
     //Right now will be directeted to level0 but needs to be improved
     public void Continue()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("Map-Exterior");
     }
     /*public void NewGame()
     {
