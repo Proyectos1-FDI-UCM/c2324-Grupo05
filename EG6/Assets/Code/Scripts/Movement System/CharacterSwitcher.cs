@@ -18,6 +18,8 @@ public class CharacterSwitcher : MonoBehaviour
     private PlayerControlInput _childPlayerInput;
     private PlayerControlInput _penguinPlayerInput;
     private NavMeshAgent _penguinNavMeshAgent;
+    private CharacterInteraction _childCharacterInteraction;
+    private CharacterInteraction _penguinCharacterInteraction;
 
     public bool _isControllingChild = true;
     
@@ -28,6 +30,8 @@ public class CharacterSwitcher : MonoBehaviour
         _childPlayerInput = _childCharacter.GetComponent<PlayerControlInput>();
         _penguinPlayerInput = _penguinCharacter.GetComponent<PlayerControlInput>();
         _penguinNavMeshAgent = _penguinCharacter.GetComponent<NavMeshAgent>();
+        _childCharacterInteraction = _childCharacter.GetComponent<CharacterInteraction>(); 
+        _penguinCharacterInteraction = _penguinCharacter.GetComponent<CharacterInteraction>();
     }
 
     public void SwitchCharacter()
@@ -39,6 +43,10 @@ public class CharacterSwitcher : MonoBehaviour
             _penguinPlayerInput.enabled = true;
             _penguinNavMeshAgent.enabled = false;
 
+            _childCharacterInteraction.DiscardSelection();
+            _penguinCharacterInteraction.enabled = true;
+            _childCharacterInteraction.enabled = false;
+
             _penguinPlayerMovement.MovementMode = MovementMode.PlayerControlled;
             _isControllingChild = false;
         }
@@ -48,6 +56,10 @@ public class CharacterSwitcher : MonoBehaviour
             _childPlayerInput.enabled = true;
             _penguinPlayerInput.enabled = false;
             _penguinNavMeshAgent.enabled = true;
+
+            _penguinCharacterInteraction.DiscardSelection();
+            _penguinCharacterInteraction.enabled = false;
+            _childCharacterInteraction.enabled = true;
 
             _penguinPlayerMovement.MovementMode = MovementMode.AIControlled;
             _isControllingChild = true;

@@ -41,14 +41,14 @@ public class CharacterInteraction : MonoBehaviour
             Debug.DrawLine(transform.position, (Vector2)transform.position + direction * _interactionDistance, Color.red);
             if (_selectedObject != null)
             {
-                _selectedObject.SpriteRenderer.color = Color.red;
+                _selectedObject.Select();
             }
         }
         else
         {
             if (_selectedObject != null)
             {
-                _selectedObject.SpriteRenderer.color = Color.white;
+                _selectedObject.Deselect();
                 _selectedObject = null;
             }
         }
@@ -67,6 +67,15 @@ public class CharacterInteraction : MonoBehaviour
         if (_selectedObject != null)
         {
             _selectedObject.Destroy();
+        }
+    }
+
+    public void DiscardSelection()
+    {
+        if (_selectedObject != null)
+        {
+            _selectedObject.Deselect();
+            _selectedObject = null;
         }
     }
 

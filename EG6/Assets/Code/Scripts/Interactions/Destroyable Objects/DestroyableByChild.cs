@@ -22,5 +22,9 @@ public class DestroyableByChild : DestroyableObject
         {
             base.Destroy();
         }
+        else
+        {
+            Debug.Log("Only the child can destroy this object");
+        }
     }
 }

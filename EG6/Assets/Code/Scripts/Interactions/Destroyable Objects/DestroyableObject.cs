@@ -28,4 +28,14 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         gameObject.SetActive(false);
         _localObjectHandler.DestroyedObjectsIDs.Add(ID);
     }
+
+    public virtual void Select()
+    {
+        _spriteRenderer.color = Color.red;
+    }
+
+    public virtual void Deselect()
+    {
+        _spriteRenderer.color = Color.white;
+    }
 }

@@ -22,5 +22,9 @@ public class DestroyableByPenguin : DestroyableObject
         {
             base.Destroy();
         }
+        else
+        {
+            Debug.Log("Only the penguin can destroy this object");
+        }
     }
 }
