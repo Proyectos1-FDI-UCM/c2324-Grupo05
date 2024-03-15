@@ -11,14 +11,6 @@ public class ConveyorButton : Button
 {
     [SerializeField] private ConveyorBelt _conveyorBelt;
 
-    private void OnTriggerEnter2D(Collider2D other) 
-    {
-        if (other.GetComponent<ChildMovement>() != null)
-        {
-            OnPressed();
-        }    
-    }
-
     protected override async void OnPressed()
     {
         ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);

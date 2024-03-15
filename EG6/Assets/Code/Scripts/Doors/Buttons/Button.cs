@@ -21,6 +21,17 @@ public abstract class Button : MonoBehaviour
         _buttonRenderer = GetComponent<SpriteRenderer>();
     }
 
+    // When the player enters the button collider the OnPressed method is called
+    private void OnTriggerEnter2D(Collider2D collision) 
+    {
+        if ((collision.GetComponent<ChildMovement>() != null || collision.GetComponent<PenguinMovement>().MovementMode == MovementMode.PlayerControlled) 
+        && _isPressed == false)
+        {
+            _isPressed = true;
+            OnPressed();
+        }
+    }
+
     protected virtual void OnPressed() 
     {
         

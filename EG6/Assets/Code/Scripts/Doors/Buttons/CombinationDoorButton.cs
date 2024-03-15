@@ -10,15 +10,6 @@ public class CombinationDoorButton : Button
     [SerializeField] private DoorSwitcher _doorSwitcher;
     [SerializeField] private SequenceChecker _sequenceChecker;
 
-    // When the player enters the button collider the OnPressed method is called
-    private void OnTriggerEnter2D(Collider2D collision) 
-    {
-        if (collision.GetComponent<ChildMovement>() != null && _isPressed == false)
-        {
-            _isPressed = true;
-            OnPressed();
-        }
-    }
 
     // The OnPressed method is overriden to check the sequence of buttons pressed and open the door
     protected override void OnPressed()
