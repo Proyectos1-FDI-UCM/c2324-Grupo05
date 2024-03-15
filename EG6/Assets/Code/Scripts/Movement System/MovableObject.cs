@@ -56,10 +56,9 @@ public class MovableObject : MonoBehaviour, IMovable
 
     protected virtual void Move(Vector2 direction)
     {
-        Vector2 movementDirection = direction;
+        Vector2 movementDirection = direction * _movementSpeed + _additionalVector;
 
-        float totalSpeed = _movementSpeed;
-        float distanceRemaining = Mathf.Min(totalSpeed * Time.fixedDeltaTime, movementDirection.magnitude);
+        float distanceRemaining = movementDirection.magnitude;
         float maxIterations = _maxIterations;
         const float Epsilon = 0.005f;
         
@@ -72,7 +71,8 @@ public class MovableObject : MonoBehaviour, IMovable
             _collisionHandler.CheckCollisions(ref distanceRemaining, ref movementDirection);
         };
 
-        Vector2 movementVector =  movementDirection.normalized * distanceRemaining + _additionalVector * Time.fixedDeltaTime;
+        Vector2 movementVector =  movementDirection * Time.fixedDeltaTime;
+        Debug.Log(movementVector.magnitude);
         Vector2 newPosition = _rigidbody2D.position + movementVector;
         _rigidbody2D.MovePosition(newPosition);
     }
