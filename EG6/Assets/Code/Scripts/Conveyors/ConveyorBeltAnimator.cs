@@ -7,7 +7,7 @@ public class ConveyorBeltAnimator : MonoBehaviour
     // Block with custom classes or structures
 
     // Block with private (or protected) _fields
-
+    private Animator animator;
     // Block with public Properties {get; set;}
 
     // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
@@ -18,7 +18,7 @@ public class ConveyorBeltAnimator : MonoBehaviour
 
     private void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // MonoBehaviour update methods
