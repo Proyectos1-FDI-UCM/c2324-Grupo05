@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 public class ConveyorButton : Button
 {
     [SerializeField] private ConveyorBelt _conveyorBelt;
+    ConveyorBeltAnimator anim;
 
     protected override async void OnPressed()
     {
         ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
         buttonPressCommand.Execute();
+        anim = GameObject.FindGameObjectWithTag("A").GetComponent<ConveyorBeltAnimator>();
+        anim.RotateSprite();
         _conveyorBelt.MovementDirection = _conveyorBelt.MovementDirection * -1;
         await Task.Delay(1000);
         buttonPressCommand.Undo();
