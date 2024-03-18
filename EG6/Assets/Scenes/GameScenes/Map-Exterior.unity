@@ -1069,6 +1069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 80761823}
+  - component: {fileID: 80761824}
   m_Layer: 0
   m_Name: TP0
   m_TagString: Untagged
@@ -1091,6 +1092,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2082190315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &80761824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80761822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ad374f205efd0469ae8f57ccf21687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkpointID: 1
 --- !u!1 &89932327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,8 +2186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!1001 &206221090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17991,8 +18003,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!1001 &367410010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19523,8 +19533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5149a8397241bbf4cb6eb6c2663e50be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 2
 --- !u!61 &447950015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20310,8 +20318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!1001 &487736586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21120,7 +21126,7 @@ Transform:
   m_GameObject: {fileID: 506923093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.7863, y: 0.051732063, z: -20}
+  m_LocalPosition: {x: 71.796265, y: 0.051693916, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24120,6 +24126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 708867385}
+  - component: {fileID: 708867386}
   m_Layer: 0
   m_Name: TP2
   m_TagString: Untagged
@@ -24142,6 +24149,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2082190315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &708867386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708867384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ad374f205efd0469ae8f57ccf21687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkpointID: 3
 --- !u!1 &711954017
 GameObject:
   m_ObjectHideFlags: 0
@@ -24745,8 +24765,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!1001 &772635065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26364,6 +26382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 904825612}
+  - component: {fileID: 904825613}
   m_Layer: 0
   m_Name: TP1
   m_TagString: Untagged
@@ -26386,6 +26405,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2082190315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &904825613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904825611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ad374f205efd0469ae8f57ccf21687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkpointID: 2
 --- !u!1001 &905999379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40713,7 +40745,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983240429}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
   m_Name: 
@@ -45950,8 +45982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!1 &1104889652
 GameObject:
   m_ObjectHideFlags: 0
@@ -45997,8 +46027,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!60 &1104889655
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -47636,8 +47664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!1 &1238023173
 GameObject:
   m_ObjectHideFlags: 0
@@ -48169,7 +48195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d372c22d2627249b01a667351b6c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleport: {fileID: 0}
   _pauseMenu: {fileID: 1431053589}
 --- !u!114 &1294037983
 MonoBehaviour:
@@ -57987,8 +58012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!1 &1462080864
 GameObject:
   m_ObjectHideFlags: 0
@@ -58164,8 +58187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!60 &1474545293
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -59230,8 +59251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!60 &1534645810
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -59498,8 +59517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5149a8397241bbf4cb6eb6c2663e50be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 2
 --- !u!61 &1540939087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59740,8 +59757,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!60 &1571827943
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -63841,8 +63856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5149a8397241bbf4cb6eb6c2663e50be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 2
 --- !u!61 &1845716776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64858,8 +64871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc57d31c278028d42b8d4b379f9a72b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportController: {fileID: 2082190314}
-  _level: 1
 --- !u!1001 &1906494037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68040,11 +68051,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _penguin: {fileID: 1341495668}
-  _kid: {fileID: 645756203}
-  _target0: {fileID: 80761823}
-  _target1: {fileID: 904825612}
-  _target2: {fileID: 708867385}
-  _target3: {fileID: 0}
+  _child: {fileID: 645756203}
+  _allCheckpoints:
+  - {fileID: 80761824}
+  - {fileID: 904825613}
+  - {fileID: 708867386}
 --- !u!4 &2082190315
 Transform:
   m_ObjectHideFlags: 0
@@ -69538,8 +69549,8 @@ SceneRoots:
   - {fileID: 2039626918}
   - {fileID: 1427621281}
   - {fileID: 1022052239}
-  - {fileID: 1476766883}
   - {fileID: 53178530}
+  - {fileID: 1476766883}
   - {fileID: 642283116}
   - {fileID: 682944211}
   - {fileID: 2082190315}

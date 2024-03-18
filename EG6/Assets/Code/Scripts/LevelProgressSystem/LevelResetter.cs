@@ -21,9 +21,9 @@ public class LevelResetter : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
         {
-            //_localObjectHandler.SaveLocalState();
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Debug.Log("Reset Level placeholder");
+            Debug.Log("Resetting level");
+            _localObjectHandler.SaveLocalState();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

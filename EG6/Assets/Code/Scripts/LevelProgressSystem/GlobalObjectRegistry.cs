@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
 
 /// <summary>
 /// This class is used to store the state of the objects in the game between the scenes (on each level).
@@ -15,14 +18,16 @@ public class GlobalObjectRegistry : MonoBehaviour
         public List<int> pickedObjects;
         public List<int> openedDoors;
         public List<int> destroyedObjects;
+        public int currentCheckpoint;
 
-        public LevelState(string sceneName, bool isCompleted, List<int> pickedObjects, List<int> openedDoors, List<int> destroyedObjects)
+        public LevelState(string sceneName, bool isCompleted, List<int> pickedObjects, List<int> openedDoors, List<int> destroyedObjects, int currentCheckpoint)
         {
             this.sceneName = sceneName;
             this.isCompleted = isCompleted;
             this.pickedObjects = pickedObjects;
             this.openedDoors = openedDoors;
             this.destroyedObjects = destroyedObjects;
+            this.currentCheckpoint = currentCheckpoint;
         }
     }
 
@@ -45,7 +50,7 @@ public class GlobalObjectRegistry : MonoBehaviour
         }
     }
 
-    public void SaveLevelState(List<int> pickedObjectsIDs, List<int> openedDoorsIDs, List<int> destroyedObjectsIDs)
+    public void SaveLevelState(List<int> pickedObjectsIDs, List<int> openedDoorsIDs, List<int> destroyedObjectsIDs, int lastCheckpoint)
     {
         string currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         LevelState currentState = GetLevelState(currentSceneName);
@@ -53,6 +58,7 @@ public class GlobalObjectRegistry : MonoBehaviour
         currentState.pickedObjects = pickedObjectsIDs;
         currentState.openedDoors = openedDoorsIDs;
         currentState.destroyedObjects = destroyedObjectsIDs;
+        currentState.currentCheckpoint = lastCheckpoint;
 
         _levelStates.Remove(currentState);
         _levelStates.Add(currentState);
@@ -68,6 +74,6 @@ public class GlobalObjectRegistry : MonoBehaviour
                 return state;
             }
         }
-        return new LevelState(sceneName, false, new List<int>(), new List<int>(), new List<int>());
+        return new LevelState(sceneName, false, new List<int>(), new List<int>(), new List<int>(), 0);
     }
 }

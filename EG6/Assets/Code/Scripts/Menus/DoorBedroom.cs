@@ -33,11 +33,7 @@ public class DoorBedroom : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null) 
         {
-            Debug.Log("teletrasport");
-            //Time.timeScale = 0f;
-            SceneManager.LoadScene("Map-Exterior");
-        
-        
+            SceneManager.LoadScene("SelectLevel");
         }
     }
 

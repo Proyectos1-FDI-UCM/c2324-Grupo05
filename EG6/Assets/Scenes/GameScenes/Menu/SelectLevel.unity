@@ -1760,13 +1760,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1873918282}
-        m_TargetAssemblyTypeName: SelectingLevel, Assembly-CSharp
-        m_MethodName: Level0
-        m_Mode: 1
+        m_TargetAssemblyTypeName: SelectingLevelButton, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2058,7 +2058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d372c22d2627249b01a667351b6c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleport: {fileID: 0}
+  _pauseMenu: {fileID: 0}
 --- !u!1 &2144362383
 GameObject:
   m_ObjectHideFlags: 0

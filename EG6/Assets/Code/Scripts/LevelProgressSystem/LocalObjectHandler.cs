@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using SceneManager = UnityEngine.SceneManagement.SceneManager;
 using UnityEngine;
+using Unity.VisualScripting;
 
 /// <summary>
 /// This class is used to store the local state of the objects in the level
@@ -11,9 +12,11 @@ public class LocalObjectHandler : MonoBehaviour
 {
     private GlobalObjectRegistry _globalObjectRegistry;
 
+    [SerializeField] private Checkpoint _lastCheckpoint;
     private List<int> _pickedObjectsIDs;
     private List<int> _openedDoorsIDs;
     private List<int> _destroyedObjectsIDs;
+    private TeleportHandler _teleporter;
 
     public List<int> PickedObjectsIDs { get => _pickedObjectsIDs; }
     public List<int> OpenedDoorsIDs { get => _openedDoorsIDs; }
@@ -28,12 +31,18 @@ public class LocalObjectHandler : MonoBehaviour
 
     private void Start() 
     {
+        _teleporter = FindObjectOfType<TeleportHandler>();
         _globalObjectRegistry = GlobalObjectRegistry.instance;
         _pickedObjectsIDs = _globalObjectRegistry.GetLevelState(SceneManager.GetActiveScene().name).pickedObjects;
         _openedDoorsIDs = _globalObjectRegistry.GetLevelState(SceneManager.GetActiveScene().name).openedDoors;
         _destroyedObjectsIDs = _globalObjectRegistry.GetLevelState(SceneManager.GetActiveScene().name).destroyedObjects;
 
         DisableObjects();
+
+        if (_lastCheckpoint.CheckpointID != 0)
+        {
+            _teleporter.TeleportCharactersToLastCheckpoint(_lastCheckpoint.CheckpointID);
+        }
     }
 
     private void DisableObjects()
@@ -65,6 +74,11 @@ public class LocalObjectHandler : MonoBehaviour
         }
     }
 
+    public void SetLastCheckpoint(Checkpoint lastCheckpoint)
+    {
+        _lastCheckpoint = lastCheckpoint;
+    }
+
     public void AddPickedObject(int objectID)
     {
         if (!_pickedObjectsIDs.Contains(objectID))
@@ -92,7 +106,7 @@ public class LocalObjectHandler : MonoBehaviour
 
     public void SaveLocalState()
     {
-        _globalObjectRegistry.SaveLevelState(_pickedObjectsIDs, _openedDoorsIDs, _destroyedObjectsIDs);
+        _globalObjectRegistry.SaveLevelState(_pickedObjectsIDs, _openedDoorsIDs, _destroyedObjectsIDs, _lastCheckpoint.CheckpointID);
         Debug.Log("Local level state was successfully saved" +
         "\nPicked objects: " + _pickedObjectsIDs.Count + 
         "\nOpened doors: " + _openedDoorsIDs.Count + 
