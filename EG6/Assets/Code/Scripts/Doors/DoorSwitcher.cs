@@ -27,13 +27,11 @@ public class DoorSwitcher : MonoBehaviour
     {
         if (_isDoorOpen)
         {
-            Debug.Log("Door is open");
             _door.SetActive(false);
             _localObjectHandler.OpenedDoorsIDs.Add(ID);
         }
         else
         {
-            Debug.Log("Door is closed");
             _door.SetActive(true);
         }
     }

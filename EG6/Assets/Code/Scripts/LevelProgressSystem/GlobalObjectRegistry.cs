@@ -41,26 +41,27 @@ public class GlobalObjectRegistry : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // Помечаем текущий объект как не уничтожаемый при загрузке новой сцены
+            DontDestroyOnLoad(gameObject); 
             _levelStates = new List<LevelState>();
         }
         else
         {
-            Destroy(gameObject); // Уничтожаем дубликат
+            Destroy(gameObject);
         }
     }
 
-    public void SaveLevelState(List<int> pickedObjectsIDs, List<int> openedDoorsIDs, List<int> destroyedObjectsIDs, int lastCheckpoint)
+    public void SaveLevelState(List<int> pickedObjectsIDs, List<int> openedDoorsIDs, List<int> destroyedObjectsIDs, int lastCheckpoint, string sceneName = null)
     {
-        string currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        string currentSceneName = sceneName ?? UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         LevelState currentState = GetLevelState(currentSceneName);
+        _levelStates.Remove(currentState);
+        
         currentState.isCompleted = true;
         currentState.pickedObjects = pickedObjectsIDs;
         currentState.openedDoors = openedDoorsIDs;
         currentState.destroyedObjects = destroyedObjectsIDs;
         currentState.currentCheckpoint = lastCheckpoint;
 
-        _levelStates.Remove(currentState);
         _levelStates.Add(currentState);
     }
 
@@ -71,9 +72,11 @@ public class GlobalObjectRegistry : MonoBehaviour
         {
             if (state.sceneName == sceneName)
             {
+                Debug.Log("Global current checkpoint:" + state.currentCheckpoint);
                 return state;
             }
         }
         return new LevelState(sceneName, false, new List<int>(), new List<int>(), new List<int>(), 0);
+        
     }
 }

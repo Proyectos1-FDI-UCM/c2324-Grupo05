@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using SceneManager = UnityEngine.SceneManagement.SceneManager;
 using UnityEngine;
 using Unity.VisualScripting;
+using LevelState = GlobalObjectRegistry.LevelState;
 
 /// <summary>
 /// This class is used to store the local state of the objects in the level
@@ -12,7 +13,7 @@ public class LocalObjectHandler : MonoBehaviour
 {
     private GlobalObjectRegistry _globalObjectRegistry;
 
-    [SerializeField] private Checkpoint _lastCheckpoint;
+    private Checkpoint _lastCheckpoint;
     private List<int> _pickedObjectsIDs;
     private List<int> _openedDoorsIDs;
     private List<int> _destroyedObjectsIDs;
@@ -27,22 +28,19 @@ public class LocalObjectHandler : MonoBehaviour
         _pickedObjectsIDs = new List<int>();
         _openedDoorsIDs = new List<int>();
         _destroyedObjectsIDs = new List<int>();
+        _teleporter = FindObjectOfType<TeleportHandler>();
+        _globalObjectRegistry = GlobalObjectRegistry.instance;
+        LevelState levelState = _globalObjectRegistry.GetLevelState(SceneManager.GetActiveScene().name);
+        _pickedObjectsIDs = levelState.pickedObjects;
+        _openedDoorsIDs = levelState.openedDoors;
+        _destroyedObjectsIDs = levelState.destroyedObjects;
+        SetLastCheckpoint(_teleporter.AllCheckpoints[levelState.currentCheckpoint]);
     }
 
     private void Start() 
     {
-        _teleporter = FindObjectOfType<TeleportHandler>();
-        _globalObjectRegistry = GlobalObjectRegistry.instance;
-        _pickedObjectsIDs = _globalObjectRegistry.GetLevelState(SceneManager.GetActiveScene().name).pickedObjects;
-        _openedDoorsIDs = _globalObjectRegistry.GetLevelState(SceneManager.GetActiveScene().name).openedDoors;
-        _destroyedObjectsIDs = _globalObjectRegistry.GetLevelState(SceneManager.GetActiveScene().name).destroyedObjects;
-
         DisableObjects();
-
-        if (_lastCheckpoint.CheckpointID != 0)
-        {
-            _teleporter.TeleportCharactersToLastCheckpoint(_lastCheckpoint.CheckpointID);
-        }
+        _teleporter.TeleportCharactersToLastCheckpoint(_lastCheckpoint.CheckpointID);
     }
 
     private void DisableObjects()
@@ -77,6 +75,7 @@ public class LocalObjectHandler : MonoBehaviour
     public void SetLastCheckpoint(Checkpoint lastCheckpoint)
     {
         _lastCheckpoint = lastCheckpoint;
+        SaveLocalState();
     }
 
     public void AddPickedObject(int objectID)
@@ -85,7 +84,6 @@ public class LocalObjectHandler : MonoBehaviour
         {
             _pickedObjectsIDs.Add(objectID);
         }
-        Debug.Log("Picked object ID: " + objectID);
     }
 
     public void AddOpenedDoor(int doorID)
@@ -106,10 +104,7 @@ public class LocalObjectHandler : MonoBehaviour
 
     public void SaveLocalState()
     {
+        Debug.Log("Last saved checkpoint: " + _lastCheckpoint.CheckpointID + " in scene: " + SceneManager.GetActiveScene().name);
         _globalObjectRegistry.SaveLevelState(_pickedObjectsIDs, _openedDoorsIDs, _destroyedObjectsIDs, _lastCheckpoint.CheckpointID);
-        Debug.Log("Local level state was successfully saved" +
-        "\nPicked objects: " + _pickedObjectsIDs.Count + 
-        "\nOpened doors: " + _openedDoorsIDs.Count + 
-        "\nDestroyed objects: " + _destroyedObjectsIDs.Count);
     }
 }

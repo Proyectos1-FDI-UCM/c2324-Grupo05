@@ -17,9 +17,9 @@ public class SelectingLevelButton : MonoBehaviour
 
     public void LoadLevel(int indexLevel)
     {
-        LevelState levelState = _globalObjectRegistry.GetLevelState(SceneManager.GetSceneByBuildIndex(indexLevel).name);
+        LevelState levelState = _globalObjectRegistry.GetLevelState("Map-Exterior");
         levelState.currentCheckpoint = indexLevel;
-        _globalObjectRegistry.SaveLevelState(levelState.pickedObjects, levelState.openedDoors, levelState.destroyedObjects, levelState.currentCheckpoint);
+        _globalObjectRegistry.SaveLevelState(levelState.pickedObjects, levelState.openedDoors, levelState.destroyedObjects, levelState.currentCheckpoint, "Map-Exterior");
         SceneManager.LoadScene("Map-Exterior");
     }
 

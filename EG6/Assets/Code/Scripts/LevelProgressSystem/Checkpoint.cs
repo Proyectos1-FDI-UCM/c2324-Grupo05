@@ -19,7 +19,6 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
         {
             _localObjectHandler.SetLastCheckpoint(this);
-            Debug.Log("Checkpoint reached");
         }
     }
 }

@@ -72,7 +72,6 @@ public class MovableObject : MonoBehaviour, IMovable
         };
 
         Vector2 movementVector =  movementDirection * Time.fixedDeltaTime;
-        Debug.Log(movementVector.magnitude);
         Vector2 newPosition = _rigidbody2D.position + movementVector;
         _rigidbody2D.MovePosition(newPosition);
     }
