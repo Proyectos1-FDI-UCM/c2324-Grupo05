@@ -13,7 +13,7 @@ public class DirtyWatertp : MonoBehaviour
 
         if (collision.gameObject.GetComponent<ChildMovement>() != null || collision.gameObject.GetComponent<PenguinMovement>())
         {
-            //Tiene que espear unos segundos para la animacion de muerte y luego tp
+            //Dirty Water death animation
             _teleportController.Teleport(_level);
         }
            
