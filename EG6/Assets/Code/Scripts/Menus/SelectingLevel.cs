@@ -18,8 +18,15 @@ public class SelectingLevelButton : MonoBehaviour
     public void LoadLevel(int indexLevel)
     {
         LevelState levelState = _globalObjectRegistry.GetLevelState("Map-Exterior");
-        levelState.currentCheckpoint = indexLevel;
-        _globalObjectRegistry.SaveLevelState(levelState.pickedObjects, levelState.openedDoors, levelState.destroyedObjects, levelState.currentCheckpoint, "Map-Exterior");
+
+        if (indexLevel > levelState.LastCheckpointID)
+        {
+            Debug.Log("You can't load this level yet");
+            return;
+        }
+
+        levelState.CurrentCheckpointID = indexLevel;
+        _globalObjectRegistry.SaveLevelState(levelState.PickedObjects, levelState.OpenedDoors, levelState.DestroyedObjects, levelState.CurrentCheckpointID, "Map-Exterior");
         SceneManager.LoadScene("Map-Exterior");
     }
 

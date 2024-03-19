@@ -13,21 +13,23 @@ public class GlobalObjectRegistry : MonoBehaviour
 {
     public struct LevelState
     {
-        public string sceneName;
+        public string SceneName;
         public bool isCompleted;
-        public List<int> pickedObjects;
-        public List<int> openedDoors;
-        public List<int> destroyedObjects;
-        public int currentCheckpoint;
+        public List<int> PickedObjects;
+        public List<int> OpenedDoors;
+        public List<int> DestroyedObjects;
+        public int CurrentCheckpointID;
+        public int LastCheckpointID;
 
-        public LevelState(string sceneName, bool isCompleted, List<int> pickedObjects, List<int> openedDoors, List<int> destroyedObjects, int currentCheckpoint)
+        public LevelState(string sceneName, bool completed, List<int> pickedObjects, List<int> openedDoors, List<int> destroyedObjects, int currentCheckpointID)
         {
-            this.sceneName = sceneName;
-            this.isCompleted = isCompleted;
-            this.pickedObjects = pickedObjects;
-            this.openedDoors = openedDoors;
-            this.destroyedObjects = destroyedObjects;
-            this.currentCheckpoint = currentCheckpoint;
+            SceneName = sceneName;
+            isCompleted = completed;
+            PickedObjects = pickedObjects;
+            OpenedDoors = openedDoors;
+            DestroyedObjects = destroyedObjects;
+            CurrentCheckpointID = currentCheckpointID;
+            LastCheckpointID = CurrentCheckpointID;
         }
     }
 
@@ -57,10 +59,15 @@ public class GlobalObjectRegistry : MonoBehaviour
         _levelStates.Remove(currentState);
         
         currentState.isCompleted = true;
-        currentState.pickedObjects = pickedObjectsIDs;
-        currentState.openedDoors = openedDoorsIDs;
-        currentState.destroyedObjects = destroyedObjectsIDs;
-        currentState.currentCheckpoint = lastCheckpoint;
+        currentState.PickedObjects = pickedObjectsIDs;
+        currentState.OpenedDoors = openedDoorsIDs;
+        currentState.DestroyedObjects = destroyedObjectsIDs;
+        currentState.CurrentCheckpointID = lastCheckpoint;
+
+        if (currentState.LastCheckpointID < lastCheckpoint)
+        {
+            currentState.LastCheckpointID = lastCheckpoint;
+        }
 
         _levelStates.Add(currentState);
     }
@@ -70,9 +77,9 @@ public class GlobalObjectRegistry : MonoBehaviour
     {
         foreach (LevelState state in _levelStates)
         {
-            if (state.sceneName == sceneName)
+            if (state.SceneName == sceneName)
             {
-                Debug.Log("Global current checkpoint:" + state.currentCheckpoint);
+                Debug.Log("Global current checkpoint:" + state.CurrentCheckpointID);
                 return state;
             }
         }

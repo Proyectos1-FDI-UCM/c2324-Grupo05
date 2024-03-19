@@ -31,10 +31,10 @@ public class LocalObjectHandler : MonoBehaviour
         _teleporter = FindObjectOfType<TeleportHandler>();
         _globalObjectRegistry = GlobalObjectRegistry.instance;
         LevelState levelState = _globalObjectRegistry.GetLevelState(SceneManager.GetActiveScene().name);
-        _pickedObjectsIDs = levelState.pickedObjects;
-        _openedDoorsIDs = levelState.openedDoors;
-        _destroyedObjectsIDs = levelState.destroyedObjects;
-        SetLastCheckpoint(_teleporter.AllCheckpoints[levelState.currentCheckpoint]);
+        _pickedObjectsIDs = levelState.PickedObjects;
+        _openedDoorsIDs = levelState.OpenedDoors;
+        _destroyedObjectsIDs = levelState.DestroyedObjects;
+        SetLastCheckpoint(_teleporter.AllCheckpoints[levelState.CurrentCheckpointID]);
     }
 
     private void Start() 
@@ -104,7 +104,6 @@ public class LocalObjectHandler : MonoBehaviour
 
     public void SaveLocalState()
     {
-        Debug.Log("Last saved checkpoint: " + _lastCheckpoint.CheckpointID + " in scene: " + SceneManager.GetActiveScene().name);
         _globalObjectRegistry.SaveLevelState(_pickedObjectsIDs, _openedDoorsIDs, _destroyedObjectsIDs, _lastCheckpoint.CheckpointID);
     }
 }
