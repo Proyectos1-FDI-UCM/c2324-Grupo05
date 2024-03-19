@@ -16,20 +16,22 @@ public class ConveyorStopButton : Button
     {
         ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
         buttonPressCommand.Execute();
-        anim = GameObject.FindGameObjectWithTag("A").GetComponent<ConveyorBeltAnimator>();
-        anim.RotateSprite();
+        //anim = GameObject.FindGameObjectWithTag("A").GetComponent<ConveyorBeltAnimator>();
+        //anim.RotateSprite();
 
         if (_conveyorBelt.MovementDirection == Vector2.zero)
         {
             _conveyorBelt.MovementDirection = new Vector2(1, 0);
+            Debug.Log("Conveyor belt is moving");
         }
         else
         {
             _conveyorBelt.MovementDirection = Vector2.zero;
+            Debug.Log("Conveyor belt is stopped");
         }
 
         //_conveyorBelt.MovementDirection = _conveyorBelt.MovementDirection * -1;
-        await Task.Delay(1000);
+        await Task.Delay(100);
         buttonPressCommand.Undo();
 
     }
