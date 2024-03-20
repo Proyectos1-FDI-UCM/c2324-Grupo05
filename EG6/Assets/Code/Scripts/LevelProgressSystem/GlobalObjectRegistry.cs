@@ -14,17 +14,15 @@ public class GlobalObjectRegistry : MonoBehaviour
     public struct LevelState
     {
         public string SceneName;
-        public bool isCompleted;
         public List<int> PickedObjects;
         public List<int> OpenedDoors;
         public List<int> DestroyedObjects;
         public int CurrentCheckpointID;
         public int LastCheckpointID;
 
-        public LevelState(string sceneName, bool completed, List<int> pickedObjects, List<int> openedDoors, List<int> destroyedObjects, int currentCheckpointID)
+        public LevelState(string sceneName, List<int> pickedObjects, List<int> openedDoors, List<int> destroyedObjects, int currentCheckpointID)
         {
             SceneName = sceneName;
-            isCompleted = completed;
             PickedObjects = pickedObjects;
             OpenedDoors = openedDoors;
             DestroyedObjects = destroyedObjects;
@@ -58,7 +56,6 @@ public class GlobalObjectRegistry : MonoBehaviour
         LevelState currentState = GetLevelState(currentSceneName);
         _levelStates.Remove(currentState);
         
-        currentState.isCompleted = true;
         currentState.PickedObjects = pickedObjectsIDs;
         currentState.OpenedDoors = openedDoorsIDs;
         currentState.DestroyedObjects = destroyedObjectsIDs;
@@ -83,7 +80,7 @@ public class GlobalObjectRegistry : MonoBehaviour
                 return state;
             }
         }
-        return new LevelState(sceneName, false, new List<int>(), new List<int>(), new List<int>(), 0);
+        return new LevelState(sceneName, new List<int>(), new List<int>(), new List<int>(), 0);
         
     }
 }

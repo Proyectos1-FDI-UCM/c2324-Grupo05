@@ -10,7 +10,14 @@ using System.Threading.Tasks;
 public class ConveyorStopButton : Button
 {
     [SerializeField] private ConveyorBelt _conveyorBelt;
+    private BoxCollider2D _collider;
     ConveyorBeltAnimator anim;
+
+    protected override void Start()
+    {
+        base.Start();
+        _collider = _conveyorBelt.GetComponent<BoxCollider2D>();
+    }
 
     protected override async void OnPressed()
     {
@@ -19,15 +26,15 @@ public class ConveyorStopButton : Button
         //anim = GameObject.FindGameObjectWithTag("A").GetComponent<ConveyorBeltAnimator>();
         //anim.RotateSprite();
 
-        if (_conveyorBelt.MovementDirection == Vector2.zero)
+        if (_collider.enabled == true)
         {
-            _conveyorBelt.MovementDirection = new Vector2(1, 0);
-            Debug.Log("Conveyor belt is moving");
+            _collider.enabled = false;
+            Debug.Log("Conveyor belt is stopped");
         }
         else
         {
-            _conveyorBelt.MovementDirection = Vector2.zero;
-            Debug.Log("Conveyor belt is stopped");
+            _collider.enabled = true;
+            Debug.Log("Conveyor belt is moving");
         }
 
         //_conveyorBelt.MovementDirection = _conveyorBelt.MovementDirection * -1;
