@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8738571300597384127}
   - component: {fileID: 4464196603729231779}
   - component: {fileID: 1195475180974465958}
+  - component: {fileID: 3781648841255750834}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Untagged
@@ -297,3 +298,24 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   _interactionDistance: 0.5
+--- !u!95 &3781648841255750834
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390498169718599313}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

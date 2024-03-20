@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4910461662812493306}
   - component: {fileID: 5040252584855639190}
   - component: {fileID: 7978071568656571756}
+  - component: {fileID: 647470770289088847}
   m_Layer: 3
   m_Name: Main Character
   m_TagString: Untagged
@@ -288,3 +289,24 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   _interactionDistance: 0.5
+--- !u!95 &647470770289088847
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017602186203392709}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
