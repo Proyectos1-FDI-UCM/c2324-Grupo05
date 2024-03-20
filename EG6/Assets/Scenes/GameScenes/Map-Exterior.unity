@@ -20974,7 +20974,7 @@ Transform:
   m_GameObject: {fileID: 506923093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 123.003815, y: 0.007619858, z: -20}
+  m_LocalPosition: {x: 123.014435, y: 0.0076167583, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25326,7 +25326,7 @@ PrefabInstance:
     - target: {fileID: 4868714519538971283, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 601eef9e25c0698409d1d8065d74d872, type: 3}
+      objectReference: {fileID: -487351392, guid: 6da1ade57f7cb4a4aa5592784d74b326, type: 3}
     - target: {fileID: 4868714519538971283, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -52461,6 +52461,7 @@ GameObject:
   - component: {fileID: 2034673432}
   - component: {fileID: 2034673431}
   - component: {fileID: 2034673430}
+  - component: {fileID: 2034673434}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
@@ -52490,7 +52491,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034673429}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -52515,9 +52516,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.6142423}
+  m_Offset: {x: -0.2806105, y: -1.6142423}
   serializedVersion: 2
-  m_Radius: 1.2629073
+  m_Radius: 0.9822968
 --- !u!212 &2034673432
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -52559,7 +52560,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d3e4724e7478081478344b044954e882, type: 3}
+  m_Sprite: {fileID: 630047757, guid: 75b3fa21dc67462418ac8a1dd60a8919, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -52579,12 +52580,47 @@ Transform:
   m_GameObject: {fileID: 2034673429}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.04, y: 2.09, z: 10.306306}
+  m_LocalPosition: {x: -24.04, y: 1.47, z: 10.306306}
   m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1022052239}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2034673434
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034673429}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000047683716, y: 0.00000047683716}
+  serializedVersion: 2
+  m_Radius: 1.4249998
 --- !u!1001 &2034924672
 PrefabInstance:
   m_ObjectHideFlags: 0
