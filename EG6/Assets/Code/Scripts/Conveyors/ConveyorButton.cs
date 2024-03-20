@@ -16,7 +16,7 @@ public class ConveyorButton : Button
     {
         ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
         buttonPressCommand.Execute();
-        anim = GameObject.FindGameObjectWithTag("A").GetComponent<ConveyorBeltAnimator>();
+        anim = GameObject.Find("Cinta 1").GetComponent<ConveyorBeltAnimator>();
         anim.RotateSprite();
         _conveyorBelt.MovementDirection = _conveyorBelt.MovementDirection * -1;
         await Task.Delay(1000);
