@@ -21194,7 +21194,7 @@ Transform:
   m_GameObject: {fileID: 506923093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 122.98158, y: 0.007626772, z: -20}
+  m_LocalPosition: {x: 123.00482, y: 0.0076196194, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25685,11 +25685,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3457932428125981357, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 63.62
+      value: -7.8
       objectReference: {fileID: 0}
     - target: {fileID: 3457932428125981357, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.28
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3457932428125981357, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -53342,6 +53342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 200
   _nEgg: 0
+  _nextCheckpoint: {fileID: 904825613}
 --- !u!58 &2034673431
 CircleCollider2D:
   m_ObjectHideFlags: 0
