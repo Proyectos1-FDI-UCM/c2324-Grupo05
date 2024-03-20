@@ -6,7 +6,7 @@ public class Egg : PickableObject
     //reference to egg counter
     public int _nEgg;
 
-    //reference to instance
+    [SerializeField] private Checkpoint _nextCheckpoint;
     private static Egg _instance;
     static public Egg Instance
     {
@@ -33,7 +33,7 @@ public class Egg : PickableObject
             PickUp();
             DontDestroyOnLoad(gameObject);
             
-            _localObjectHandler.SaveLocalState();
+            _localObjectHandler.SetLastCheckpoint(_nextCheckpoint);
             SceneManager.LoadScene("BedroomTest");
         }
     }
