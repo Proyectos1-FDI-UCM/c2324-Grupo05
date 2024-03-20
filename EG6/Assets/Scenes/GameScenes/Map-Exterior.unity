@@ -22429,6 +22429,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d0782c8cf51c6c84b9e3a13709261d09, type: 3}
     - target: {fileID: 5736450015439839040, guid: 86e2b9c8b548bc542a1f41c6956e6d4a, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736450015439839040, guid: 86e2b9c8b548bc542a1f41c6956e6d4a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -44926,7 +44930,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Careful not to \nfall into the water"
+  m_text: "Careful not to \nfall into the lava"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
