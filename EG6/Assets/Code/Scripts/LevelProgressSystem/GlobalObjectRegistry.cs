@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
@@ -11,6 +12,7 @@ using Vector2 = UnityEngine.Vector2;
 /// </summary>
 public class GlobalObjectRegistry : MonoBehaviour
 {
+    
     public struct LevelState
     {
         public string SceneName;
@@ -19,6 +21,7 @@ public class GlobalObjectRegistry : MonoBehaviour
         public List<int> DestroyedObjects;
         public int CurrentCheckpointID;
         public int LastCheckpointID;
+       
 
         public LevelState(string sceneName, List<int> pickedObjects, List<int> openedDoors, List<int> destroyedObjects, int currentCheckpointID)
         {
@@ -28,6 +31,9 @@ public class GlobalObjectRegistry : MonoBehaviour
             DestroyedObjects = destroyedObjects;
             CurrentCheckpointID = currentCheckpointID;
             LastCheckpointID = CurrentCheckpointID;
+            
+           
+            
         }
     }
 
@@ -38,6 +44,7 @@ public class GlobalObjectRegistry : MonoBehaviour
 
     private void Awake()
     {
+      
         if (instance == null)
         {
             instance = this;
@@ -48,6 +55,7 @@ public class GlobalObjectRegistry : MonoBehaviour
         {
             Destroy(gameObject);
         }
+       
     }
 
     public void SaveLevelState(List<int> pickedObjectsIDs, List<int> openedDoorsIDs, List<int> destroyedObjectsIDs, int lastCheckpoint, string sceneName = null)
@@ -66,6 +74,7 @@ public class GlobalObjectRegistry : MonoBehaviour
             currentState.LastCheckpointID = lastCheckpoint;
         }
 
+        
         _levelStates.Add(currentState);
     }
 
