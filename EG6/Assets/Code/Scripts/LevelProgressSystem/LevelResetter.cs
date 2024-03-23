@@ -25,6 +25,20 @@ public class LevelResetter : MonoBehaviour
             _localObjectHandler.SaveLocalState();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        else if (collision.gameObject.GetComponent<PenguinMovement>() != null)
+        {
+            PenguinMovement penguinMovement = collision.gameObject.GetComponent<PenguinMovement>();
+            penguinMovement.MovementMode = MovementMode.Swimming;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) 
+    {
+        if (collision.gameObject.GetComponent<PenguinMovement>() != null)
+        {
+            PenguinMovement penguinMovement = collision.gameObject.GetComponent<PenguinMovement>();
+            penguinMovement.MovementMode = MovementMode.Walking;
+        }
     }
 }
 

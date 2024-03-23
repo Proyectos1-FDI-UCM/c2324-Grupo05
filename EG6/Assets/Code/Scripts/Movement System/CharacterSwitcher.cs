@@ -47,7 +47,7 @@ public class CharacterSwitcher : MonoBehaviour
             _penguinCharacterInteraction.enabled = true;
             _childCharacterInteraction.enabled = false;
 
-            _penguinPlayerMovement.MovementMode = MovementMode.PlayerControlled;
+            _penguinPlayerMovement.ControllingMode = ControllingMode.PlayerControlled;
             _isControllingChild = false;
         }
         else
@@ -61,7 +61,7 @@ public class CharacterSwitcher : MonoBehaviour
             _penguinCharacterInteraction.enabled = false;
             _childCharacterInteraction.enabled = true;
 
-            _penguinPlayerMovement.MovementMode = MovementMode.AIControlled;
+            _penguinPlayerMovement.ControllingMode = ControllingMode.AIControlled;
             _isControllingChild = true;
         }
     }

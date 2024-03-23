@@ -1,12 +1,23 @@
+using System;
+using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 
 
-public enum MovementMode
+public enum ControllingMode
 {
     PlayerControlled,
     AIControlled
+}
+
+public enum MovementMode
+{
+    Walking,
+    Swimming
 }
 
 /// <summary>
@@ -18,7 +29,14 @@ public class PenguinMovement : MovableObject
 {
     [SerializeField] private Transform _targetTransform;
     private NavMeshAgent _navMeshAgent;
-    private MovementMode _movementMode;
+    private ControllingMode _controllingMode;
+    [SerializeField] private MovementMode _movementMode;
+
+    public ControllingMode ControllingMode
+    {
+        get => _controllingMode;
+        set => _controllingMode = value;
+    }
 
     public MovementMode MovementMode
     {
@@ -38,17 +56,17 @@ public class PenguinMovement : MovableObject
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _collisionHandler = GetComponent<CollisionHandler>();
-        _movementMode = MovementMode.AIControlled;
+        _controllingMode = ControllingMode.AIControlled;
     }
 
     protected override void FixedUpdate()
     {
-        switch (_movementMode)
+        switch (_controllingMode)
         {
-            case MovementMode.PlayerControlled:
+            case ControllingMode.PlayerControlled:
                 Move(_movementDirection);
                 break;
-            case MovementMode.AIControlled:
+            case ControllingMode.AIControlled:
                 HandleAIMovement();
                 break;
         }
@@ -79,5 +97,20 @@ public class PenguinMovement : MovableObject
     public override void SetInputDirection(Vector2 direction)
     {
         _movementDirection = direction;
+    }
+
+    protected override void Move(Vector2 direction)
+    {
+        if (_movementMode == MovementMode.Walking)
+        {
+            _collisionHandler.CollisionOffset = 0.15f;
+            base.Move(direction);
+        }
+        else
+        {
+            _collisionHandler.CollisionOffset = 0.75f;
+            Vector2 newPosition = CalculateNewPosition(direction);
+            _rigidbody2D.velocity = Vector2.Lerp(_rigidbody2D.velocity, (newPosition - (Vector2)transform.position) / Time.fixedDeltaTime, 0.15f);
+        }
     }
 }

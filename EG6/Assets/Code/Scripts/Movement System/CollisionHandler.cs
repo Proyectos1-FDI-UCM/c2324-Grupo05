@@ -13,6 +13,8 @@ public class CollisionHandler : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private MovableObject _movableObject;
 
+    public float CollisionOffset { get => _collisionOffset; set => _collisionOffset = value; }
+
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();

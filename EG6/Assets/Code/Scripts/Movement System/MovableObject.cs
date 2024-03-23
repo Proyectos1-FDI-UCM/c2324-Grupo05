@@ -1,6 +1,7 @@
 using Vector2 = UnityEngine.Vector2;
 using UnityEngine;
 
+
 /// <summary>
 /// Base class for the movable objects in the game.
 /// Is used to move kinematic rigidbodies in the game.
@@ -54,7 +55,7 @@ public class MovableObject : MonoBehaviour, IMovable
         _movementDirection = direction;
     }
 
-    protected virtual void Move(Vector2 direction)
+    protected virtual Vector2 CalculateNewPosition(Vector2 direction)
     {
         Vector2 movementDirection = direction * _movementSpeed + _additionalVector;
 
@@ -73,6 +74,12 @@ public class MovableObject : MonoBehaviour, IMovable
 
         Vector2 movementVector =  movementDirection * Time.fixedDeltaTime;
         Vector2 newPosition = _rigidbody2D.position + movementVector;
+        return newPosition;
+    }
+
+    protected virtual void Move(Vector2 direction)
+    {
+        Vector2 newPosition = CalculateNewPosition(direction);
         _rigidbody2D.MovePosition(newPosition);
     }
 }
