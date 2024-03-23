@@ -10,7 +10,7 @@ using UnityEngine;
 public class CharacterInteraction : MonoBehaviour
 {
     [SerializeField] private ContactFilter2D _interactionFilter;
-    [SerializeField] private float _interactionDistance = 0.5f;
+    [SerializeField] private float _interactionDistance = 0.3f;
 
     private List<RaycastHit2D> _interactionHits = new List<RaycastHit2D>();
     private Rigidbody2D _rigidbody2D;
@@ -35,7 +35,7 @@ public class CharacterInteraction : MonoBehaviour
     {
         int hitCount = _rigidbody2D.Cast(direction, _interactionFilter, _interactionHits, _interactionDistance);
 
-        if (hitCount > 0)
+        if (hitCount == 1)
         {
             _selectedObject = _interactionHits[0].collider.gameObject.GetComponent<DestroyableObject>();
             Debug.DrawLine(transform.position, (Vector2)transform.position + direction * _interactionDistance, Color.red);

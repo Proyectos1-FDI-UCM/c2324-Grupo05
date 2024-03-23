@@ -13,7 +13,8 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 {
     [SerializeField] private int _id;
     protected int _durability = 3;
-    
+    protected bool _isSelected = false;
+
     protected LocalObjectHandler _localObjectHandler;
     protected SpriteRenderer _spriteRenderer;
     protected NavMeshSurface _navMeshSurface;
@@ -26,6 +27,18 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
         _navMeshSurface = FindObjectOfType<NavMeshSurface>();
+    }
+
+    private void Update() 
+    {
+        if (_isSelected)
+        {
+            _spriteRenderer.color = Color.red;
+        }
+        else
+        {
+            _spriteRenderer.color = Color.white;
+        }
     }
 
     public virtual void Destroy()
@@ -50,11 +63,11 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 
     public virtual void Select()
     {
-        _spriteRenderer.color = Color.red;
+        _isSelected = true;
     }
 
     public virtual void Deselect()
     {
-        _spriteRenderer.color = Color.white;
+        _isSelected = false;
     }
 }
