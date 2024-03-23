@@ -12,11 +12,11 @@ using UnityEngine.SocialPlatforms;
 public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 {
     [SerializeField] private int _id;
+    protected int _durability = 3;
+    
     protected LocalObjectHandler _localObjectHandler;
     protected SpriteRenderer _spriteRenderer;
     protected NavMeshSurface _navMeshSurface;
-    
-    [SerializeField] protected int _durability = 3;
 
     public SpriteRenderer SpriteRenderer => _spriteRenderer;
     public int ID { get => _id; }
