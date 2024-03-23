@@ -62,11 +62,11 @@ public class CharacterInteraction : MonoBehaviour
         }
     }
 
-    public void Interact()
+    public void TriggerInteraction()
     {
         if (_selectedObject != null)
         {
-            _selectedObject.Destroy();
+            _selectedObject.PerformInteraction();
         }
     }
 

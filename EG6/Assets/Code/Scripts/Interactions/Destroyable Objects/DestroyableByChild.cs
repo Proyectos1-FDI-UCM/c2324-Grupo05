@@ -16,11 +16,11 @@ public class DestroyableByChild : DestroyableObject
         _characterSwitcher = FindObjectOfType<CharacterSwitcher>();
     }
 
-    public override void Destroy()
+    public override void PerformInteraction()
     {
         if (_characterSwitcher._isControllingChild)
         {
-            base.Destroy();
+            base.PerformInteraction();
         }
         else
         {

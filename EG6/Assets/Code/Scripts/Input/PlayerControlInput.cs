@@ -31,7 +31,7 @@ public class PlayerControlInput : MonoBehaviour
 	{
 		_playerInput.Enable();
         _playerInput.Player.SwitchCharacter.performed += ctx =>  _characterSwitcher.SwitchCharacter();  
-        _playerInput.Player.Interaction.performed += ctx => _characterInteraction.Interact();
+        _playerInput.Player.Interaction.performed += ctx => _characterInteraction.TriggerInteraction();
     }
 
     private void OnDisable() 

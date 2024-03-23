@@ -6,4 +6,6 @@ using UnityEngine;
 public interface IInteractable
 {
     SpriteRenderer SpriteRenderer { get; }
+
+    void PerformInteraction();
 }

@@ -15,6 +15,8 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
     protected LocalObjectHandler _localObjectHandler;
     protected SpriteRenderer _spriteRenderer;
     protected NavMeshSurface _navMeshSurface;
+    
+    [SerializeField] protected int _durability = 3;
 
     public SpriteRenderer SpriteRenderer => _spriteRenderer;
     public int ID { get => _id; }
@@ -32,6 +34,18 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         _navMeshSurface.RemoveData();
         _navMeshSurface.BuildNavMesh();
         _localObjectHandler.DestroyedObjectsIDs.Add(ID);
+    }
+
+    public virtual void PerformInteraction()
+    {
+        if (_durability > 0)
+        {
+            _durability--;
+            if (_durability == 0)
+            {
+                Destroy();
+            }
+        }
     }
 
     public virtual void Select()
