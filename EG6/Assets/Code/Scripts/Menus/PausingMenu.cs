@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class PausingMenu : MonoBehaviour
 {
     // Block with private (or protected) _fields
-    [SerializeField] private GameObject _selectLevelMenu;
 
     // Block with public Properties {get; set;}
 
@@ -45,11 +45,6 @@ public class PausingMenu : MonoBehaviour
         gameObject.SetActive(false);
     }
     
-    public void SelectLevel()
-    {
-        _selectLevelMenu.SetActive(true);
-        gameObject.SetActive(false);
-    }
 
     public void LoadScreen()
     {
@@ -72,6 +67,15 @@ public class PausingMenu : MonoBehaviour
 
         */
 
+        
+
+    }
+    //SAVE
+
+    public void Bedroom()
+    {
+
+        SceneManager.LoadScene("BedroomTest");
 
     }
 }

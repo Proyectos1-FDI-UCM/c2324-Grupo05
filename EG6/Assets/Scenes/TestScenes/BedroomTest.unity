@@ -1616,7 +1616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088466dde4404154b9a53a683389a77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectLevelMenu: {fileID: 0}
 --- !u!114 &107754575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1804,6 +1803,10 @@ PrefabInstance:
       propertyPath: _movementSpeed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5040252584855639190, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
+      propertyPath: _pausingMenu
+      value: 
+      objectReference: {fileID: 107754574}
     - target: {fileID: 5972960083587989783, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_Size.x
       value: 0.27981576
@@ -1822,13 +1825,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972960083587989783, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.64
+      value: 0.6125
       objectReference: {fileID: 0}
     - target: {fileID: 5972960083587989783, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.28
+      value: 1.15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5040252584855639190, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1883,7 +1887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a68b1cd5dacce341b98874d7c1bea7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pausingMenu: {fileID: 0}
+  _pausingMenu: {fileID: 107754574}
   _characterInteraction: {fileID: 177625208}
 --- !u!114 &177625210 stripped
 MonoBehaviour:

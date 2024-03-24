@@ -20891,7 +20891,7 @@ Transform:
   m_GameObject: {fileID: 506923093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 122.99783, y: 0.007621765, z: -20}
+  m_LocalPosition: {x: 123.011765, y: 0.0076174736, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34211,7 +34211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d372c22d2627249b01a667351b6c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pauseMenu: {fileID: 1431053589}
 --- !u!114 &1294037983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43766,7 +43765,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088466dde4404154b9a53a683389a77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectLevelMenu: {fileID: 1294037981}
 --- !u!114 &1431053591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43982,7 +43980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5736450015439839040, guid: 86e2b9c8b548bc542a1f41c6956e6d4a, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7088193858470215140, guid: 86e2b9c8b548bc542a1f41c6956e6d4a, type: 3}
       propertyPath: _doorSwitcher
