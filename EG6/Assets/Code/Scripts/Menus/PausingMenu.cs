@@ -19,6 +19,7 @@ public class PausingMenu : MonoBehaviour
     private void Start()
     {
         gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     // MonoBehaviour update methods
@@ -75,7 +76,7 @@ public class PausingMenu : MonoBehaviour
     public void Bedroom()
     {
         Time.timeScale = 1f;
-        //SceneManager.LoadScene("BedroomTest");
+        SceneManager.LoadScene("BedroomTest");
         
     }
 }
