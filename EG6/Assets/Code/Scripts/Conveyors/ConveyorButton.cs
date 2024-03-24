@@ -21,7 +21,5 @@ public class ConveyorButton : Button
         _conveyorBelt.MovementDirection = _conveyorBelt.MovementDirection * -1;
         await Task.Delay(1000);
         buttonPressCommand.Undo();
-        
     }
-    
 }
