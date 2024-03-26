@@ -701,7 +701,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4097097710111781137, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
       propertyPath: _id
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5202073398970048748, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
       propertyPath: m_Name
@@ -33282,84 +33282,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1844651187891565230, guid: 113fad288bf44454c9e1508b4225b83d, type: 3}
   m_PrefabInstance: {fileID: 677055849}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &683782969
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1917370348}
-    m_Modifications:
-    - target: {fileID: -4097097710111781137, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: _id
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202073398970048748, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_Name
-      value: paletSnow (15)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
---- !u!4 &683782970 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-  m_PrefabInstance: {fileID: 683782969}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &696800301 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8551262978144202716, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
@@ -61960,7 +61882,6 @@ Transform:
   m_Children:
   - {fileID: 284029251}
   - {fileID: 58661896}
-  - {fileID: 683782970}
   - {fileID: 1838484095}
   - {fileID: 191914682}
   - {fileID: 1078108970}
