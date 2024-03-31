@@ -3677,26 +3677,6 @@ PrefabInstance:
       propertyPath: _id
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -4097097710111781137, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: _statesSprite.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -4097097710111781137, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: _statesSprite.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 4d1a3fe6d9cd14348b836594c3b759be, type: 3}
-    - target: {fileID: -4097097710111781137, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: _statesSprite.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: c82441ff9dc0b4645bb77fe219ed438c, type: 3}
-    - target: {fileID: -4097097710111781137, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: _statesSprite.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: b9f7d2fc0566f444890c28c2b37e1afc, type: 3}
-    - target: {fileID: -4097097710111781137, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: _statesSprite.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: c82441ff9dc0b4645bb77fe219ed438c, type: 3}
     - target: {fileID: 5202073398970048748, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
       propertyPath: m_Name
       value: paletSnow (12)
@@ -31544,11 +31524,7 @@ Transform:
   m_GameObject: {fileID: 506923093}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 126.612526, y: -4.0230002, z: -20}
-=======
-  m_LocalPosition: {x: 126.64016, y: -4.0230083, z: -20}
->>>>>>> d77719fda5013affb00c0d124cc4a5b2801092dd
+  m_LocalPosition: {x: 126.61208, y: -4.0230007, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33241,10 +33217,6 @@ PrefabInstance:
       propertyPath: _id
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: -4097097710111781137, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: _statesSprite.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5202073398970048748, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
       propertyPath: m_Name
       value: paletSnow (15)
@@ -33619,10 +33591,6 @@ PrefabInstance:
     - target: {fileID: -4097097710111781137, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
       propertyPath: _id
       value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: -4097097710111781137, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: _statesSprite.Array.size
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5202073398970048748, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
       propertyPath: m_Name
@@ -36602,7 +36570,7 @@ PrefabInstance:
       addedObject: {fileID: 1191555161}
     - targetCorrespondingSourceObject: {fileID: 2017602186203392709, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1191555171}
+      addedObject: {fileID: 1191555162}
   m_SourcePrefab: {fileID: 100100000, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
 --- !u!114 &887576954 stripped
 MonoBehaviour:
@@ -44375,7 +44343,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   _interactionDistance: 0.5
---- !u!114 &1191555171
+--- !u!114 &1191555162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
