@@ -7,5 +7,5 @@ public interface IInteractable
 {
     SpriteRenderer SpriteRenderer { get; }
 
-    void PerformInteraction();
+    void PerformInteraction(CharacterInteraction characterInteraction);
 }

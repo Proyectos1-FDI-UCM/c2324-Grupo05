@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using NavMeshPlus.Components;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
@@ -12,9 +13,10 @@ using UnityEngine.SocialPlatforms;
 public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 {
     [SerializeField] private int _id;
-    protected int _durability = 3;
+    protected int _durability = 12;
     protected bool _isSelected = false;
 
+    [SerializeField] protected Sprite[] _statesSprite = new Sprite[3];
     protected LocalObjectHandler _localObjectHandler;
     protected SpriteRenderer _spriteRenderer;
     protected NavMeshSurface _navMeshSurface;
@@ -49,12 +51,16 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         _localObjectHandler.DestroyedObjectsIDs.Add(ID);
     }
 
-    public virtual void PerformInteraction()
+    public virtual void PerformInteraction(CharacterInteraction characterInteraction)
     {
+        GameObject character = characterInteraction.gameObject;
+        CharacterDamage characterDamage = character.GetComponent<CharacterDamage>();
+
         if (_durability > 0)
         {
-            _durability--;
-            if (_durability == 0)
+            _durability-= characterDamage.Damage;
+            UpdateSprite();
+            if (_durability <= 0)
             {
                 Destroy();
             }
@@ -69,5 +75,21 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
     public virtual void Deselect()
     {
         _isSelected = false;
+    }
+
+    private void UpdateSprite()
+    {
+        if (_durability >= 12)
+        {
+            _spriteRenderer.sprite = _statesSprite[0];
+        }
+        else if (_durability >= 6)
+        {
+            _spriteRenderer.sprite = _statesSprite[1];
+        }
+        else if (_durability >= 4)
+        {
+            _spriteRenderer.sprite = _statesSprite[2];
+        }
     }
 }

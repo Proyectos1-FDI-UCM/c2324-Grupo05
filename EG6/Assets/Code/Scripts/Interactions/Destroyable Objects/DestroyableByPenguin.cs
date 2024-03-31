@@ -16,11 +16,11 @@ public class DestroyableByPenguin : DestroyableObject
         _characterSwitcher = FindObjectOfType<CharacterSwitcher>();
     }
 
-    public override void PerformInteraction()
+    public override void PerformInteraction(CharacterInteraction characterInteraction)
     {
         if (_characterSwitcher._isControllingChild == false)
         {
-            base.PerformInteraction();
+            base.PerformInteraction(characterInteraction);
         }
         else
         {

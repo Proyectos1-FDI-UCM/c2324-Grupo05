@@ -66,7 +66,7 @@ public class CharacterInteraction : MonoBehaviour
     {
         if (_selectedObject != null)
         {
-            _selectedObject.PerformInteraction();
+            _selectedObject.PerformInteraction(this);
         }
     }
 
