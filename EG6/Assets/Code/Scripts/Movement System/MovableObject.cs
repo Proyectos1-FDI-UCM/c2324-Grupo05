@@ -15,11 +15,13 @@ public class MovableObject : MonoBehaviour, IMovable
     protected CollisionHandler _collisionHandler;
     protected Vector2 _movementDirection; 
     protected Vector2 _additionalVector;
+    protected bool _isMoving = false;
 
     [SerializeField] [Range(1f, 10f)] 
     protected float _movementSpeed = 4f;
 
     public Vector2 AdditionalVector { get => _additionalVector; set => _additionalVector = value;}
+    public bool IsMoving { get => _isMoving;}
     public float MovementSpeed
     {
         get => _movementSpeed;
@@ -80,6 +82,15 @@ public class MovableObject : MonoBehaviour, IMovable
     protected virtual void Move(Vector2 direction)
     {
         Vector2 newPosition = CalculateNewPosition(direction);
-        _rigidbody2D.MovePosition(newPosition);
+
+        if (newPosition != _rigidbody2D.position)
+        {
+            _rigidbody2D.MovePosition(newPosition);
+            _isMoving = true;
+        }
+        else
+        {
+            _isMoving = false;
+        }
     }
 }
