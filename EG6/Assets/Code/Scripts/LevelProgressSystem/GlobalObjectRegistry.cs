@@ -36,6 +36,7 @@ public class GlobalObjectRegistry : MonoBehaviour
 
     private List<LevelState> _levelStates;
     public bool isPenguinUnlocked = false;
+    public int collectedPieces = 0;
 
     public static GlobalObjectRegistry instance;
     public List<LevelState> LevelStates { get => _levelStates;}

@@ -22,6 +22,7 @@ public class Piece : PickableObject
     public override void PickUp()
     {
         _counter.IncrementCount();
+        GlobalObjectRegistry.instance.collectedPieces++;
         base.PickUp();
         
     }
