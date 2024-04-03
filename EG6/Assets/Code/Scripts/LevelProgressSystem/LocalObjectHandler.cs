@@ -4,6 +4,7 @@ using SceneManager = UnityEngine.SceneManagement.SceneManager;
 using UnityEngine;
 using Unity.VisualScripting;
 using LevelState = GlobalObjectRegistry.LevelState;
+using NavMeshPlus.Components;
 
 /// <summary>
 /// This class is used to store the local state of the objects in the level
@@ -18,6 +19,7 @@ public class LocalObjectHandler : MonoBehaviour
     private List<int> _openedDoorsIDs;
     private List<int> _destroyedObjectsIDs;
     private TeleportHandler _teleporter;
+    private LevelState _levelState;
 
     public List<int> PickedObjectsIDs { get => _pickedObjectsIDs; }
     public List<int> OpenedDoorsIDs { get => _openedDoorsIDs; }
@@ -25,22 +27,27 @@ public class LocalObjectHandler : MonoBehaviour
 
     private void Awake()
     {
+        _globalObjectRegistry = GlobalObjectRegistry.instance;
+        _levelState = _globalObjectRegistry.GetLevelState(SceneManager.GetActiveScene().name);
+
         _pickedObjectsIDs = new List<int>();
         _openedDoorsIDs = new List<int>();
         _destroyedObjectsIDs = new List<int>();
         _teleporter = FindObjectOfType<TeleportHandler>();
-        _globalObjectRegistry = GlobalObjectRegistry.instance;
-        LevelState levelState = _globalObjectRegistry.GetLevelState(SceneManager.GetActiveScene().name);
-        _pickedObjectsIDs = levelState.PickedObjects;
-        _openedDoorsIDs = levelState.OpenedDoors;
-        _destroyedObjectsIDs = levelState.DestroyedObjects;
-        SetLastCheckpoint(_teleporter.AllCheckpoints[levelState.CurrentCheckpointID]);
+        _pickedObjectsIDs = _levelState.PickedObjects;
+        _openedDoorsIDs = _levelState.OpenedDoors;
+        _destroyedObjectsIDs = _levelState.DestroyedObjects;
+
+        SetLastCheckpoint(_teleporter.AllCheckpoints[_levelState.CurrentCheckpointID]);
     }
 
     private void Start() 
     {
         DisableObjects();
         _teleporter.TeleportCharactersToLastCheckpoint(_lastCheckpoint.CheckpointID);
+        NavMeshSurface navMeshSurface = FindObjectOfType<NavMeshSurface>();
+        navMeshSurface.RemoveData();
+        navMeshSurface.BuildNavMesh();
     }
 
     private void DisableObjects()
@@ -48,6 +55,11 @@ public class LocalObjectHandler : MonoBehaviour
         PickableObject[] pickableObjects = FindObjectsOfType<PickableObject>();
         DestroyableObject[] destroyableObjects = FindObjectsOfType<DestroyableObject>();
         DoorSwitcher[] doors = FindObjectsOfType<DoorSwitcher>();
+
+        if (_globalObjectRegistry.isPenguinUnlocked == false)
+        {
+            FindObjectOfType<PenguinMovement>().gameObject.SetActive(false);
+        }
 
         foreach (PickableObject pickableObject in pickableObjects)
         {

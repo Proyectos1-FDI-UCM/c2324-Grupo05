@@ -34,6 +34,7 @@ public class Egg : PickableObject
             DontDestroyOnLoad(gameObject);
             
             _localObjectHandler.SetLastCheckpoint(_nextCheckpoint);
+            GlobalObjectRegistry.instance.isPenguinUnlocked = true;
             SceneManager.LoadScene("BedroomTest");
         }
     }

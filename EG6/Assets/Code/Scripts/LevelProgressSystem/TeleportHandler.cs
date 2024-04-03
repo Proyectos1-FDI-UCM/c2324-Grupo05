@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TeleportHandler : MonoBehaviour
 {
@@ -13,7 +14,12 @@ public class TeleportHandler : MonoBehaviour
 
     public void TeleportCharactersToLastCheckpoint(int checkpointIndex)
     {
-        _penguin.position = _allCheckpoints[checkpointIndex].transform.position;
-        _child.position = _allCheckpoints[checkpointIndex].transform.position;
+        if (GlobalObjectRegistry.instance.isPenguinUnlocked == true)
+        {
+            _penguin.GetComponent<NavMeshAgent>().Warp(_allCheckpoints[checkpointIndex].transform.position);
+            _child.position = _allCheckpoints[checkpointIndex].transform.position + new Vector3(0, 1, 0);
+        }
+        _penguin.GetComponent<NavMeshAgent>().Warp(_allCheckpoints[checkpointIndex].transform.position);
+        _child.position = _allCheckpoints[checkpointIndex].transform.position + new Vector3(0, 1, 0);
     }
 }

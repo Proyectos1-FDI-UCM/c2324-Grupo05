@@ -36,6 +36,11 @@ public class CharacterSwitcher : MonoBehaviour
 
     public void SwitchCharacter()
     {
+        if (GlobalObjectRegistry.instance.isPenguinUnlocked == false)
+        {
+            return;
+        }
+
         if (_isControllingChild)
         {
             _childPlayerMovement.enabled = false;

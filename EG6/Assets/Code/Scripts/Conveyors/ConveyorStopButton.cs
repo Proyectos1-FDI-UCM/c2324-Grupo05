@@ -29,12 +29,10 @@ public class ConveyorStopButton : Button
         if (_collider.enabled == true)
         {
             _collider.enabled = false;
-            Debug.Log("Conveyor belt is stopped");
         }
         else
         {
             _collider.enabled = true;
-            Debug.Log("Conveyor belt is moving");
         }
 
         //_conveyorBelt.MovementDirection = _conveyorBelt.MovementDirection * -1;

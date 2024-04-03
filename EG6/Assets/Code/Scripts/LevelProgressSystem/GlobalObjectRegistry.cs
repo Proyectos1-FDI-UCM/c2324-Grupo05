@@ -31,13 +31,11 @@ public class GlobalObjectRegistry : MonoBehaviour
             DestroyedObjects = destroyedObjects;
             CurrentCheckpointID = currentCheckpointID;
             LastCheckpointID = CurrentCheckpointID;
-            
-           
-            
         }
     }
 
     private List<LevelState> _levelStates;
+    public bool isPenguinUnlocked = false;
 
     public static GlobalObjectRegistry instance;
     public List<LevelState> LevelStates { get => _levelStates;}
