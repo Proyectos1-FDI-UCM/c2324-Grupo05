@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
@@ -8,36 +7,36 @@ using UnityEngine.SceneManagement;
 public class TimelineController : MonoBehaviour
 {
     //reference to saved file
-    [SerializeField] GameObject[] cinemáticas; // Arreglo para almacenar las cinemáticas
+    [SerializeField] GameObject[] cinematicas; // Arreglo para almacenar las cinemï¿½ticas
     [SerializeField] GameObject _menu;
-    private int cinemáticaActual = -1; // Índice de la cinemática actual (-1 significa que ninguna está siendo reproducida)
+    private int cinematicaActual = -1; // ï¿½ndice de la cinemï¿½tica actual (-1 significa que ninguna estï¿½ siendo reproducida)
 
     void Start()
     {
         _menu.SetActive(true);
-        // Desactiva todas las cinemáticas al inicio
-        foreach (GameObject cinemática in cinemáticas)
+        // Desactiva todas las cinemï¿½ticas al inicio
+        foreach (GameObject cinematica in cinematicas)
         {
-            cinemática.SetActive(false);
+            cinematica.SetActive(false);
         }
     }
 
-    // Método para iniciar una cinemática específica
-    public void IniciarCinemática(int índice)
+    // Mï¿½todo para iniciar una cinemï¿½tica especï¿½fica
+    public void IniciarCinematica(int indice)
     {
-        // Si hay una cinemática reproduciéndose, la detenemos
-        if (cinemáticaActual != -1)
+        // Si hay una cinemï¿½tica reproduciï¿½ndose, la detenemos
+        if (cinematicaActual != -1)
         {
-            cinemáticas[cinemáticaActual].SetActive(false);
+            cinematicas[cinematicaActual].SetActive(false);
         }
 
-        // Activamos la nueva cinemática
+        // Activamos la nueva cinemï¿½tica
         _menu.SetActive(false);
-        cinemáticaActual = índice;
-        cinemáticas[índice].SetActive(true);
+        cinematicaActual = indice;
+        cinematicas[indice].SetActive(true);
     }
 
-    // Método para cambiar de escena
+    // Mï¿½todo para cambiar de escena
     public void CambiarEscena()
     {
         SceneManager.LoadScene("BedroomTest");

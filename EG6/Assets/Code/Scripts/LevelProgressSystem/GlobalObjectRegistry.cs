@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
-using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
@@ -35,11 +35,11 @@ public class GlobalObjectRegistry : MonoBehaviour
     }
 
     private List<LevelState> _levelStates;
-    public bool isPenguinUnlocked = false;
-    public int collectedPieces = 0;
 
     public static GlobalObjectRegistry instance;
-    public List<LevelState> LevelStates { get => _levelStates;}
+    public List<LevelState> LevelStates { get => _levelStates; set => _levelStates = value;}
+    public bool isPenguinUnlocked = false;
+    public int collectedPieces = 0;
 
     private void Awake()
     {
@@ -75,6 +75,8 @@ public class GlobalObjectRegistry : MonoBehaviour
 
         
         _levelStates.Add(currentState);
+
+        GetComponent<SavesManager>().SaveToFile();
     }
 
 

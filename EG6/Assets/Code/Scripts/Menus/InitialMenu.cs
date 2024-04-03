@@ -53,7 +53,7 @@ public class InitialMenu : MonoBehaviour
     {
         if (Application.isEditor)
         {
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
         }
         else
         {
