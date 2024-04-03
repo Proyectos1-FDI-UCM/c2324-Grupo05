@@ -11,9 +11,7 @@ public class IceDespawner : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<MovableObject>()!= null)
         {
-
             Destroy(collision.gameObject);
-        
         }
     }
 }

@@ -29,6 +29,7 @@ public class LevelResetter : MonoBehaviour
         {
             PenguinMovement penguinMovement = collision.gameObject.GetComponent<PenguinMovement>();
             penguinMovement.MovementMode = MovementMode.Swimming;
+            penguinMovement.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
 
@@ -38,6 +39,7 @@ public class LevelResetter : MonoBehaviour
         {
             PenguinMovement penguinMovement = collision.gameObject.GetComponent<PenguinMovement>();
             penguinMovement.MovementMode = MovementMode.Walking;
+            penguinMovement.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
 }
