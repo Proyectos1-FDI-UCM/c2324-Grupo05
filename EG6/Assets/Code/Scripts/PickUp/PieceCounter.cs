@@ -36,7 +36,6 @@ public class PieceCounter : MonoBehaviour, ICounter
     {
         Debug.Log("llega");
         _collectedPieceCount ++;
-        PlayerPrefs.SetInt("pieza", _collectedPieceCount);
         Debug.Log("Piece acquired" + _collectedPieceCount);
         _pieceText.text = "" + _collectedPieceCount;
     }
