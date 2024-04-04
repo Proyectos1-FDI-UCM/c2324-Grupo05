@@ -7,37 +7,39 @@ using UnityEngine.SceneManagement;
 public class TimelineController : MonoBehaviour
 {
     //reference to saved file
-    [SerializeField] GameObject[] cinematicas; // Arreglo para almacenar las cinem�ticas
-    [SerializeField] GameObject _menu;
-    private int cinematicaActual = -1; // �ndice de la cinem�tica actual (-1 significa que ninguna est� siendo reproducida)
+    private int _piece;
+    [SerializeField] private GameObject[] _timelines; // Array to store all timelines
+    private int _currentTimeline = -1; // index of current timeline (-1 is no timeline)
 
     void Start()
     {
-        _menu.SetActive(true);
-        // Desactiva todas las cinem�ticas al inicio
-        foreach (GameObject cinematica in cinematicas)
+        // All timelines stop
+        foreach (GameObject timeline in _timelines)
         {
-            cinematica.SetActive(false);
+            timeline.SetActive(false);
         }
+
+        _piece = PlayerPrefs.GetInt("pieza");
+        StartTimeline();
+
     }
 
-    // M�todo para iniciar una cinem�tica espec�fica
-    public void IniciarCinematica(int indice)
+    
+    public void StartTimeline()
     {
-        // Si hay una cinem�tica reproduci�ndose, la detenemos
-        if (cinematicaActual != -1)
+        // If there's a timeline playing we stop it
+        if (_currentTimeline != -1)
         {
-            cinematicas[cinematicaActual].SetActive(false);
+            _timelines[_currentTimeline].SetActive(false);
         }
 
-        // Activamos la nueva cinem�tica
-        _menu.SetActive(false);
-        cinematicaActual = indice;
-        cinematicas[indice].SetActive(true);
+        // Start new timeline
+        _currentTimeline = _piece;
+        _timelines[_piece].SetActive(true);
     }
 
-    // M�todo para cambiar de escena
-    public void CambiarEscena()
+    //Is called at the end of each timeline (animation event)
+    public void ChangeScene()
     {
         SceneManager.LoadScene("BedroomTest");
     }

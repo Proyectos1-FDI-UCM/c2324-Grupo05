@@ -15,7 +15,10 @@ public class Piece : PickableObject
         {
             PickUp();
             _localObjectHandler.SaveLocalState();
-            SceneManager.LoadScene("BedroomTest");
+
+            SceneManager.LoadScene("Cinematica");
+
+            //SceneManager.LoadScene("BedroomTest");
         }
     }
 

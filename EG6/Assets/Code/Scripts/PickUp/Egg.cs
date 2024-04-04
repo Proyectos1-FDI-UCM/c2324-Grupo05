@@ -35,7 +35,8 @@ public class Egg : PickableObject
             
             _localObjectHandler.SetLastCheckpoint(_nextCheckpoint);
             GlobalObjectRegistry.instance.isPenguinUnlocked = true;
-            SceneManager.LoadScene("BedroomTest");
+            SceneManager.LoadScene("Cinematica");
+            //SceneManager.LoadScene("BedroomTest");
         }
     }
 
