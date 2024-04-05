@@ -5,17 +5,14 @@ using UnityEngine;
 public class SpawnPiece : MonoBehaviour
 {
     [SerializeField] GameObject _piece;
-    private void Awake()
-    {
-        _piece.SetActive(false);
-    }
+    public int _pieces;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
-        { 
-        
-            _piece.SetActive(true);
-        
+        {
+            
+                _piece.GetComponent<MovableObject>().enabled = true;
         }
     }
 }

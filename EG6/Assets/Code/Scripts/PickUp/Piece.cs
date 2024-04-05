@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Piece : PickableObject
 {
     [SerializeField] private PieceCounter _counter;
+    [SerializeField] private Checkpoint _nextCheckpoint;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,6 +26,7 @@ public class Piece : PickableObject
     public override void PickUp()
     {
         _counter.IncrementCount();
+        _localObjectHandler.SetLastCheckpoint(_nextCheckpoint);
         GlobalObjectRegistry.instance.collectedPieces++;
         base.PickUp();
         

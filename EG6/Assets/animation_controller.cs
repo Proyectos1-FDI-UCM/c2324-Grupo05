@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class animation_controller : MonoBehaviour
 {
-    // Block with custom classes or structures
-
-    // Block with private (or protected) _fields
-
-    // Block with public Properties {get; set;}
-
-    // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
-    public GameObject ChildMovement;
-    private ChildMovement _Child;
+    
+    private ChildMovement _child;
+    private Animator _animator;
     private void Awake()
     {
 
@@ -21,22 +15,20 @@ public class animation_controller : MonoBehaviour
     private Animation anim;
     private void Start()
     {
-        anim = gameObject.GetComponent<Animation>();
-        _Child = gameObject.GetComponent<ChildMovement>();
+        //anim = gameObject.GetComponent<Animation>();
+        _animator = gameObject.GetComponent<Animator>();
+        _child = gameObject.GetComponent<ChildMovement>();
     }
 
     // MonoBehaviour update methods
     private void Update()
     {
-        if (anim.isPlaying)
-        {
-            return;
-        }
-        if (_Child.IsMoving & _Child.MovementDirection.x > 0 & _Child.MovementDirection.y > 0)
-        {
-            anim.Play("WFront_kid");
-        }
-
+    
+            _animator.SetBool("isMoving",_child.IsMoving);
+            _animator.SetFloat("xDirection", _child.MovementDirection.x );
+            _animator.SetFloat("yDirection", _child.MovementDirection.y );
+      
+       
     }
     // Block with custom private Methods 
 

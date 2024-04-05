@@ -46,17 +46,7 @@ public class PiecesBedrooom : MonoBehaviour
 
 
     }
-    private void ClickYes()
-    {
-        //desbloquear cinematica
-
-    }
-
-    private void ClickNo()
-    {
-        _SegirJugando.SetActive(false);
-
-    }
+   
 
 }
    
