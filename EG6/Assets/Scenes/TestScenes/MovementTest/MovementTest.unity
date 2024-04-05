@@ -545,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 54540830}
     - target: {fileID: 4053522191386273628, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
       propertyPath: m_Name
-      value: Conveyor Button
+      value: Stop Botton
       objectReference: {fileID: 0}
     - target: {fileID: 6312132761764612965, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -586,6 +586,18 @@ PrefabInstance:
     - target: {fileID: 6312132761764612965, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773700976419476009, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773700976419476009, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773700976419476009, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4745098
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3381649999389648559, guid: 583a51d284ca8884fad3f7b81d5f1ce3, type: 3}
@@ -932,7 +944,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.11666667
+  m_VoxelSize: 0.1
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: ca8f17448ae2b61428bbde13a22eb040, type: 2}
