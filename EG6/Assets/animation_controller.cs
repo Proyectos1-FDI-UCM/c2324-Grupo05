@@ -32,7 +32,10 @@ public class animation_controller : MonoBehaviour
                  float xDir = _child.MovementDirection.x   ;
                  float yDir = _child.MovementDirection.y  ;
             }
-      
+            else {
+                 _animator.SetFloat("xDirection", xDir );
+                _animator.SetFloat("yDirection", yDir );
+            }
       
        
     }
