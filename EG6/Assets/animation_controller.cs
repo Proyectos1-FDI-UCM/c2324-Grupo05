@@ -7,8 +7,8 @@ public class animation_controller : MonoBehaviour
     
     private ChildMovement _child;
     private Animator _animator;
-    float xDir;
-    float yDir;
+    public float xDir;
+    public float yDir;
     private void Awake()
     {
 
@@ -30,16 +30,16 @@ public class animation_controller : MonoBehaviour
     
             _animator.SetBool("isMoving",_child.IsMoving);
             if (_child.IsMoving) {
-                _animator.SetFloat("xDirection", _child.MovementDirection.x );
-                _animator.SetFloat("yDirection", _child.MovementDirection.y );
+                //_animator.SetFloat("xDirection", _child.MovementDirection.x );
+                //_animator.SetFloat("yDirection", _child.MovementDirection.y );
                 //save last direction 
                  xDir = _child.MovementDirection.x   ;
                  yDir = _child.MovementDirection.y  ;
             }
-            else {
-                 _animator.SetFloat("xDirection", xDir );
+            
+                _animator.SetFloat("xDirection", xDir );
                 _animator.SetFloat("yDirection", yDir );
-            }
+            
       
        
     }
