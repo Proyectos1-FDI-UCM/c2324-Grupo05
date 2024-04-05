@@ -7,6 +7,8 @@ public class animation_controller : MonoBehaviour
     
     private ChildMovement _child;
     private Animator _animator;
+    float xDir;
+    float yDir;
     private void Awake()
     {
 
@@ -18,6 +20,8 @@ public class animation_controller : MonoBehaviour
         //anim = gameObject.GetComponent<Animation>();
         _animator = gameObject.GetComponent<Animator>();
         _child = gameObject.GetComponent<ChildMovement>();
+         float xDir = 0;
+         float yDir = 0;
     }
 
     // MonoBehaviour update methods
@@ -29,8 +33,8 @@ public class animation_controller : MonoBehaviour
                 _animator.SetFloat("xDirection", _child.MovementDirection.x );
                 _animator.SetFloat("yDirection", _child.MovementDirection.y );
                 //save last direction 
-                 float xDir = _child.MovementDirection.x   ;
-                 float yDir = _child.MovementDirection.y  ;
+                 xDir = _child.MovementDirection.x   ;
+                 yDir = _child.MovementDirection.y  ;
             }
             else {
                  _animator.SetFloat("xDirection", xDir );
