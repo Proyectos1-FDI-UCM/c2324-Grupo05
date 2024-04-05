@@ -24,9 +24,9 @@ public class animation_controller : MonoBehaviour
     private void Update()
     {
     
-            _animator.SetBool("isMoving",_child.IsMoving)
-            _animator.SetInteger("xDirection", _child.MovementDirection.x )
-            _animator.SetInteger("yDirection", _child.MovementDirection.y )
+            _animator.SetBool("isMoving",_child.IsMoving);
+            _animator.SetInteger("xDirection", _child.MovementDirection.x );
+            _animator.SetInteger("yDirection", _child.MovementDirection.y );
       
        
     }
