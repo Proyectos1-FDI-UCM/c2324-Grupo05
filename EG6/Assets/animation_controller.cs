@@ -15,7 +15,7 @@ public class animation_controller : MonoBehaviour
     private Animation anim;
     private void Start()
     {
-        anim = gameObject.GetComponent<Animation>();
+        //anim = gameObject.GetComponent<Animation>();
         _animator = gameObject.GetComponent<Animator>();
         _child = gameObject.GetComponent<ChildMovement>();
     }
@@ -25,8 +25,8 @@ public class animation_controller : MonoBehaviour
     {
     
             _animator.SetBool("isMoving",_child.IsMoving);
-            _animator.SetInteger("xDirection", _child.MovementDirection.x );
-            _animator.SetInteger("yDirection", _child.MovementDirection.y );
+            _animator.SetFloat("xDirection", _child.MovementDirection.x );
+            _animator.SetFloat("yDirection", _child.MovementDirection.y );
       
        
     }
