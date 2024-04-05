@@ -28,8 +28,11 @@ public class animation_controller : MonoBehaviour
             if (_child.IsMoving) {
                 _animator.SetFloat("xDirection", _child.MovementDirection.x );
                 _animator.SetFloat("yDirection", _child.MovementDirection.y );
+                //save last direction 
+                 float xDir = _child.MovementDirection.x   ;
+                 float yDir = _child.MovementDirection.y  ;
             }
-           
+      
       
        
     }
