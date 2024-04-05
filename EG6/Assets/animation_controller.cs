@@ -25,8 +25,11 @@ public class animation_controller : MonoBehaviour
     {
     
             _animator.SetBool("isMoving",_child.IsMoving);
-            _animator.SetFloat("xDirection", _child.MovementDirection.x );
-            _animator.SetFloat("yDirection", _child.MovementDirection.y );
+            if (_child.IsMoving) {
+                _animator.SetFloat("xDirection", _child.MovementDirection.x );
+                _animator.SetFloat("yDirection", _child.MovementDirection.y );
+            }
+           
       
        
     }
