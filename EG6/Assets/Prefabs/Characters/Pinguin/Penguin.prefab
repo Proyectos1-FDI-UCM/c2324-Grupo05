@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4464196603729231779}
   - component: {fileID: 1195475180974465958}
   - component: {fileID: 3781648841255750834}
+  - component: {fileID: 298535117562169273}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Untagged
@@ -271,6 +272,7 @@ MonoBehaviour:
   _maxIterations: 2
   _movementSpeed: 4
   _targetTransform: {fileID: 0}
+  _movementMode: 0
 --- !u!114 &1195475180974465958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,3 +321,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &298535117562169273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390498169718599313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5caa0ae2760824d8b3106181e7afc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 4
