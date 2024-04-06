@@ -41,6 +41,8 @@ public class TimelineController : MonoBehaviour
     //Is called at the end of each timeline (animation event)
     public void ChangeScene()
     {
+        _timelines[_currentTimeline].SetActive(false);
         SceneManager.LoadScene("BedroomTest");
     }
+
 }
