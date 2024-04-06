@@ -12,7 +12,7 @@ public class Piece : PickableObject
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<ChildMovement>() != null)
+        if (collision.gameObject.GetComponent<ChildMovement>() != null || collision.gameObject.GetComponent<PenguinMovement>() != null)
         {
             PickUp();
             _localObjectHandler.SaveLocalState();
