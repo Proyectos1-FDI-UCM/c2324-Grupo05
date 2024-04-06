@@ -18,9 +18,9 @@ public class ConveyorBeltAnimator : MonoBehaviour
 
     private void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+       _spriteRenderer = GetComponent<SpriteRenderer>();
 
+    }
     // MonoBehaviour update methods
     private void Update()
     {
@@ -33,16 +33,20 @@ public class ConveyorBeltAnimator : MonoBehaviour
     public void RotateSprite()
     {   
         
-       // if (_spriteRenderer != null)
-        {
-            Vector3 currentScale = _spriteRenderer.transform.localScale;
+       if (gameObject.CompareTag("A")) //verificar si tiene la etiqueta
+       {
+            Vector3 currentScale = _spriteRenderer.transform.localScale;   //rotar el objeto en vertical
+            currentScale.y *= -1;
+            _spriteRenderer.transform.localScale = currentScale;
+
+       }
+       else
+       {
+            Vector3 currentScale = _spriteRenderer.transform.localScale;     //rotar el objeto en horizontal
             currentScale.x *= -1;
             _spriteRenderer.transform.localScale = currentScale;
-        }
-       // else
-       // {
 
-      //  }
+       }
         
     }
 }
