@@ -31,12 +31,18 @@ public class ConveyorBeltAnimator : MonoBehaviour
 
     // Block with custom public Methods (with summary if it has complex logic)
     public void RotateSprite()
-    {    
+    {   
+        
+       // if (_spriteRenderer != null)
         {
             Vector3 currentScale = _spriteRenderer.transform.localScale;
             currentScale.x *= -1;
             _spriteRenderer.transform.localScale = currentScale;
         }
+       // else
+       // {
+
+      //  }
         
     }
 }
