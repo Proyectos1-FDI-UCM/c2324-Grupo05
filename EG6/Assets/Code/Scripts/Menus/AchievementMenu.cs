@@ -12,12 +12,12 @@ public class AchievementMenu : MonoBehaviour
     [SerializeField] private float _time = 4f;
 
 
-    public int _piece;
+   
     public int _pCounter;
 
     private void Start()
     {
-        _piece = PlayerPrefs.GetInt("pieza");
+        
         foreach (GameObject phrase in _decodePhrases)
         {
             phrase.SetActive(false);
@@ -38,7 +38,7 @@ public class AchievementMenu : MonoBehaviour
 
     public void ShowEggPhrase()
     {
-        if (_piece >= 0) //&& egg adquired
+        if (GlobalObjectRegistry.instance.collectedPieces >= 0) //egg picked
         {
             _pCounter = 0;
             _decodeNumbers.SetActive(false);
@@ -54,7 +54,7 @@ public class AchievementMenu : MonoBehaviour
 
     public void ShowFirstPiece()
     {
-        if (_piece >= 1)
+        if (GlobalObjectRegistry.instance.collectedPieces >= 1)
         {
             _pCounter = 1;
             _decodeNumbers.SetActive(false);
@@ -70,7 +70,7 @@ public class AchievementMenu : MonoBehaviour
 
     public void ShowSecondPiece()
     {
-        if (_piece >= 2)
+        if (GlobalObjectRegistry.instance.collectedPieces >= 2)
         {
             _pCounter = 2;
             _decodeNumbers.SetActive(false);
@@ -87,7 +87,7 @@ public class AchievementMenu : MonoBehaviour
 
     public void ShowThirdPiece()
     {
-        if (_piece >= 3)
+        if (GlobalObjectRegistry.instance.collectedPieces >= 3)
         {
             _pCounter = 3;
             _decodeNumbers.SetActive(false);

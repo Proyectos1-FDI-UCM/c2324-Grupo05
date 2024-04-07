@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PiecesBedrooom : MonoBehaviour
 {
-    private int _piece;
+    
     [SerializeField] private GameObject _SegirJugando;
     [SerializeField] private GameObject _NoDesbloqueado;
     [SerializeField] private float _time= 4f;
@@ -18,8 +18,6 @@ public class PiecesBedrooom : MonoBehaviour
 
 private void Start()
     {
-        _piece = PlayerPrefs.GetInt("pieza");
-        Debug.Log("piezas" + _piece);
         _SegirJugando.SetActive(false);
         _NoDesbloqueado.SetActive(false);
     }
@@ -29,7 +27,7 @@ private void Start()
         if (collision.gameObject.GetComponent<ChildMovement>() != null) 
         {
             Sonido.Play();
-            if (_piece == 2) 
+            if (GlobalObjectRegistry.instance.collectedPieces == 2) 
             {
                 _SegirJugando.SetActive(true);
                 Debug.Log("Segir Jugando?");
