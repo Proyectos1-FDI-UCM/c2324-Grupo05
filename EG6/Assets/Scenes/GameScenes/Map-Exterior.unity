@@ -3021,10 +3021,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 168954326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1001 &173937390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6635,10 +6635,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 309515469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1001 &324795161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32491,7 +32491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 447950013}
   - component: {fileID: 447950015}
-  - component: {fileID: 447950014}
+  - component: {fileID: 447950016}
   m_Layer: 0
   m_Name: Water collider (2)
   m_TagString: Untagged
@@ -32514,18 +32514,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1001186596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &447950014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447950012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &447950015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32571,6 +32559,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &447950016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447950012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be013e4b0bbdf74588d3be5b1b98158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _retryPanel: {fileID: 192869588}
 --- !u!1001 &449906608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33338,10 +33339,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 482821796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1001 &487736586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40970,10 +40971,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 864258625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1 &869418269
 GameObject:
   m_ObjectHideFlags: 0
@@ -42036,10 +42037,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 929548757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1001 &939200340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64707,10 +64708,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1474545290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1 &1476299526
 GameObject:
   m_ObjectHideFlags: 0
@@ -66555,10 +66556,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1534645807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1 &1536131314
 GameObject:
   m_ObjectHideFlags: 0
@@ -66864,7 +66865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1540939085}
   - component: {fileID: 1540939087}
-  - component: {fileID: 1540939086}
+  - component: {fileID: 1540939088}
   m_Layer: 0
   m_Name: Water collider
   m_TagString: Untagged
@@ -66887,18 +66888,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1001186596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1540939086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540939084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1540939087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66944,6 +66933,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1540939088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540939084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be013e4b0bbdf74588d3be5b1b98158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _retryPanel: {fileID: 192869588}
 --- !u!1001 &1551765152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67196,10 +67198,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1571827940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1001 &1573155556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71635,7 +71637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845716774}
   - component: {fileID: 1845716776}
-  - component: {fileID: 1845716775}
+  - component: {fileID: 1845716777}
   m_Layer: 0
   m_Name: Water collider (1)
   m_TagString: Untagged
@@ -71658,18 +71660,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1001186596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1845716775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845716773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1845716776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -71715,6 +71705,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1845716777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845716773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be013e4b0bbdf74588d3be5b1b98158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _retryPanel: {fileID: 192869588}
 --- !u!1001 &1848074490
 PrefabInstance:
   m_ObjectHideFlags: 0
