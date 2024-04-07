@@ -35,7 +35,7 @@ public class Egg : PickableObject
             DontDestroyOnLoad(gameObject);
             
             _localObjectHandler.SetLastCheckpoint(_nextCheckpoint);
-            GlobalObjectRegistry.instance.isPenguinUnlocked = true;
+            
             _transitionScene.ChangeScene(true);
             //SceneManager.LoadScene("Cinematica");
         }
@@ -45,6 +45,7 @@ public class Egg : PickableObject
     {
         PlayerPrefs.SetInt("pieza", 0);
         _nEgg++;
+        GlobalObjectRegistry.instance.isEggPicked = true;
         PlayerPrefs.SetInt("huevo", _nEgg);
         base.PickUp(); // base. is used to call method PickUp from PickableObject class and then execute additional code below
         

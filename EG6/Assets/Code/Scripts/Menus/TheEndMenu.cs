@@ -8,6 +8,7 @@ public class TheEndMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+
     }
 
     public void BacktoInitialMenu()
