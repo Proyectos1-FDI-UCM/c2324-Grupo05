@@ -34,10 +34,10 @@ public class PieceCounter : MonoBehaviour, ICounter
 
     public void IncrementCount()
     {
-        PlayerPrefs.SetInt("pieza", _collectedPieceCount);
+        
         Debug.Log("llega");
         _collectedPieceCount ++;
-       
+        PlayerPrefs.SetInt("pieza", _collectedPieceCount);
         Debug.Log("Piece acquired" + _collectedPieceCount);
         _pieceText.text = "" + _collectedPieceCount;
     }
