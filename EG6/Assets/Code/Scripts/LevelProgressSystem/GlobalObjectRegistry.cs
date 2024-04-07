@@ -5,6 +5,7 @@ using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
+using SceneManager = UnityEngine.SceneManagement.SceneManager;
 
 /// <summary>
 /// This class is used to store the state of the objects in the game between the scenes (on each level).
@@ -46,7 +47,6 @@ public class GlobalObjectRegistry : MonoBehaviour
 
     private void Awake()
     {
-      
         if (instance == null)
         {
             instance = this;
@@ -57,7 +57,11 @@ public class GlobalObjectRegistry : MonoBehaviour
         {
             Destroy(gameObject);
         }
-       
+    }
+
+    private void Start() 
+    {
+        GetComponent<SavesManager>().LoadGame();
     }
 
     public void SaveLevelState(List<int> pickedObjectsIDs, List<int> openedDoorsIDs, List<int> destroyedObjectsIDs, int lastCheckpoint, string sceneName = null)
@@ -79,7 +83,7 @@ public class GlobalObjectRegistry : MonoBehaviour
         
         _levelStates.Add(currentState);
 
-        GetComponent<SavesManager>().SaveToFile();
+        GetComponent<SavesManager>().SaveGame();
     }
 
 
@@ -94,5 +98,16 @@ public class GlobalObjectRegistry : MonoBehaviour
             }
         }
         return new LevelState(sceneName, new List<int>(), new List<int>(), new List<int>(), 0);
+    }
+
+    public void StartNewGame()
+    {
+        _levelStates.Clear();
+        isPenguinUnlocked = false;
+        isEggPicked = false;
+        collectedPieces = 0;
+        collectedTrash = 0;
+        GetComponent<SavesManager>().SaveGame();
+        SceneManager.LoadScene("Map-Exterior");
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using System.Linq;
 
+
 public class SavesManager : MonoBehaviour
 {
 
@@ -12,7 +13,9 @@ public class SavesManager : MonoBehaviour
     {
         public List<GlobalObjectRegistry.LevelState> LevelStates;
         public bool IsPenguinUnlocked;
+        public bool IsEggPicked;
         public int CollectedPieces;
+        public int CollectedTrash;
     }
 
     private GlobalObjectRegistry _globalObjectRegistry;
@@ -22,47 +25,50 @@ public class SavesManager : MonoBehaviour
         _globalObjectRegistry = GlobalObjectRegistry.instance;
     }
 
-    public void SaveToFile()
+    public void SaveGame()
     {
-        // Создаем объект для сериализации данных
         SavedData savedData = new SavedData
         {
             IsPenguinUnlocked = _globalObjectRegistry.isPenguinUnlocked,
-            CollectedPieces = _globalObjectRegistry.collectedPieces
+            IsEggPicked = _globalObjectRegistry.isEggPicked,
+            CollectedPieces = _globalObjectRegistry.collectedPieces,
+            CollectedTrash = _globalObjectRegistry.collectedTrash,
         };
 
-        string jsonLevelStates = "";
-        foreach (GlobalObjectRegistry.LevelState levelState in _globalObjectRegistry.LevelStates)
+        List<GlobalObjectRegistry.LevelState> levelStates = _globalObjectRegistry.LevelStates;
+
+        foreach (GlobalObjectRegistry.LevelState levelState in levelStates)
         {
-            jsonLevelStates = JsonUtility.ToJson(levelState);
+            string jsonLevelState = JsonUtility.ToJson(levelState);
+            File.WriteAllText(Path.Combine(Application.dataPath, $"LevelSaves/{levelState.SceneName}.json"), jsonLevelState);
         }
+
 
         string jsonGlobalData = JsonUtility.ToJson(savedData);
-
-        // Записываем JSON в файл
         File.WriteAllText(Path.Combine(Application.dataPath, "GlobalData.json"), jsonGlobalData);
-        File.WriteAllText(Path.Combine(Application.dataPath, "LevelStates.json"), jsonLevelStates);
     }
 
-    // Метод для чтения информации из файла и установки значений
-    public void LoadFromFile(string filePath)
+    public void LoadGame()
     {
-        if (File.Exists(filePath))
+        string globalDataPath = Path.Combine(Application.dataPath, "GlobalData.json");
+        string levelStatesFolderPath = Path.Combine(Application.dataPath, "LevelSaves/");
+        if (File.Exists(globalDataPath))
         {
-            // Читаем JSON из файла
-            string json = File.ReadAllText(filePath);
+            string json = File.ReadAllText(globalDataPath);
 
-            // Десериализуем JSON в объект SavedData
             SavedData savedData = JsonUtility.FromJson<SavedData>(json);
 
-            // Устанавливаем значения из сохраненных данных
-            _globalObjectRegistry.LevelStates = savedData.LevelStates;
             _globalObjectRegistry.isPenguinUnlocked = savedData.IsPenguinUnlocked;
+            _globalObjectRegistry.isEggPicked = savedData.IsEggPicked;
             _globalObjectRegistry.collectedPieces = savedData.CollectedPieces;
+            _globalObjectRegistry.collectedTrash = savedData.CollectedTrash;
         }
-        else
+
+        foreach (string filePath in Directory.GetFiles(levelStatesFolderPath))
         {
-            Debug.LogWarning("File not found: " + filePath);
+            string json = File.ReadAllText(filePath);
+            GlobalObjectRegistry.LevelState levelState = JsonUtility.FromJson<GlobalObjectRegistry.LevelState>(json);
+            _globalObjectRegistry.LevelStates.Add(levelState);
         }
     }
 }
