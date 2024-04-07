@@ -19,12 +19,13 @@ public abstract class LevelResetter : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<ChildMovement>() != null || collision.gameObject.GetComponent<PenguinMovement>() != null)
-        {
-            Debug.Log("Resetting level");
-            _localObjectHandler.SaveLocalState();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        
+    }
+
+    protected virtual void ResetLevel()
+    {
+        _localObjectHandler.SaveLocalState();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 
