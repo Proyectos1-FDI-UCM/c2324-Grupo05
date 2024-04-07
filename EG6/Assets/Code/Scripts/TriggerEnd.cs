@@ -8,11 +8,13 @@ public class TriggerEnd : MonoBehaviour
     [SerializeField] private GameObject _cantGo;
     [SerializeField] private GameObject _canGo;
     [SerializeField] private float _time = 4f;
+    [SerializeField] private GameObject _block;
 
     private void Start()
     {
         _cantGo.SetActive(false);
         _canGo.SetActive(false);
+        _block.SetActive(false);
     }
    
 
@@ -27,6 +29,7 @@ public class TriggerEnd : MonoBehaviour
         else if(collision.gameObject.GetComponent<ChildMovement>() != null && GlobalObjectRegistry.instance.collectedPieces == 2)
         {
             StartCoroutine(WaitSeconds());
+            _block.SetActive(true);
             Sonido.Play();
             _canGo.SetActive(true);
             StartCoroutine(Waittext());
