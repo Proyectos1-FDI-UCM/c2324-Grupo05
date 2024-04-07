@@ -9,7 +9,14 @@ public class PiecesBedrooom : MonoBehaviour
     [SerializeField] private GameObject _SegirJugando;
     [SerializeField] private GameObject _NoDesbloqueado;
     [SerializeField] private float _time= 4f;
-    private void Start()
+    public AudioSource Sonido;
+   
+
+
+
+
+
+private void Start()
     {
         _piece = PlayerPrefs.GetInt("pieza");
         Debug.Log("piezas" + _piece);
@@ -21,7 +28,7 @@ public class PiecesBedrooom : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null) 
         {
-
+            Sonido.Play();
             if (_piece == 2) 
             {
                 _SegirJugando.SetActive(true);
