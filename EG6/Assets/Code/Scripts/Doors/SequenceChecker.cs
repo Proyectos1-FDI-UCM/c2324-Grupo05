@@ -65,19 +65,18 @@ public class SequenceChecker : MonoBehaviour
     // Method to undo the sequence (undo all commands that the player has pressed)
     private async void UndoSequence()
     {
-        if (_sequence.Count == 0)
+        List<ButtonPressCommand> sequenceCopy;
+
+        lock (_sequence)
         {
-            return;
+            sequenceCopy = new List<ButtonPressCommand>(_sequence); // Создаем копию _sequence
+            _sequence.Clear(); // Очищаем _sequence
         }
-        for (int i = _sequence.Count - 1; i >= 0; i--)
+
+        for (int i = sequenceCopy.Count - 1; i >= 0; i--)
         {
-            if (i < 0)
-            {
-                return;
-            }
-            _sequence[i].Undo();
+            sequenceCopy[i].Undo();
             await Task.Delay(300);
         }
-        _sequence.Clear();
     }
 }
