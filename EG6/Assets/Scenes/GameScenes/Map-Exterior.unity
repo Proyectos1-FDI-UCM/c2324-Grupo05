@@ -39552,6 +39552,22 @@ PrefabInstance:
       propertyPath: _id
       value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 3524073175259865903, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7745954
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524073175259865903, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3695557
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524073175259865903, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0075033307
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524073175259865903, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.08264294
+      objectReference: {fileID: 0}
     - target: {fileID: 5202073398970048748, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
       propertyPath: m_Name
       value: paletSnow (31)
@@ -41792,6 +41808,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1476766883}
     m_Modifications:
+    - target: {fileID: -6237951167049168444, guid: 71c7d752d818381438beb39acf9dd66f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7080002
+      objectReference: {fileID: 0}
+    - target: {fileID: -6237951167049168444, guid: 71c7d752d818381438beb39acf9dd66f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8347702
+      objectReference: {fileID: 0}
+    - target: {fileID: -6237951167049168444, guid: 71c7d752d818381438beb39acf9dd66f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.06982803
+      objectReference: {fileID: 0}
+    - target: {fileID: -6237951167049168444, guid: 71c7d752d818381438beb39acf9dd66f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0826149
+      objectReference: {fileID: 0}
     - target: {fileID: 1931886565266051340, guid: 71c7d752d818381438beb39acf9dd66f, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -60810,7 +60842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2081814821038530542, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3267369201902119115, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
       propertyPath: m_Size.y
@@ -60841,6 +60873,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8063817413164605191, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
+      propertyPath: _collisionOffset
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063817413164605191, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
       propertyPath: _movementFilter.useDepth
       value: 0
       objectReference: {fileID: 0}
@@ -60850,7 +60886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8063817413164605191, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
       propertyPath: _movementFilter.layerMask.m_Bits
-      value: 320
+      value: 832
       objectReference: {fileID: 0}
     - target: {fileID: 9049879381957568954, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
       propertyPath: m_AgentTypeID
