@@ -75,8 +75,8 @@ public class SequenceChecker : MonoBehaviour
 
         for (int i = sequenceCopy.Count - 1; i >= 0; i--)
         {
-            sequenceCopy[i].Undo();
             await Task.Delay(300);
+            sequenceCopy[i].Undo();
         }
     }
 }
