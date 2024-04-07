@@ -44,5 +44,8 @@ public class DoorSwitcher : MonoBehaviour
     {
         _isDoorOpen = state;
         UpdateDoorState();
+        
+        AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/Buttons/doorOpened");
+        AudioSource.PlayClipAtPoint(onPressedSound, transform.position);
     }
 }

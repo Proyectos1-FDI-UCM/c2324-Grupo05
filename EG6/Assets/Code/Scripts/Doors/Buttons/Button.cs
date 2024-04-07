@@ -28,12 +28,13 @@ public abstract class Button : MonoBehaviour
         && _isPressed == false)
         {
             _isPressed = true;
-            OnPressed();
+            ButtonPressed();
         }
     }
 
-    protected virtual void OnPressed() 
+    protected virtual void ButtonPressed() 
     {
-        
+        AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/Buttons/buttonPressed");
+        AudioSource.PlayClipAtPoint(onPressedSound, transform.position);
     }
 }

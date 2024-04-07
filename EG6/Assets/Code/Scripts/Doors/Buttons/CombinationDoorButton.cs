@@ -12,14 +12,13 @@ public class CombinationDoorButton : Button
 
 
     // The OnPressed method is overriden to check the sequence of buttons pressed and open the door
-    protected override void OnPressed()
+    protected override void ButtonPressed()
     {
-        {
-            ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
-            buttonPressCommand.Execute();
-            _sequenceChecker.AddButtonToSequence(buttonPressCommand);
-            _sequenceChecker.CheckSequence();
-        }
+        base.ButtonPressed();
+        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
+        buttonPressCommand.Execute();
+        _sequenceChecker.AddButtonToSequence(buttonPressCommand);
+        _sequenceChecker.CheckSequence();
     }
     
 }

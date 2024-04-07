@@ -8,8 +8,9 @@ public class DoorButton : Button
     [SerializeField] private DoorSwitcher _doorSwitcher;
 
     // The OnPressed method is overriden to call the SetDoorState method from the DoorSwitcher class
-    protected override void OnPressed()
+    protected override void ButtonPressed()
     {
+        base.ButtonPressed();
         ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
         buttonPressCommand.Execute();
         _doorSwitcher.SetDoorState(true);

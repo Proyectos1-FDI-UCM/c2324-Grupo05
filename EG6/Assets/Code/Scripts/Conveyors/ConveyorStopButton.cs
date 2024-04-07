@@ -19,8 +19,9 @@ public class ConveyorStopButton : Button
         _collider = _conveyorBelt.GetComponent<BoxCollider2D>();
     }
 
-    protected override async void OnPressed()
+    protected override async void ButtonPressed()
     {
+        base.ButtonPressed();
         ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
         buttonPressCommand.Execute();
         //anim = GameObject.FindGameObjectWithTag("A").GetComponent<ConveyorBeltAnimator>();

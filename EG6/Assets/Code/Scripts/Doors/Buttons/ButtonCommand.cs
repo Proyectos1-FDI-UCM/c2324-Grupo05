@@ -30,6 +30,8 @@ public class ButtonPressCommand : ICommand
     // This method is called to undo the action
     public void Undo()
     {
+        AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/Buttons/buttonReleased");
+        AudioSource.PlayClipAtPoint(onPressedSound, _buttonRenderer.transform.position);
         _buttonRenderer.sprite = _previousSprite;
         Button button = _buttonRenderer.GetComponent<Button>();
         button.IsPressed = false;

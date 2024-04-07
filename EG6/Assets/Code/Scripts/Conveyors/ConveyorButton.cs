@@ -12,8 +12,9 @@ public class ConveyorButton : Button
     [SerializeField] private ConveyorBelt _conveyorBelt;
     [SerializeField] private ConveyorBeltAnimator _anim;
 
-    protected override async void OnPressed()
+    protected override async void ButtonPressed()
     {
+        base.ButtonPressed();
         ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
         buttonPressCommand.Execute();
         _anim.RotateSprite();

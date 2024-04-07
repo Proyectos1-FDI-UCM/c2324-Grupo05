@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using System;
+using System.Threading.Tasks;
 
 /// <summary>
 /// This class is used to check if the player has pressed the correct sequence of buttons to open the door.
@@ -14,7 +16,6 @@ public class SequenceChecker : MonoBehaviour
     private List<ButtonPressCommand> _sequence = new List<ButtonPressCommand>(); // Commands that the player has pressed
     private List<ButtonPressCommand> _desiredSequence = new List<ButtonPressCommand>(); // field to store the desired sequence
     private bool _isSequenceMatched = true;
-
     
     private void Start()
     {
@@ -39,41 +40,40 @@ public class SequenceChecker : MonoBehaviour
 
     // Method to check if the sequence is matched and open the door if it's true
     public void CheckSequence()
-    {
-        if (_sequence.Count == _desiredSequence.Count) // If the sequence has the same length as the desired sequence
+    {   
+        for (int i = 0; i < _sequence.Count; i++) 
         {
-            _isSequenceMatched = true;
-
-            // Check if the sequence is matched by comparing the button ids
-            for (int i = 0; i < _sequence.Count; i++) 
+            if (_sequence[i].GetButtonId() != _desiredSequence[i].GetButtonId() && _isSequenceMatched == true)
             {
-                if (_sequence[i].GetButtonId() != _desiredSequence[i].GetButtonId())
-                {
-                    _isSequenceMatched = false;
-                    break;
-                }
+                _isSequenceMatched = false;
             }
-
-            // If the sequence is matched, open the door
-            if (_isSequenceMatched)
-            {
-                _door.SetDoorState(true);
-                //UndoSequence();
-            }
-            else
-            {
-                UndoSequence();
-            }
-            _sequence.Clear(); // In any case, clear the sequence
         }
+
+        if (_isSequenceMatched && _sequence.Count == _desiredSequence.Count)
+        {
+            _door.SetDoorState(true);
+            return;
+        }
+        else if (!_isSequenceMatched || _sequence.Count >= _desiredSequence.Count)
+        {
+            UndoSequence();
+            _isSequenceMatched = true;
+        }
+
     }
 
     // Method to undo the sequence (undo all commands that the player has pressed)
-    private void UndoSequence()
+    private async void UndoSequence()
     {
+        if (_sequence.Count == 0)
+        {
+            return;
+        }
         for (int i = _sequence.Count - 1; i >= 0; i--)
         {
             _sequence[i].Undo();
+            await Task.Delay(300);
         }
+        _sequence.Clear();
     }
 }
