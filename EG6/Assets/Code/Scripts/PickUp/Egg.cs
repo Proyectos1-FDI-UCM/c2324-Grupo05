@@ -42,7 +42,9 @@ public class Egg : PickableObject
 
     public override void PickUp()
     {
+        PlayerPrefs.SetInt("pieza", 0);
         _nEgg++;
+        PlayerPrefs.SetInt("huevo", _nEgg);
         base.PickUp(); // base. is used to call method PickUp from PickableObject class and then execute additional code below
         
     }
