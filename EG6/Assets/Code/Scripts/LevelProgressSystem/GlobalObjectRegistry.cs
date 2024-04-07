@@ -66,7 +66,7 @@ public class GlobalObjectRegistry : MonoBehaviour
 
     public void SaveLevelState(List<int> pickedObjectsIDs, List<int> openedDoorsIDs, List<int> destroyedObjectsIDs, int lastCheckpoint, string sceneName = null)
     {
-        string currentSceneName = sceneName ?? UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        string currentSceneName = sceneName ?? SceneManager.GetActiveScene().name;
         LevelState currentState = GetLevelState(currentSceneName);
         _levelStates.Remove(currentState);
         
