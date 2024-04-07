@@ -29,6 +29,7 @@ public class Piece : PickableObject
         _counter.IncrementCount();
         _localObjectHandler.SetLastCheckpoint(_nextCheckpoint);
         GlobalObjectRegistry.instance.collectedPieces++;
+        GlobalObjectRegistry.instance.isPenguinUnlocked = true;
         base.PickUp();
         
     }

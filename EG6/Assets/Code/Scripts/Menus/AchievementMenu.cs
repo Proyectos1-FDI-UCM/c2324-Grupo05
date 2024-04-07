@@ -38,7 +38,7 @@ public class AchievementMenu : MonoBehaviour
 
     public void ShowEggPhrase()
     {
-        if (GlobalObjectRegistry.instance.collectedPieces >= 0) //egg picked
+        if (GlobalObjectRegistry.instance.collectedPieces >= 0 && GlobalObjectRegistry.instance.isEggPicked) //egg picked
         {
             _pCounter = 0;
             _decodeNumbers.SetActive(false);
