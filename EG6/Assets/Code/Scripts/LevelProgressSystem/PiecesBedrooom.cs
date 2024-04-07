@@ -22,7 +22,7 @@ public class PiecesBedrooom : MonoBehaviour
         if (collision.gameObject.GetComponent<ChildMovement>() != null) 
         {
 
-            if (_piece == 3) 
+            if (_piece == 2) 
             {
                 _SegirJugando.SetActive(true);
                 Debug.Log("Segir Jugando?");

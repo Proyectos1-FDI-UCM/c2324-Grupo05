@@ -5,9 +5,10 @@ using UnityEngine;
 public class DoorButtons : MonoBehaviour
 {
     [SerializeField] private GameObject _SegirJugando;
+    [SerializeField] private GameObject _end;
     public void ClickYes()
     {
-        //desbloquear cinematica
+        _end.SetActive(true);
 
     }
 
