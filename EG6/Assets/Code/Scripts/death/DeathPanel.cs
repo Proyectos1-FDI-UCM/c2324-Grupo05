@@ -14,8 +14,6 @@ public class DeathPanel : MonoBehaviour
         if (collision.gameObject.GetComponent<ChildMovement>() != null || collision.gameObject.GetComponent<PenguinMovement>() != null)
         {
             ShowPannel();
-         
-
         }
     }
     private void ShowPannel()

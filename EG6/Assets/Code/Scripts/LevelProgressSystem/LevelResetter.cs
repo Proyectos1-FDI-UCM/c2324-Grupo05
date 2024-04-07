@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public abstract class LevelResetter : MonoBehaviour
 {
+    [SerializeField] protected RetryMenu _retryPanel;
     protected LocalObjectHandler _localObjectHandler;
 
 
@@ -22,10 +23,10 @@ public abstract class LevelResetter : MonoBehaviour
         
     }
 
-    protected virtual void ResetLevel()
+    protected virtual void ShowRetryMenu()
     {
-        _localObjectHandler.SaveLocalState();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        _retryPanel.gameObject.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
 

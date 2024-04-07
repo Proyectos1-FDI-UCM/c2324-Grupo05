@@ -6,7 +6,6 @@ using LevelState = GlobalObjectRegistry.LevelState;
 
 public class SelectingLevelButton : MonoBehaviour
 {
-    //[SerializeField] private GameObject _pauseMenu;
     private GlobalObjectRegistry _globalObjectRegistry;
 
     private void Start()

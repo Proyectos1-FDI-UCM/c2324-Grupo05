@@ -463,11 +463,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6312132761764612965, guid: f05735730edd6374ab10c6de256cbfa0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.57
+      value: 4.72
       objectReference: {fileID: 0}
     - target: {fileID: 6312132761764612965, guid: f05735730edd6374ab10c6de256cbfa0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.27
+      value: -2.39
       objectReference: {fileID: 0}
     - target: {fileID: 6312132761764612965, guid: f05735730edd6374ab10c6de256cbfa0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3596,10 +3596,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 192869583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd8fd2e64e7fc740974943c3289cad6, type: 3}
+  m_Script: {fileID: 11500000, guid: b4c1b96eac59eb54ab0fae3b98de63aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
 --- !u!1 &195458404
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,7 +3610,6 @@ GameObject:
   - component: {fileID: 195458405}
   - component: {fileID: 195458406}
   - component: {fileID: 195458407}
-  - component: {fileID: 195458408}
   m_Layer: 0
   m_Name: collider (6)
   m_TagString: Untagged
@@ -3688,22 +3686,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 195458404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &195458408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195458404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1 &205262604
 GameObject:
   m_ObjectHideFlags: 0
@@ -30564,7 +30550,6 @@ GameObject:
   - component: {fileID: 365211785}
   - component: {fileID: 365211786}
   - component: {fileID: 365211787}
-  - component: {fileID: 365211788}
   m_Layer: 0
   m_Name: collider (4)
   m_TagString: Untagged
@@ -30651,22 +30636,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 365211784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &365211788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365211784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1001 &366307267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37299,7 +37272,6 @@ GameObject:
   - component: {fileID: 666545628}
   - component: {fileID: 666545630}
   - component: {fileID: 666545629}
-  - component: {fileID: 666545631}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -37366,19 +37338,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666545627}
   m_CullTransparentMesh: 1
---- !u!114 &666545631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666545627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd8fd2e64e7fc740974943c3289cad6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
 --- !u!1 &669378154
 GameObject:
   m_ObjectHideFlags: 0
@@ -39552,7 +39511,6 @@ GameObject:
   - component: {fileID: 770832898}
   - component: {fileID: 770832899}
   - component: {fileID: 770832900}
-  - component: {fileID: 770832901}
   m_Layer: 0
   m_Name: collider (3)
   m_TagString: Untagged
@@ -39629,22 +39587,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 770832897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &770832901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770832897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1001 &775095366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42517,7 +42463,6 @@ GameObject:
   - component: {fileID: 983240436}
   - component: {fileID: 983240435}
   - component: {fileID: 983240434}
-  - component: {fileID: 983240433}
   - component: {fileID: 983240432}
   - component: {fileID: 983240431}
   m_Layer: 0
@@ -42998,18 +42943,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &983240433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983240429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!19719996 &983240434
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -49478,7 +49411,6 @@ GameObject:
   - component: {fileID: 1100952301}
   - component: {fileID: 1100952302}
   - component: {fileID: 1100952303}
-  - component: {fileID: 1100952304}
   m_Layer: 0
   m_Name: collider (5)
   m_TagString: Untagged
@@ -49563,22 +49495,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1100952300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1100952304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100952300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1 &1104889652
 GameObject:
   m_ObjectHideFlags: 0
@@ -49590,7 +49510,6 @@ GameObject:
   - component: {fileID: 1104889653}
   - component: {fileID: 1104889655}
   - component: {fileID: 1104889656}
-  - component: {fileID: 1104889657}
   m_Layer: 0
   m_Name: collider
   m_TagString: Untagged
@@ -49673,22 +49592,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1104889652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1104889657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104889652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1 &1105337656
 GameObject:
   m_ObjectHideFlags: 0
@@ -64246,7 +64153,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1456888577}
-  - component: {fileID: 1456888579}
   - component: {fileID: 1456888580}
   - component: {fileID: 1456888581}
   m_Layer: 0
@@ -64271,18 +64177,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2015728979}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1456888579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456888576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &1456888580
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -64343,10 +64237,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1456888576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!4 &1461287376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8551262978144202716, guid: d9cf2b973a322f041956eb0609d17aaa, type: 3}
@@ -73649,16 +73543,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 192869588}
-        m_TargetAssemblyTypeName: BottonDeath, Assembly-CSharp
-        m_MethodName: Retry
+      - m_Target: {fileID: 11500000, guid: b4c1b96eac59eb54ab0fae3b98de63aa, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ResetLevel()
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1892613769
@@ -73776,7 +73670,6 @@ GameObject:
   - component: {fileID: 1898707306}
   - component: {fileID: 1898707307}
   - component: {fileID: 1898707308}
-  - component: {fileID: 1898707309}
   m_Layer: 0
   m_Name: collider (1)
   m_TagString: Untagged
@@ -73853,22 +73746,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1898707305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7fb6436bf805024ea29480d99a14e40, type: 3}
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1898707309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898707305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149a6ef6e9dc59f41b1a775a4eab6023, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pannel: {fileID: 192869583}
+  _retryPanel: {fileID: 192869588}
 --- !u!1001 &1899018161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76538,6 +76419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2015728979}
+  - component: {fileID: 2015728980}
   m_Layer: 0
   m_Name: Dirty Water
   m_TagString: Untagged
@@ -76567,6 +76449,19 @@ Transform:
   - {fileID: 195458405}
   m_Father: {fileID: 53178530}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2015728980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015728978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314e73337a66ca4428f0649612befbea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _retryPanel: {fileID: 192869588}
 --- !u!1 &2021529390
 GameObject:
   m_ObjectHideFlags: 0

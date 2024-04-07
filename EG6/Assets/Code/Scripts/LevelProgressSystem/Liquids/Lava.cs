@@ -9,7 +9,7 @@ public class Lava : LevelResetter
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null || collision.gameObject.GetComponent<PenguinMovement>() != null)
         {
-            ResetLevel();
+            ShowRetryMenu();
         }
     }
 }

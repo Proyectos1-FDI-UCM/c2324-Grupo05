@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
         {
-            ResetLevel();
+            ShowRetryMenu();
         }
         else if (collision.gameObject.GetComponent<PenguinMovement>() != null)
         {
