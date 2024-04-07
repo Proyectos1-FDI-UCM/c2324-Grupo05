@@ -71,6 +71,10 @@ public class SequenceChecker : MonoBehaviour
         }
         for (int i = _sequence.Count - 1; i >= 0; i--)
         {
+            if (i < 0)
+            {
+                return;
+            }
             _sequence[i].Undo();
             await Task.Delay(300);
         }

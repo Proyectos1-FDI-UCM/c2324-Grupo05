@@ -20,6 +20,7 @@ public class DoorSwitcher : MonoBehaviour
     {
         _door = gameObject;
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
+        _isDoorOpen = _localObjectHandler.OpenedDoorsIDs.Contains(ID);
     }
 
     // private method to update the door state based on the _isDoorOpen state
@@ -42,6 +43,11 @@ public class DoorSwitcher : MonoBehaviour
     /// <param name="state">true if door is opened, false if it's closed</param>
     public void SetDoorState(bool state)
     {
+        if (_isDoorOpen == state)
+        {
+            return;
+        }
+
         _isDoorOpen = state;
         UpdateDoorState();
         
