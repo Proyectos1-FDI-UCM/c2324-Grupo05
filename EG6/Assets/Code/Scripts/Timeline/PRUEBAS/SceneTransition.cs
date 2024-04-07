@@ -16,20 +16,21 @@ public class SceneTransition : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    
+
+    public void ChangeScene(bool start)
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(start)
         {
             StartCoroutine(CambiarEscena());
-        }
+        }    
+            
     }
-
 
     IEnumerator CambiarEscena()
     {
         animator.SetTrigger("Iniciar");
         yield return new WaitForSeconds(animacionFinal.length);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Cinematica");
     }
 }
