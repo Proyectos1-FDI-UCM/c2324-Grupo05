@@ -21,6 +21,6 @@ public class DeathPanel : MonoBehaviour
     private void ShowPannel()
     {
         _pannel.SetActive(true);
-        //Time.timeScale = 0f;
+        Time.timeScale = 0f;
     }
 }

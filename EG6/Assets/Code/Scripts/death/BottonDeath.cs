@@ -9,7 +9,7 @@ public class BottonDeath : MonoBehaviour
     {
         _pannel.SetActive(false);
         //tiempo normal
-       // Time.timeScale = 1f;
+        Time.timeScale = 1f;
 
     }
 }
