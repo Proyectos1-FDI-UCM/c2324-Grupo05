@@ -38,6 +38,12 @@ public class LocalObjectHandler : MonoBehaviour
         _openedDoorsIDs = _levelState.OpenedDoors;
         _destroyedObjectsIDs = _levelState.DestroyedObjects;
 
+        CharacterDamage[] characterDamages = FindObjectsOfType<CharacterDamage>();
+        foreach (CharacterDamage characterDamage in characterDamages)
+        {
+            characterDamage.SetDamage(_globalObjectRegistry.collectedTrash);
+        }
+
         SetLastCheckpoint(_teleporter.AllCheckpoints[_levelState.CurrentCheckpointID]);
     }
 

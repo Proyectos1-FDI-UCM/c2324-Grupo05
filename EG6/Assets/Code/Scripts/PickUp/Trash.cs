@@ -20,6 +20,13 @@ public class Trash : PickableObject
     public override void PickUp()
     {
         base.PickUp();
+        GlobalObjectRegistry.instance.collectedTrash++;
         _counter.IncrementCount();
+
+        CharacterDamage[] characterDamages = FindObjectsOfType<CharacterDamage>();
+        foreach (CharacterDamage characterDamage in characterDamages)
+        {
+            characterDamage.SetDamage(GlobalObjectRegistry.instance.collectedTrash);
+        }
     }
 }

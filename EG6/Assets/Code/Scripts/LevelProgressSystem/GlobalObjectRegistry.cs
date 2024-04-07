@@ -39,7 +39,10 @@ public class GlobalObjectRegistry : MonoBehaviour
     public static GlobalObjectRegistry instance;
     public List<LevelState> LevelStates { get => _levelStates; set => _levelStates = value;}
     public bool isPenguinUnlocked = false;
+    public bool isEggPicked = false;
     public int collectedPieces = 0;
+    public int collectedTrash = 0;
+
 
     private void Awake()
     {
@@ -91,6 +94,5 @@ public class GlobalObjectRegistry : MonoBehaviour
             }
         }
         return new LevelState(sceneName, new List<int>(), new List<int>(), new List<int>(), 0);
-        
     }
 }
