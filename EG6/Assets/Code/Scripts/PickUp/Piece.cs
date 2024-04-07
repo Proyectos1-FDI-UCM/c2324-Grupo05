@@ -9,6 +9,7 @@ public class Piece : PickableObject
 {
     [SerializeField] private PieceCounter _counter;
     [SerializeField] private Checkpoint _nextCheckpoint;
+    [SerializeField] private SceneTransition _transitionScene;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,9 +18,9 @@ public class Piece : PickableObject
             PickUp();
             _localObjectHandler.SaveLocalState();
 
-            SceneManager.LoadScene("Cinematica");
+            _transitionScene.ChangeScene(true);
+            //SceneManager.LoadScene("Cinematica");
 
-            //SceneManager.LoadScene("BedroomTest");
         }
     }
 
@@ -31,4 +32,6 @@ public class Piece : PickableObject
         base.PickUp();
         
     }
+
+    
 }

@@ -7,6 +7,7 @@ public class Egg : PickableObject
     public int _nEgg;
 
     [SerializeField] private Checkpoint _nextCheckpoint;
+    [SerializeField] private SceneTransition _transitionScene;
     private static Egg _instance;
     static public Egg Instance
     {
@@ -35,8 +36,8 @@ public class Egg : PickableObject
             
             _localObjectHandler.SetLastCheckpoint(_nextCheckpoint);
             GlobalObjectRegistry.instance.isPenguinUnlocked = true;
-            SceneManager.LoadScene("Cinematica");
-            //SceneManager.LoadScene("BedroomTest");
+            _transitionScene.ChangeScene(true);
+            //SceneManager.LoadScene("Cinematica");
         }
     }
 
