@@ -64,6 +64,10 @@ public class SavesManager : MonoBehaviour
             _globalObjectRegistry.collectedTrash = savedData.CollectedTrash;
         }
 
+        if (!Directory.Exists(levelStatesFolderPath))
+        {
+            Directory.CreateDirectory(levelStatesFolderPath);
+        }
         foreach (string filePath in Directory.GetFiles(levelStatesFolderPath))
         {
             string json = File.ReadAllText(filePath);

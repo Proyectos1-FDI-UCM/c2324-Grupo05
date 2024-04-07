@@ -13,6 +13,7 @@ public class RetryMenu : MonoBehaviour
 
     public void ResetLevel()
     {
+        Time.timeScale = 1;
         _localObjectHandler.SaveLocalState();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
