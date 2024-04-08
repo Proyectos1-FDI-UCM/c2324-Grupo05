@@ -1,3 +1,4 @@
+using NavMeshPlus.Components;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class DoorSwitcher : MonoBehaviour
     private bool _isDoorOpen = false;
     private LocalObjectHandler _localObjectHandler;
     private GameObject _door;
+    protected NavMeshSurface _navMeshSurface;
 
     public int ID { get => _id;}
 
@@ -21,6 +23,7 @@ public class DoorSwitcher : MonoBehaviour
         _door = gameObject;
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
         _isDoorOpen = _localObjectHandler.OpenedDoorsIDs.Contains(ID);
+        _navMeshSurface = FindObjectOfType<NavMeshSurface>();
     }
 
     // private method to update the door state based on the _isDoorOpen state
@@ -29,7 +32,10 @@ public class DoorSwitcher : MonoBehaviour
         if (_isDoorOpen)
         {
             _door.SetActive(false);
+            _navMeshSurface.RemoveData();
+            _navMeshSurface.BuildNavMesh();
             _localObjectHandler.OpenedDoorsIDs.Add(ID);
+            
         }
         else
         {
