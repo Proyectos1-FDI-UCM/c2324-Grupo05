@@ -2699,7 +2699,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPenguinUnlocked: 0
+  isEggPicked: 0
   collectedPieces: 0
+  collectedTrash: 0
 --- !u!4 &142813109
 Transform:
   m_ObjectHideFlags: 0
@@ -3812,7 +3814,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.1
+  m_VoxelSize: 0.10666666
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: 5b763cf6def47454fa3a9cbd183fbed3, type: 2}
@@ -29555,8 +29557,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.24025, y: -1.5415998, z: 0}
-    m_Extent: {x: 4.24335, y: 8.904699, z: 0}
+    m_Center: {x: -2.24655, y: -1.5444002, z: 0}
+    m_Extent: {x: 4.24935, y: 8.9003, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -32840,7 +32842,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 647461503
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 2.1666667, y: 0.7166667, z: 0}
@@ -45848,7 +45850,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 647461503
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -75872,7 +75874,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 647461503
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.5666667, y: 0.7166667, z: 0}
@@ -87493,7 +87495,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 647461503
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 886061105, guid: 75b3fa21dc67462418ac8a1dd60a8919, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -93519,6 +93521,7 @@ MonoBehaviour:
   _id: 200
   _nEgg: 0
   _nextCheckpoint: {fileID: 904825613}
+  _transitionScene: {fileID: 0}
 --- !u!58 &2034673431
 CircleCollider2D:
   m_ObjectHideFlags: 0
