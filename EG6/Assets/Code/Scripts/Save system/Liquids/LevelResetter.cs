@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This class is used to reset the level when the player crosses the reset trigger 
-/// (like water or something else that kills the player)
+/// In game it is used for water and lava
 /// </summary>
 public abstract class LevelResetter : MonoBehaviour
 {

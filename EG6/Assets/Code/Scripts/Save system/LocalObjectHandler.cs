@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using SceneManager = UnityEngine.SceneManagement.SceneManager;
 using UnityEngine;
-using Unity.VisualScripting;
 using LevelState = GlobalObjectRegistry.LevelState;
 using NavMeshPlus.Components;
 
 /// <summary>
 /// This class is used to store the local state of the objects in the level
-/// Then save it to the global object registry
+/// Turns off the objects that were picked, opened or destroyed
+/// Saves it to the global object registry when we change or restart the level
 /// </summary>
 public class LocalObjectHandler : MonoBehaviour
 {

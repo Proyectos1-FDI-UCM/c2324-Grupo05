@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-    public class Water : LevelResetter
+
+/// <summary>
+/// This class is used to reset the level when child falls into the water
+/// For pengiun it changes the movement mode to swimming
+/// </summary>
+public class Water : LevelResetter
 {
-    
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null)

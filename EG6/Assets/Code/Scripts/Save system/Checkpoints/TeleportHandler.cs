@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
+/// <summary>
+/// This class is used to teleport both the penguin and the child to the last checkpoint
+/// Called when we launch or restart level
+/// </summary>
 public class TeleportHandler : MonoBehaviour
 {
     [SerializeField] private Transform _penguin;

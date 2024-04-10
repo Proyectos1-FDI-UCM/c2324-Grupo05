@@ -10,6 +10,7 @@ using SceneManager = UnityEngine.SceneManagement.SceneManager;
 /// <summary>
 /// This class is used to store the state of the objects in the game between the scenes (on each level).
 /// Like the picked objects, opened doors, destroyed objects and the completion state of the level.
+/// It is also used to store the global state of the game like the penguin unlock state, egg picked state, collected pieces and trash.
 /// </summary>
 public class GlobalObjectRegistry : MonoBehaviour
 {
