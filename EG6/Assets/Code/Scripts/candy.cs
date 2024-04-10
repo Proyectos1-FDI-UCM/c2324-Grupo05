@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class candy : MonoBehaviour
 {
-    private int _piece;
     [SerializeField] private GameObject _candy;
-    [SerializeField] private float _time = 4f;
 
     private void Start()
     {
@@ -18,20 +16,14 @@ public class candy : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null|| collision.gameObject.GetComponent<PenguinMovement>() != null)
         {
-
-
+                //Show clue menu and stop time
                 _candy.SetActive(true);
-            StartCoroutine(Waittext());
+                Time.timeScale = 1.0f;
+           
 
         }
     }
-    private IEnumerator Waittext()
-    {
-        yield return new WaitForSeconds(_time);
-        _candy.SetActive(false);
-
-
-    }
+   
 
 
 }
