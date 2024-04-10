@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +17,7 @@ public class CharacterInteraction : MonoBehaviour
     private Vector2 _direction;
     private DestroyableObject _selectedObject;
 
+
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -25,11 +25,13 @@ public class CharacterInteraction : MonoBehaviour
         _direction = _movableObject.MovementDirection;
     }
 
+
     private void Update() 
     {
         UpdateInteractionDirection(_movableObject.MovementDirection);
         CheckInteractions(_direction);
     }
+
 
     private void CheckInteractions(Vector2 direction)
     {
@@ -53,6 +55,7 @@ public class CharacterInteraction : MonoBehaviour
         }
     }
 
+
     private void UpdateInteractionDirection(Vector2 direction)
     {
         if (direction != _direction && direction != Vector2.zero)
@@ -60,6 +63,7 @@ public class CharacterInteraction : MonoBehaviour
             _direction = direction;
         }
     }
+
 
     public void TriggerInteraction()
     {
@@ -69,6 +73,7 @@ public class CharacterInteraction : MonoBehaviour
         }
     }
 
+
     public void DiscardSelection()
     {
         if (_selectedObject != null)
@@ -77,5 +82,4 @@ public class CharacterInteraction : MonoBehaviour
             _selectedObject = null;
         }
     }
-
 }

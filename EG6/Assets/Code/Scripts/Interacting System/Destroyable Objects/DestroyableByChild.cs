@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 /// <summary>
 /// This class is used to define the objects that can be destroyed by the child
@@ -9,6 +6,7 @@ using UnityEngine.TextCore.Text;
 public class DestroyableByChild : DestroyableObject
 {
     private CharacterSwitcher _characterSwitcher;
+    
     
     protected override void Start()
     {

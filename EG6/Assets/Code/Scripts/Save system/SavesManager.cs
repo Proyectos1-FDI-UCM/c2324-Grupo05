@@ -1,13 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using System.Linq;
 
 
 public class SavesManager : MonoBehaviour
 {
-
     [System.Serializable]
     private class SavedData
     {
@@ -19,6 +16,7 @@ public class SavesManager : MonoBehaviour
     }
 
     private GlobalObjectRegistry _globalObjectRegistry;
+
 
     private void Awake()
     {
@@ -43,10 +41,10 @@ public class SavesManager : MonoBehaviour
             File.WriteAllText(Path.Combine(Application.dataPath, $"LevelSaves/{levelState.SceneName}.json"), jsonLevelState);
         }
 
-
         string jsonGlobalData = JsonUtility.ToJson(savedData);
         File.WriteAllText(Path.Combine(Application.dataPath, "GlobalData.json"), jsonGlobalData);
     }
+
 
     public void LoadGame()
     {

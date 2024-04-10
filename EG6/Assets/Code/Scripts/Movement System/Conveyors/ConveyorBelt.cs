@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -9,24 +7,28 @@ using UnityEngine;
 /// </summary>
 public class ConveyorBelt : MonoBehaviour
 {
-    [SerializeField] private Vector2 _movementDirection;
+    [SerializeField] private Vector2 _pushDirection;
     [SerializeField] private float _pushSpeed = 2f;
 
-    public Vector2 MovementDirection { get => _movementDirection; set => _movementDirection = value; }
+    public Vector2 PushDirection { get => _pushDirection; set => _pushDirection = value; }
+
 
     private void Start() 
     {
-        _movementDirection = _movementDirection.normalized;
+        _pushDirection = _pushDirection.normalized;
     }
+
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.GetComponent<MovableObject>() != null)
         {
             MovableObject movableObject = collision.GetComponent<MovableObject>();
-            movableObject.AdditionalVector = _movementDirection * _pushSpeed;
+            movableObject.AdditionalVector = _pushDirection * _pushSpeed;
         }
     }
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<MovableObject>() != null)

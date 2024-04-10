@@ -12,5 +12,4 @@ public class ChildMovement : MovableObject
     {
         _movementDirection = direction;
     }
-
 }

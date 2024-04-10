@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This class is used to reset the level when the player crosses the reset trigger 
@@ -17,11 +14,13 @@ public abstract class LevelResetter : MonoBehaviour
     {
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
     }
+    
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         
     }
+
 
     protected virtual void ShowRetryMenu()
     {

@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using NavMeshPlus.Components;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 /// <summary>
 /// This class defines the destroyable objects in the game
@@ -11,11 +8,12 @@ using UnityEngine.SocialPlatforms;
 /// </summary>
 public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 {
+    [SerializeField] protected Sprite[] _statesSprite = new Sprite[3];
     [SerializeField] private int _id;
+    
     protected int _durability = 12;
     protected bool _isSelected = false;
 
-    [SerializeField] protected Sprite[] _statesSprite = new Sprite[3];
     protected LocalObjectHandler _localObjectHandler;
     protected SpriteRenderer _spriteRenderer;
     protected NavMeshSurface _navMeshSurface;
@@ -23,12 +21,14 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
     public SpriteRenderer SpriteRenderer => _spriteRenderer;
     public int ID { get => _id; }
 
+
     protected virtual void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
         _navMeshSurface = FindObjectOfType<NavMeshSurface>();
     }
+
 
     private void Update() 
     {
@@ -42,6 +42,7 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         }
     }
 
+
     public virtual void Destroy()
     {
         gameObject.SetActive(false);
@@ -49,6 +50,7 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         _navMeshSurface.BuildNavMesh();
         _localObjectHandler.DestroyedObjectsIDs.Add(ID);
     }
+
 
     public virtual void PerformInteraction(CharacterInteraction characterInteraction)
     {
@@ -66,15 +68,18 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         }
     }
 
+
     public virtual void Select()
     {
         _isSelected = true;
     }
 
+
     public virtual void Deselect()
     {
         _isSelected = false;
     }
+
 
     private void UpdateSprite()
     {

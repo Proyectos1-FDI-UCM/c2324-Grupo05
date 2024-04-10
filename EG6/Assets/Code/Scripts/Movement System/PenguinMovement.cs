@@ -1,11 +1,7 @@
-using System;
-using System.Numerics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
-
 
 
 public enum ControllingMode
@@ -23,7 +19,7 @@ public enum MovementMode
 /// <summary>
 /// This class is used for the movement of the penguin.
 /// Uses NavMeshPlus for the AI movement and the MovableObject for the player controlled movement.
-/// Uses State Pattern to switch between the AI and Player controlled movement.
+/// Uses enum Movement mode to switch between the AI and Player controlled movement (this is not the State pattern!).
 /// </summary>
 public class PenguinMovement : MovableObject
 {
@@ -44,6 +40,7 @@ public class PenguinMovement : MovableObject
         set => _movementMode = value;
     }
 
+
     private void Awake()
     {  
         _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -52,12 +49,14 @@ public class PenguinMovement : MovableObject
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
+
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _collisionHandler = GetComponent<CollisionHandler>();
         _controllingMode = ControllingMode.AIControlled;
     }
+
 
     protected override void FixedUpdate()
     {
@@ -71,6 +70,7 @@ public class PenguinMovement : MovableObject
                 break;
         }
     }
+
 
     private void HandleAIMovement()
     {
@@ -86,6 +86,7 @@ public class PenguinMovement : MovableObject
     }
 
 
+    // This method is used to fix when the penguin is stuck in the same position.
     private void IdleWalking()
     {
         if (_navMeshAgent.velocity.magnitude < 0.1f && _navMeshAgent.enabled)
@@ -94,10 +95,12 @@ public class PenguinMovement : MovableObject
         }
     }
 
+
     public override void SetInputDirection(Vector2 direction)
     {
         _movementDirection = direction;
     }
+
 
     protected override void Move(Vector2 direction)
     {
@@ -106,7 +109,7 @@ public class PenguinMovement : MovableObject
             _collisionHandler.CollisionOffset = 0.15f;
             base.Move(direction);
         }
-        else
+        else if (_movementMode == MovementMode.Swimming)
         {
             _collisionHandler.CollisionOffset = 0.75f;
             Vector2 newPosition = CalculateNewPosition(direction);

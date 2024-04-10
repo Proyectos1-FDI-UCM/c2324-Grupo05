@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -23,6 +21,7 @@ public class CharacterSwitcher : MonoBehaviour
 
     public bool _isControllingChild = true;
     
+
     private void Start()
     {
         _childPlayerMovement = _childCharacter.GetComponent<ChildMovement>();
@@ -33,6 +32,7 @@ public class CharacterSwitcher : MonoBehaviour
         _childCharacterInteraction = _childCharacter.GetComponent<CharacterInteraction>(); 
         _penguinCharacterInteraction = _penguinCharacter.GetComponent<CharacterInteraction>();
     }
+
 
     public void SwitchCharacter()
     {
@@ -62,6 +62,4 @@ public class CharacterSwitcher : MonoBehaviour
             _isControllingChild = true;
         }
     }
-
-
 }

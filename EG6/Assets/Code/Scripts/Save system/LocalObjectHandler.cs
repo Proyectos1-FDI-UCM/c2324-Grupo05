@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using SceneManager = UnityEngine.SceneManagement.SceneManager;
 using UnityEngine;
@@ -47,6 +46,7 @@ public class LocalObjectHandler : MonoBehaviour
         SetLastCheckpoint(_teleporter.AllCheckpoints[_levelState.CurrentCheckpointID]);
     }
 
+
     private void Start() 
     {
         DisableObjects();
@@ -55,6 +55,7 @@ public class LocalObjectHandler : MonoBehaviour
         navMeshSurface.RemoveData();
         navMeshSurface.BuildNavMesh();
     }
+
 
     private void DisableObjects()
     {
@@ -90,11 +91,13 @@ public class LocalObjectHandler : MonoBehaviour
         }
     }
 
+
     public void SetLastCheckpoint(Checkpoint lastCheckpoint)
     {
         _lastCheckpoint = lastCheckpoint;
         SaveLocalState();
     }
+
 
     public void AddPickedObject(int objectID)
     {
@@ -104,6 +107,7 @@ public class LocalObjectHandler : MonoBehaviour
         }
     }
 
+
     public void AddOpenedDoor(int doorID)
     {
         if (!_openedDoorsIDs.Contains(doorID))
@@ -112,6 +116,7 @@ public class LocalObjectHandler : MonoBehaviour
         }
     }
 
+
     public void AddDestroyedObject(int objectID)
     {
         if (!_destroyedObjectsIDs.Contains(objectID))
@@ -119,6 +124,7 @@ public class LocalObjectHandler : MonoBehaviour
             _destroyedObjectsIDs.Add(objectID);
         }
     }
+
 
     public void SaveLocalState()
     {

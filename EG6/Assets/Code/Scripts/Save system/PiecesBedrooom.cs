@@ -1,26 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PiecesBedrooom : MonoBehaviour
 {
-    
     [SerializeField] private GameObject _SegirJugando;
     [SerializeField] private GameObject _NoDesbloqueado;
     [SerializeField] private float _time= 4f;
     public AudioSource Sonido;
    
 
-
-
-
-
-private void Start()
+    private void Start()
     {
         _SegirJugando.SetActive(false);
         _NoDesbloqueado.SetActive(false);
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -34,24 +28,18 @@ private void Start()
             }
             else
             {
-
                 _NoDesbloqueado.SetActive(true);
                 StartCoroutine(Waittext());
                 Debug.Log("No desbloqueado");
-
             }
-        
-        
         }
     }
+
+
     private IEnumerator Waittext()
     {
         yield return new WaitForSeconds(_time);
         _NoDesbloqueado.SetActive(false);
-
-
     }
-   
-
 }
    

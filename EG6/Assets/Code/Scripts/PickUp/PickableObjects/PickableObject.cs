@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -17,7 +15,6 @@ public class PickableObject : MonoBehaviour, IPickable
     private void Start() 
     {
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
-
     }
 
     public virtual void PickUp()
@@ -25,5 +22,4 @@ public class PickableObject : MonoBehaviour, IPickable
         _localObjectHandler.AddPickedObject(ID);
         gameObject.SetActive(false);
     }
-    
 }

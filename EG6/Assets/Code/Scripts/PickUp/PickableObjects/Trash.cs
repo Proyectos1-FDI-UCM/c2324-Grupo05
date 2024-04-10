@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -18,6 +16,7 @@ public class Trash : PickableObject
             PickUp();
         }
     }
+    
 
     public override void PickUp()
     {

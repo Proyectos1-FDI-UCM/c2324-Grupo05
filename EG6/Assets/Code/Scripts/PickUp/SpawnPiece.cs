@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnPiece : MonoBehaviour
@@ -11,7 +9,6 @@ public class SpawnPiece : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
         {
-            
                 _piece.GetComponent<MovableObject>().enabled = true;
         }
     }

@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using System;
 using System.Threading.Tasks;
 
 /// <summary>
@@ -11,18 +8,20 @@ using System.Threading.Tasks;
 /// </summary>
 public class SequenceChecker : MonoBehaviour
 {
-    [SerializeField] private List<int> _combination; // List of the button ids that the player needs to press
-    [SerializeField] private DoorSwitcher _door; // Reference to the door switcher
-    private List<ButtonPressCommand> _sequence = new List<ButtonPressCommand>(); // Commands that the player has pressed
-    private List<ButtonPressCommand> _desiredSequence = new List<ButtonPressCommand>(); // field to store the desired sequence
+    [SerializeField] private List<int> _combination;
+    [SerializeField] private DoorSwitcher _door; 
+
+    private List<ButtonPressCommand> _sequence = new List<ButtonPressCommand>(); 
+    private List<ButtonPressCommand> _desiredSequence = new List<ButtonPressCommand>();
     private bool _isSequenceMatched = true;
     
+
     private void Start()
     {
         SetCombination();
     }  
 
-    // Method to set the combination of the buttons by creating the desired sequence
+
     private void SetCombination()
     {
         for (int i = 0; i < _combination.Count; i++)
@@ -32,13 +31,13 @@ public class SequenceChecker : MonoBehaviour
     }
 
 
-    // Method to add the button-command to the current sequence
+
     public void AddButtonToSequence(ButtonPressCommand button)
     {
         _sequence.Add(button);
     }
 
-    // Method to check if the sequence is matched and open the door if it's true
+
     public void CheckSequence()
     {   
         for (int i = 0; i < _sequence.Count; i++) 
@@ -62,15 +61,15 @@ public class SequenceChecker : MonoBehaviour
 
     }
 
-    // Method to undo the sequence (undo all commands that the player has pressed)
+
     private async void UndoSequence()
     {
         List<ButtonPressCommand> sequenceCopy;
 
-        lock (_sequence)
+        lock (_sequence) // Lock, because it can be modified by the player while another async task is running
         {
-            sequenceCopy = new List<ButtonPressCommand>(_sequence); // Создаем копию _sequence
-            _sequence.Clear(); // Очищаем _sequence
+            sequenceCopy = new List<ButtonPressCommand>(_sequence); 
+            _sequence.Clear(); 
         }
 
         for (int i = sequenceCopy.Count - 1; i >= 0; i--)

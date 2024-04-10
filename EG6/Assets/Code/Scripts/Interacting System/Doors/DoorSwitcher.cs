@@ -1,8 +1,5 @@
 using NavMeshPlus.Components;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 /// <summary>
 /// This class is used to switch the state of the door (opened or closed)
@@ -12,9 +9,10 @@ public class DoorSwitcher : MonoBehaviour
 {
     [SerializeField] private int _id;
     private bool _isDoorOpen = false;
+
+    protected NavMeshSurface _navMeshSurface;
     private LocalObjectHandler _localObjectHandler;
     private GameObject _door;
-    protected NavMeshSurface _navMeshSurface;
 
     public int ID { get => _id;}
 
@@ -26,7 +24,7 @@ public class DoorSwitcher : MonoBehaviour
         _navMeshSurface = FindObjectOfType<NavMeshSurface>();
     }
 
-    // private method to update the door state based on the _isDoorOpen state
+
     private void UpdateDoorState()
     {
         if (_isDoorOpen)
@@ -43,10 +41,7 @@ public class DoorSwitcher : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Method to set the door state (opened or closed)
-    /// </summary>
-    /// <param name="state">true if door is opened, false if it's closed</param>
+
     public void SetDoorState(bool state)
     {
         if (_isDoorOpen == state)

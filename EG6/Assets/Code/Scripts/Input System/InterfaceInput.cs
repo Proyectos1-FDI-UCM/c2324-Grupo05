@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 /// <summary>
 /// This class is used to handle the input for the interface actions.
@@ -13,6 +10,7 @@ public class InterfaceInput : MonoBehaviour
     [SerializeField] private PausingMenu _pausingMenu;
     [SerializeField] private CharacterInteraction _characterInteraction;
     
+
     private void Awake()
     {
         PlayerInput playerInput = new PlayerInput();
@@ -31,5 +29,4 @@ public class InterfaceInput : MonoBehaviour
 	{
 		_interfaceInput.Disable();
     }
-
 }

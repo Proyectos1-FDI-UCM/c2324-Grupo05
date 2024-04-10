@@ -1,10 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Numerics;
-using Unity.VisualScripting;
 using UnityEngine;
-using Vector2 = UnityEngine.Vector2;
 using SceneManager = UnityEngine.SceneManagement.SceneManager;
 
 /// <summary>
@@ -60,10 +55,12 @@ public class GlobalObjectRegistry : MonoBehaviour
         }
     }
 
+
     private void Start() 
     {
         GetComponent<SavesManager>().LoadGame();
     }
+
 
     public void SaveLevelState(List<int> pickedObjectsIDs, List<int> openedDoorsIDs, List<int> destroyedObjectsIDs, int lastCheckpoint, string sceneName = null)
     {
@@ -100,6 +97,7 @@ public class GlobalObjectRegistry : MonoBehaviour
         }
         return new LevelState(sceneName, new List<int>(), new List<int>(), new List<int>(), 0);
     }
+
 
     public void StartNewGame()
     {

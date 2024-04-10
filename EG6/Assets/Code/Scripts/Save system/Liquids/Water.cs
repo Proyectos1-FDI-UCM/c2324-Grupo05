@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
 /// <summary>
@@ -23,6 +20,7 @@ public class Water : LevelResetter
             penguinMovement.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D collision) 
     {

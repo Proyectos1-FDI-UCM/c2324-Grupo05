@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Class for the piece pickable object
@@ -20,10 +19,9 @@ public class Piece : PickableObject
             _localObjectHandler.SaveLocalState();
 
             _transitionScene.ChangeScene(true);
-            //SceneManager.LoadScene("Cinematica");
-
         }
     }
+
 
     public override void PickUp()
     {
@@ -32,7 +30,6 @@ public class Piece : PickableObject
         GlobalObjectRegistry.instance.collectedPieces++;
         GlobalObjectRegistry.instance.isPenguinUnlocked = true;
         base.PickUp();
-        
     }
 
     

@@ -9,17 +9,17 @@ using UnityEngine.UI;
 public class ButtonPressCommand : ICommand
 {
     private int _buttonId;
-    private SpriteRenderer _buttonRenderer; // Renderer reference to change the color of the button
-    private Sprite _previousSprite; // Store the previous sprite of the button
+    private SpriteRenderer _buttonRenderer; 
+    private Sprite _previousSprite; 
 
-    // Constructor
+
     public ButtonPressCommand(int buttonId, SpriteRenderer buttonRenderer)
     {
         _buttonId = buttonId;
         _buttonRenderer = buttonRenderer;
     }
 
-    // Execute the command, change the color of the button to green
+
     public void Execute()
     {
         _previousSprite = _buttonRenderer.sprite;
@@ -27,7 +27,7 @@ public class ButtonPressCommand : ICommand
         _buttonRenderer.sprite = sprite;
     }
 
-    // This method is called to undo the action
+
     public void Undo()
     {
         AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/Buttons/buttonReleased");
@@ -37,7 +37,7 @@ public class ButtonPressCommand : ICommand
         button.IsPressed = false;
     }
 
-    // public method to get the button id
+    
     public int GetButtonId()
     {
         return _buttonId;

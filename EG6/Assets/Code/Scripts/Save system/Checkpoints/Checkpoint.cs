@@ -14,10 +14,12 @@ public class Checkpoint : MonoBehaviour
 
     public int CheckpointID { get => _checkpointID;}
 
+
     private void Start() 
     {
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
     }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

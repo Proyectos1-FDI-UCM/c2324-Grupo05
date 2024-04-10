@@ -7,9 +7,12 @@ using UnityEngine;
 /// Is used to move kinematic rigidbodies in the game.
 /// Has additional vector for the movement to implement conveyor belts and other additional movement effects.
 /// </summary>
+[RequireComponent(typeof(CollisionHandler))]
 public class MovableObject : MonoBehaviour, IMovable
 {
-    [SerializeField] private float _maxIterations = 2f;
+
+    [SerializeField] [Range(1f, 10f)]
+    protected float _movementSpeed = 4f;
 
     protected Rigidbody2D _rigidbody2D;
     protected CollisionHandler _collisionHandler;
@@ -17,11 +20,11 @@ public class MovableObject : MonoBehaviour, IMovable
     protected Vector2 _additionalVector;
     protected bool _isMoving = false;
 
-    [SerializeField] [Range(1f, 10f)] 
-    protected float _movementSpeed = 4f;
+    private float _maxIterations = 2f;
 
     public Vector2 AdditionalVector { get => _additionalVector; set => _additionalVector = value;}
     public bool IsMoving { get => _isMoving;}
+
     public float MovementSpeed
     {
         get => _movementSpeed;
@@ -39,7 +42,9 @@ public class MovableObject : MonoBehaviour, IMovable
             }
         }
     }
+
     public Vector2 MovementDirection { get => _movementDirection;}
+
 
     void Start()
     {
@@ -47,15 +52,18 @@ public class MovableObject : MonoBehaviour, IMovable
         _collisionHandler = GetComponent<CollisionHandler>();
     }
 
+
     protected virtual void FixedUpdate()
     {
         Move(_movementDirection);
     }
 
+
     public virtual void SetInputDirection(Vector2 direction)
     {
         _movementDirection = direction;
     }
+
 
     protected virtual Vector2 CalculateNewPosition(Vector2 direction)
     {
@@ -79,10 +87,10 @@ public class MovableObject : MonoBehaviour, IMovable
         return newPosition;
     }
 
+
     protected virtual void Move(Vector2 direction)
     {
         Vector2 newPosition = CalculateNewPosition(direction);
-
         if (newPosition != _rigidbody2D.position)
         {
             _rigidbody2D.MovePosition(newPosition);

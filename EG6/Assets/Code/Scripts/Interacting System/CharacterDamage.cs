@@ -1,10 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// This class defines the damage that the character can deal
+/// </summary>
 public class CharacterDamage : MonoBehaviour
 {
-    [SerializeField] private int _damage = 4;
+    private int _damage = 4;
 
     public int Damage => _damage;
 
