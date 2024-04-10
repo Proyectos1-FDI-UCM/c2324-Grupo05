@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+/// <summary>
+/// This class is used to change the scene when the animation ends
+/// </summary>
 public class SceneTransition : MonoBehaviour
 {
     private Animator animator;
@@ -16,15 +20,12 @@ public class SceneTransition : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    
-
     public void ChangeScene(bool start)
     {
         if(start)
         {
             StartCoroutine(CambiarEscena());
         }    
-            
     }
 
     IEnumerator CambiarEscena()

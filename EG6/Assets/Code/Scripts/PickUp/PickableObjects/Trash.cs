@@ -4,6 +4,8 @@ using UnityEngine;
 
 /// <summary>
 /// Class of pickable trash
+/// Increments the trash counter when picked up
+/// Updates the damage of the characters when picked up
 /// </summary>
 public class Trash : PickableObject
 {

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// Class for the piece pickable object
 /// Teleports the player to the BedroomTest scene
+/// Overwrites the last unlocked checkpoint
 /// </summary>
 public class Piece : PickableObject
 {
