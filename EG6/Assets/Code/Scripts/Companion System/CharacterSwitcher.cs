@@ -41,31 +41,23 @@ public class CharacterSwitcher : MonoBehaviour
             return;
         }
 
+        _childPlayerMovement.enabled = !_isControllingChild;
+        _childPlayerInput.enabled = !_isControllingChild;
+        _penguinPlayerInput.enabled = _isControllingChild;
+        _penguinNavMeshAgent.enabled = !_isControllingChild;
+        _penguinCharacterInteraction.enabled = _isControllingChild;
+        _childCharacterInteraction.enabled = !_isControllingChild;
+
+        _childCharacterInteraction.DiscardSelection();
+        _penguinCharacterInteraction.DiscardSelection();
+
         if (_isControllingChild)
         {
-            _childPlayerMovement.enabled = false;
-            _childPlayerInput.enabled = false;
-            _penguinPlayerInput.enabled = true;
-            _penguinNavMeshAgent.enabled = false;
-
-            _childCharacterInteraction.DiscardSelection();
-            _penguinCharacterInteraction.enabled = true;
-            _childCharacterInteraction.enabled = false;
-
             _penguinPlayerMovement.ControllingMode = ControllingMode.PlayerControlled;
             _isControllingChild = false;
         }
         else
         {
-            _childPlayerMovement.enabled = true;
-            _childPlayerInput.enabled = true;
-            _penguinPlayerInput.enabled = false;
-            _penguinNavMeshAgent.enabled = true;
-
-            _penguinCharacterInteraction.DiscardSelection();
-            _penguinCharacterInteraction.enabled = false;
-            _childCharacterInteraction.enabled = true;
-
             _penguinPlayerMovement.ControllingMode = ControllingMode.AIControlled;
             _isControllingChild = true;
         }
