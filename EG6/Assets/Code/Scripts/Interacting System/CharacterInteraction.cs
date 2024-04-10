@@ -38,7 +38,6 @@ public class CharacterInteraction : MonoBehaviour
         if (hitCount == 1)
         {
             _selectedObject = _interactionHits[0].collider.gameObject.GetComponent<DestroyableObject>();
-            Debug.DrawLine(transform.position, (Vector2)transform.position + direction * _interactionDistance, Color.red);
             if (_selectedObject != null)
             {
                 _selectedObject.Select();
