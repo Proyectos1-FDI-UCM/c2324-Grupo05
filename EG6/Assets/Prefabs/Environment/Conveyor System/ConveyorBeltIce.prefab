@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 414655121983027559}
   - component: {fileID: -198256240476055201}
   - component: {fileID: 3699990092570563262}
-  - component: {fileID: 3540379175603168926}
   - component: {fileID: 8382827932428451069}
+  - component: {fileID: 100559177549599563}
   m_Layer: 6
   m_Name: ConveyorBeltIce
   m_TagString: Untagged
@@ -172,24 +172,11 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 8
+      m_Bits: 72
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
---- !u!114 &3540379175603168926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916061823998194578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 809137104bf863c4bbcd788c7773c75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementSpeed: 4
 --- !u!50 &8382827932428451069
 Rigidbody2D:
   serializedVersion: 4
@@ -217,3 +204,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &100559177549599563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916061823998194578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29aa28697a246146a8f29e7bc34cbdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementSpeed: 4
+  _lifetime: 12

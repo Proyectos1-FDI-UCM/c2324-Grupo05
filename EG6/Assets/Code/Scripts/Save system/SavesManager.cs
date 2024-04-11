@@ -68,9 +68,16 @@ public class SavesManager : MonoBehaviour
         }
         foreach (string filePath in Directory.GetFiles(levelStatesFolderPath))
         {
-            string json = File.ReadAllText(filePath);
-            GlobalObjectRegistry.LevelState levelState = JsonUtility.FromJson<GlobalObjectRegistry.LevelState>(json);
-            _globalObjectRegistry.LevelStates.Add(levelState);
-        }
+            try 
+            {
+                string json = File.ReadAllText(filePath);
+                GlobalObjectRegistry.LevelState levelState = JsonUtility.FromJson<GlobalObjectRegistry.LevelState>(json);
+                _globalObjectRegistry.LevelStates.Add(levelState);
+            }
+            catch (System.ArgumentException)
+            {
+                // Do nothing
+            }	
+        }       
     }
 }

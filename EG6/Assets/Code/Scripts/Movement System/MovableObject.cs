@@ -46,7 +46,7 @@ public class MovableObject : MonoBehaviour, IMovable
     public Vector2 MovementDirection { get => _movementDirection;}
 
 
-    void Start()
+    protected virtual void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _collisionHandler = GetComponent<CollisionHandler>();

@@ -32,7 +32,10 @@ public class IceSpawner : MonoBehaviour
 
     private void SpawnIce()
     {
-        Instantiate(_ice, _myTransform.position, Quaternion.identity);
+        if (_spawnerBlocked == false)
+        {
+            Instantiate(_ice, _myTransform.position, Quaternion.identity);
+        }
     }
 
 
@@ -41,17 +44,15 @@ public class IceSpawner : MonoBehaviour
         if (collision.GetComponent<MovableObject>() != null)
         {
             _spawnerBlocked = true;
-            Debug.Log(_spawnerBlocked);
         }
     }
 
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<MovableObject>() != null)
+        if (collision.GetComponent<ChildMovement>() != null || collision.GetComponent<PenguinMovement>() != null)
         {
             _spawnerBlocked = false;
-            Debug.Log(_spawnerBlocked);
         }
     }
 }
