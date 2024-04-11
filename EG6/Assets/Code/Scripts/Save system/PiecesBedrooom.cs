@@ -5,6 +5,9 @@ public class PiecesBedrooom : MonoBehaviour
 {
     [SerializeField] private GameObject _SegirJugando;
     [SerializeField] private GameObject _NoDesbloqueado;
+    [SerializeField] private Transform _gardenDoor;
+    [SerializeField] private Transform _child;
+    [SerializeField] private Transform _penguin;
     [SerializeField] private float _time= 4f;
     public AudioSource Sonido;
    
@@ -21,6 +24,25 @@ public class PiecesBedrooom : MonoBehaviour
         if (collision.gameObject.GetComponent<ChildMovement>() != null) 
         {
             Sonido.Play();
+            
+            if(GlobalObjectRegistry.instance.isEggPicked)
+            {
+                //child can go to garden
+                _child.position = _gardenDoor.position;
+                
+                if(GlobalObjectRegistry.instance.isPenguinUnlocked)
+                {
+                    //penguin follows child after piece 1
+                    _penguin.position = _gardenDoor.position;
+                }
+            }
+            
+            
+            
+            
+            
+            
+            /*
             if (GlobalObjectRegistry.instance.collectedPieces == 2) 
             {
                 _SegirJugando.SetActive(true);
@@ -32,6 +54,7 @@ public class PiecesBedrooom : MonoBehaviour
                 StartCoroutine(Waittext());
                 Debug.Log("No desbloqueado");
             }
+            */
         }
     }
 
