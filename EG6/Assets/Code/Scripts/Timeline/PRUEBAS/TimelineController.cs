@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class TimelineController : MonoBehaviour
 {
-    //reference to saved file
-    //private int _piece;
-    [SerializeField] private GameObject[] _timelines; // Array to store all timelines
+    
+    [SerializeField] private GameObject[] _timelines; // Array to store all new mechanic timelines
+    [SerializeField] private GameObject _introduction;
     private int _currentTimeline = -1; // index of current timeline (-1 is no timeline)
 
     void Start()
@@ -19,7 +19,7 @@ public class TimelineController : MonoBehaviour
             timeline.SetActive(false);
         }
 
-        //_piece = PlayerPrefs.GetInt("pieza");
+        _introduction.SetActive(false);
         StartTimeline();
 
     }
@@ -34,14 +34,30 @@ public class TimelineController : MonoBehaviour
         }
 
         // Start new timeline
-        _currentTimeline = GlobalObjectRegistry.instance.collectedPieces;
-        _timelines[GlobalObjectRegistry.instance.collectedPieces].SetActive(true);
+        if(!GlobalObjectRegistry.instance.isEggPicked)  
+        {
+            _introduction.SetActive(true);
+        }
+        else
+        {
+            _currentTimeline = GlobalObjectRegistry.instance.collectedPieces;
+            _timelines[GlobalObjectRegistry.instance.collectedPieces].SetActive(true);
+        }
+        
     }
 
     //Is called at the end of each timeline (animation event)
     public void ChangeScene()
     {
-        _timelines[_currentTimeline].SetActive(false);
+        if (!GlobalObjectRegistry.instance.isEggPicked)
+        {
+            _introduction.SetActive(true);
+        }
+        else
+        {
+            _timelines[_currentTimeline].SetActive(false);
+        }
+        
         SceneManager.LoadScene("BedroomTest");
     }
 

@@ -112,6 +112,6 @@ public class GlobalObjectRegistry : MonoBehaviour
         collectedPieces = 0;
         collectedTrash = 0;
         GetComponent<SavesManager>().SaveGame();
-        SceneManager.LoadScene("Map-Exterior");
+        SceneManager.LoadScene("Cinematica");
     }
 }
