@@ -14,7 +14,7 @@ public class ConveyorButton : Button
     {
         base.ButtonPressed();
 
-        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
+        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer, _localObjectHandler);
         buttonPressCommand.Execute();
 
         _conveyorBelt.PushDirection = _conveyorBelt.PushDirection * -1;

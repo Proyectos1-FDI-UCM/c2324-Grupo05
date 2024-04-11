@@ -20,7 +20,7 @@ public class ConveyorStopButton : Button
     protected override async void ButtonPressed()
     {
         base.ButtonPressed();
-        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer);
+        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer, _localObjectHandler);
         buttonPressCommand.Execute();
 
         if (_collider.enabled == true)

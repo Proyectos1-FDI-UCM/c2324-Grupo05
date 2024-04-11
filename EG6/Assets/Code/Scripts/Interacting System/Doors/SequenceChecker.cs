@@ -12,7 +12,7 @@ public class SequenceChecker : MonoBehaviour
     [SerializeField] private DoorSwitcher _door; 
 
     private List<ButtonPressCommand> _sequence = new List<ButtonPressCommand>(); 
-    private List<ButtonPressCommand> _desiredSequence = new List<ButtonPressCommand>();
+    private List<int> _desiredSequence = new List<int>();
     private bool _isSequenceMatched = true;
     
 
@@ -26,7 +26,7 @@ public class SequenceChecker : MonoBehaviour
     {
         for (int i = 0; i < _combination.Count; i++)
         {
-            _desiredSequence.Add(new ButtonPressCommand(_combination[i], null));
+            _desiredSequence.Add(_combination[i]);
         }
     }
 
@@ -42,7 +42,7 @@ public class SequenceChecker : MonoBehaviour
     {   
         for (int i = 0; i < _sequence.Count; i++) 
         {
-            if (_sequence[i].GetButtonId() != _desiredSequence[i].GetButtonId() && _isSequenceMatched == true)
+            if (_sequence[i].GetButtonId() != _desiredSequence[i] && _isSequenceMatched == true)
             {
                 _isSequenceMatched = false;
             }
