@@ -3,6 +3,7 @@ using SceneManager = UnityEngine.SceneManagement.SceneManager;
 using UnityEngine;
 using LevelState = GlobalObjectRegistry.LevelState;
 using NavMeshPlus.Components;
+using Unity.VisualScripting;
 
 /// <summary>
 /// This class is used to store the local state of the objects in the level
@@ -17,12 +18,14 @@ public class LocalObjectHandler : MonoBehaviour
     private List<int> _pickedObjectsIDs;
     private List<int> _openedDoorsIDs;
     private List<int> _destroyedObjectsIDs;
+    private List<int> _pressedButtonsIDs;
     private TeleportHandler _teleporter;
     private LevelState _levelState;
 
     public List<int> PickedObjectsIDs { get => _pickedObjectsIDs; }
     public List<int> OpenedDoorsIDs { get => _openedDoorsIDs; }
     public List<int> DestroyedObjectsIDs { get => _destroyedObjectsIDs; }
+    public List<int> PressedButtonsIDs { get => _pressedButtonsIDs; }
 
     private void Awake()
     {
@@ -36,6 +39,7 @@ public class LocalObjectHandler : MonoBehaviour
         _pickedObjectsIDs = _levelState.PickedObjects;
         _openedDoorsIDs = _levelState.OpenedDoors;
         _destroyedObjectsIDs = _levelState.DestroyedObjects;
+        _pressedButtonsIDs = _levelState.PressedButtons;
 
         CharacterDamage[] characterDamages = FindObjectsOfType<CharacterDamage>();
         foreach (CharacterDamage characterDamage in characterDamages)
@@ -62,6 +66,11 @@ public class LocalObjectHandler : MonoBehaviour
         PickableObject[] pickableObjects = FindObjectsOfType<PickableObject>();
         DestroyableObject[] destroyableObjects = FindObjectsOfType<DestroyableObject>();
         DoorSwitcher[] doors = FindObjectsOfType<DoorSwitcher>();
+        
+        List<Button> doorButtons = new List<Button>();
+        doorButtons.AddRange(FindObjectsOfType<DoorButton>());
+        doorButtons.AddRange(FindObjectsOfType<CombinationDoorButton>());
+        Button[] buttons = doorButtons.ToArray(); 
 
         if (_globalObjectRegistry.isPenguinUnlocked == false)
         {
@@ -87,6 +96,13 @@ public class LocalObjectHandler : MonoBehaviour
             if (_openedDoorsIDs.Contains(door.ID))
             {
                 door.gameObject.SetActive(false);
+            }
+        }
+        foreach (Button button in buttons)
+        {
+            if (_pressedButtonsIDs.Contains(button.ButtonId))
+            {
+                button.DisactivateButton();
             }
         }
     }
@@ -128,6 +144,7 @@ public class LocalObjectHandler : MonoBehaviour
 
     public void SaveLocalState()
     {
-        _globalObjectRegistry.SaveLevelState(_pickedObjectsIDs, _openedDoorsIDs, _destroyedObjectsIDs, _lastCheckpoint.CheckpointID);
+        _globalObjectRegistry.SaveLevelState(_pickedObjectsIDs, _openedDoorsIDs, _destroyedObjectsIDs, 
+        _pressedButtonsIDs, _lastCheckpoint.CheckpointID);
     }
 }

@@ -11,17 +11,19 @@ public abstract class Button : MonoBehaviour
 {
     [SerializeField] protected int _buttonId; 
     protected SpriteRenderer _buttonRenderer;
+    protected LocalObjectHandler _localObjectHandler;
     protected bool _isPressed = false;
 
     public bool IsPressed { get => _isPressed; set => _isPressed = value; }
-    public int ButtonId { get => _buttonId; private set => _buttonId = value; } // Incapsulated property for the id
+    public int ButtonId { get => _buttonId; private set => _buttonId = value; } 
 
     protected virtual void Start() 
     {
         _buttonRenderer = GetComponent<SpriteRenderer>();
+        _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
     }
 
-    // When the player enters the button collider the OnPressed method is called
+
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         if ((collision.GetComponent<ChildMovement>() != null || collision.GetComponent<PenguinMovement>().ControllingMode == ControllingMode.PlayerControlled) 
@@ -34,7 +36,16 @@ public abstract class Button : MonoBehaviour
 
     protected virtual void ButtonPressed() 
     {
-        AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/Buttons/buttonPressed");
-        AudioSource.PlayClipAtPoint(onPressedSound, transform.position);
+        
+    }
+
+    /// <summary>
+    /// This method is used to disactivate pressed buttons when we load the level again.
+    /// Without sound and execution of the command.
+    /// </summary>
+    public void DisactivateButton() 
+    {
+        _isPressed = true;
+        _buttonRenderer.sprite = Resources.Load<Sprite>("Sprites/Environment/SpritesFinales/ButtonPressed");
     }
 }

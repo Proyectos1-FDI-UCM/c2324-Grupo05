@@ -25,7 +25,7 @@ public class SelectingLevelButton : MonoBehaviour
         }
 
         levelState.CurrentCheckpointID = indexLevel;
-        _globalObjectRegistry.SaveLevelState(levelState.PickedObjects, levelState.OpenedDoors, levelState.DestroyedObjects, levelState.CurrentCheckpointID, "Map-Exterior");
+        _globalObjectRegistry.SaveLevelState(levelState.PickedObjects, levelState.OpenedDoors, levelState.DestroyedObjects, levelState.PressedButtons, levelState.CurrentCheckpointID, "Map-Exterior");
         SceneManager.LoadScene("Map-Exterior");
     }
 

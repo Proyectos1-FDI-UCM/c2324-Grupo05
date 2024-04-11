@@ -16,16 +16,19 @@ public class GlobalObjectRegistry : MonoBehaviour
         public List<int> PickedObjects;
         public List<int> OpenedDoors;
         public List<int> DestroyedObjects;
+        public List<int> PressedButtons;
         public int CurrentCheckpointID;
         public int LastCheckpointID;
        
 
-        public LevelState(string sceneName, List<int> pickedObjects, List<int> openedDoors, List<int> destroyedObjects, int currentCheckpointID)
+        public LevelState(string sceneName, List<int> pickedObjects, List<int> openedDoors, List<int> pressedButtons,
+        List<int> destroyedObjects, int currentCheckpointID)
         {
             SceneName = sceneName;
             PickedObjects = pickedObjects;
             OpenedDoors = openedDoors;
             DestroyedObjects = destroyedObjects;
+            PressedButtons = pressedButtons;
             CurrentCheckpointID = currentCheckpointID;
             LastCheckpointID = CurrentCheckpointID;
         }
@@ -62,7 +65,8 @@ public class GlobalObjectRegistry : MonoBehaviour
     }
 
 
-    public void SaveLevelState(List<int> pickedObjectsIDs, List<int> openedDoorsIDs, List<int> destroyedObjectsIDs, int lastCheckpoint, string sceneName = null)
+    public void SaveLevelState(List<int> pickedObjectsIDs, List<int> openedDoorsIDs, List<int> destroyedObjectsIDs,
+    List<int> pressedButtonsIDs, int lastCheckpoint, string sceneName = null)
     {
         string currentSceneName = sceneName ?? SceneManager.GetActiveScene().name;
         LevelState currentState = GetLevelState(currentSceneName);
@@ -71,6 +75,7 @@ public class GlobalObjectRegistry : MonoBehaviour
         currentState.PickedObjects = pickedObjectsIDs;
         currentState.OpenedDoors = openedDoorsIDs;
         currentState.DestroyedObjects = destroyedObjectsIDs;
+        currentState.PressedButtons = pressedButtonsIDs;
         currentState.CurrentCheckpointID = lastCheckpoint;
 
         if (currentState.LastCheckpointID < lastCheckpoint)
@@ -95,7 +100,7 @@ public class GlobalObjectRegistry : MonoBehaviour
                 return state;
             }
         }
-        return new LevelState(sceneName, new List<int>(), new List<int>(), new List<int>(), 0);
+        return new LevelState(sceneName, new List<int>(), new List<int>(), new List<int>(), new List<int>(), 0);
     }
 
 
