@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class AchievementMenu : MonoBehaviour
+public class DecodedPhrasesMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _decodeNumbers;
     [SerializeField] private GameObject[] _decodePhrases;
@@ -38,7 +38,7 @@ public class AchievementMenu : MonoBehaviour
 
     public void ShowEggPhrase()
     {
-        if (GlobalObjectRegistry.instance.collectedPieces >= 0 && GlobalObjectRegistry.instance.isEggPicked) //egg picked
+        if (GlobalObjectRegistry.instance.collectedPieces >= 0 && GlobalObjectRegistry.instance.isEggPicked)
         {
             _pCounter = 0;
             _decodeNumbers.SetActive(false);
