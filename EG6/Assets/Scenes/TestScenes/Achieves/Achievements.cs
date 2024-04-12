@@ -10,6 +10,7 @@ public class Achievements : MonoBehaviour
     private bool FullTrash;
     private bool Friend;
     // Block with public Properties {get; set;}
+    public Animator animator;
     public GameObject Logro1;
     public GameObject Logro2;
     // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
@@ -20,7 +21,7 @@ public class Achievements : MonoBehaviour
 
     private void Start()
     {
-        
+        animator = animator.GetComponent<Animator>();
     }
 
     // MonoBehaviour update methods
@@ -34,11 +35,12 @@ public class Achievements : MonoBehaviour
     // Block with custom public Methods (with summary if it has complex logic)
     public void ShowAchive()
     {
-        if (GlobalObjectRegistry.instance.collectedTrash == 46)
+        if (GlobalObjectRegistry.instance.collectedTrash == 1)
         {
             FullTrash = true;
             Logro1.SetActive(true);
             PlayerPrefs.SetInt("Logro1", Logro1 ? 1 : 0);
+            animator.Play("Logro1");
         }
 
         if (GlobalObjectRegistry.instance.isEggPicked)
