@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PiecesBedrooom : MonoBehaviour
 {
@@ -27,14 +28,17 @@ public class PiecesBedrooom : MonoBehaviour
 
             if (GlobalObjectRegistry.instance.isEggPicked)
             {
-                //child can go to garden
+
+                SceneManager.LoadScene("Map-Exterior");
+
+               /* //child can go to garden
                 _child.position = _gardenDoor.position;
 
                 if (GlobalObjectRegistry.instance.isPenguinUnlocked)
                 {
                     //penguin follows child after piece 1
                     _penguin.position = _gardenDoor.position;
-                }
+                }*/
             }
             else
             {
