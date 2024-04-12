@@ -24,37 +24,33 @@ public class PiecesBedrooom : MonoBehaviour
         if (collision.gameObject.GetComponent<ChildMovement>() != null) 
         {
             Sonido.Play();
-            
-            if(GlobalObjectRegistry.instance.isEggPicked)
+
+            if (GlobalObjectRegistry.instance.isEggPicked)
             {
                 //child can go to garden
                 _child.position = _gardenDoor.position;
-                
-                if(GlobalObjectRegistry.instance.isPenguinUnlocked)
+
+                if (GlobalObjectRegistry.instance.isPenguinUnlocked)
                 {
                     //penguin follows child after piece 1
                     _penguin.position = _gardenDoor.position;
                 }
-            }
-            
-            
-            
-            
-            
-            
-            /*
-            if (GlobalObjectRegistry.instance.collectedPieces == 2) 
-            {
-                _SegirJugando.SetActive(true);
-                Debug.Log("Segir Jugando?");
             }
             else
             {
                 _NoDesbloqueado.SetActive(true);
                 StartCoroutine(Waittext());
                 Debug.Log("No desbloqueado");
+
             }
-            */
+
+            if (GlobalObjectRegistry.instance.collectedPieces == 3)
+            {
+                _SegirJugando.SetActive(true);
+                Debug.Log("Segir Jugando?");
+            }
+           
+            
         }
     }
 
