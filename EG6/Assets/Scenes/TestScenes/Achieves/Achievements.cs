@@ -8,8 +8,10 @@ public class Achievements : MonoBehaviour
 
     // Block with private (or protected) _fields
     private bool FullTrash;
+    private bool Friend;
     // Block with public Properties {get; set;}
     public GameObject Logro1;
+    public GameObject Logro2;
     // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
     private void Awake()
     {
@@ -36,6 +38,16 @@ public class Achievements : MonoBehaviour
         {
             FullTrash = true;
             Logro1.SetActive(true);
+            PlayerPrefs.SetInt("Logro1", Logro1 ? 1 : 0);
         }
+
+        if (GlobalObjectRegistry.instance.isEggPicked)
+        {
+            Friend = true;
+            Logro2.SetActive(true);
+            PlayerPrefs.SetInt("Logro2", Logro2 ? 1 : 0);
+        }
+
+
     }
 }
