@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BackBottonCandy : MonoBehaviour
@@ -10,8 +8,6 @@ public class BackBottonCandy : MonoBehaviour
         //move again
         Time.timeScale = 1f;
         _pannel.SetActive(false);
-    
-    
     }
 
 
