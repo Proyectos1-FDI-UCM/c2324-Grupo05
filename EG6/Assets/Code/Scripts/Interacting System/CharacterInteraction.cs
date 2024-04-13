@@ -35,23 +35,37 @@ public class CharacterInteraction : MonoBehaviour
 
     private void CheckInteractions(Vector2 direction)
     {
-        int hitCount = _rigidbody2D.Cast(direction, _interactionFilter, _interactionHits, _interactionDistance);
+        int distanceModifier = 0;
+        if (direction == Vector2.up)
+        {
+            distanceModifier = 3;
+        }
+        else 
+        {
+            distanceModifier = 1;
+        }
+
+        int hitCount = _rigidbody2D.Cast(direction, _interactionFilter, _interactionHits, _interactionDistance * distanceModifier);
 
         if (hitCount == 1)
         {
-            _selectedObject = _interactionHits[0].collider.gameObject.GetComponent<DestroyableObject>();
-            if (_selectedObject != null)
+            if (_interactionHits[0].collider.gameObject.GetComponent<DestroyableObject>() == null)
             {
-                _selectedObject.Select();
+                return;
             }
-        }
-        else
-        {
+
             if (_selectedObject != null)
             {
                 _selectedObject.Deselect();
-                _selectedObject = null;
             }
+            _selectedObject = _interactionHits[0].collider.gameObject.GetComponent<DestroyableObject>();
+            _selectedObject.Select();
+        }
+
+        if (hitCount == 0 && _selectedObject != null)
+        {
+            _selectedObject.Deselect();
+            _selectedObject = null;
         }
     }
 

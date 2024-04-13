@@ -9,6 +9,7 @@ using UnityEngine;
 public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 {
     [SerializeField] protected Sprite[] _statesSprite = new Sprite[3];
+    [SerializeField] private GameObject _selectArrow;
     [SerializeField] private int _id;
     
     protected int _durability = 12;
@@ -17,6 +18,7 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
     protected LocalObjectHandler _localObjectHandler;
     protected SpriteRenderer _spriteRenderer;
     protected NavMeshSurface _navMeshSurface;
+    protected GameObject _arrowInstance;
 
     public SpriteRenderer SpriteRenderer => _spriteRenderer;
     public int ID { get => _id; }
@@ -34,11 +36,21 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
     {
         if (_isSelected)
         {
-            _spriteRenderer.color = Color.red;
+            if (_arrowInstance == null)
+            {
+                _arrowInstance = Instantiate(_selectArrow, transform.position + Vector3.up * 1f, Quaternion.identity);
+            }
+            else
+            {
+                _arrowInstance.SetActive(true);
+            }
         }
         else
         {
-            _spriteRenderer.color = Color.white;
+            if (_arrowInstance != null)
+            {
+                _arrowInstance.SetActive(false);
+            }
         }
     }
 
@@ -63,6 +75,7 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
             UpdateSprite();
             if (_durability <= 0)
             {
+                _arrowInstance.SetActive(false);
                 Destroy();
             }
         }
