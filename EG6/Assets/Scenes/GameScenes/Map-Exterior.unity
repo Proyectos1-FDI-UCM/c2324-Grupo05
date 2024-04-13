@@ -43018,11 +43018,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3457932428125981357, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 116.84
+      value: -6.9
       objectReference: {fileID: 0}
     - target: {fileID: 3457932428125981357, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.19
+      value: -2.41
       objectReference: {fileID: 0}
     - target: {fileID: 3457932428125981357, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65141,8 +65141,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1427295602}
   - component: {fileID: 1427295605}
-  - component: {fileID: 1427295604}
   - component: {fileID: 1427295603}
+  - component: {fileID: 1427295606}
   m_Layer: 0
   m_Name: candy (1)
   m_TagString: Untagged
@@ -65210,19 +65210,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &1427295604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427295601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a999c7eed90dfe24c96d719c85950c16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _candy: {fileID: 751731183}
 --- !u!212 &1427295605
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -65275,6 +65262,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1427295606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427295601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476cf96d0ad7a2e41979bc7f86215342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cluePanel: {fileID: 751731183}
 --- !u!1001 &1427337725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79239,8 +79239,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1980617562}
   - component: {fileID: 1980617561}
-  - component: {fileID: 1980617564}
   - component: {fileID: 1980617563}
+  - component: {fileID: 1980617564}
   m_Layer: 0
   m_Name: candy
   m_TagString: Untagged
@@ -79369,10 +79369,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1980617560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a999c7eed90dfe24c96d719c85950c16, type: 3}
+  m_Script: {fileID: 11500000, guid: 476cf96d0ad7a2e41979bc7f86215342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _candy: {fileID: 529836747}
+  _cluePanel: {fileID: 529836747}
 --- !u!1001 &1980639943
 PrefabInstance:
   m_ObjectHideFlags: 0
