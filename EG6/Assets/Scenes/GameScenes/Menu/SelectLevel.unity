@@ -342,15 +342,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 713754658}
-        m_TargetAssemblyTypeName: SelectingLevelButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: SelectLevelMenu, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Map-Exterior
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &67259770
@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 2
+  _sceneName: Map-Exterior
 --- !u!1 &337307287
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,15 +490,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 713754658}
-        m_TargetAssemblyTypeName: SelectingLevelButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: SelectLevelMenu, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Map-Exterior
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &337307290
@@ -551,6 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 1
+  _sceneName: Map-Exterior
 --- !u!1 &623543009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,15 +1107,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 713754658}
-        m_TargetAssemblyTypeName: SelectingLevelButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: SelectLevelMenu, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Map-Exterior
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1058966173
@@ -1167,6 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 4
+  _sceneName: Map-Exterior
 --- !u!1 &1065166414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,15 +1992,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 713754658}
-        m_TargetAssemblyTypeName: SelectingLevelButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: SelectLevelMenu, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
+          m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1935301220
@@ -2050,7 +2053,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddd09313235cee4f848a8a430efa533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 7
+  _id: 2
+  _sceneName: Level3
 --- !u!1 &1940509511
 GameObject:
   m_ObjectHideFlags: 0

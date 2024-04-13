@@ -7,21 +7,24 @@ public class SelectLevelButton : MonoBehaviour
 {
 
     [SerializeField] private int _id;
+    [SerializeField] private string _sceneName;
     private GlobalObjectRegistry _globalObjectRegistry;
     private UnityEngine.UI.Button _button;
     private LevelState _levelState;
 
     public int ButtonID => _id;
+    public string SceneName => _sceneName;
 
 
     private void Awake()
     {
-        _globalObjectRegistry = GlobalObjectRegistry.instance;
+        _globalObjectRegistry = instance;
         _button = GetComponent<UnityEngine.UI.Button>();
     }
+    
     private void Start()
     {
-        _levelState = _globalObjectRegistry.GetLevelState("Map-Exterior");
+        _levelState = _globalObjectRegistry.GetLevelState(_sceneName);
         if (_id > _levelState.LastCheckpointID)
         {
             _button.interactable = false;
