@@ -128,22 +128,16 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 
         while (timer < 0.5f)
         {
-            // Генерация случайной позиции на основе амплитуды потрясения
             Vector3 randomPoint = originalPosition + Random.insideUnitSphere * shakeAmount;
 
-            // Применение случайной позиции к объекту
             transform.localPosition = randomPoint;
 
-            // Увеличение времени
             timer += Time.deltaTime;
 
-            // Уменьшение амплитуды потрясения со временем
             shakeAmount *= 1 - Time.deltaTime * 1f;
 
             yield return null;
         }
-
-        // Возвращение объекта к исходной позиции после окончания потрясения
         transform.localPosition = originalPosition;
     }
 }

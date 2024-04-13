@@ -50,7 +50,7 @@ public class IceSpawner : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<ChildMovement>() != null || collision.GetComponent<PenguinMovement>() != null)
+        if (collision.GetComponent<MovableObject>() != null)
         {
             _spawnerBlocked = false;
         }

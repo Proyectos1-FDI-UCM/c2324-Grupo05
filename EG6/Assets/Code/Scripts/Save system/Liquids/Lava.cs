@@ -13,9 +13,9 @@ public class Lava : LevelResetter
         {
             ShowRetryMenu();
         }
-        if (collision.gameObject.GetComponent<Ice>() != null)
-        {
-            Destroy(collision.gameObject);
-        }
+        //if (collision.gameObject.GetComponent<Ice>() != null)
+        //{
+        //    Destroy(collision.gameObject);
+        //}
     }
 }

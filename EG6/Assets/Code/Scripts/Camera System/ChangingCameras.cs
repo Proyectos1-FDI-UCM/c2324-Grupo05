@@ -14,7 +14,6 @@ public class ChangingCameras : MonoBehaviour
     [SerializeField] private GameObject _block;
     [SerializeField] private GameObject _penguinDoor;
 
-
     private void Start()
     {
         _virtualCamera.SetActive(false);
