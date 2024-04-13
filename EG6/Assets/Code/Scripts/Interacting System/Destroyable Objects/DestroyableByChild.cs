@@ -22,7 +22,9 @@ public class DestroyableByChild : DestroyableObject
         }
         else
         {
-            Debug.Log("Only the child can destroy this object");
+            AudioClip onKnockSound = Resources.Load<AudioClip>("Audio/Destroyable/knockWood");
+            AudioSource.PlayClipAtPoint(onKnockSound,transform.position);
+            Shake();
         }
     }
 }

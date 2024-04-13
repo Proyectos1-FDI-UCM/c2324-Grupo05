@@ -1,5 +1,6 @@
 using NavMeshPlus.Components;
 using UnityEngine;
+using System.Collections;
 
 /// <summary>
 /// This class defines the destroyable objects in the game
@@ -10,6 +11,8 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 {
     [SerializeField] protected Sprite[] _statesSprite = new Sprite[3];
     [SerializeField] private GameObject _selectArrow;
+    [SerializeField] private AudioClip _onHitSound;
+    [SerializeField] private AudioClip _onDestroySound;
     [SerializeField] private int _id;
     
     protected int _durability = 12;
@@ -57,6 +60,7 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
 
     public virtual void Destroy()
     {
+        AudioSource.PlayClipAtPoint(_onDestroySound, transform.position);
         gameObject.SetActive(false);
         _navMeshSurface.RemoveData();
         _navMeshSurface.BuildNavMesh();
@@ -73,11 +77,12 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         {
             _durability-= characterDamage.Damage;
             UpdateSprite();
-            if (_durability <= 0)
-            {
-                _arrowInstance.SetActive(false);
-                Destroy();
-            }
+            AudioSource.PlayClipAtPoint(_onHitSound, transform.position);
+        }
+        else if (_durability <= 0)
+        {
+            _arrowInstance.SetActive(false);
+            Destroy();
         }
     }
 
@@ -108,5 +113,37 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         {
             _spriteRenderer.sprite = _statesSprite[2];
         }
+    }
+
+    protected void Shake()
+    {
+        StartCoroutine(ShakeCoroutine());
+    }
+
+    private IEnumerator ShakeCoroutine()
+    {
+        Vector3 originalPosition = transform.localPosition;
+        float timer = 0.0f;
+        float shakeAmount = 0.05f;
+
+        while (timer < 0.5f)
+        {
+            // Генерация случайной позиции на основе амплитуды потрясения
+            Vector3 randomPoint = originalPosition + Random.insideUnitSphere * shakeAmount;
+
+            // Применение случайной позиции к объекту
+            transform.localPosition = randomPoint;
+
+            // Увеличение времени
+            timer += Time.deltaTime;
+
+            // Уменьшение амплитуды потрясения со временем
+            shakeAmount *= 1 - Time.deltaTime * 1f;
+
+            yield return null;
+        }
+
+        // Возвращение объекта к исходной позиции после окончания потрясения
+        transform.localPosition = originalPosition;
     }
 }

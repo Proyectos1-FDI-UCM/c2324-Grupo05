@@ -22,7 +22,9 @@ public class DestroyableByPenguin : DestroyableObject
         }
         else
         {
-            Debug.Log("Only the penguin can destroy this object");
+            AudioClip onKnockSound = Resources.Load<AudioClip>("Audio/Destroyable/knockIce");
+            AudioSource.PlayClipAtPoint(onKnockSound,transform.position);
+            Shake();
         }
     }
 }
