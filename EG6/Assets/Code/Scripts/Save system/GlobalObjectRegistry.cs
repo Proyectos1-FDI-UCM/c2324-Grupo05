@@ -100,7 +100,7 @@ public class GlobalObjectRegistry : MonoBehaviour
                 return state;
             }
         }
-        return new LevelState(sceneName, new List<int>(), new List<int>(), new List<int>(), new List<int>(), 0);
+        return new LevelState(sceneName, new List<int>(), new List<int>(), new List<int>(), new List<int>(), 1);
     }
 
 

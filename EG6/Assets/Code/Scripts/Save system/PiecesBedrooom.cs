@@ -1,22 +1,24 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using LevelState = GlobalObjectRegistry.LevelState;
 
 public class PiecesBedrooom : MonoBehaviour
 {
-    [SerializeField] private GameObject _SegirJugando;
     [SerializeField] private GameObject _NoDesbloqueado;
-    [SerializeField] private Transform _gardenDoor;
-    [SerializeField] private Transform _child;
-    [SerializeField] private Transform _penguin;
     [SerializeField] private float _time= 4f;
+
+    private GlobalObjectRegistry _globalObjectRegistry;
+    private LevelState _levelState;
+
     public AudioSource Sonido;
    
 
     private void Start()
     {
-        _SegirJugando.SetActive(false);
         _NoDesbloqueado.SetActive(false);
+        _globalObjectRegistry = GlobalObjectRegistry.instance;
+        _levelState = _globalObjectRegistry.GetLevelState("Map-Exterior");
     }
 
 
@@ -29,32 +31,15 @@ public class PiecesBedrooom : MonoBehaviour
             if (GlobalObjectRegistry.instance.isEggPicked)
             {
 
+                _levelState.CurrentCheckpointID = 0;
+                _globalObjectRegistry.SaveLevelState(_levelState.PickedObjects, _levelState.OpenedDoors, _levelState.DestroyedObjects, _levelState.PressedButtons, _levelState.CurrentCheckpointID, "Map-Exterior");
                 SceneManager.LoadScene("Map-Exterior");
-
-               /* //child can go to garden
-                _child.position = _gardenDoor.position;
-
-                if (GlobalObjectRegistry.instance.isPenguinUnlocked)
-                {
-                    //penguin follows child after piece 1
-                    _penguin.position = _gardenDoor.position;
-                }*/
             }
             else
             {
                 _NoDesbloqueado.SetActive(true);
                 StartCoroutine(Waittext());
-                Debug.Log("No desbloqueado");
-
             }
-
-            if (GlobalObjectRegistry.instance.collectedPieces == 3)
-            {
-                _SegirJugando.SetActive(true);
-                Debug.Log("Segir Jugando?");
-            }
-           
-            
         }
     }
 
