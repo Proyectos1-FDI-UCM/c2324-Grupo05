@@ -3241,7 +3241,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 12a952893e8233b40b48cbeda2a6cee8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3751,11 +3751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1bdc5af603e94448b7791c6c617446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SegirJugando: {fileID: 1767066928}
   _NoDesbloqueado: {fileID: 2048810440}
-  _gardenDoor: {fileID: 0}
-  _child: {fileID: 239570146}
-  _penguin: {fileID: 0}
   _time: 1
   Sonido: {fileID: 422433170}
 --- !u!61 &422433169
@@ -7289,7 +7285,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b9f7d2fc0566f444890c28c2b37e1afc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9272,7 +9268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1355438633}
   - component: {fileID: 1355438632}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider for bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11424,7 +11420,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1767066932
 RectTransform:
@@ -12762,7 +12758,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &2048810444
 RectTransform:
