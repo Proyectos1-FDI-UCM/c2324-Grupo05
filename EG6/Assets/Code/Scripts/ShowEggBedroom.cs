@@ -9,8 +9,7 @@ public class ShowEggBedroom : MonoBehaviour
     [SerializeField] GameObject _egg;
     [SerializeField] GameObject _pannelEgg;
     [SerializeField] GameObject _collider;
-
-
+ 
     private void Start()
     {
       
@@ -21,13 +20,13 @@ public class ShowEggBedroom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<ChildMovement>() != null&& GlobalObjectRegistry.instance.isEggPicked)
+        if (collision.gameObject.GetComponent<ChildMovement>() != null&& GlobalObjectRegistry.instance.isEggPicked && GlobalObjectRegistry.instance.collectedPieces == 0)
         {
             
             _egg.SetActive(true);
             _pannelEgg.SetActive(false);
            _collider.SetActive(false);
-            
+            Destroy(gameObject);
         }
     }
    

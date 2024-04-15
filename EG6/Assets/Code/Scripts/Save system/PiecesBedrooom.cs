@@ -10,7 +10,7 @@ public class PiecesBedrooom : MonoBehaviour
 
     private GlobalObjectRegistry _globalObjectRegistry;
     private LevelState _levelState;
-    private RequiresSctionFirst _requiresSactionFirst;
+
     public AudioSource Sonido;
     
 

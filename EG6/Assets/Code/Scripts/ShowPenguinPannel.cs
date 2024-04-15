@@ -7,7 +7,7 @@ public class ShowPenguinPannel : MonoBehaviour
   
     [SerializeField] GameObject _eggCanHelpPannel;
     [SerializeField] GameObject _collider;
-
+    [SerializeField] int _pieces=0;
     private void Start()
     {
       
@@ -16,7 +16,7 @@ public class ShowPenguinPannel : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<ChildMovement>() != null && GlobalObjectRegistry.instance.isEggPicked)
+        if (collision.gameObject.GetComponent<ChildMovement>() != null && GlobalObjectRegistry.instance.isEggPicked&& GlobalObjectRegistry.instance.collectedPieces==_pieces)
         {
           
             _collider.AddComponent<BoxCollider2D>();
