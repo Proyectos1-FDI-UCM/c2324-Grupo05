@@ -5,7 +5,7 @@ public class DoorBetweenScenes: MonoBehaviour
 {
     [SerializeField] private string _sceneName;
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<ChildMovement>() != null)
         {

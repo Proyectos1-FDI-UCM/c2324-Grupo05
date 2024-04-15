@@ -35226,7 +35226,7 @@ Transform:
   m_GameObject: {fileID: 506923093}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.74, y: 6.99, z: -20}
+  m_LocalPosition: {x: 130.9, y: -4.9, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -78933,6 +78933,7 @@ GameObject:
   - component: {fileID: 1925521657}
   - component: {fileID: 1925521656}
   - component: {fileID: 1925521655}
+  - component: {fileID: 1925521658}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -79052,6 +79053,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 417778248}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &1925521658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925521653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578a7f03215c35140886218c614f2a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: BedroomTest
 --- !u!114 &1930147196 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5408351879332347010, guid: 5b14fbbc80a6fdd4e8575fdac98d39e8, type: 3}
