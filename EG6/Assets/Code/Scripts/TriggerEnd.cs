@@ -9,14 +9,17 @@ public class TriggerEnd : MonoBehaviour
     [SerializeField] private GameObject _canGo;
     [SerializeField] private float _time = 4f;
     [SerializeField] private GameObject _block;
+    [SerializeField] private GameObject _eggCanHelpPannel;
 
     private void Start()
     {
         _cantGo.SetActive(false);
         _canGo.SetActive(false);
         _block.SetActive(false);
+        _eggCanHelpPannel.SetActive(false);
+
     }
-   
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,7 +29,7 @@ public class TriggerEnd : MonoBehaviour
             _cantGo.SetActive(true);
             StartCoroutine(Waittext());
         }
-        else if(collision.gameObject.GetComponent<ChildMovement>() != null && GlobalObjectRegistry.instance.collectedPieces == 2)
+        else if (collision.gameObject.GetComponent<ChildMovement>() != null && GlobalObjectRegistry.instance.collectedPieces == 2)
         {
             StartCoroutine(WaitSeconds());
             _block.SetActive(true);
@@ -34,7 +37,11 @@ public class TriggerEnd : MonoBehaviour
             _canGo.SetActive(true);
             StartCoroutine(Waittext());
         }
+       
     }
+
+   
+
 
     private IEnumerator Waittext()
     {

@@ -10,9 +10,9 @@ public class PiecesBedrooom : MonoBehaviour
 
     private GlobalObjectRegistry _globalObjectRegistry;
     private LevelState _levelState;
-
+    private RequiresSctionFirst _requiresSactionFirst;
     public AudioSource Sonido;
-   
+    
 
     private void Start()
     {
@@ -34,6 +34,8 @@ public class PiecesBedrooom : MonoBehaviour
                 _levelState.CurrentCheckpointID = 0;
                 _globalObjectRegistry.SaveLevelState(_levelState.PickedObjects, _levelState.OpenedDoors, _levelState.DestroyedObjects, _levelState.PressedButtons, _levelState.CurrentCheckpointID, "Map-Exterior");
                 SceneManager.LoadScene("Map-Exterior");
+                
+               
             }
             else
             {
