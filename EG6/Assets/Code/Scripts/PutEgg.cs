@@ -11,11 +11,8 @@ public class PutEgg : MonoBehaviour
     {
         if (GlobalObjectRegistry.instance.collectedPieces == 1)
         {
-
             _pickpen.PutEgg();
             Destroy(gameObject);
         }
-    
-    
     }
 }
