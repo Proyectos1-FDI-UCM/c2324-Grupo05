@@ -19,7 +19,7 @@ public enum MovementMode
 /// <summary>
 /// This class is used for the movement of the penguin.
 /// Uses NavMeshPlus for the AI movement and the MovableObject for the player controlled movement.
-/// Uses enum Movement mode to switch between the AI and Player controlled movement (this is not the State pattern!).
+/// Uses enum Movement Mode to switch between Walking and Swimming.
 /// </summary>
 public class PenguinMovement : MovableObject
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This class is used as a base class for the child movement in the game.
+/// This class is used as a class for the child movement in the game.
 /// Inherits from MovableObject, but sets the input direction to the movement direction.
 /// </summary>
 public class ChildMovement : MovableObject
