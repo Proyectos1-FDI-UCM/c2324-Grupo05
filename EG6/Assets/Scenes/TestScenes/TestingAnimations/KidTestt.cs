@@ -44,5 +44,9 @@ public class KidTestt : MonoBehaviour
 
     // Block with custom private Methods 
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
     // Block with custom public Methods (with summary if it has complex logic)
 }
