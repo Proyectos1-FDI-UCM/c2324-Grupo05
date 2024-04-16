@@ -254,12 +254,14 @@ While on an object with candy, the player can read a veiled hint about the order
 
 ### Art:
 
-https://github.com/Proyectos1-FDI-UCM/c2324-Grupo05/blob/main/docs/Media/MainMenuBackground.png
+![MainMenuBackground](https://github.com/Proyectos1-FDI-UCM/c2324-Grupo05/assets/80777350/f797b216-cf73-4861-b7b6-128fc16f0d15)
+
 
 
 ### Animations:
 
-https://github.com/Proyectos1-FDI-UCM/c2324-Grupo05/blob/main/docs/Media/ChildAnimations.png
+![ChildAnimations](https://github.com/Proyectos1-FDI-UCM/c2324-Grupo05/assets/80777350/139c631e-28d7-431f-8f03-90b1429f924a)
+
 
 
 ### Sound:
