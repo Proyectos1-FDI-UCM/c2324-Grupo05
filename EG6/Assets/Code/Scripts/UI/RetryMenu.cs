@@ -1,14 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RetryMenu : MonoBehaviour
 {
+    [Header("First Selected Object")]
+    [SerializeField] private GameObject _firstSelectedObject;
+
     protected LocalObjectHandler _localObjectHandler;
     private void Start()
     {
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
+
+         if (Input.GetJoystickNames().Length == 0)
+        {
+            return;
+        }
+        if (_firstSelectedObject != null)
+        {
+            EventSystem.current.SetSelectedGameObject(_firstSelectedObject);
+        }
     }
 
     public void ResetLevel()

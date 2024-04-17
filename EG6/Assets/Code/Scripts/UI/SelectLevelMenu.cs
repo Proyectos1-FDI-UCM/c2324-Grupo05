@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using LevelState = GlobalObjectRegistry.LevelState;
 
 public class SelectLevelMenu : MonoBehaviour
 {
-    
+    [Header("First Selected Object")]
+    [SerializeField] private GameObject _firstSelectedObject;
+
     private GlobalObjectRegistry _globalObjectRegistry;
     private LevelState _levelState;
     private SelectLevelButton[] _buttons;
@@ -23,6 +26,14 @@ public class SelectLevelMenu : MonoBehaviour
         if (GetComponentInChildren<SelectLevelButton>() != null)
         {
             _buttons = GetComponentsInChildren<SelectLevelButton>();
+        }
+        if (Input.GetJoystickNames().Length == 0)
+        {
+            return;
+        }
+        if (_firstSelectedObject != null)
+        {
+            EventSystem.current.SetSelectedGameObject(_firstSelectedObject);
         }
     }
 
