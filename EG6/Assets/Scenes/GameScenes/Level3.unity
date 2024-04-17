@@ -5524,7 +5524,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.20027924, y: 0.015368938}
@@ -8900,7 +8900,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -9720,7 +9720,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 297556967417809102, guid: f05735730edd6374ab10c6de256cbfa0, type: 3}
       propertyPath: _buttonId
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 297556967417809102, guid: f05735730edd6374ab10c6de256cbfa0, type: 3}
       propertyPath: _doorSwitcher
@@ -11596,19 +11596,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 990707309}
+    m_TransformParent: {fileID: 1992546629}
     m_Modifications:
     - target: {fileID: 470458465548409166, guid: 38ecf6ddbf545f9468b4aed8fdaafdb4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8611755
+      value: 5.091217
       objectReference: {fileID: 0}
     - target: {fileID: 470458465548409166, guid: 38ecf6ddbf545f9468b4aed8fdaafdb4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.893267
+      value: -0.48407555
       objectReference: {fileID: 0}
     - target: {fileID: 470458465548409166, guid: 38ecf6ddbf545f9468b4aed8fdaafdb4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.2454867
+      value: -0.05589819
       objectReference: {fileID: 0}
     - target: {fileID: 470458465548409166, guid: 38ecf6ddbf545f9468b4aed8fdaafdb4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11638,6 +11638,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5064826864709025056, guid: 38ecf6ddbf545f9468b4aed8fdaafdb4, type: 3}
+      propertyPath: _door
+      value: 
+      objectReference: {fileID: 1563145955}
     - target: {fileID: 8616761896354653545, guid: 38ecf6ddbf545f9468b4aed8fdaafdb4, type: 3}
       propertyPath: m_Name
       value: SequenceChecker (1)
@@ -24723,7 +24727,6 @@ Transform:
   - {fileID: 1187264691}
   - {fileID: 1371227771}
   - {fileID: 409075016}
-  - {fileID: 862175475}
   - {fileID: 477392452}
   m_Father: {fileID: 2103012283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25822,6 +25825,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5064826864709025056, guid: 38ecf6ddbf545f9468b4aed8fdaafdb4, type: 3}
+      propertyPath: _door
+      value: 
+      objectReference: {fileID: 110226576}
     - target: {fileID: 8616761896354653545, guid: 38ecf6ddbf545f9468b4aed8fdaafdb4, type: 3}
       propertyPath: m_Name
       value: SequenceChecker
@@ -34357,7 +34364,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 297556967417809102, guid: f05735730edd6374ab10c6de256cbfa0, type: 3}
       propertyPath: _buttonId
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 297556967417809102, guid: f05735730edd6374ab10c6de256cbfa0, type: 3}
       propertyPath: _doorSwitcher
@@ -35371,11 +35378,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3457932428125981357, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 196.67
+      value: 165.61
       objectReference: {fileID: 0}
     - target: {fileID: 3457932428125981357, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.84
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 3457932428125981357, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37297,7 +37304,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -37799,7 +37806,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 297556967417809102, guid: f05735730edd6374ab10c6de256cbfa0, type: 3}
       propertyPath: _buttonId
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 297556967417809102, guid: f05735730edd6374ab10c6de256cbfa0, type: 3}
       propertyPath: _doorSwitcher
@@ -38615,11 +38622,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6123215124051882297, guid: 96573a7877d0a534da1ea1c93e023dfc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.834183
+      value: -9.9
       objectReference: {fileID: 0}
     - target: {fileID: 6123215124051882297, guid: 96573a7877d0a534da1ea1c93e023dfc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.601128
+      value: -23.58
       objectReference: {fileID: 0}
     - target: {fileID: 6123215124051882297, guid: 96573a7877d0a534da1ea1c93e023dfc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40421,7 +40428,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.26670074, y: 1.8460808}
@@ -41497,7 +41504,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.26670074, y: -0.061268806}
@@ -42435,7 +42442,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.17495728, y: 0.015368938}
@@ -42881,11 +42888,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1097001802960553444, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 195.3
+      value: 167.11
       objectReference: {fileID: 0}
     - target: {fileID: 1097001802960553444, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.6
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 1097001802960553444, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44638,7 +44645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992546629}
   m_Layer: 0
-  m_Name: CONVEYOR BUTTONS
+  m_Name: COMBINATION BUTTONS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44662,6 +44669,7 @@ Transform:
   - {fileID: 1445457691}
   - {fileID: 1211485399}
   - {fileID: 1563145954}
+  - {fileID: 862175475}
   m_Father: {fileID: 990707309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994917169
@@ -51094,7 +51102,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.26670074, y: 1.6067548}
