@@ -205,6 +205,8 @@ Uses animator for movement animation in the form of arrows on belt surface that 
 #### Penguin AI Movement
 To make the penguin follow the child automatically, we used [NavMeshPlus](https://github.com/h8man/NavMeshPlus).
 When implementing this mechanic, we used several tricks. To prevent the penguin from passing through destructible obstacles, we bake a map with a “walkable” zone at the beginning of the level, taking into account the previously destroyed obstacles. We also clear the navmesh map and bake it again every time we destroy another obstacle to update possible paths.
+#### Penguin Evolution
+By collecting parts, the player improves the penguin, adding new abilities to it. At the same time, the penguin's appearance changes. 
 #### Switching Character
 After collecting the first part, the player can change the character by pressing the button:
  *`<Change Character>`*.
