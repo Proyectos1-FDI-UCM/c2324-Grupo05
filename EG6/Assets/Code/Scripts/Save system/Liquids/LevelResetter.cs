@@ -13,7 +13,7 @@ public abstract class LevelResetter : MonoBehaviour
     private void Start()
     {
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
-        
+        KidTestt.OnAnimationFinished += ShowRetryMenu;
     }
     
 
@@ -22,7 +22,10 @@ public abstract class LevelResetter : MonoBehaviour
         
     }
 
-
+    private void OnDestroy()
+    {
+        KidTestt.OnAnimationFinished -= ShowRetryMenu; //Desuscribe method
+    }
     protected virtual void ShowRetryMenu()
     {
         _retryPanel.gameObject.SetActive(true);
