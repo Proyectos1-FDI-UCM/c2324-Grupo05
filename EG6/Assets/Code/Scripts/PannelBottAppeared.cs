@@ -12,21 +12,15 @@ public class PannelBottAppeared : MonoBehaviour
     {
 
         _pannel.SetActive(false);
-
-    }
-
-
-
-    public void AllPiecesPicked()
-    {
-
         if (GlobalObjectRegistry.instance.collectedPieces == _pieces)
         {
 
             _pannel.SetActive(true);
-        
-        
+
+
         }
-    
     }
+
+
+
 }

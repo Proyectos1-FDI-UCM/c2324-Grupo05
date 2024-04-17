@@ -12,19 +12,15 @@ public class CheckAllPieces : MonoBehaviour
     {
 
         _bottonExit.SetActive(false);
-    }
-
-    public void AllCollectedPieces()
-    {
         if (GlobalObjectRegistry.instance.collectedPieces == _numpieces)
         {
 
             _bottonExit.SetActive(true);
 
         }
-
-
     }
+
+    
 
 }
 
