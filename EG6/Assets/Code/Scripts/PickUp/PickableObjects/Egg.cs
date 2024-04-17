@@ -15,8 +15,6 @@ public class Egg : PickableObject
         {
             PickUp();
             
-            _localObjectHandler.SetLastCheckpoint(_nextCheckpoint);
-            
             _transitionScene.ChangeScene(true);
         }
     }

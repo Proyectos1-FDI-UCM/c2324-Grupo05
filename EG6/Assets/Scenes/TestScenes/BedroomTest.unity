@@ -5953,7 +5953,7 @@ GameObject:
   - component: {fileID: 803044288}
   - component: {fileID: 803044289}
   m_Layer: 6
-  m_Name: leave egg
+  m_Name: Invisible Wall
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5981,7 +5981,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803044286}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -8804,7 +8804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _egg: {fileID: 1638060243}
   _pannelEgg: {fileID: 129595135}
-  _collider: {fileID: 803044286}
+  _invisibleWall: {fileID: 803044286}
 --- !u!1 &1183739595
 GameObject:
   m_ObjectHideFlags: 0
@@ -13569,7 +13569,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2074869980}
-  - component: {fileID: 2074869982}
   - component: {fileID: 2074869983}
   m_Layer: 0
   m_Name: trigger leave penguin
@@ -13593,21 +13592,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2074869982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074869979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbeb1a277c156a840a19ce739d102dea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eggCanHelpPannel: {fileID: 129595135}
-  _collider: {fileID: 803044286}
-  _waitTime: 8
 --- !u!61 &2074869983
 BoxCollider2D:
   m_ObjectHideFlags: 0
