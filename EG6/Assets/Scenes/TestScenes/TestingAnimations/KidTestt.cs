@@ -9,7 +9,8 @@ public class KidTestt : MonoBehaviour
     // Block with private (or protected) _fields
     private Animator animator;
     // Block with public Properties {get; set;}
-
+    public delegate void AnimationFinishedHandler();
+    public static event AnimationFinishedHandler OnAnimationFinished;
     // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
     private void Awake()
     {
@@ -44,9 +45,13 @@ public class KidTestt : MonoBehaviour
 
     // Block with custom private Methods 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
     // Block with custom public Methods (with summary if it has complex logic)
+
+    public void AnimationFinished()
+    {
+        if (OnAnimationFinished != null)
+        {
+            OnAnimationFinished();
+        }
+    }
 }

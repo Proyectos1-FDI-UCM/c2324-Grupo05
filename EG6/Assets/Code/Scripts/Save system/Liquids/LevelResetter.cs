@@ -13,6 +13,7 @@ public abstract class LevelResetter : MonoBehaviour
     private void Start()
     {
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
+        
     }
     
 
