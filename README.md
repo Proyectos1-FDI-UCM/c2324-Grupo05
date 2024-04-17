@@ -178,6 +178,16 @@ This system performs 3 main functions:
 | Local Object Handler   | Uses a structure with information about interacting objects in the level, updating this information as the game progresses for the currently active scene. When player changes scene, it saves information about scene progress to the global register. |
 | Global Object Registry | Stores global information about the game in the form of variables (whether the penguin is unlocked, how much trash the player has collected, etc.), as well as a list of all level states for each scene.                                               |
 | Saves Manager          | Saves information to the game directory, converting the level state structure into a JSON file. Also makes deserialization to load level from JSON.                                                                                                     |
+#### Achievement System
+We created the achievement system at the very end, so it is implemented in such a way that every time we enter a room, it checks for unlocked achievements according to their conditions.
+This system is very tightly coupled with the global registry and has no potential for expansion; it was rather made as a minimally working feature.
+
+To implement the achievement system, we use only 2 scripts:
+
+| Class                 | Responsibility                                                                                                                               |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Achievement           | Represents an achievement in the game.                                                                                                       |
+| Achievement Collector | Stores information about all achievements in the game and unlocks them based on certain conditions using data from the GlobalObjectRegistry. |
 
 #### Camera System
 [Unity Cinemachine](https://unity.com/unity/features/editor/art-and-design/cinemachine) is responsible for the behavior of the camera in the game
