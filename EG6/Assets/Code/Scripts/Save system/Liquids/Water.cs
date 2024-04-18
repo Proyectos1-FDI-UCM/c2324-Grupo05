@@ -9,6 +9,8 @@ public class Water : LevelResetter
 {
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
+        base .OnTriggerEnter2D(collision);
+
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
         {
             ShowRetryMenu();
