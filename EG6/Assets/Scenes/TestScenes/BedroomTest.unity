@@ -438,7 +438,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46, y: -80.7}
+  m_AnchoredPosition: {x: 46, y: -19}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &29664402
@@ -4521,7 +4521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: 34.3}
+  m_AnchoredPosition: {x: -35, y: 6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593357595
@@ -4544,7 +4544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use WASD to move or left joystick
+  m_text: 'Use WASD to move '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4d457999521a724a8a123bf78a62b9c, type: 2}
   m_sharedMaterial: {fileID: 4989604482835277898, guid: b4d457999521a724a8a123bf78a62b9c, type: 2}
@@ -9625,7 +9625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childCharacter: {fileID: 1513757760}
   _penguinCharacter: {fileID: 1937511071}
-  _isControllingChild: 1
+  isControllingChild: 1
 --- !u!4 &1294655665
 Transform:
   m_ObjectHideFlags: 0
