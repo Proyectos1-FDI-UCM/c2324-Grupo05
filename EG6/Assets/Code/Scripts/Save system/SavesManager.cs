@@ -91,9 +91,12 @@ public class SavesManager : MonoBehaviour
             File.Delete(globalDataPath);
         }
 
-        if (Directory.Exists(levelStatesFolderPath))
+        if (Directory.GetFiles(levelStatesFolderPath).Length > 0)
         {
-            Directory.Delete(levelStatesFolderPath, true);
+            foreach (string filePath in Directory.GetFiles(levelStatesFolderPath))
+            {
+                File.Delete(filePath);
+            }
         }
     }
 }

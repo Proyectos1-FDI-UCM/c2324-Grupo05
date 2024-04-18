@@ -19,7 +19,14 @@ public abstract class LevelResetter : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.GetComponent<MovableObject>().enabled = false;
+        if (collision.gameObject.GetComponent<ChildMovement>() != null)
+        {
+            collision.GetComponent<ChildMovement>().enabled = false;
+        }
+        else if (collision.gameObject.GetComponent<PenguinMovement>() != null)
+        {
+            collision.GetComponent<PenguinMovement>().enabled = false;
+        }
     }
 
     private void OnDestroy()
