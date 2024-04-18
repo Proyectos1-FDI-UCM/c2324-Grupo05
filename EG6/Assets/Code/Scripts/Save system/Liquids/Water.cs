@@ -10,7 +10,10 @@ public class Water : LevelResetter
     [SerializeField]private Animator anim;
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        base .OnTriggerEnter2D(collision);
+        if (collision.gameObject.GetComponent<ChildMovement>() != null)
+        {
+            collision.GetComponent<ChildMovement>().enabled = false;
+        }
 
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
         {
