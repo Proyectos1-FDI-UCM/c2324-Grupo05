@@ -3,16 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class PausingMenu : MonoBehaviour
 {
+    private SavesManager _savesManager;
 
     private void Start()
     {
+        _savesManager = FindObjectOfType<SavesManager>();
         gameObject.SetActive(false);
         Time.timeScale = 1f;
-    }
-
-    private void Update()
-    {
-        
     }
 
     public void OnPressedPause()
@@ -37,5 +34,11 @@ public class PausingMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("BedroomTest");
+    }
+
+    public void SaveAndExit()
+    {
+        _savesManager.SaveGame();
+        Application.Quit();
     }
 }
