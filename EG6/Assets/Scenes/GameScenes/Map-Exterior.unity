@@ -5243,7 +5243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &188444116
 Transform:
   m_ObjectHideFlags: 0
@@ -8516,7 +8516,7 @@ PlayableDirector:
   m_GameObject: {fileID: 304773564}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 15178039c8d287649af6ec7adbfe0641, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 6b9e650ca5968604dac48e6dbaabfc67, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -8533,6 +8533,12 @@ PlayableDirector:
   - key: {fileID: 4885492909601745379, guid: 15178039c8d287649af6ec7adbfe0641, type: 2}
     value: {fileID: 886200746}
   - key: {fileID: 7475134987201655854, guid: 15178039c8d287649af6ec7adbfe0641, type: 2}
+    value: {fileID: 683318961}
+  - key: {fileID: 395320829072084602, guid: 6b9e650ca5968604dac48e6dbaabfc67, type: 2}
+    value: {fileID: 1855806473}
+  - key: {fileID: 4885492909601745379, guid: 6b9e650ca5968604dac48e6dbaabfc67, type: 2}
+    value: {fileID: 886200746}
+  - key: {fileID: 7475134987201655854, guid: 6b9e650ca5968604dac48e6dbaabfc67, type: 2}
     value: {fileID: 683318961}
   m_ExposedReferences:
     m_References: []
@@ -32728,6 +32734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _retryPanel: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1001 &449906608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73760,6 +73767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _retryPanel: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &1542826302 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9129243765786251393, guid: 113fad288bf44454c9e1508b4225b83d, type: 3}
@@ -79158,6 +79166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _retryPanel: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1001 &1848074490
 PrefabInstance:
   m_ObjectHideFlags: 0
