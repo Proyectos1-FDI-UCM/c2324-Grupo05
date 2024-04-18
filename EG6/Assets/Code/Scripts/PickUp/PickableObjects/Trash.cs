@@ -22,7 +22,6 @@ public class Trash : PickableObject
     {
         base.PickUp();
         GlobalObjectRegistry.instance.collectedTrash++;
-        _counter.IncrementCount();
 
         CharacterDamage[] characterDamages = FindObjectsOfType<CharacterDamage>();
         foreach (CharacterDamage characterDamage in characterDamages)
