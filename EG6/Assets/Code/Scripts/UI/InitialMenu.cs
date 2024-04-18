@@ -8,20 +8,30 @@ public class InitialMenu : MonoBehaviour
 { 
 
     [Header("First Selected Object")]
-    [SerializeField] private GameObject _firstSelectedObject;
+    [SerializeField] private UnityEngine.UI.Button _newGameButton;
+    [SerializeField] private UnityEngine.UI.Button _continueButton;
+    private SavesManager _savesManager;
 
     private void Start()
     {
         gameObject.SetActive(true);
+        _savesManager = FindObjectOfType<SavesManager>();
 
         if (Input.GetJoystickNames().Length == 0)
         {
             return;
         }
-        if (_firstSelectedObject != null)
+
+        if (GlobalObjectRegistry.instance.isEggPicked == false)
         {
-            EventSystem.current.SetSelectedGameObject(_firstSelectedObject);
+            _continueButton.interactable = false;
+            EventSystem.current.SetSelectedGameObject(_newGameButton.gameObject);
         }
+        else
+        {
+            EventSystem.current.SetSelectedGameObject(_continueButton.gameObject);
+        }
+
     }
 
     public void Continue()
@@ -42,12 +52,8 @@ public class InitialMenu : MonoBehaviour
         }
         else
         {
+            _savesManager.SaveGame();
             Application.Quit();
         }
     }
-
-
-
-
-
 }
