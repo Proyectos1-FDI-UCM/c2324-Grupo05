@@ -107,6 +107,7 @@ public class GlobalObjectRegistry : MonoBehaviour
     public void StartNewGame()
     {
         _levelStates.Clear();
+        GetComponent<SavesManager>().ClearSaves();
         isPenguinUnlocked = false;
         isEggPicked = false;
         collectedPieces = 0;

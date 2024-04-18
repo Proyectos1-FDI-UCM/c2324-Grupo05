@@ -80,4 +80,20 @@ public class SavesManager : MonoBehaviour
             }	
         }       
     }
+
+    public void ClearSaves()
+    {
+        string globalDataPath = Path.Combine(Application.dataPath, "GlobalData.json");
+        string levelStatesFolderPath = Path.Combine(Application.dataPath, "LevelSaves/");
+
+        if (File.Exists(globalDataPath))
+        {
+            File.Delete(globalDataPath);
+        }
+
+        if (Directory.Exists(levelStatesFolderPath))
+        {
+            Directory.Delete(levelStatesFolderPath, true);
+        }
+    }
 }
