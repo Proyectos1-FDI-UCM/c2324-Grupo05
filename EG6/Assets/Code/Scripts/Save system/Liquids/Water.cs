@@ -7,19 +7,24 @@ using UnityEngine;
 /// </summary>
 public class Water : LevelResetter
 {
+    [SerializeField]private Animator anim;
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base .OnTriggerEnter2D(collision);
 
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
         {
-            ShowRetryMenu();
+            anim.SetTrigger("Die2"); //Iniciates the animation
         }
         else if (collision.gameObject.GetComponent<PenguinMovement>() != null)
         {
             PenguinMovement penguinMovement = collision.gameObject.GetComponent<PenguinMovement>();
             penguinMovement.MovementMode = MovementMode.Swimming;
             penguinMovement.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+        else
+        {
+            ShowRetryMenu();
         }
     }
 
