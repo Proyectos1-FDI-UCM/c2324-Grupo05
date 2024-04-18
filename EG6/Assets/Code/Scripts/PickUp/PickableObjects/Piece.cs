@@ -8,7 +8,6 @@ using LevelState = GlobalObjectRegistry.LevelState;
 /// </summary>
 public class Piece : PickableObject
 {
-    [SerializeField] private PieceCounter _counter;
     [SerializeField] private Checkpoint _nextCheckpoint;
     [SerializeField] private SceneTransition _transitionScene;
     [SerializeField] private bool _isUnlockLastLevel;
@@ -27,7 +26,6 @@ public class Piece : PickableObject
 
     public override void PickUp()
     {
-        _counter.IncrementCount();
         _localObjectHandler.SetLastCheckpoint(_nextCheckpoint);
         GlobalObjectRegistry.instance.collectedPieces++;
         GlobalObjectRegistry.instance.isPenguinUnlocked = true;
