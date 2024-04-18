@@ -16,7 +16,7 @@ public class DestroyableByPenguin : DestroyableObject
 
     public override void PerformInteraction(CharacterInteraction characterInteraction)
     {
-        if (_characterSwitcher._isControllingChild == false)
+        if (_characterSwitcher.isControllingChild == false)
         {
             base.PerformInteraction(characterInteraction);
         }

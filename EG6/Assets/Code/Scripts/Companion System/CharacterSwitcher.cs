@@ -19,7 +19,7 @@ public class CharacterSwitcher : MonoBehaviour
     private CharacterInteraction _childCharacterInteraction;
     private CharacterInteraction _penguinCharacterInteraction;
 
-    public bool _isControllingChild = true;
+    public bool isControllingChild = true;
     
 
     private void Start()
@@ -41,25 +41,25 @@ public class CharacterSwitcher : MonoBehaviour
             return;
         }
 
-        _childPlayerMovement.enabled = !_isControllingChild;
-        _childPlayerInput.enabled = !_isControllingChild;
-        _penguinPlayerInput.enabled = _isControllingChild;
-        _penguinNavMeshAgent.enabled = !_isControllingChild;
-        _penguinCharacterInteraction.enabled = _isControllingChild;
-        _childCharacterInteraction.enabled = !_isControllingChild;
+        _childPlayerMovement.enabled = !isControllingChild;
+        _childPlayerInput.enabled = !isControllingChild;
+        _penguinPlayerInput.enabled = isControllingChild;
+        _penguinNavMeshAgent.enabled = !isControllingChild;
+        _penguinCharacterInteraction.enabled = isControllingChild;
+        _childCharacterInteraction.enabled = !isControllingChild;
 
         _childCharacterInteraction.DiscardSelection();
         _penguinCharacterInteraction.DiscardSelection();
 
-        if (_isControllingChild)
+        if (isControllingChild)
         {
             _penguinPlayerMovement.ControllingMode = ControllingMode.PlayerControlled;
-            _isControllingChild = false;
+            isControllingChild = false;
         }
         else
         {
             _penguinPlayerMovement.ControllingMode = ControllingMode.AIControlled;
-            _isControllingChild = true;
+            isControllingChild = true;
         }
     }
 }

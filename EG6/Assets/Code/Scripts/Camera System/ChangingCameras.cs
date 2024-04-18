@@ -24,7 +24,7 @@ public class ChangingCameras : MonoBehaviour
         //Check whether the child or the penguin is moving
         //Camera should follow the one that is bein controlled at that moment
 
-        if (_switcher._isControllingChild)
+        if (_switcher.isControllingChild)
         {
             _target.transform.position = _child.position;
             _block.SetActive(false);

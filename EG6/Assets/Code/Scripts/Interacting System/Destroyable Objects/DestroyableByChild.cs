@@ -16,7 +16,7 @@ public class DestroyableByChild : DestroyableObject
 
     public override void PerformInteraction(CharacterInteraction characterInteraction)
     {
-        if (_characterSwitcher._isControllingChild)
+        if (_characterSwitcher.isControllingChild)
         {
             base.PerformInteraction(characterInteraction);
         }
