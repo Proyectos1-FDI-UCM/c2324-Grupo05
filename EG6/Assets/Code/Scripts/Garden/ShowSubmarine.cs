@@ -8,8 +8,10 @@ public class ShowSubmarine : MonoBehaviour
     [SerializeField] GameObject _pannel;
     [SerializeField] GameObject _trigger;
     [SerializeField] GameObject _pannel2;
+    [SerializeField] GameObject _penguin;
     public void ClickTransform()
-    { 
+    {
+        _penguin.SetActive(false);
         _submarine.SetActive(true);
         _pannel.SetActive(false);
         Destroy(_trigger);
