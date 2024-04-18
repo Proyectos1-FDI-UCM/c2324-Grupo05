@@ -43141,7 +43141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1838508183686332966, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: _movementFilter.layerMask.m_Bits
-      value: 832
+      value: 2880
       objectReference: {fileID: 0}
     - target: {fileID: 2017602186203392709, guid: 13c4b4e627e73a6448ada49996f10dfb, type: 3}
       propertyPath: m_Name
@@ -67027,6 +67027,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1195475180974465958, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
+      propertyPath: _interactionFilter.useLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195475180974465958, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
+      propertyPath: _interactionFilter.layerMask.m_Bits
+      value: 2304
+      objectReference: {fileID: 0}
     - target: {fileID: 2081814821038530542, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -67073,7 +67081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8063817413164605191, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
       propertyPath: _movementFilter.layerMask.m_Bits
-      value: 832
+      value: 2880
       objectReference: {fileID: 0}
     - target: {fileID: 9049879381957568954, guid: 6d3fd56196a86ab4f81387ba6cb4d804, type: 3}
       propertyPath: m_AgentTypeID
@@ -93039,6 +93047,10 @@ PrefabInstance:
     - target: {fileID: 6123215124051882297, guid: 96573a7877d0a534da1ea1c93e023dfc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293826749006030143, guid: 96573a7877d0a534da1ea1c93e023dfc, type: 3}
+      propertyPath: m_Size.x
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
