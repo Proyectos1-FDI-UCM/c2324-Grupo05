@@ -4442,68 +4442,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 848816094}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &321629015
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 906612661}
-    m_Modifications:
-    - target: {fileID: 5202073398970048748, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_Name
-      value: paletSnow (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.325851
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.66360474
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.44251204
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
---- !u!4 &321629016 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5251771544965658354, guid: 7148deeab1901654b8a4ae836344804c, type: 3}
-  m_PrefabInstance: {fileID: 321629015}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &326204164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5675,7 +5613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &428500365
 Transform:
   m_ObjectHideFlags: 0
@@ -9172,7 +9110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &589269741
 Transform:
   m_ObjectHideFlags: 0
@@ -12708,7 +12646,6 @@ Transform:
   - {fileID: 865802207}
   - {fileID: 1456563403}
   - {fileID: 396323476}
-  - {fileID: 321629016}
   - {fileID: 1726605918}
   - {fileID: 1972672961}
   - {fileID: 1976972177}
@@ -37971,7 +37908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1418358127
 Transform:
   m_ObjectHideFlags: 0
@@ -41839,7 +41776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1638660285
 Transform:
   m_ObjectHideFlags: 0
@@ -43004,7 +42941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1730345854
 Transform:
   m_ObjectHideFlags: 0
@@ -44028,7 +43965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1796844411
 Transform:
   m_ObjectHideFlags: 0
@@ -53224,7 +53161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2096107308
 Transform:
   m_ObjectHideFlags: 0
