@@ -10,6 +10,7 @@ public class RetryMenu : MonoBehaviour
     protected LocalObjectHandler _localObjectHandler;
     private void Start()
     {
+        gameObject.SetActive(false);
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
 
          if (Input.GetJoystickNames().Length == 0)

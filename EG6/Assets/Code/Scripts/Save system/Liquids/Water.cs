@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public class Water : LevelResetter
 {
-    [SerializeField]private Animator anim;
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
@@ -17,7 +16,7 @@ public class Water : LevelResetter
 
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
         {
-            anim.SetTrigger("Die2"); //Iniciates the animation
+            _anim.SetTrigger("Die2"); //Iniciates the animation
         }
         else if (collision.gameObject.GetComponent<PenguinMovement>() != null)
         {

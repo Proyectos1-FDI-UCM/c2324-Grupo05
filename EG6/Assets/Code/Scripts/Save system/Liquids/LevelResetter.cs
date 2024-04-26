@@ -6,12 +6,18 @@ using UnityEngine;
 /// </summary>
 public abstract class LevelResetter : MonoBehaviour
 {
-    [SerializeField] protected RetryMenu _retryPanel;
+    protected RetryMenu _retryPanel;
     protected LocalObjectHandler _localObjectHandler;
+    protected Animator _anim;
 
+    private void Awake()
+    {
+        _anim = FindObjectOfType<ChildMovement>().GetComponent<Animator>();
+    }
 
     private void Start()
     {
+        _retryPanel = FindAnyObjectByType<RetryMenu>();
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
         KidTestt.OnAnimationFinished += ShowRetryMenu;
     }

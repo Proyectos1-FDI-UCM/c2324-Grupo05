@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public class Lava : LevelResetter
 {
-    [SerializeField] private Animator anim;
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
@@ -16,7 +15,7 @@ public class Lava : LevelResetter
         {
             if (collision.gameObject.GetComponent<ChildMovement>() != null)
             {
-                anim.SetTrigger("Die"); //Iniciates the animation
+                _anim.SetTrigger("Die"); //Iniciates the animation
             }
             else
             {
