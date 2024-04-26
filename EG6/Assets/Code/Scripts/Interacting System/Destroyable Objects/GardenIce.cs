@@ -4,17 +4,9 @@ using UnityEngine;
 
 public class GardenIce : DestroyableByPenguin
 {
-    public override void PerformInteraction(CharacterInteraction characterInteraction)
+    protected override void Start() 
     {
-        if (GlobalObjectRegistry.instance.collectedPieces >= 3)
-        {
-            base.PerformInteraction(characterInteraction);
-        }
-        else
-        {
-            AudioClip onKnockSound = Resources.Load<AudioClip>("Audio/Destroyable/knockIce");
-            AudioSource.PlayClipAtPoint(onKnockSound, transform.position);
-            Shake();
-        }
+        base.Start();
+        _durability = 24;
     }
 }
