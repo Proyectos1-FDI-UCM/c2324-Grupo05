@@ -22,7 +22,7 @@ public class IceSpawner : MonoBehaviour
     {
         _currentTime += Time.deltaTime;
 
-        if (_spawnerBlocked == false && _currentTime >= _spawnTime ) 
+        if (!_spawnerBlocked && _currentTime >= _spawnTime ) 
         {
             _currentTime = 0;
             SpawnIce();
@@ -32,7 +32,7 @@ public class IceSpawner : MonoBehaviour
 
     private void SpawnIce()
     {
-        if (_spawnerBlocked == false)
+        if (!_spawnerBlocked)
         {
             Instantiate(_ice, _myTransform.position, Quaternion.identity);
         }
@@ -41,7 +41,7 @@ public class IceSpawner : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.GetComponent<MovableObject>() != null)
+        if (collision.GetComponent<ChildMovement>() != null || collision.GetComponent<PenguinMovement>() != null)
         {
             _spawnerBlocked = true;
         }
@@ -50,7 +50,7 @@ public class IceSpawner : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<MovableObject>() != null)
+        if (collision.GetComponent<ChildMovement>() != null || collision.GetComponent<PenguinMovement>() != null)
         {
             _spawnerBlocked = false;
         }
