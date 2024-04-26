@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class InitialMenu : MonoBehaviour
 { 
@@ -17,21 +17,23 @@ public class InitialMenu : MonoBehaviour
         gameObject.SetActive(true);
         _savesManager = FindObjectOfType<SavesManager>();
 
-        if (Input.GetJoystickNames().Length == 0)
-        {
-            return;
-        }
+        Debug.Log("Is egg picked: " + GlobalObjectRegistry.instance.isEggPicked);
+
 
         if (GlobalObjectRegistry.instance.isEggPicked == false)
         {
             _continueButton.interactable = false;
-            EventSystem.current.SetSelectedGameObject(_newGameButton.gameObject);
+            Color current_color = _continueButton.GetComponentInChildren<TMP_Text>().color;
+            _continueButton.GetComponentInChildren<TMP_Text>().color = new Color(current_color.r, current_color.g, current_color.b, 0.5f);
         }
-        else
+        
+        if (Input.GetJoystickNames().Length > 0)
         {
-            EventSystem.current.SetSelectedGameObject(_continueButton.gameObject);
+            if (_continueButton.interactable)
+                EventSystem.current.SetSelectedGameObject(_continueButton.gameObject);
+            else
+                EventSystem.current.SetSelectedGameObject(_newGameButton.gameObject);
         }
-
     }
 
     public void Continue()

@@ -58,11 +58,11 @@ public class GlobalObjectRegistry : MonoBehaviour
         }
     }
 
-
-    private void Start() 
+    private void Start()
     {
         GetComponent<SavesManager>().LoadGame();
     }
+
 
 
     public void SaveLevelState(List<int> pickedObjectsIDs, List<int> openedDoorsIDs, List<int> destroyedObjectsIDs,
