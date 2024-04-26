@@ -26,7 +26,8 @@ public abstract class Button : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) 
     {
-        if ((collision.GetComponent<ChildMovement>() != null || collision.GetComponent<PenguinMovement>().ControllingMode == ControllingMode.PlayerControlled) 
+        if ((collision.GetComponent<ChildMovement>() != null || 
+        (collision.GetComponent<PenguinMovement>() != null && collision.GetComponent<PenguinMovement>().ControllingMode == ControllingMode.PlayerControlled)) 
         && _isPressed == false)
         {
             _isPressed = true;
