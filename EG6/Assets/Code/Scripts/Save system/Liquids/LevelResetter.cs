@@ -13,11 +13,11 @@ public abstract class LevelResetter : MonoBehaviour
     private void Awake()
     {
         _anim = FindObjectOfType<ChildMovement>().GetComponent<Animator>();
+        _retryPanel = FindAnyObjectByType<RetryMenu>();
     }
 
     private void Start()
     {
-        _retryPanel = FindAnyObjectByType<RetryMenu>();
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
         KidTestt.OnAnimationFinished += ShowRetryMenu;
     }
