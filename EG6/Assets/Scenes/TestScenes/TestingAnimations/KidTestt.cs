@@ -54,4 +54,16 @@ public class KidTestt : MonoBehaviour
             OnAnimationFinished();
         }
     }
+    
+    // Método para activar el Animator
+    public void ActivateAnimator()
+    {
+        animator.enabled = true;
+    }
+
+    // Método para desactivar el Animator
+    public void DeactivateAnimator()
+    {
+        animator.enabled = false;
+    }
 }

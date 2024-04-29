@@ -18,6 +18,7 @@ public class CharacterSwitcher : MonoBehaviour
     private NavMeshAgent _penguinNavMeshAgent;
     private CharacterInteraction _childCharacterInteraction;
     private CharacterInteraction _penguinCharacterInteraction;
+    private AnimatorController _animatorController; //(of child)
 
     public bool isControllingChild = true;
     
@@ -31,6 +32,7 @@ public class CharacterSwitcher : MonoBehaviour
         _penguinNavMeshAgent = _penguinCharacter.GetComponent<NavMeshAgent>();
         _childCharacterInteraction = _childCharacter.GetComponent<CharacterInteraction>(); 
         _penguinCharacterInteraction = _penguinCharacter.GetComponent<CharacterInteraction>();
+        _animatorController = _childCharacter.GetComponent<KidTestt>();
     }
 
 
@@ -55,11 +57,13 @@ public class CharacterSwitcher : MonoBehaviour
         {
             _penguinPlayerMovement.ControllingMode = ControllingMode.PlayerControlled;
             isControllingChild = false;
+             _animatorController.ActivateAnimator();
         }
         else
         {
             _penguinPlayerMovement.ControllingMode = ControllingMode.AIControlled;
             isControllingChild = true;
+              _animatorController.DeactivateAnimator();
         }
     }
 }
