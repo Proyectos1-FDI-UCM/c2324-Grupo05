@@ -8700,13 +8700,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1810917022}
         m_TargetAssemblyTypeName: AchievementMenu, Assembly-CSharp
         m_MethodName: ShowAchievement
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: A new friend!
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1072828097
@@ -13017,6 +13017,7 @@ GameObject:
   - component: {fileID: 1810917017}
   - component: {fileID: 1810917021}
   - component: {fileID: 1810917022}
+  - component: {fileID: 1810917023}
   m_Layer: 5
   m_Name: Rojo
   m_TagString: Untagged
@@ -13137,10 +13138,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _achieveBadge: {fileID: 1634667761}
-  _achievement: {fileID: 1649680466}
+  _achievementText: {fileID: 609561175}
   _buttonBackSelect: {fileID: 1462424365}
   _notAvailable: {fileID: 1079453370}
   _time: 4
+--- !u!114 &1810917023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810917016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2c09e5926715f499eeb5cc98a5fe8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1813997345
 GameObject:
   m_ObjectHideFlags: 0
