@@ -1,33 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class AchievementMenu : MonoBehaviour
 {
-    // Block with custom classes or structures
+    [SerializeField] private GameObject _achieveBadge;
+    [SerializeField] private GameObject _achievement;
+    [SerializeField] private GameObject _buttonBackSelect;
 
-    // Block with private (or protected) _fields
-
-    // Block with public Properties {get; set;}
-
-    // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
-    private void Awake()
-    {
-        
-    }
+    //not available text
+    [SerializeField] private GameObject _notAvailable;
+    [SerializeField] private float _time = 4f;
 
     private void Start()
     {
-        
+        _buttonBackSelect.SetActive(false);
+        _notAvailable.SetActive(false);
+        _achieveBadge.SetActive(true);
+        _achievement.SetActive(false);
     }
 
-    // MonoBehaviour update methods
-    private void Update()
+    public void BackToSelect()
     {
-        
+        _achieveBadge.SetActive(true);
+        _achievement.SetActive(false);
+        _buttonBackSelect.SetActive(false);
     }
 
-    // Block with custom private Methods 
+    public void ShowAchievement()
+    {
+        //if achievement is unlocked, show achievement text
+        _achieveBadge.SetActive(false);
+        _achievement.SetActive(true);
+        _buttonBackSelect.SetActive(true);
+        
+        //if achievement is locked
+        /*
+        _notAvailable.SetActive(true);
+        StartCoroutine(Waittext());
+        */
+    }
 
-    // Block with custom public Methods (with summary if it has complex logic)
+    private IEnumerator Waittext()
+    {
+        Debug.Log("Entra a la corrutina");
+        yield return new WaitForSecondsRealtime(_time);
+        _notAvailable.SetActive(false);
+
+
+    }
 }
