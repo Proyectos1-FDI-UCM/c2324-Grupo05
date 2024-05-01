@@ -18,7 +18,7 @@ public class CharacterSwitcher : MonoBehaviour
     private NavMeshAgent _penguinNavMeshAgent;
     private CharacterInteraction _childCharacterInteraction;
     private CharacterInteraction _penguinCharacterInteraction;
-    private AnimatorController _animatorController; //(of child)
+    private KidTestt _animatorController; //(of child)
 
     public bool isControllingChild = true;
     
