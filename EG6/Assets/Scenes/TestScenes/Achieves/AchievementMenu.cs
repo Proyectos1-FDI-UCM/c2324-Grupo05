@@ -7,9 +7,13 @@ using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCou
 
 public class AchievementMenu : MonoBehaviour
 {
+    //reference to achievement menu ui
     [SerializeField] private GameObject _achieveBadge;
-    [SerializeField] private TextMeshProUGUI _achievementText;
+    [SerializeField] private TextMeshProUGUI _achievementName;
+    [SerializeField] private TextMeshProUGUI _achievementDescription;
     [SerializeField] private GameObject _buttonBackSelect;
+    
+    //reference to achievement system
     public List<Achievement> Achievements;
     private AchievementCollector _achievementCollector;
 
@@ -23,19 +27,21 @@ public class AchievementMenu : MonoBehaviour
         _buttonBackSelect.SetActive(false);
         _notAvailable.SetActive(false);
         _achieveBadge.SetActive(true);
-        _achievementText.enabled = false;
+        _achievementName.enabled = false;
+        _achievementDescription.enabled = false;
     }
 
     public void BackToSelect()
     {
         _achieveBadge.SetActive(true);
-        _achievementText.enabled = false;
+        _achievementName.enabled = false;
+        _achievementDescription.enabled = false;
         _buttonBackSelect.SetActive(false);
     }
 
     public void ShowAchievement(string achievementName)
     {
-        
+        //search for the correct achievement
         foreach (Achievement achievement in _achievementCollector.Achievements)
         {
             if (achievement.Name == achievementName)
@@ -44,8 +50,10 @@ public class AchievementMenu : MonoBehaviour
                 if (achievement.IsUnlocked == true)
                 {
                     _achieveBadge.SetActive(false);
-                    _achievementText.text = achievement.Name;
-                    _achievementText.enabled = true;
+                    _achievementName.text = achievement.Name;
+                    _achievementDescription.text = achievement.Description;
+                    _achievementName.enabled = true;
+                    _achievementDescription.enabled = true;
                     _buttonBackSelect.SetActive(true);
                 }
                 else
@@ -63,10 +71,8 @@ public class AchievementMenu : MonoBehaviour
 
     private IEnumerator Waittext()
     {
-        Debug.Log("Entra a la corrutina");
         yield return new WaitForSecondsRealtime(_time);
         _notAvailable.SetActive(false);
-
 
     }
 }

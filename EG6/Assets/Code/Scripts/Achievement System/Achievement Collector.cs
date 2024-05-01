@@ -19,13 +19,13 @@ public class AchievementCollector : MonoBehaviour
         _achievements = new List<Achievement>
         {
             new Achievement
-            ("A new friend!", "This is the first achievement", "Assets/Resources/Sprites/Achievements/..."),
+            ("A new friend!", "Description: This is the first achievement", "Assets/Resources/Sprites/Achievements/..."),
             new Achievement
-            ("Island cleaned", "This is the second achievement", "Assets/Resources/Sprites/Achievements/..."),
+            ("Island cleaned", "Description: This is the second achievement", "Assets/Resources/Sprites/Achievements/..."),
             new Achievement
-            ("Rampage", "This is the third achievement", "Assets/Resources/Sprites/Achievements/..."),
+            ("Rampage", "Description: This is the third achievement", "Assets/Resources/Sprites/Achievements/..."),
             new Achievement
-            ("Ready for escape", "This is the fourth achievement", "Assets/Resources/Sprites/Achievements/...")
+            ("Ready for escape", "Description: This is the fourth achievement", "Assets/Resources/Sprites/Achievements/...")
         };
 
         UnlockAchievementsByConditions();
