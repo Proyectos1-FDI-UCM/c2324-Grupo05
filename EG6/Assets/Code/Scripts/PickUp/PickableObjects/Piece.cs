@@ -16,9 +16,9 @@ public class Piece : PickableObject
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null || collision.gameObject.GetComponent<PenguinMovement>() != null)
         {
-            PickUp();
+            
             _localObjectHandler.SaveLocalState();
-
+            PickUp();
             _transitionScene.ChangeScene(true);
         }
     }

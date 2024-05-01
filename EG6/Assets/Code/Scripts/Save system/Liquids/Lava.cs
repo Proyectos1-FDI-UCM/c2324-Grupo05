@@ -16,7 +16,7 @@ public class Lava : LevelResetter
             if (collision.gameObject.GetComponent<ChildMovement>() != null)
             {
                 _anim.SetTrigger("Die"); //Iniciates the animation
-                AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/death/deathSound");
+                AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/death/DeathSound");
                 AudioSource.PlayClipAtPoint(onPressedSound, transform.position);
             }
             else
