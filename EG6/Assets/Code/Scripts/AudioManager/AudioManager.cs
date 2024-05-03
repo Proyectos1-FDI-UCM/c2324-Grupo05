@@ -9,64 +9,21 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource _musicSource;
     [SerializeField] AudioSource _SFXSource;
 
-    [Header("------- AUDIO CLIPS -------")]
-    [Header("------- Music -------")]
-    [SerializeField] AudioClip _initialMenuMusic;
-    [SerializeField] AudioClip _bedroomMusic;
-    [SerializeField] AudioClip _selectLevelMusic;
-    [SerializeField] AudioClip _mapExteriorMusic;
-    [SerializeField] AudioClip _level3Music;
-
     [Header("------- SFX -------")]
-    [SerializeField] AudioClip _books;
-    [SerializeField] AudioClip _buttonPressed;
-    [SerializeField] AudioClip _buttonReleased;
-    [SerializeField] AudioClip _doorOpened;
-    [SerializeField] AudioClip _death;
-    [SerializeField] AudioClip _breakIce;
-    [SerializeField] AudioClip _breakWood;
-    [SerializeField] AudioClip _hitIce;
-    [SerializeField] AudioClip _hitWood;
-    [SerializeField] AudioClip _knockIce;
-    [SerializeField] AudioClip _knockWood;
-    [SerializeField] AudioClip _waterPlatform;
+    [SerializeField] public AudioClip _books;
+    [SerializeField] public AudioClip _buttonPressed;
+    [SerializeField] public AudioClip _buttonReleased;
+    [SerializeField] public AudioClip _doorOpened;
+    [SerializeField] public AudioClip _death;
+    [SerializeField] public AudioClip _breakIce;
+    [SerializeField] public AudioClip _breakWood;
+    [SerializeField] public AudioClip _hitIce;
+    [SerializeField] public AudioClip _hitWood;
+    [SerializeField] public AudioClip _knockIce;
+    [SerializeField] public AudioClip _knockWood;
+    [SerializeField] public AudioClip _waterPlatform;
 
 
-
-    private void Start()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        //each scene has its own background music
-        switch (scene.name)
-        {
-            case "InitialMenu":
-                _musicSource.clip = _initialMenuMusic;
-                break;
-            case "BedroomTest":
-                _musicSource.clip = _bedroomMusic;
-                break;
-            case "SelectLevel":
-                _musicSource.clip = _selectLevelMusic;
-                break;
-            case "MapExterior":
-                _musicSource.clip = _mapExteriorMusic;
-                break;
-            case "Level3":
-                _musicSource.clip = _level3Music;
-                break;
-          
-        }
-
-        
-        if (_musicSource.clip != null)
-        {
-            _musicSource.Play();
-        }
-    }
 
     public void PlaySFX(AudioClip clip) //method to call when sfx has to be played
     {

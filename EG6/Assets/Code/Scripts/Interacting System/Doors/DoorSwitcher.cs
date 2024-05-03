@@ -13,6 +13,7 @@ public class DoorSwitcher : MonoBehaviour
     protected NavMeshSurface _navMeshSurface;
     private LocalObjectHandler _localObjectHandler;
     private GameObject _door;
+    private AudioManager _audioManager;
 
     public int ID { get => _id;}
 
@@ -22,6 +23,7 @@ public class DoorSwitcher : MonoBehaviour
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
         _isDoorOpen = _localObjectHandler.OpenedDoorsIDs.Contains(ID);
         _navMeshSurface = FindObjectOfType<NavMeshSurface>();
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
 
@@ -51,8 +53,11 @@ public class DoorSwitcher : MonoBehaviour
 
         _isDoorOpen = state;
         UpdateDoorState();
-        
+
+        _audioManager.PlaySFX(_audioManager._doorOpened);
+        /*
         AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/Buttons/doorOpened");
         AudioSource.PlayClipAtPoint(onPressedSound, transform.position);
+        */
     }
 }

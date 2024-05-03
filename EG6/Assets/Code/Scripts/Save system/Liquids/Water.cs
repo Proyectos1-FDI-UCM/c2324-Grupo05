@@ -7,6 +7,12 @@ using UnityEngine;
 /// </summary>
 public class Water : LevelResetter
 {
+    AudioManager _audioManager;
+    
+    private void Start()
+    {
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
@@ -17,8 +23,11 @@ public class Water : LevelResetter
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
         {
             _anim.SetTrigger("Die2"); //Iniciates the animation
+            _audioManager.PlaySFX(_audioManager._death);
+            /*
             AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/death/DeathSound");
             AudioSource.PlayClipAtPoint(onPressedSound, transform.position);
+            */
         }
         else if (collision.gameObject.GetComponent<PenguinMovement>() != null)
         {

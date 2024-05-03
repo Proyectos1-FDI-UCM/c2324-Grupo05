@@ -4,6 +4,12 @@ using UnityEngine;
 public class WPWrongButton : Button
 {
    [SerializeField] GameObject _waterPlatform;
+    private AudioManager _audioManager;
+
+    private void Start()
+    {
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     protected override async void ButtonPressed()
     {
@@ -17,8 +23,11 @@ public class WPWrongButton : Button
             Water water = smallPlatform.gameObject.GetComponent<Water>();
             smallPlatform.GetComponent<SpriteRenderer>().enabled = false;
         }
+        _audioManager.PlaySFX(_audioManager._waterPlatform);
+        /*
         AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/WaterPlatform/waterPlatform");
         AudioSource.PlayClipAtPoint(onPressedSound, transform.position);
+        */
 
         await Task.Delay(1000);
         buttonPressCommand.Undo();

@@ -6,12 +6,13 @@ using UnityEngine;
 public class DestroyableByChild : DestroyableObject
 {
     private CharacterSwitcher _characterSwitcher;
-    
+    private AudioManager _audioManager;
     
     protected override void Start()
     {
         base.Start();
         _characterSwitcher = FindObjectOfType<CharacterSwitcher>();
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     public override void PerformInteraction(CharacterInteraction characterInteraction)
@@ -22,8 +23,11 @@ public class DestroyableByChild : DestroyableObject
         }
         else
         {
+            _audioManager.PlaySFX(_audioManager._knockWood);
+            /*
             AudioClip onKnockSound = Resources.Load<AudioClip>("Audio/Destroyable/knockWood");
             AudioSource.PlayClipAtPoint(onKnockSound,transform.position);
+            */
             Shake();
         }
     }
