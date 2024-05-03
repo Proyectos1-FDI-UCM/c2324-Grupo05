@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public AudioClip _knockIce;
     [SerializeField] public AudioClip _knockWood;
     [SerializeField] public AudioClip _waterPlatform;
+    [SerializeField] public AudioClip _lockedDoor;
 
 
 

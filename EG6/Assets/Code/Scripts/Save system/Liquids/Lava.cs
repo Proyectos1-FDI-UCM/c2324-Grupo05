@@ -29,6 +29,7 @@ public class Lava : LevelResetter
                 AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/death/DeathSound");
                 AudioSource.PlayClipAtPoint(onPressedSound, transform.position);
                 */
+                
             }
             else
             {

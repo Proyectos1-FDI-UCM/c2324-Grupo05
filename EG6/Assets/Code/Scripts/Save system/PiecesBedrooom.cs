@@ -10,8 +10,8 @@ public class PiecesBedrooom : MonoBehaviour
 
     private GlobalObjectRegistry _globalObjectRegistry;
     private LevelState _levelState;
-
-    public AudioSource Sonido;
+    private AudioManager _audioManager;
+    //public AudioSource Sonido;
     
 
     private void Start()
@@ -19,6 +19,7 @@ public class PiecesBedrooom : MonoBehaviour
         _NoDesbloqueado.SetActive(false);
         _globalObjectRegistry = GlobalObjectRegistry.instance;
         _levelState = _globalObjectRegistry.GetLevelState("Map-Exterior");
+        _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
 
@@ -26,7 +27,8 @@ public class PiecesBedrooom : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null) 
         {
-            Sonido.Play();
+            _audioManager.PlaySFX(_audioManager._lockedDoor);
+            //Sonido.Play();
 
             if (GlobalObjectRegistry.instance.isEggPicked)
             {
