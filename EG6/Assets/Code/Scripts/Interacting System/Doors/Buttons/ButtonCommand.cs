@@ -12,22 +12,23 @@ public class ButtonPressCommand : ICommand
     private AudioManager _audioManager;
 
     
-    public ButtonPressCommand(int buttonId, SpriteRenderer buttonRenderer, LocalObjectHandler localObjectHandler)
+    public ButtonPressCommand(int buttonId, SpriteRenderer buttonRenderer, LocalObjectHandler localObjectHandler, AudioManager audioManager)
     {
         _buttonId = buttonId;
         _buttonRenderer = buttonRenderer;
         _localObjectHandler = localObjectHandler;
+        _audioManager = audioManager;
     }
 
 
     public void Execute()
     {
         _previousSprite = _buttonRenderer.sprite;
-        //_audioManager.PlaySFX(_audioManager._buttonPressed);
+        _audioManager.PlaySFX(_audioManager._buttonPressed);
 
         
-        AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/Buttons/buttonPressed");
-        AudioSource.PlayClipAtPoint(onPressedSound, _buttonRenderer.transform.position);
+        //AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/Buttons/buttonPressed");
+        //AudioSource.PlayClipAtPoint(onPressedSound, _buttonRenderer.transform.position);
         
         
         Sprite sprite = Resources.Load<Sprite>("Sprites/Environment/SpritesFinales/ButtonPressed");
@@ -39,10 +40,10 @@ public class ButtonPressCommand : ICommand
 
     public void Undo()
     {
-        //_audioManager.PlaySFX(_audioManager._buttonReleased);
+        _audioManager.PlaySFX(_audioManager._buttonReleased);
         
-        AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/Buttons/buttonReleased");
-        AudioSource.PlayClipAtPoint(onPressedSound, _buttonRenderer.transform.position);
+        // AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/Buttons/buttonReleased");
+        // AudioSource.PlayClipAtPoint(onPressedSound, _buttonRenderer.transform.position);
         
         _buttonRenderer.sprite = _previousSprite;
         Button button = _buttonRenderer.GetComponent<Button>();

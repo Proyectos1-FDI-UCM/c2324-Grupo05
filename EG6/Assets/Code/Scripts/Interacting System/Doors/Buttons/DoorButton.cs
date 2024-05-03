@@ -11,7 +11,7 @@ public class DoorButton : Button
     protected override void ButtonPressed()
     {
         base.ButtonPressed();
-        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer, _localObjectHandler);
+        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer, _localObjectHandler, _audioManager);
         buttonPressCommand.Execute();
         _doorSwitcher.SetDoorState(true);
     }

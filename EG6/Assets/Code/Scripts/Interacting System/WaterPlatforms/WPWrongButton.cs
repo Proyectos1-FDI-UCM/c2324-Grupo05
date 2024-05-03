@@ -4,7 +4,6 @@ using UnityEngine;
 public class WPWrongButton : Button
 {
    [SerializeField] GameObject _waterPlatform;
-    private AudioManager _audioManager;
 
     private void Start()
     {
@@ -14,7 +13,7 @@ public class WPWrongButton : Button
     protected override async void ButtonPressed()
     {
         base.ButtonPressed();
-        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer, _localObjectHandler);
+        ButtonPressCommand buttonPressCommand = new ButtonPressCommand(ButtonId, _buttonRenderer, _localObjectHandler, _audioManager);
         buttonPressCommand.Execute();
         foreach (Transform smallPlatform in _waterPlatform.GetComponentInChildren<Transform>())
         {

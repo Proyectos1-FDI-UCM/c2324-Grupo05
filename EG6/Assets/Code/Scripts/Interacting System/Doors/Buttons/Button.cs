@@ -10,6 +10,7 @@ using UnityEngine;
 public abstract class Button : MonoBehaviour
 {
     [SerializeField] protected int _buttonId; 
+    protected AudioManager _audioManager;
     protected SpriteRenderer _buttonRenderer;
     protected LocalObjectHandler _localObjectHandler;
     protected bool _isPressed = false;
@@ -21,6 +22,7 @@ public abstract class Button : MonoBehaviour
     {
         _buttonRenderer = GetComponent<SpriteRenderer>();
         _localObjectHandler = FindObjectOfType<LocalObjectHandler>();
+        _audioManager = GameObject.FindAnyObjectByType<AudioManager>();
     }
 
 
