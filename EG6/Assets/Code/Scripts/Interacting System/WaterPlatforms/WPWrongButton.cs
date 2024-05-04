@@ -7,6 +7,7 @@ public class WPWrongButton : Button
 
     protected override void Start()
     {
+        base.Start();
         _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
