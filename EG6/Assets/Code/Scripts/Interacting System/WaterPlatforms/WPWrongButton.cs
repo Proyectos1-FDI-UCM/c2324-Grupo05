@@ -5,7 +5,7 @@ public class WPWrongButton : Button
 {
    [SerializeField] GameObject _waterPlatform;
 
-    private void Start()
+    protected override void Start()
     {
         _audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
