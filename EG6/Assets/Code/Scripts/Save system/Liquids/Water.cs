@@ -12,12 +12,8 @@ public class Water : LevelResetter
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null)
         {
-            collision.GetComponent<ChildMovement>().enabled = false;
-        }
-
-        if (collision.gameObject.GetComponent<ChildMovement>() != null)
-        {
             _anim.SetTrigger("Die2"); //Iniciates the animation
+            collision.GetComponent<ChildMovement>().enabled = false;
             
             AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/death/DeathSound");
             AudioSource.PlayClipAtPoint(onPressedSound, transform.position);

@@ -24,6 +24,7 @@ public class WPWrongButton : Button
             smallPlatform.GetComponent<SpriteRenderer>().enabled = false;
         }
         _audioManager.PlaySFX(_audioManager._waterPlatform);
+        FindObjectOfType<CharacterSwitcher>().SwitchCharacter();
         /*
         AudioClip onPressedSound = Resources.Load<AudioClip>("Audio/WaterPlatform/waterPlatform");
         AudioSource.PlayClipAtPoint(onPressedSound, transform.position);
