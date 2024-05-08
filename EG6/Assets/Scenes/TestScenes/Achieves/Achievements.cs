@@ -11,8 +11,7 @@ public class Achievements : MonoBehaviour
     private bool Friend;
     // Block with public Properties {get; set;}
     public Animator animator;
-    public GameObject Logro1;
-    public GameObject Logro2;
+    public GameObject Logro;
     // Block with MonoBehaviour life-cycle methods (ONLY mono-functions)
     private void Awake()
     {
@@ -38,18 +37,10 @@ public class Achievements : MonoBehaviour
         if (GlobalObjectRegistry.instance.collectedTrash == 1)
         {
             FullTrash = true;
-            Logro1.SetActive(true);
-            PlayerPrefs.SetInt("Logro1", Logro1 ? 1 : 0);
-            animator.Play("Logro1");
+            Logro.SetActive(true);
+            PlayerPrefs.SetInt("Logro", Logro ? 1 : 0);
+            animator.Play("Logro");
         }
-
-        if (GlobalObjectRegistry.instance.isEggPicked)
-        {
-            Friend = true;
-            Logro2.SetActive(true);
-            PlayerPrefs.SetInt("Logro2", Logro2 ? 1 : 0);
-        }
-
 
     }
 }

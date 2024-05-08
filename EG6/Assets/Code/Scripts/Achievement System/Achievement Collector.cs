@@ -11,9 +11,12 @@ public class AchievementCollector : MonoBehaviour
     private GlobalObjectRegistry _globalObjectRegistry;
 
     public List<Achievement> Achievements { get => _achievements;}
-
+    public Animator anim;
+    public GameObject Question;
     private void Start()
     {
+
+         anim = anim.GetComponent<Animator>();
         _globalObjectRegistry = GlobalObjectRegistry.instance;
 
         _achievements = new List<Achievement>
@@ -40,6 +43,7 @@ public class AchievementCollector : MonoBehaviour
             if (achievement.Name == achievementName)
             {
                 achievement.IsUnlocked = true;
+                anim.Play("Logro");
             }
         }
     }
