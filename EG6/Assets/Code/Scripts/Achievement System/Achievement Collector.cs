@@ -19,13 +19,15 @@ public class AchievementCollector : MonoBehaviour
         _achievements = new List<Achievement>
         {
             new Achievement
-            ("A new friend!", "Description: This is the first achievement", "Assets/Resources/Sprites/Achievements/..."),
+            ("Not Alone", "Description: You found yourself a new friend!", "Assets/Resources/Sprites/Achievements/..."),
             new Achievement
-            ("Island cleaned", "Description: This is the second achievement", "Assets/Resources/Sprites/Achievements/..."),
+            ("Proud Greenpeace", "Description: Greenpeace loves you and admires you", "Assets/Resources/Sprites/Achievements/..."),
             new Achievement
-            ("Rampage", "Description: This is the third achievement", "Assets/Resources/Sprites/Achievements/..."),
+            ("Timbers!", "Description: It's goin' down, I'm yellin' timber", "Assets/Resources/Sprites/Achievements/..."),
             new Achievement
-            ("Ready for escape", "Description: This is the fourth achievement", "Assets/Resources/Sprites/Achievements/...")
+            ("What about light?", "Description: All is darkness and I am darkness", "Assets/Resources/Sprites/Achievements/..."),
+            new Achievement
+            ("The last of us", "Description: All pieces collected", "Assets/Resources/Sprites/Achievements/...")
         };
 
         UnlockAchievementsByConditions();
@@ -46,12 +48,12 @@ public class AchievementCollector : MonoBehaviour
     {
         if (_globalObjectRegistry.isPenguinUnlocked)
         {
-            UnlockAchievement("A new friend!");
+            UnlockAchievement("Not Alone");
         }
 
-        if (_globalObjectRegistry.collectedTrash >= 100)
+        if (_globalObjectRegistry.collectedTrash >= 10)
         {
-            UnlockAchievement("Island cleaned");
+            UnlockAchievement("Proud Greenpeace");
         }
 
         int destroyedObjects = 0;
@@ -60,14 +62,14 @@ public class AchievementCollector : MonoBehaviour
             destroyedObjects += levelState.DestroyedObjects.Count;
         }
 
-        if (destroyedObjects >= 100)
+        if (destroyedObjects >= 10)
         {
-            UnlockAchievement("Rampage");
+            UnlockAchievement("Timbers!");
         }
         
         if (_globalObjectRegistry.collectedPieces == 3)
         {
-            UnlockAchievement("Ready for escape");
+            UnlockAchievement("The last of us");
         }
     }
 }
