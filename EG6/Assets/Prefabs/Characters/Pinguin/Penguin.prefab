@@ -83,7 +83,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 495401146, guid: bfd68abf42adaad40b206ebb44d3ae05, type: 3}
   m_Color: {r: 0.9568628, g: 0.9568628, b: 0.9568628, a: 1}
   m_FlipX: 0
@@ -154,7 +154,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03666997, y: 0.34992018}
+  m_Offset: {x: 0.045095444, y: 0.19164996}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0.041666668, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -165,7 +165,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6519144, y: 0.59933275}
+  m_Size: {x: 1.5608027, y: 0.3127003}
   m_EdgeRadius: 0
 --- !u!114 &8063817413164605191
 MonoBehaviour:
@@ -182,14 +182,14 @@ MonoBehaviour:
   _collisionOffset: 0.18
   _movementFilter:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 832
+      m_Bits: 2880
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -202,15 +202,15 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5390498169718599313}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.2
   m_Speed: 4
-  m_Acceleration: 12
+  m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 150
   m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
@@ -287,14 +287,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactionFilter:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 2304
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -347,6 +347,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _evolutionSprite:
   - {fileID: 21300000, guid: d3e4724e7478081478344b044954e882, type: 3}
-  - {fileID: -914598633, guid: 29717baa54808c04daa347cd2fa9858b, type: 3}
-  - {fileID: -879500081, guid: 29717baa54808c04daa347cd2fa9858b, type: 3}
-  - {fileID: -1006471224, guid: 29717baa54808c04daa347cd2fa9858b, type: 3}
+  - {fileID: -1109564071, guid: bfd68abf42adaad40b206ebb44d3ae05, type: 3}
+  - {fileID: -954753830, guid: bfd68abf42adaad40b206ebb44d3ae05, type: 3}
+  - {fileID: 495401146, guid: bfd68abf42adaad40b206ebb44d3ae05, type: 3}
