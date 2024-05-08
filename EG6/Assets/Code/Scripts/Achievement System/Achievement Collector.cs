@@ -46,7 +46,7 @@ public class AchievementCollector : MonoBehaviour
 
     private void UnlockAchievementsByConditions()
     {
-        if (_globalObjectRegistry.isPenguinUnlocked)
+        if (_globalObjectRegistry.isEggPicked)
         {
             UnlockAchievement("Not Alone");
         }
