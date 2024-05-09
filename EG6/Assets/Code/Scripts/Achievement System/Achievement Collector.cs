@@ -32,7 +32,9 @@ public class AchievementCollector : MonoBehaviour
             new Achievement
             ("The last of us", "Description: All pieces collected", "Assets/Resources/Sprites/Achievements/..."),
             new Achievement
-            ("Safe!", "Description: All trash collected", "Assets/Resources/Sprites/Achievements/...")
+            ("Safe!", "Description: All trash collected", "Assets/Resources/Sprites/Achievements/..."),
+            new Achievement
+            ("What about light?", "Unlock level-3", "Assets/Resources/Sprites/Achievements/..."),
         };
 
         UnlockAchievementsByConditions();
@@ -81,6 +83,11 @@ public class AchievementCollector : MonoBehaviour
         if(_globalObjectRegistry.collectedTrash == 68)
         {
             UnlockAchievement("Safe!");
+        }
+
+        if (_globalObjectRegistry.GetLevelState("Level3").CurrentCheckpointID >= 2)
+        {
+            UnlockAchievement("What about light?");
         }
     }
 }
