@@ -11,13 +11,11 @@ public class AchievementCollector : MonoBehaviour
     private GlobalObjectRegistry _globalObjectRegistry;
 
     public List<Achievement> Achievements { get => _achievements;}
-    public Animator anim;
-    public GameObject Question;
+    public GameObject achievementUnlocked;
     private void Start()
     {
-
-         anim = anim.GetComponent<Animator>();
         _globalObjectRegistry = GlobalObjectRegistry.instance;
+        achievementUnlocked.SetActive(false);
 
         _achievements = new List<Achievement>
         {
@@ -47,7 +45,6 @@ public class AchievementCollector : MonoBehaviour
             if (achievement.Name == achievementName)
             {
                 achievement.IsUnlocked = true;
-                anim.Play("Logro");
             }
         }
     }
@@ -57,11 +54,15 @@ public class AchievementCollector : MonoBehaviour
         if (_globalObjectRegistry.isEggPicked)
         {
             UnlockAchievement("Not Alone");
+
+            achievementUnlocked.SetActive(true);
         }
 
         if (_globalObjectRegistry.collectedTrash >= 10)
         {
             UnlockAchievement("Proud Greenpeace");
+
+            achievementUnlocked.SetActive(true);
         }
 
         int destroyedObjects = 0;
@@ -73,21 +74,28 @@ public class AchievementCollector : MonoBehaviour
         if (destroyedObjects >= 10)
         {
             UnlockAchievement("Timbers!");
+            achievementUnlocked.SetActive(true);
         }
         
         if (_globalObjectRegistry.collectedPieces == 3)
         {
             UnlockAchievement("The last of us");
+
+            achievementUnlocked.SetActive(true);
         }
 
         if(_globalObjectRegistry.collectedTrash == 68)
         {
             UnlockAchievement("Safe!");
+
+            achievementUnlocked.SetActive(true);
         }
 
         if (_globalObjectRegistry.GetLevelState("Level3").CurrentCheckpointID >= 2)
         {
             UnlockAchievement("What about light?");
+
+            achievementUnlocked.SetActive(true);
         }
     }
 }
