@@ -11,11 +11,11 @@ public class AchievementCollector : MonoBehaviour
     private GlobalObjectRegistry _globalObjectRegistry;
 
     public List<Achievement> Achievements { get => _achievements;}
-    public GameObject achievementUnlocked;
+    //public GameObject achievementUnlocked;
     private void Start()
     {
         _globalObjectRegistry = GlobalObjectRegistry.instance;
-        achievementUnlocked.SetActive(false);
+        //achievementUnlocked.SetActive(false);
 
         _achievements = new List<Achievement>
         {
@@ -55,14 +55,14 @@ public class AchievementCollector : MonoBehaviour
         {
             UnlockAchievement("Not Alone");
 
-            achievementUnlocked.SetActive(true);
+            //achievementUnlocked.SetActive(true);
         }
 
         if (_globalObjectRegistry.collectedTrash >= 10)
         {
             UnlockAchievement("Proud Greenpeace");
 
-            achievementUnlocked.SetActive(true);
+            //achievementUnlocked.SetActive(true);
         }
 
         int destroyedObjects = 0;
@@ -74,28 +74,28 @@ public class AchievementCollector : MonoBehaviour
         if (destroyedObjects >= 10)
         {
             UnlockAchievement("Timbers!");
-            achievementUnlocked.SetActive(true);
+            //achievementUnlocked.SetActive(true);
         }
         
         if (_globalObjectRegistry.collectedPieces == 3)
         {
             UnlockAchievement("The last of us");
 
-            achievementUnlocked.SetActive(true);
+            //achievementUnlocked.SetActive(true);
         }
 
         if(_globalObjectRegistry.collectedTrash == 68)
         {
             UnlockAchievement("Safe!");
 
-            achievementUnlocked.SetActive(true);
+            //achievementUnlocked.SetActive(true);
         }
 
         if (_globalObjectRegistry.GetLevelState("Level3").CurrentCheckpointID >= 2)
         {
             UnlockAchievement("What about light?");
 
-            achievementUnlocked.SetActive(true);
+            //achievementUnlocked.SetActive(true);
         }
     }
 }
