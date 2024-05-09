@@ -30,7 +30,9 @@ public class AchievementCollector : MonoBehaviour
             new Achievement
             ("What about light?", "Description: All is darkness and I am darkness", "Assets/Resources/Sprites/Achievements/..."),
             new Achievement
-            ("The last of us", "Description: All pieces collected", "Assets/Resources/Sprites/Achievements/...")
+            ("The last of us", "Description: All pieces collected", "Assets/Resources/Sprites/Achievements/..."),
+            new Achievement
+            ("Safe!", "Description: All trash collected", "Assets/Resources/Sprites/Achievements/...")
         };
 
         UnlockAchievementsByConditions();
@@ -74,6 +76,11 @@ public class AchievementCollector : MonoBehaviour
         if (_globalObjectRegistry.collectedPieces == 3)
         {
             UnlockAchievement("The last of us");
+        }
+
+        if(_globalObjectRegistry.collectedTrash == 68)
+        {
+            UnlockAchievement("Safe!");
         }
     }
 }
