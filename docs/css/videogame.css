@@ -45,12 +45,19 @@ img.img-header {
 
 .media-item {
   margin: 1rem;
-  border: 2px solid #3d375d;
+  border: 4px solid #3d375d;
+  
 }
 
 .mi-image {
-  width: 500px; 
+  width: 800px; 
   height: auto; 
+}
+
+.img-thumbnail {
+  border: 4px solid #3d375d; /* Color y grosor del borde */
+  max-width: 100%; /* Ajusta el ancho máximo al tamaño de su contenedor */
+  height: auto; /* Mantén la proporción de aspecto */
 }
 
 .titulo {
