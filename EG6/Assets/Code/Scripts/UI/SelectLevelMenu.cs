@@ -55,7 +55,7 @@ public class SelectLevelMenu : MonoBehaviour
 
     public void Bedroom()
     {
-        SceneManager.LoadScene("BedroomTest");
+        SceneManager.LoadScene("Bedroom");
     }
 
     

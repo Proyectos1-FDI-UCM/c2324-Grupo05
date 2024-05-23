@@ -3,7 +3,7 @@ using LevelState = GlobalObjectRegistry.LevelState;
 
 /// <summary>
 /// Class for the piece pickable object
-/// Teleports the player to the BedroomTest scene
+/// Teleports the player to the Bedroom scene
 /// Overwrites the last unlocked checkpoint
 /// </summary>
 public class Piece : PickableObject

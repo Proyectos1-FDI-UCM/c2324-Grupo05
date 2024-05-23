@@ -47,7 +47,7 @@ public class PausingMenu : MonoBehaviour
     {
         _savesManager.SaveGame();
         Time.timeScale = 1f;
-        SceneManager.LoadScene("BedroomTest");
+        SceneManager.LoadScene("Bedroom");
     }
 
     public void SaveAndExit()

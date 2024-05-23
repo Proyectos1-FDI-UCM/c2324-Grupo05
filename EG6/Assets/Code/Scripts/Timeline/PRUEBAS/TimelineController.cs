@@ -58,7 +58,7 @@ public class TimelineController : MonoBehaviour
             _timelines[_currentTimeline].SetActive(false);
         }
         
-        SceneManager.LoadScene("BedroomTest");
+        SceneManager.LoadScene("Bedroom");
     }
 
 }

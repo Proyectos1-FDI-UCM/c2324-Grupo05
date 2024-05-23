@@ -38,7 +38,7 @@ public class InitialMenu : MonoBehaviour
 
     public void Continue()
     {
-        SceneManager.LoadScene("BedroomTest");
+        SceneManager.LoadScene("Bedroom");
     }
 
     public void NewGame()
