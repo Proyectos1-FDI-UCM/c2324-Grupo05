@@ -12,11 +12,12 @@ public class ShowSubmarine : MonoBehaviour
     [SerializeField] private CharacterSwitcher _switcher;
     public void ClickTransform()
     {
-        GlobalObjectRegistry.instance.isPenguinUnlocked = false;
+        
         if (_switcher.isControllingChild)
         {
 
             _penguin.SetActive(false);
+            GlobalObjectRegistry.instance.isPenguinUnlocked = false;
             _submarine.SetActive(true);
             _pannel.SetActive(false);
             Destroy(_trigger);
