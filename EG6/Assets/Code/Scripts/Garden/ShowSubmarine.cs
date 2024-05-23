@@ -12,7 +12,7 @@ public class ShowSubmarine : MonoBehaviour
     [SerializeField] private CharacterSwitcher _switcher;
     public void ClickTransform()
     {
-        //
+        GlobalObjectRegistry.instance.isPenguinUnlocked = false;
         if (_switcher.isControllingChild)
         {
 
