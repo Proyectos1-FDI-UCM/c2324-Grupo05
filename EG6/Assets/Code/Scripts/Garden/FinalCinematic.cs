@@ -9,7 +9,7 @@ public class FinalCinematic : MonoBehaviour
     [SerializeField] private GameObject _credits;
     [SerializeField] private UnityEngine.UI.Button _yesButton;
     [SerializeField] private AudioSource _mapExteriorSource;
-
+    [SerializeField] private CharacterSwitcher _switcher;
     private void Start()
     {
         _finalTimeline.SetActive(false);
@@ -21,9 +21,18 @@ public class FinalCinematic : MonoBehaviour
 
     public void OnClickYes()
     {
-        //_pannel.SetActive(false);
-        _mapExteriorSource.mute = true;
-        _finalTimeline.SetActive(true);
+        //
+        if (_switcher.isControllingChild)
+        {
+
+            _mapExteriorSource.mute = true;
+            _finalTimeline.SetActive(true);
+        }
+        else 
+        {
+            _pannel.SetActive(true);
+        }
+       
 
 
     }

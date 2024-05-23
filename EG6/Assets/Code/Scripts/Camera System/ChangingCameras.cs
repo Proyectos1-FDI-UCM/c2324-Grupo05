@@ -13,6 +13,7 @@ public class ChangingCameras : MonoBehaviour
     [SerializeField] private CharacterSwitcher _switcher;
     [SerializeField] private GameObject _block;
     [SerializeField] private GameObject _penguinDoor;
+    [SerializeField] private GameObject _childDoor;
 
     private void Start()
     {
@@ -29,12 +30,14 @@ public class ChangingCameras : MonoBehaviour
             _target.transform.position = _child.position;
             _block.SetActive(false);
             _penguinDoor.SetActive(true);
+            _childDoor.SetActive(false);
         }
         else
         {
             _target.transform.position = _penguin.position;
             _block.SetActive(true);
             _penguinDoor.SetActive(false);
+            _childDoor.SetActive(true);
         }
 
     }
