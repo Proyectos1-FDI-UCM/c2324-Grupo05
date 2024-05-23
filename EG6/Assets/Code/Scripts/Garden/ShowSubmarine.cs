@@ -21,7 +21,6 @@ public class ShowSubmarine : MonoBehaviour
             _pannel.SetActive(false);
             Destroy(_trigger);
             _pannel2.SetActive(true);
-            GlobalObjectRegistry.instance.isPenguinUnlocked = false;
         }
         else
         {

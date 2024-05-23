@@ -21,7 +21,7 @@ public class FinalCinematic : MonoBehaviour
 
     public void OnClickYes()
     {
-        GlobalObjectRegistry.instance.isPenguinUnlocked = false;
+        //
         if (_switcher.isControllingChild)
         {
 
