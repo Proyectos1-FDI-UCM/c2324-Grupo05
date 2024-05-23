@@ -32,6 +32,6 @@ public class SceneTransition : MonoBehaviour
     {
         animator.SetTrigger("Iniciar");
         yield return new WaitForSeconds(animacionFinal.length);
-        SceneManager.LoadScene("Cinematica");
+        SceneManager.LoadScene("Timelines");
     }
 }
