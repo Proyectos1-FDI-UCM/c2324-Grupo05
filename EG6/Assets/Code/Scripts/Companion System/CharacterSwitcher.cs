@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This class is used to switch between the characters in the game.
@@ -38,7 +39,7 @@ public class CharacterSwitcher : MonoBehaviour
 
     public void SwitchCharacter()
     {
-        if (GlobalObjectRegistry.instance.isPenguinUnlocked == false)
+        if (GlobalObjectRegistry.instance.isPenguinUnlocked == false || SceneManager.GetActiveScene().name == "Bedroom")
         {
             return;
         }
