@@ -1,6 +1,7 @@
 using NavMeshPlus.Components;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This class defines the destroyable objects in the game
@@ -65,6 +66,11 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         _navMeshSurface.RemoveData();
         _navMeshSurface.BuildNavMesh();
         _localObjectHandler.DestroyedObjectsIDs.Add(ID);
+
+        if (_localObjectHandler.DestroyedObjectsIDs.Count == 10 && SceneManager.GetActiveScene().name == "Map-Exterior")
+        {
+            FindAnyObjectByType<AchievementNotifier>().ShowNotify();
+        }
     }
 
 

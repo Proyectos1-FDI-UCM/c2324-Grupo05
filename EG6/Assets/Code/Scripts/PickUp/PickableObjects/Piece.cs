@@ -34,7 +34,15 @@ public class Piece : PickableObject
             LevelState lastLevelState = GlobalObjectRegistry.instance.GetLevelState("Level3");
             lastLevelState.LastCheckpointID = 2;
             GlobalObjectRegistry.instance.SaveLevelState(lastLevelState.PickedObjects, lastLevelState.OpenedDoors, lastLevelState.DestroyedObjects, lastLevelState.PressedButtons, lastLevelState.LastCheckpointID, "Level3");
+
+            FindAnyObjectByType<AchievementNotifier>().ShowNotify();
         }
+
+        if (GlobalObjectRegistry.instance.collectedPieces == 3)
+        {
+            FindAnyObjectByType<AchievementNotifier>().ShowNotify();
+        }
+
         base.PickUp();
     }
 

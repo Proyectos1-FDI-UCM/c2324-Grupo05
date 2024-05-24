@@ -28,5 +28,15 @@ public class Trash : PickableObject
         {
             characterDamage.SetDamage(GlobalObjectRegistry.instance.collectedTrash);
         }
+
+        if (GlobalObjectRegistry.instance.collectedTrash == 10)
+        {
+            FindAnyObjectByType<AchievementNotifier>().ShowNotify();
+        }
+
+        if (GlobalObjectRegistry.instance.collectedTrash == 68)
+        {
+            FindAnyObjectByType<AchievementNotifier>().ShowNotify();
+        }
     }
 }

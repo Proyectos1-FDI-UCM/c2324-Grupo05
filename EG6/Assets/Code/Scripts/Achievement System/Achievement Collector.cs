@@ -20,19 +20,19 @@ public class AchievementCollector : MonoBehaviour
         _achievements = new List<Achievement>
         {
             new Achievement
-            ("Not Alone", "Description: You found yourself a new friend!", "Assets/Resources/Sprites/Achievements/..."),
+            ("Not Alone", "Description: You found yourself a new friend!"),
             new Achievement
-            ("Proud Greenpeace", "Description: Greenpeace loves you and admires you", "Assets/Resources/Sprites/Achievements/..."),
+            ("Proud Greenpeace", "Description: Greenpeace loves you and admires you"),
             new Achievement
-            ("Timbers!", "Description: It's goin' down, I'm yellin' timber", "Assets/Resources/Sprites/Achievements/..."),
+            ("Timbers!", "Description: It's goin' down, I'm yellin' timber"),
             new Achievement
-            ("What about light?", "Description: All is darkness and I am darkness", "Assets/Resources/Sprites/Achievements/..."),
+            ("What about light?", "Description: All is darkness and I am darkness"),
             new Achievement
-            ("The last of us", "Description: All pieces collected", "Assets/Resources/Sprites/Achievements/..."),
+            ("The last of us", "Description: All pieces collected"),
             new Achievement
-            ("Safe!", "Description: All trash collected", "Assets/Resources/Sprites/Achievements/..."),
+            ("Safe!", "Description: All trash collected"),
             new Achievement
-            ("What about light?", "Unlock level-3", "Assets/Resources/Sprites/Achievements/..."),
+            ("What about light?", "Unlock level-3"),
         };
 
         UnlockAchievementsByConditions();
@@ -54,15 +54,11 @@ public class AchievementCollector : MonoBehaviour
         if (_globalObjectRegistry.isEggPicked)
         {
             UnlockAchievement("Not Alone");
-
-            //achievementUnlocked.SetActive(true);
         }
 
         if (_globalObjectRegistry.collectedTrash >= 10)
         {
             UnlockAchievement("Proud Greenpeace");
-
-            //achievementUnlocked.SetActive(true);
         }
 
         int destroyedObjects = 0;
@@ -74,28 +70,21 @@ public class AchievementCollector : MonoBehaviour
         if (destroyedObjects >= 10)
         {
             UnlockAchievement("Timbers!");
-            //achievementUnlocked.SetActive(true);
         }
         
         if (_globalObjectRegistry.collectedPieces == 3)
         {
             UnlockAchievement("The last of us");
-
-            //achievementUnlocked.SetActive(true);
         }
 
         if(_globalObjectRegistry.collectedTrash == 68)
         {
             UnlockAchievement("Safe!");
-
-            //achievementUnlocked.SetActive(true);
         }
 
         if (_globalObjectRegistry.GetLevelState("Level3").CurrentCheckpointID >= 2)
         {
             UnlockAchievement("What about light?");
-
-            //achievementUnlocked.SetActive(true);
         }
     }
 }

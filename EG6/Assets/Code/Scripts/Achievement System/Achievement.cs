@@ -8,11 +8,10 @@ public class Achievement
     public string SpritePath { get; }
     public bool IsUnlocked { get; set;}
 
-    public Achievement(string name, string description, string spritePath)
+    public Achievement(string name, string description)
     {
         Name = name;
         Description = description;
-        SpritePath = spritePath;
         IsUnlocked = false;
     }   
 }

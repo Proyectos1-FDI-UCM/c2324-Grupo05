@@ -17,7 +17,6 @@ public class CharacterInteraction : MonoBehaviour
     private Vector2 _direction;
     private DestroyableObject _selectedObject;
 
-
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();

@@ -15,6 +15,8 @@ public class Egg : PickableObject
         {
             PickUp();
             
+            FindAnyObjectByType<AchievementNotifier>().ShowNotify();
+            
             _transitionScene.ChangeScene(true);
         }
     }
