@@ -15,7 +15,7 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
     [SerializeField] private AudioClip _onDestroySound;
     [SerializeField] private int _id;
     
-    protected int _durability = 12;
+    [SerializeField]protected int _durability = 12;
     protected bool _isSelected = false;
 
     protected LocalObjectHandler _localObjectHandler;
@@ -77,12 +77,15 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         {
             _durability-= characterDamage.Damage;
             UpdateSprite();
-            AudioSource.PlayClipAtPoint(_onHitSound, transform.position);
         }
-        else if (_durability <= 0)
+        if (_durability <= 0)
         {
             _arrowInstance.SetActive(false);
             Destroy();
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(_onHitSound, transform.position);
         }
     }
 
@@ -109,7 +112,7 @@ public class DestroyableObject : MonoBehaviour, IDestroyable, IInteractable
         {
             _spriteRenderer.sprite = _statesSprite[1];
         }
-        else if (_durability >= 4)
+        else if (_durability >= 1)
         {
             _spriteRenderer.sprite = _statesSprite[2];
         }
