@@ -77,7 +77,7 @@ public class AchievementCollector : MonoBehaviour
             UnlockAchievement("The last of us");
         }
 
-        if(_globalObjectRegistry.collectedTrash == 68)
+        if(_globalObjectRegistry.collectedTrash >= 67)
         {
             UnlockAchievement("Safe!");
         }
