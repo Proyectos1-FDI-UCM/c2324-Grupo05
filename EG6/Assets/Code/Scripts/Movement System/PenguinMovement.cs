@@ -111,7 +111,7 @@ public class PenguinMovement : MovableObject
         }
         else if (_movementMode == MovementMode.Swimming)
         {
-            _collisionHandler.CollisionOffset = 0.75f;
+            _collisionHandler.CollisionOffset = 0.25f;
             Vector2 newPosition = CalculateNewPosition(direction);
             _rigidbody2D.velocity = Vector2.Lerp(_rigidbody2D.velocity, (newPosition - (Vector2)transform.position) / Time.fixedDeltaTime, 0.15f);
         }
