@@ -27,7 +27,7 @@ The setting of the EG6 game is a bleak world of a landfill on an arctic island, 
 | S / Arrow Down  | Down             |
 | D / Arrow Right | Right            |
 | E / Space       | Interact         |
-| Esc             | Pause Menu       |
+| M             | Pause Menu       |
 | Q               | Change character |
 
 ### Gamepad
