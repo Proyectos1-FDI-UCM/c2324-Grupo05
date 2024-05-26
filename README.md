@@ -189,6 +189,17 @@ To implement the achievement system, we use only 2 scripts:
 | Achievement           | Represents an achievement in the game.                                                                                                       |
 | Achievement Collector | Stores information about all achievements in the game and unlocks them based on certain conditions using data from the GlobalObjectRegistry. |
 
+#### Achievement System
+It was added almost at the very end, so it works separately from other systems. It is divided into a notifier (which works separately during the game, shows "Achievement collected" message) and a collector (which is triggered each time when we enter the room).
+
+
+| Class                | Responsibility                                                                                                                     |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| AchievementCollector | Marks unlocked achievements based on information received from the global registry (each time when we load Bedroom scene)          |
+| AchievementNotifier  | Triggers the appearance of a window notifying about a new achievement when the player fulfills a certain condition during the game |
+| Achievement          | Represents an achievement instance (with a name and description)                                                                   |
+
+
 #### Camera System
 [Unity Cinemachine](https://unity.com/unity/features/editor/art-and-design/cinemachine) is responsible for the behavior of the camera in the game
 Camera movement is limited within one level or part of a level; when the character reaches the edge, the camera rests on the border of an invisible area.
@@ -259,15 +270,32 @@ While on an object with candy, the player can read a veiled hint about the order
 >
 >The value of the parameters should not be written before the prototype, as it is better to test them in practice and point them here.
 
+
+| Parameter                      | Value           |
+| ------------------------------ | --------------- |
+| Child Speed                    | 4f              |
+| Interaction Distance           | 0.5f            |
+| Character Damage               | 4f -> 6f -> 12f |
+| Destroyable Objects Durability | 12f             |
+
+
 ## Design
 
 ### Narrative:
+The game's narration occurs through pop-up hints with the main character's thoughts and the doctor's encrypted notes. The plot is not very detailed, rather it just gives small hints about the penguin's abilities and his origins.
+
+![Pop-Up Thoughts](docs/img/pop-up-thoughts.png)
+![Encrypted-Message](docs/img/encrypted-message.png)
+![Encrypted-Message-2](docs/img/encrypted-message-2.png)
+
 
 
 ### Art:
 
 ![MainMenuBackground](https://github.com/Proyectos1-FDI-UCM/c2324-Grupo05/assets/80777350/f797b216-cf73-4861-b7b6-128fc16f0d15)
 
+**Achievement icons**
+![Achievements-icons](docs/img/achievement-icons.png)
 
 
 ### Animations:
@@ -275,23 +303,42 @@ While on an object with candy, the player can read a veiled hint about the order
 ![ChildAnimations](https://github.com/Proyectos1-FDI-UCM/c2324-Grupo05/assets/80777350/139c631e-28d7-431f-8f03-90b1429f924a)
 
 
-
-### Sound:
-  
-  
-
 ### Music:
   
+| Scene             | Background music                                                                                                                                                                    |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MAP EXTERIOR      | **[https://shononoki.itch.io/rpg-music-pack-svl](https://shononoki.itch.io/rpg-music-pack-svl)** **Tema field**                                                                     |
+| LEVEL 3           | **[https://crowshade.itch.io/horror-music-pack](https://crowshade.itch.io/horror-music-pack)** **Midnight dreams, Minds eye pack**                                                  |
+| INITIAL MENU      | **[https://shononoki.itch.io/rpg-music-pack-svl](https://shononoki.itch.io/rpg-music-pack-svl)** **Tema field**                                                                     |
+| INITIAL ANIMATION | **[https://shononoki.itch.io/rpg-music-pack-svl](https://shononoki.itch.io/rpg-music-pack-svl)** **Night theme**                                                                    |
+| SELECT LEVE       | **[https://chillmindscapes.itch.io/free-chiptune-music-pack-4-chillmindscapes](https://chillmindscapes.itch.io/free-chiptune-music-pack-4-chillmindscapes)** **I think I like you** |
+| BEDROOM           | [https://chillmindscapes.itch.io/free-chiptune-music-pack-4-chillmindscapes](https://chillmindscapes.itch.io/free-chiptune-music-pack-4-chillmindscapes)**She will try**            |
+| FINAL TIMELINE    | [https://clement-panchout.itch.io/yet-another-free-music-pack?download](https://clement-panchout.itch.io/yet-another-free-music-pack?download) **Journey**                          |
 
-### Levels:
+  
 
   
 ## Progression
 
 >[!NOTE]
 >A very small section that indicates the sequence of opening levels, unlocking new mechanics and story events.
+
+
+| Piece | Mechanic                                                                                                    |
+| ----- | ----------------------------------------------------------------------------------------------------------- |
+| **1** | The player can press `<Switch Character>` to control the penguin, break ice and pass through penguin doors. |
+| **2** | Penguin can swim in water and glow in the dark.                                                             |
+| **3** | A penguin can turn into a submarine so that a child can swim away from the island.                          |
+
   
 ## Interface
+
+During the game itself, the interface is practically absent. There is a restart menu in case of death, a pause menu and notifications about achievements achieved
+
+In the child's room there are books that open a menu of achievements, progress and encrypted messages.
+
+Hints on controls and mechanics are presented in the form of pop-up messages.
+  
 
 
 
