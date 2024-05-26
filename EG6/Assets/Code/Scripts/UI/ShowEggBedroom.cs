@@ -40,6 +40,10 @@ public class ShowEggBedroom : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<ChildMovement>() != null && GlobalObjectRegistry.instance.isEggPicked && _isEggPlaced == false)
         {
+
+            AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+            audioManager.PlaySFX(audioManager._pickUpTrash);
+
             _egg.SetActive(true);
             _pannelEgg.SetActive(false);
             _invisibleWall.SetActive(false);

@@ -38,5 +38,8 @@ public class Trash : PickableObject
         {
             FindAnyObjectByType<AchievementNotifier>().ShowNotify();
         }
+
+        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+        audioManager.PlaySFX(audioManager._pickUpTrash);
     }
 }

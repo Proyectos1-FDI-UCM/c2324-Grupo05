@@ -23,6 +23,9 @@ public class AchievementNotifier : MonoBehaviour
     public void ShowNotify()
     {
         StartCoroutine(AnimateNotification());
+
+        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+        audioManager.PlaySFX(audioManager._newAchievement);
     }
 
     private IEnumerator AnimateNotification()

@@ -23,6 +23,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public AudioClip _knockWood;
     [SerializeField] public AudioClip _waterPlatform;
     [SerializeField] public AudioClip _lockedDoor;
+    [SerializeField] public AudioClip _pickUpTrash;
+    [SerializeField] public AudioClip _pickUpPiece;
+    [SerializeField] public AudioClip _newAchievement;
 
 
 

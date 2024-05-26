@@ -43,6 +43,9 @@ public class Piece : PickableObject
             FindAnyObjectByType<AchievementNotifier>().ShowNotify();
         }
 
+        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+        audioManager.PlaySFX(audioManager._pickUpPiece);
+
         base.PickUp();
     }
 
